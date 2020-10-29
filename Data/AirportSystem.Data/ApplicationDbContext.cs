@@ -11,6 +11,11 @@
 
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+    using PlaneSystem.Data;
+    using PlaneSystem.Data.Destinations;
+    using PlaneSystem.Data.Flight;
+    using PlaneSystem.Data.Planes;
+    using PlaneSystem.Data.Tickets;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
@@ -25,6 +30,22 @@
         }
 
         public DbSet<Setting> Settings { get; set; }
+
+        public DbSet<City> Cities { get; set; }
+
+        public DbSet<Luggage> Luggage { get; set; }
+
+        public DbSet<Passenger> Passengers { get; set; }
+
+        public DbSet<Plane> Planes { get; set; }
+
+        public DbSet<Ticket> Tickets { get; set; }
+
+        public DbSet<Destination> Destinations { get; set; }
+
+        public DbSet<Flights> Flights { get; set; }
+
+        public DbSet<Passport> Passports { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 
@@ -72,6 +93,12 @@
             {
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
             }
+
+            builder.Entity<Destination>().HasKey(x => new
+            {
+                x.CityId,
+                x.CountryId,
+            });
         }
 
         private static void SetIsDeletedQueryFilter<T>(ModelBuilder builder)

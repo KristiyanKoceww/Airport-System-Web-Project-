@@ -1,0 +1,16 @@
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Services.Data.deps.json
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Services.Data.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Services.Data.pdb
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Data.Common.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Data.Models.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Services.Mapping.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Data.Common.pdb
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Data.Models.pdb
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Services.Mapping.pdb
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.csprojAssemblyReference.cache
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.AssemblyInfo.cs
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.csproj.CopyComplete
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.pdb

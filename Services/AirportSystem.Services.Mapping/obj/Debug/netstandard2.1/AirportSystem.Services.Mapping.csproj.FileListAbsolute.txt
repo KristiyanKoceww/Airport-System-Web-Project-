@@ -1,0 +1,8 @@
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Mapping\bin\Debug\netstandard2.1\AirportSystem.Services.Mapping.deps.json
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Mapping\bin\Debug\netstandard2.1\AirportSystem.Services.Mapping.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Mapping\bin\Debug\netstandard2.1\AirportSystem.Services.Mapping.pdb
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Mapping\obj\Debug\netstandard2.1\AirportSystem.Services.Mapping.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Mapping\obj\Debug\netstandard2.1\AirportSystem.Services.Mapping.AssemblyInfo.cs
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Mapping\obj\Debug\netstandard2.1\AirportSystem.Services.Mapping.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Mapping\obj\Debug\netstandard2.1\AirportSystem.Services.Mapping.pdb
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Mapping\obj\Debug\netstandard2.1\AirportSystem.Services.Mapping.csproj.CoreCompileInputs.cache

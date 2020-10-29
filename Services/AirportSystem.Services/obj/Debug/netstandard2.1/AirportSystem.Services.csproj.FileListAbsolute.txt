@@ -1,0 +1,8 @@
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\bin\Debug\netstandard2.1\AirportSystem.Services.deps.json
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\bin\Debug\netstandard2.1\AirportSystem.Services.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\bin\Debug\netstandard2.1\AirportSystem.Services.pdb
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\obj\Debug\netstandard2.1\AirportSystem.Services.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\obj\Debug\netstandard2.1\AirportSystem.Services.AssemblyInfo.cs
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\obj\Debug\netstandard2.1\AirportSystem.Services.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\obj\Debug\netstandard2.1\AirportSystem.Services.pdb
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\obj\Debug\netstandard2.1\AirportSystem.Services.csproj.CoreCompileInputs.cache
