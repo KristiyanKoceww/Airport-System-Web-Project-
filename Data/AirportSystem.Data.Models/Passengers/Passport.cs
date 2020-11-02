@@ -9,7 +9,7 @@
     {
         public Passport()
         {
-            this.Id = Guid.NewGuid().ToString();
+            // this.Id = Guid.NewGuid().ToString();
         }
 
         [Required]

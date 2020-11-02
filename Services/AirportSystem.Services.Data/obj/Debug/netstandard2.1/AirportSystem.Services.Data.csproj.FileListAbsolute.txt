@@ -14,3 +14,8 @@ C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.csproj.CopyComplete
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.dll
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.pdb
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\appsettings.json
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Common.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Data.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Data.pdb
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Common.pdb

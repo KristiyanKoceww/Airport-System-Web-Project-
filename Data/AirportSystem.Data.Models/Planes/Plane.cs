@@ -23,6 +23,8 @@
 
         public int Seats { get; set; }
 
+        public bool IsPlaneAvailable { get; set; }
+
         [Required]
         public virtual PlaneType PlaneType { get; set; }
     }

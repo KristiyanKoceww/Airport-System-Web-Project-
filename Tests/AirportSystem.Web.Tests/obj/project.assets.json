@@ -3514,6 +3514,7 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
+          "AirportSystem.Data": "1.0.0",
           "AirportSystem.Data.Common": "1.0.0",
           "AirportSystem.Data.Models": "1.0.0",
           "AirportSystem.Services.Mapping": "1.0.0",

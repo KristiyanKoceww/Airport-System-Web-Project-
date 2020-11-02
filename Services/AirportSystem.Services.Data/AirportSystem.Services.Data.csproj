@@ -22,6 +22,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\AirportSystem.Data.Common\AirportSystem.Data.Common.csproj" />
     <ProjectReference Include="..\..\Data\AirportSystem.Data.Models\AirportSystem.Data.Models.csproj" />
+    <ProjectReference Include="..\..\Data\AirportSystem.Data\AirportSystem.Data.csproj" />
     <ProjectReference Include="..\AirportSystem.Services.Mapping\AirportSystem.Services.Mapping.csproj" />
   </ItemGroup>
 

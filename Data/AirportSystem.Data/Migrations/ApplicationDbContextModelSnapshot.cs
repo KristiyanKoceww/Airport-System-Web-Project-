@@ -472,6 +472,9 @@ namespace YourProjectName.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<bool>("IsPlaneAvailable")
+                        .HasColumnType("bit");
+
                     b.Property<string>("Make")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
