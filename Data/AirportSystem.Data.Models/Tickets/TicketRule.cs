@@ -6,7 +6,7 @@
 
     public enum TicketRule
     {
-        OneWay = 1,
-        TwoWay = 2,
+        OneWayTrip = 1,
+        RoundTrip = 2,
     }
 }

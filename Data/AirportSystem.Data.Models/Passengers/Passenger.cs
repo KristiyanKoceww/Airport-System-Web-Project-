@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Text;
-
+    using AirportSystem.Data.Models;
     using PlaneSystem.Data.Passengers;
     using PlaneSystem.Data.Tickets;
 
@@ -31,11 +31,15 @@
 
         public int Age { get; set; }
 
+        public string Phone { get; set; }
+
         [Required]
         public string Address { get; set; }
 
         [Required]
         public string PassportId { get; set; }
+
+        public virtual ApplicationUser User { get; set; }
 
         public virtual Passport Passport { get; set; }
 
@@ -44,8 +48,6 @@
 
         [Required]
         public virtual Gender Gender { get; set; }
-
-        public bool IsPassengerWithPet { get; set; }
 
         public virtual ICollection<Luggage> Luggage { get; set; }
 

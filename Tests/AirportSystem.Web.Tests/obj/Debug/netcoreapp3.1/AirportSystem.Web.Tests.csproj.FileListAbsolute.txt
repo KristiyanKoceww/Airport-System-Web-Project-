@@ -518,7 +518,6 @@ C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bi
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\AirportSystem.Services.Messaging.pdb
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\AirportSystem.Web.Infrastructure.pdb
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\AirportSystem.Web.ViewModels.pdb
-C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.RazorTargetAssemblyInfo.cache
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.csproj.CopyComplete
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\staticwebassets\AirportSystem.Web.Tests.StaticWebAssets.Manifest.cache
@@ -526,3 +525,4 @@ C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\ob
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.dll
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.pdb
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.genruntimeconfig.cache
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.MvcApplicationPartsAssemblyInfo.cs

@@ -11,6 +11,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20201102113740_UpdateDbWithNewEntities.cs" />
+    <Compile Remove="Migrations\20201102113740_UpdateDbWithNewEntities.Designer.cs" />
+    <Compile Remove="Migrations\20201102114520_UpdateDbWithNewEntities.cs" />
+    <Compile Remove="Migrations\20201102114520_UpdateDbWithNewEntities.Designer.cs" />
+    <Compile Remove="Migrations\20201102114850_UpdateDbWithNewEntities.cs" />
+    <Compile Remove="Migrations\20201102114850_UpdateDbWithNewEntities.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json" />
   </ItemGroup>
 
@@ -22,6 +31,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">

@@ -6,12 +6,12 @@
     using System.Linq;
     using System.Text;
 
-    using PlaneSystem.Data.Flight;
+    using AirportSystem.Data.Models.Flights;
     using PlaneSystem.Data.Planes;
 
-    public class Flights
+    public class Flight
     {
-        public Flights()
+        public Flight()
         {
             this.Id = Guid.NewGuid().ToString();
             this.Passengers = new HashSet<Passenger>();
@@ -32,12 +32,12 @@
         [Required]
         public virtual FlightStatus FlightStatus { get; set; }
 
-        public virtual Destination Destination { get; set; }
+        public virtual TravelLine TravelLine { get; set; }
+
+        public string TravelRoute => this.TravelLine.CityId + "-" + this.TravelLine.City2Id;
 
         public DateTime FlightDuration { get; set; }
 
-         // public string Origin => Destination.City.Name;
-         // public string TravelTo => Destination.City.Name;
         public virtual ICollection<Passenger> Passengers { get; set; }
 
         public int FreeSeats => this.Plane.Seats - this.Passengers.Count();

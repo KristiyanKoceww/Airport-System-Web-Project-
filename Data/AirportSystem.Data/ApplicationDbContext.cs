@@ -8,7 +8,8 @@
 
     using AirportSystem.Data.Common.Models;
     using AirportSystem.Data.Models;
-
+    using AirportSystem.Data.Models.Flights;
+    using AirportSystem.Data.Models.Payments;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
     using PlaneSystem.Data;
@@ -19,6 +20,7 @@
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
+
         private static readonly MethodInfo SetIsDeletedQueryFilterMethod =
             typeof(ApplicationDbContext).GetMethod(
                 nameof(SetIsDeletedQueryFilter),
@@ -41,11 +43,13 @@
 
         public DbSet<Ticket> Tickets { get; set; }
 
-        public DbSet<Destination> Destinations { get; set; }
-
-        public DbSet<Flights> Flights { get; set; }
+        public DbSet<Flight> Flights { get; set; }
 
         public DbSet<Passport> Passports { get; set; }
+
+        public DbSet<Payment> Payments { get; set; }
+
+        public DbSet<TravelLine> TravelLines { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 
@@ -94,11 +98,18 @@
                 foreignKey.DeleteBehavior = DeleteBehavior.Restrict;
             }
 
-            builder.Entity<Destination>().HasKey(x => new
+            builder.Entity<TravelLine>().HasKey(x => new
             {
                 x.CityId,
-                x.CountryId,
+                x.City2Id,
             });
+
+            builder.Entity<Payment>().HasKey(x => new
+            {
+                x.TicketId,
+                x.PassengerId,
+            });
+
         }
 
         private static void SetIsDeletedQueryFilter<T>(ModelBuilder builder)

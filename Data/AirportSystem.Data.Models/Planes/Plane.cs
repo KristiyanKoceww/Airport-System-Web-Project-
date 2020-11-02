@@ -16,14 +16,12 @@
         public string Id { get; set; }
 
         [Required]
-        public string Name { get; set; }
+        public string Make { get; set; }
 
         [Required]
         public string Model { get; set; }
 
         public int Seats { get; set; }
-
-        public int Range { get; set; }
 
         [Required]
         public virtual PlaneType PlaneType { get; set; }

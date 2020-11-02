@@ -17,8 +17,6 @@
         [Required]
         public string Id { get; set; }
 
-        public int CountOfTicketsToBuy { get; set; }
-
         [Required]
         public string PassengerId { get; set; }
 
@@ -34,7 +32,7 @@
         [Required]
         public string FlightId { get; set; }
 
-        public Flights Flight { get; set; }
+        public Flight Flight { get; set; }
 
         [Required]
         public virtual TicketType TicketType { get; set; }
