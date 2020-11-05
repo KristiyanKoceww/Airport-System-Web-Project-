@@ -6,8 +6,8 @@
 
     public enum PlaneType
     {
-        Civil = 1,
-        Military = 2,
-        Experimental = 3,
+        AirBus = 1,
+        AirCraft = 2,
+        Other = 3,
     }
 }

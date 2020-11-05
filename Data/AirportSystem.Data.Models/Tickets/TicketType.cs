@@ -6,8 +6,8 @@
 
     public enum TicketType
     {
-        FirstClass = 1,
-        SecondClass = 2,
-        Other = 3,
+        Economy = 1,
+        FirstClass = 2,
+        Business = 3,
     }
 }

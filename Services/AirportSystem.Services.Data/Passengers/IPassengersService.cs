@@ -1,5 +1,7 @@
 ﻿namespace AirportSystem.Services.Data.Passengers
 {
+    using System.Collections.Generic;
+
     using AirportSystem.Services.Data.InputModels;
     using PlaneSystem.Data;
 
@@ -10,5 +12,7 @@
         Passenger GetPassengerById(string id);
 
         string GetPassengerId(string firstName, string middleName, string lastName);
+
+        IEnumerable<Passenger> GetAllPassengersByFlightId(string flightId);
     }
 }

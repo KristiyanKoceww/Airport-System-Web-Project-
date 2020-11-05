@@ -8,7 +8,9 @@
 
     using AirportSystem.Data.Common.Models;
     using AirportSystem.Data.Models;
+    using AirportSystem.Data.Models.Airports;
     using AirportSystem.Data.Models.Flights;
+    using AirportSystem.Data.Models.Passengers;
     using AirportSystem.Data.Models.Payments;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
@@ -50,6 +52,12 @@
         public DbSet<Payment> Payments { get; set; }
 
         public DbSet<TravelLine> TravelLines { get; set; }
+
+        public DbSet<UserPassenger> UsersPassengers { get; set; }
+
+        public DbSet<AvioCompany> AvioCompanies { get; set; }
+
+        public DbSet<Airport> Airports { get; set; }
 
         public override int SaveChanges() => this.SaveChanges(true);
 
@@ -108,6 +116,12 @@
             {
                 x.TicketId,
                 x.PassengerId,
+            });
+
+            builder.Entity<UserPassenger>().HasKey(x => new
+            {
+                x.PassengerId,
+                x.UserId,
             });
 
         }

@@ -17,6 +17,8 @@
     <Compile Remove="Migrations\20201102114520_UpdateDbWithNewEntities.Designer.cs" />
     <Compile Remove="Migrations\20201102114850_UpdateDbWithNewEntities.cs" />
     <Compile Remove="Migrations\20201102114850_UpdateDbWithNewEntities.Designer.cs" />
+    <Compile Remove="Migrations\20201105121335_AddingPassIdToAppUser2.cs" />
+    <Compile Remove="Migrations\20201105121335_AddingPassIdToAppUser2.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

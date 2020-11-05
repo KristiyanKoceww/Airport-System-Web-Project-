@@ -3,7 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using System.Text;
+
     using AirportSystem.Data.Models;
     using PlaneSystem.Data.Passengers;
     using PlaneSystem.Data.Tickets;
@@ -31,6 +33,7 @@
 
         public int Age { get; set; }
 
+        [Required]
         public string Phone { get; set; }
 
         [Required]
@@ -38,8 +41,6 @@
 
         [Required]
         public string PassportId { get; set; }
-
-        public virtual ApplicationUser User { get; set; }
 
         public virtual Passport Passport { get; set; }
 

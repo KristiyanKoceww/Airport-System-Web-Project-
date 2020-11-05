@@ -6,8 +6,8 @@
 
     public enum LuggageType
     {
-       Regular = 1,
-       Vip = 2,
-       Additional = 3,
+        CarryOnBag = 1,
+        TrolleyBag = 2,
+        CheckedInBag = 3,
     }
 }

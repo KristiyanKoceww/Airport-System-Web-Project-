@@ -4,59 +4,22 @@ using AirportSystem.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace YourProjectName.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20201105114311_UpdateDbWithNewProps")]
+    partial class UpdateDbWithNewProps
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .HasAnnotation("ProductVersion", "3.1.9")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-            modelBuilder.Entity("AirportSystem.Data.Models.Airports.Airport", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CityId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CityId");
-
-                    b.ToTable("Airports");
-                });
-
-            modelBuilder.Entity("AirportSystem.Data.Models.Airports.AvioCompany", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("AirportId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("AirportId");
-
-                    b.ToTable("AvioCompanies");
-                });
 
             modelBuilder.Entity("AirportSystem.Data.Models.ApplicationRole", b =>
                 {
@@ -144,6 +107,9 @@ namespace YourProjectName.Data.Migrations
                         .HasColumnType("nvarchar(256)")
                         .HasMaxLength(256);
 
+                    b.Property<string>("PassengerId")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("PasswordHash")
                         .HasColumnType("nvarchar(max)");
 
@@ -175,6 +141,8 @@ namespace YourProjectName.Data.Migrations
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
+                    b.HasIndex("PassengerId");
+
                     b.ToTable("AspNetUsers");
                 });
 
@@ -189,21 +157,6 @@ namespace YourProjectName.Data.Migrations
                     b.HasKey("CityId", "City2Id");
 
                     b.ToTable("TravelLines");
-                });
-
-            modelBuilder.Entity("AirportSystem.Data.Models.Passengers.UserPassenger", b =>
-                {
-                    b.Property<string>("PassengerId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("UserId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.HasKey("PassengerId", "UserId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("UsersPassengers");
                 });
 
             modelBuilder.Entity("AirportSystem.Data.Models.Payments.Payment", b =>
@@ -398,9 +351,6 @@ namespace YourProjectName.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("AirportId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<DateTime>("ArrivalTime")
                         .HasColumnType("datetime2");
 
@@ -424,8 +374,6 @@ namespace YourProjectName.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AirportId");
 
                     b.HasIndex("PlaneId");
 
@@ -527,9 +475,6 @@ namespace YourProjectName.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("AvioCompanyId")
-                        .HasColumnType("nvarchar(450)");
-
                     b.Property<bool>("IsPlaneAvailable")
                         .HasColumnType("bit");
 
@@ -548,8 +493,6 @@ namespace YourProjectName.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("AvioCompanyId");
 
                     b.ToTable("Planes");
                 });
@@ -594,20 +537,11 @@ namespace YourProjectName.Data.Migrations
                     b.ToTable("Tickets");
                 });
 
-            modelBuilder.Entity("AirportSystem.Data.Models.Airports.Airport", b =>
+            modelBuilder.Entity("AirportSystem.Data.Models.ApplicationUser", b =>
                 {
-                    b.HasOne("PlaneSystem.Data.Destinations.City", "City")
+                    b.HasOne("PlaneSystem.Data.Passenger", "Passenger")
                         .WithMany()
-                        .HasForeignKey("CityId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("AirportSystem.Data.Models.Airports.AvioCompany", b =>
-                {
-                    b.HasOne("AirportSystem.Data.Models.Airports.Airport", null)
-                        .WithMany("AvioCompanies")
-                        .HasForeignKey("AirportId");
+                        .HasForeignKey("PassengerId");
                 });
 
             modelBuilder.Entity("AirportSystem.Data.Models.Flights.TravelLine", b =>
@@ -616,21 +550,6 @@ namespace YourProjectName.Data.Migrations
                         .WithMany()
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
-                });
-
-            modelBuilder.Entity("AirportSystem.Data.Models.Passengers.UserPassenger", b =>
-                {
-                    b.HasOne("PlaneSystem.Data.Passenger", "Passenger")
-                        .WithMany()
-                        .HasForeignKey("PassengerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("AirportSystem.Data.Models.ApplicationUser", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
 
@@ -709,10 +628,6 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("PlaneSystem.Data.Flight.Flight", b =>
                 {
-                    b.HasOne("AirportSystem.Data.Models.Airports.Airport", null)
-                        .WithMany("Flights")
-                        .HasForeignKey("AirportId");
-
                     b.HasOne("PlaneSystem.Data.Planes.Plane", "Plane")
                         .WithMany()
                         .HasForeignKey("PlaneId")
@@ -744,13 +659,6 @@ namespace YourProjectName.Data.Migrations
                         .HasForeignKey("PassportId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
-                });
-
-            modelBuilder.Entity("PlaneSystem.Data.Planes.Plane", b =>
-                {
-                    b.HasOne("AirportSystem.Data.Models.Airports.AvioCompany", null)
-                        .WithMany("Planes")
-                        .HasForeignKey("AvioCompanyId");
                 });
 
             modelBuilder.Entity("PlaneSystem.Data.Tickets.Ticket", b =>

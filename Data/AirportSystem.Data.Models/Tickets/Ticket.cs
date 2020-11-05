@@ -30,6 +30,9 @@
         public decimal Price { get; set; }
 
         [Required]
+        public string SeatNumber { get; set; }
+
+        [Required]
         public string FlightId { get; set; }
 
         public Flight Flight { get; set; }
