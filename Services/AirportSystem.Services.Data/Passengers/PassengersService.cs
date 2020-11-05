@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+
     using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
     using PlaneSystem.Data;
@@ -26,6 +27,7 @@
                 LastName = passengerInputModel.LastName,
                 Address = passengerInputModel.Address,
                 Age = passengerInputModel.Age,
+                Phone = passengerInputModel.Phone,
                 PassportId = passengerInputModel.PassportId,
                 Gender = (Gender)Enum.Parse(typeof(Gender), passengerInputModel.Gender),
                 PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), passengerInputModel.PassengerType),
@@ -35,10 +37,11 @@
             this.db.SaveChanges();
         }
 
+        //TODO
         public IEnumerable<Passenger> GetAllPassengersByFlightId(string flightId)
         {
-            //var passengers = this.db.Passengers.Where(x => x.Tickets.Where(a=>a.FlightId == flightId))
-            return null;
+            var passengers = this.db.Flights.Where(x => x.Id == flightId).Select(x => x.Passengers).ToList();
+            return (IEnumerable<Passenger>)passengers;
         }
 
         public Passenger GetPassengerById(string id)

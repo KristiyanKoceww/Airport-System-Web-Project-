@@ -37,6 +37,8 @@
 
         public DbSet<City> Cities { get; set; }
 
+        public DbSet<Country> Countries { get; set; }
+
         public DbSet<Luggage> Luggage { get; set; }
 
         public DbSet<Passenger> Passengers { get; set; }
