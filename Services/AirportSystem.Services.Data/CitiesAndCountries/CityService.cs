@@ -28,9 +28,11 @@
 
         public IEnumerable<City> GetAll()
         {
-            var cities = this.db.Countries.Select(x => new City()
+            var cities = this.db.Cities.Select(x => new City()
             {
                 Name = x.Name,
+                CountryId = x.CountryId,
+                Id = x.Id,
             }).ToList();
 
             return cities;

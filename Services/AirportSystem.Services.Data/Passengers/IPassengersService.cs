@@ -14,5 +14,7 @@
         string GetPassengerId(string firstName, string middleName, string lastName);
 
         IEnumerable<Passenger> GetAllPassengersByFlightId(string flightId);
+
+        IEnumerable<Passenger> GetAll();
     }
 }

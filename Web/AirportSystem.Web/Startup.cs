@@ -9,6 +9,9 @@
     using AirportSystem.Data.Repositories;
     using AirportSystem.Data.Seeding;
     using AirportSystem.Services.Data;
+    using AirportSystem.Services.Data.CitiesAndCountries;
+    using AirportSystem.Services.Data.Luggages;
+    using AirportSystem.Services.Data.Passengers;
     using AirportSystem.Services.Mapping;
     using AirportSystem.Services.Messaging;
     using AirportSystem.Web.ViewModels;
@@ -64,6 +67,10 @@
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
             services.AddTransient<ISettingsService, SettingsService>();
+
+            services.AddTransient<ICountryService, CountryService>();
+            services.AddTransient<ICityService, CityService>();
+            services.AddTransient<ILuggageService, LuggageService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

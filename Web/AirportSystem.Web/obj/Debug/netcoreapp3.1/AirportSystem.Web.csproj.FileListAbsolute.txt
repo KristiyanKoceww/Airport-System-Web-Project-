@@ -435,7 +435,6 @@ C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\_ViewImports.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Administration\Views\_ViewStart.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Identity\Pages\_ViewStart.cshtml.g.cs
-C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Settings\Index.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
@@ -457,3 +456,7 @@ C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\AirportSystem.Web.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\AirportSystem.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\AirportSystem.Web.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\CountriesAndCities\All.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index2.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Luggages\Search.cshtml.g.cs

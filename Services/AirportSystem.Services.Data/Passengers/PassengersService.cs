@@ -37,7 +37,22 @@
             this.db.SaveChanges();
         }
 
-        //TODO
+        public IEnumerable<Passenger> GetAll()
+        {
+            var passengers = this.db.Passengers.Select(x => new Passenger
+            {
+                FirstName = x.FirstName,
+                MiddleName = x.MiddleName,
+                LastName = x.LastName,
+                Address = x.Address,
+                Age = x.Age,
+                Phone = x.Phone,
+            }).ToList();
+
+            return passengers;
+        }
+
+        // TODO
         public IEnumerable<Passenger> GetAllPassengersByFlightId(string flightId)
         {
             var passengers = this.db.Flights.Where(x => x.Id == flightId).Select(x => x.Passengers).ToList();

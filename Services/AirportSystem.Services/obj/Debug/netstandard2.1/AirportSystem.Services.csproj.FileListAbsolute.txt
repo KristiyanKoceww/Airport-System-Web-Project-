@@ -6,4 +6,3 @@ C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\obj\Debug\netstandard2.1\AirportSystem.Services.dll
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\obj\Debug\netstandard2.1\AirportSystem.Services.pdb
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\obj\Debug\netstandard2.1\AirportSystem.Services.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services\obj\Debug\netstandard2.1\AirportSystem.Services.csprojAssemblyReference.cache
