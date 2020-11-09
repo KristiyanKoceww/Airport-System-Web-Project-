@@ -1,0 +1,73 @@
+﻿@using AirportSystem.Web.ViewModels
+@using PlaneSystem.Data.Passengers;
+@using PlaneSystem.Data
+
+@model PassengerInputModel
+
+<h1>Create your travell profile</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="FirstName"></label>
+        <input asp-for="FirstName" class="form-control" />
+        <span asp-validation-for="FirstName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="MiddleName"></label>
+        <input asp-for="MiddleName" class="form-control" />
+        <span asp-validation-for="MiddleName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="LastName"></label>
+        <input asp-for="LastName" class="form-control" />
+        <span asp-validation-for="LastName" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="Phone"></label>
+        <input asp-for="Phone" class="form-control" />
+        <span asp-validation-for="Phone" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="Age"></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="PassportId"></label>
+        <input asp-for="PassportId" class="form-control" />
+        <span asp-validation-for="PassportId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+            <label asp-for="PassengerType"></label>
+            <select asp-for="PassengerType" class="form-control"
+                    asp-items="@Html.GetEnumSelectList<PassengerType>()">
+                <option>Select type ...</option>
+            </select>
+            <span asp-validation-for="PassengerType" class="text-danger"></span>
+        </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="Gender"></label>
+        <select asp-for="Gender" class="form-control"
+                asp-items="@Html.GetEnumSelectList<Gender>()">
+            <option>Select type ...</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+
+    <input type="submit" class="btn btn-primary" />
+</form>

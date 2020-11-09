@@ -19,6 +19,7 @@
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
+    using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.EntityFrameworkCore;
     using Microsoft.Extensions.Configuration;
@@ -71,6 +72,8 @@
             services.AddTransient<ICountryService, CountryService>();
             services.AddTransient<ICityService, CityService>();
             services.AddTransient<ILuggageService, LuggageService>();
+            services.AddTransient<IPassengersService, PassengersService>();
+            services.AddTransient<IUserPassengersService, UserPassengersService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

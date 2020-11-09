@@ -6,6 +6,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Text;
 
+    using AirportSystem.Data.Common.Models;
     using AirportSystem.Data.Models;
     using PlaneSystem.Data.Passengers;
     using PlaneSystem.Data.Tickets;

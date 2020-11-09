@@ -20,6 +20,13 @@
 
         public void Create(PassengerInputModel passengerInputModel)
         {
+            var passport = new Passport()
+            {
+                Id = passengerInputModel.PassportId,
+                CreatedOn = DateTime.UtcNow,
+                ExpiresOn = DateTime.UtcNow.AddDays(365),
+            };
+
             var passenger = new Passenger()
             {
                 FirstName = passengerInputModel.FirstName,
@@ -34,6 +41,7 @@
             };
 
             this.db.Passengers.Add(passenger);
+            this.db.Passports.Add(passport);
             this.db.SaveChanges();
         }
 

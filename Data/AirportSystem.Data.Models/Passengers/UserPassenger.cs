@@ -2,7 +2,7 @@
 {
     using PlaneSystem.Data;
 
-    public class UserPassenger
+    public class IUserPassenger
     {
         public string PassengerId { get; set; }
 

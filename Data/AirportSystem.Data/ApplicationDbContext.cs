@@ -55,7 +55,7 @@
 
         public DbSet<TravelLine> TravelLines { get; set; }
 
-        public DbSet<UserPassenger> UsersPassengers { get; set; }
+        public DbSet<IUserPassenger> UsersPassengers { get; set; }
 
         public DbSet<AvioCompany> AvioCompanies { get; set; }
 
@@ -120,7 +120,7 @@
                 x.PassengerId,
             });
 
-            builder.Entity<UserPassenger>().HasKey(x => new
+            builder.Entity<IUserPassenger>().HasKey(x => new
             {
                 x.PassengerId,
                 x.UserId,
