@@ -2,8 +2,8 @@
 {
     using System.Collections.Generic;
 
+    using AirportSystem.Data.Planes;
     using AirportSystem.Services.Data.InputModels;
-    using PlaneSystem.Data.Planes;
 
     public interface IPlaneService
     {
@@ -12,6 +12,5 @@
         Plane GetPlaneById(string id);
 
         IEnumerable<Plane> GetAllPlanes();
-
     }
 }

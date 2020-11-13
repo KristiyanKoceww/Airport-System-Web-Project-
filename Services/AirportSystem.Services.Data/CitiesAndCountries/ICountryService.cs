@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
 
-    using PlaneSystem.Data.Destinations;
+    using AirportSystem.Data.Destinations;
 
     public interface ICountryService
     {

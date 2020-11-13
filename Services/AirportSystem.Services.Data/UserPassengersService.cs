@@ -1,8 +1,5 @@
 ﻿namespace AirportSystem.Services.Data
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
     using AirportSystem.Data;
     using AirportSystem.Data.Models.Passengers;
 
@@ -17,7 +14,7 @@
 
         public void Create(string userId, string passengerId)
         {
-            var userPassenger = new IUserPassenger()
+            var userPassenger = new UserPassenger()
             {
                 PassengerId = passengerId,
                 UserId = userId,

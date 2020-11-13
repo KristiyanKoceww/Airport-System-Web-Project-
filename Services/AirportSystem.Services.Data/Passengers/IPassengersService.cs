@@ -2,8 +2,8 @@
 {
     using System.Collections.Generic;
 
+    using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
-    using PlaneSystem.Data;
 
     public interface IPassengersService
     {

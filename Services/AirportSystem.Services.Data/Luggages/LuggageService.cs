@@ -5,7 +5,6 @@
 
     using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
-    using PlaneSystem.Data;
 
     public class LuggageService : ILuggageService
     {

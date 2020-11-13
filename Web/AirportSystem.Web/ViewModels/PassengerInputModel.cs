@@ -6,8 +6,8 @@
     using System.Linq;
     using System.Threading.Tasks;
 
-    using PlaneSystem.Data;
-    using PlaneSystem.Data.Passengers;
+    using AirportSystem.Data;
+    using AirportSystem.Data.Passengers;
 
     public class PassengerInputModel
     {

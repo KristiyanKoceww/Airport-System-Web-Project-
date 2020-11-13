@@ -1,9 +1,8 @@
-﻿namespace AirportSystem.Data.Models.Flights
+﻿namespace AirportSystem.Data
 {
-    using System;
     using System.ComponentModel.DataAnnotations;
 
-    using PlaneSystem.Data.Destinations;
+    using AirportSystem.Data.Destinations;
 
     public class TravelLine
     {

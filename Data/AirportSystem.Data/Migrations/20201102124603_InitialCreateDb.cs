@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace YourProjectName.Data.Migrations
+﻿namespace YourProjectName.Data.Migrations
 {
+    using System;
+
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class InitialCreateDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -29,7 +30,7 @@ namespace YourProjectName.Data.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(nullable: false),
-                    Name = table.Column<string>(nullable: false)
+                    Name = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -42,7 +43,7 @@ namespace YourProjectName.Data.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     CreatedOn = table.Column<DateTime>(nullable: false),
-                    ExpiresOn = table.Column<DateTime>(nullable: false)
+                    ExpiresOn = table.Column<DateTime>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -57,7 +58,7 @@ namespace YourProjectName.Data.Migrations
                     Make = table.Column<string>(nullable: false),
                     Model = table.Column<string>(nullable: false),
                     Seats = table.Column<int>(nullable: false),
-                    PlaneType = table.Column<int>(nullable: false)
+                    PlaneType = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -70,7 +71,7 @@ namespace YourProjectName.Data.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: false),
-                    CountryId = table.Column<string>(nullable: true)
+                    CountryId = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -88,7 +89,7 @@ namespace YourProjectName.Data.Migrations
                 columns: table => new
                 {
                     CityId = table.Column<string>(nullable: false),
-                    City2Id = table.Column<string>(nullable: false)
+                    City2Id = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -112,7 +113,7 @@ namespace YourProjectName.Data.Migrations
                     FlightStatus = table.Column<int>(nullable: false),
                     TravelLineCityId = table.Column<string>(nullable: true),
                     TravelLineCity2Id = table.Column<string>(nullable: true),
-                    FlightDuration = table.Column<DateTime>(nullable: false)
+                    FlightDuration = table.Column<DateTime>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -145,7 +146,7 @@ namespace YourProjectName.Data.Migrations
                     PassportId = table.Column<string>(nullable: false),
                     PassengerType = table.Column<int>(nullable: false),
                     Gender = table.Column<int>(nullable: false),
-                    FlightId = table.Column<string>(nullable: true)
+                    FlightId = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -171,7 +172,7 @@ namespace YourProjectName.Data.Migrations
                     Id = table.Column<string>(nullable: false),
                     LuggageType = table.Column<int>(nullable: false),
                     PassengerId = table.Column<string>(nullable: false),
-                    Weight = table.Column<decimal>(nullable: false)
+                    Weight = table.Column<decimal>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -194,7 +195,7 @@ namespace YourProjectName.Data.Migrations
                     Price = table.Column<decimal>(nullable: false),
                     FlightId = table.Column<string>(nullable: false),
                     TicketType = table.Column<int>(nullable: false),
-                    TicketRule = table.Column<int>(nullable: false)
+                    TicketRule = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -225,7 +226,7 @@ namespace YourProjectName.Data.Migrations
                 {
                     PassengerId = table.Column<string>(nullable: false),
                     TicketId = table.Column<string>(nullable: false),
-                    PaymentStatus = table.Column<int>(nullable: false)
+                    PaymentStatus = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {

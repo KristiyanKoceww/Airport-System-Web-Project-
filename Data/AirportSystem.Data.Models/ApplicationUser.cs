@@ -7,7 +7,6 @@ namespace AirportSystem.Data.Models
     using AirportSystem.Data.Common.Models;
 
     using Microsoft.AspNetCore.Identity;
-    using PlaneSystem.Data;
 
     public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity
     {

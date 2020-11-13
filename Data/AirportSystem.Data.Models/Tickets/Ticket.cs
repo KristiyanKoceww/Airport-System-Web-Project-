@@ -1,11 +1,9 @@
-﻿namespace PlaneSystem.Data.Tickets
+﻿namespace AirportSystem.Data.Tickets
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Text;
 
-    using PlaneSystem.Data.Flight;
+    using AirportSystem.Data;
 
     public class Ticket
     {

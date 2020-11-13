@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace YourProjectName.Data.Migrations
+﻿namespace YourProjectName.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class AddServices : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

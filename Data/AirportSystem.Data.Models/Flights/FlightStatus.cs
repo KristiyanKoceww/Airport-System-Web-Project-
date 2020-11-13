@@ -1,9 +1,5 @@
-﻿namespace PlaneSystem.Data.Flight
+﻿namespace AirportSystem.Data
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     public enum FlightStatus
     {
         Ready = 1,

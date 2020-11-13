@@ -7,22 +7,18 @@
     using System.Threading.Tasks;
 
     using AirportSystem.Data.Common.Models;
+    using AirportSystem.Data.Destinations;
     using AirportSystem.Data.Models;
     using AirportSystem.Data.Models.Airports;
-    using AirportSystem.Data.Models.Flights;
     using AirportSystem.Data.Models.Passengers;
     using AirportSystem.Data.Models.Payments;
+    using AirportSystem.Data.Planes;
+    using AirportSystem.Data.Tickets;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
-    using PlaneSystem.Data;
-    using PlaneSystem.Data.Destinations;
-    using PlaneSystem.Data.Flight;
-    using PlaneSystem.Data.Planes;
-    using PlaneSystem.Data.Tickets;
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser, ApplicationRole, string>
     {
-
         private static readonly MethodInfo SetIsDeletedQueryFilterMethod =
             typeof(ApplicationDbContext).GetMethod(
                 nameof(SetIsDeletedQueryFilter),
@@ -55,7 +51,7 @@
 
         public DbSet<TravelLine> TravelLines { get; set; }
 
-        public DbSet<IUserPassenger> UsersPassengers { get; set; }
+        public DbSet<UserPassenger> UsersPassengers { get; set; }
 
         public DbSet<AvioCompany> AvioCompanies { get; set; }
 
@@ -120,12 +116,11 @@
                 x.PassengerId,
             });
 
-            builder.Entity<IUserPassenger>().HasKey(x => new
+            builder.Entity<UserPassenger>().HasKey(x => new
             {
                 x.PassengerId,
                 x.UserId,
             });
-
         }
 
         private static void SetIsDeletedQueryFilter<T>(ModelBuilder builder)

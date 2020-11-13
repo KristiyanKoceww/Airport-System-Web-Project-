@@ -1,13 +1,7 @@
 ﻿namespace AirportSystem.Data.Models.Payments
 {
-    using System;
-
-    using System.Collections.Generic;
-    using System.Text;
-
     using AirportSystem.Data.Models.Payment;
-    using PlaneSystem.Data;
-    using PlaneSystem.Data.Tickets;
+    using AirportSystem.Data.Tickets;
 
     public class Payment
     {

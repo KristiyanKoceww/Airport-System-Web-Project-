@@ -5,9 +5,8 @@
     using System.Linq;
 
     using AirportSystem.Data;
+    using AirportSystem.Data.Passengers;
     using AirportSystem.Services.Data.InputModels;
-    using PlaneSystem.Data;
-    using PlaneSystem.Data.Passengers;
 
     public class PassengersService : IPassengersService
     {

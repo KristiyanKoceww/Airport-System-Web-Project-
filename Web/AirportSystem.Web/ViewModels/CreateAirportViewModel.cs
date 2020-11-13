@@ -1,8 +1,8 @@
-﻿using AirportSystem.Data.Models.Airports;
-using AirportSystem.Services.Mapping;
-
-namespace AirportSystem.Web.ViewModels
+﻿namespace AirportSystem.Web.ViewModels
 {
+    using AirportSystem.Data.Models.Airports;
+    using AirportSystem.Services.Mapping;
+
     public class CreateAirportViewModel : IMapFrom<Airport>
     {
         public string Id { get; set; }

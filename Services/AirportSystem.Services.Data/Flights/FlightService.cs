@@ -3,9 +3,9 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
+
     using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
-    using PlaneSystem.Data.Flight;
 
     public class FlightService : IFlightService
     {

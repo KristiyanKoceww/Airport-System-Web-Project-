@@ -1,9 +1,5 @@
-﻿namespace PlaneSystem.Data.Planes
+﻿namespace AirportSystem.Data.Planes
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     public enum PlaneType
     {
         AirBus = 1,

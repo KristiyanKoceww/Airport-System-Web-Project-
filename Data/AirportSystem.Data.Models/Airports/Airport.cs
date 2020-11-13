@@ -4,8 +4,8 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    using PlaneSystem.Data.Destinations;
-    using PlaneSystem.Data.Flight;
+    using AirportSystem.Data;
+    using AirportSystem.Data.Destinations;
 
     public class Airport
     {

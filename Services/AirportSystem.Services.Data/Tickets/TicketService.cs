@@ -5,8 +5,8 @@
     using System.Linq;
 
     using AirportSystem.Data;
+    using AirportSystem.Data.Tickets;
     using AirportSystem.Services.Data.InputModels;
-    using PlaneSystem.Data.Tickets;
 
     public class TicketService : ITicketService
     {

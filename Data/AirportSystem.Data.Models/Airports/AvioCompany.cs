@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
-    using PlaneSystem.Data.Planes;
+    using AirportSystem.Data.Planes;
 
     public class AvioCompany
     {

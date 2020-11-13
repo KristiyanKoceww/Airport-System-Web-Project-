@@ -1,15 +1,11 @@
-﻿namespace PlaneSystem.Data
+﻿namespace AirportSystem.Data
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
-    using System.Text;
 
-    using AirportSystem.Data.Common.Models;
-    using AirportSystem.Data.Models;
-    using PlaneSystem.Data.Passengers;
-    using PlaneSystem.Data.Tickets;
+    using AirportSystem.Data.Passengers;
+    using AirportSystem.Data.Tickets;
 
     public class Passenger
     {

@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace YourProjectName.Data.Migrations
+﻿namespace YourProjectName.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class AddingNewEntities : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -34,7 +34,7 @@ namespace YourProjectName.Data.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: false),
-                    CityId = table.Column<string>(nullable: false)
+                    CityId = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -52,7 +52,7 @@ namespace YourProjectName.Data.Migrations
                 columns: table => new
                 {
                     PassengerId = table.Column<string>(nullable: false),
-                    UserId = table.Column<string>(nullable: false)
+                    UserId = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -77,7 +77,7 @@ namespace YourProjectName.Data.Migrations
                 {
                     Id = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: false),
-                    AirportId = table.Column<string>(nullable: true)
+                    AirportId = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {

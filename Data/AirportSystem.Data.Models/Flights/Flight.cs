@@ -1,13 +1,11 @@
-﻿namespace PlaneSystem.Data.Flight
+﻿namespace AirportSystem.Data
 {
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
-    using System.Text;
 
-    using AirportSystem.Data.Models.Flights;
-    using PlaneSystem.Data.Planes;
+    using AirportSystem.Data.Planes;
 
     public class Flight
     {

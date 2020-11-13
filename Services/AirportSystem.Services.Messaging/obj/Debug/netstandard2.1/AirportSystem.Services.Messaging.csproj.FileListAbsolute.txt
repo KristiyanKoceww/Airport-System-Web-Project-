@@ -7,3 +7,11 @@ C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Messaging\obj\Debug\netstandard2.1\AirportSystem.Services.Messaging.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Messaging\obj\Debug\netstandard2.1\AirportSystem.Services.Messaging.dll
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Messaging\obj\Debug\netstandard2.1\AirportSystem.Services.Messaging.pdb
+C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Messaging\bin\Debug\netstandard2.1\AirportSystem.Services.Messaging.deps.json
+C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Messaging\bin\Debug\netstandard2.1\AirportSystem.Services.Messaging.dll
+C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Messaging\bin\Debug\netstandard2.1\AirportSystem.Services.Messaging.pdb
+C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Messaging\obj\Debug\netstandard2.1\AirportSystem.Services.Messaging.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Messaging\obj\Debug\netstandard2.1\AirportSystem.Services.Messaging.AssemblyInfo.cs
+C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Messaging\obj\Debug\netstandard2.1\AirportSystem.Services.Messaging.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Messaging\obj\Debug\netstandard2.1\AirportSystem.Services.Messaging.dll
+C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Messaging\obj\Debug\netstandard2.1\AirportSystem.Services.Messaging.pdb

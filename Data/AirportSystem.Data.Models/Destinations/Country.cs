@@ -1,9 +1,7 @@
-﻿namespace PlaneSystem.Data.Destinations
+﻿namespace AirportSystem.Data.Destinations
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Text;
 
     public class Country
     {

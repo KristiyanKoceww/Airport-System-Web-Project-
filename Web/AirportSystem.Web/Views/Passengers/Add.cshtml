@@ -1,6 +1,4 @@
 ﻿@using AirportSystem.Web.ViewModels
-@using PlaneSystem.Data.Passengers;
-@using PlaneSystem.Data
 
 @model PassengerInputModel
 
@@ -51,7 +49,7 @@
         <span asp-validation-for="PassportId" class="text-danger"></span>
     </div>
 
-    <div class="form-group col-md-6">
+    @*<div class="form-group col-md-6">
             <label asp-for="PassengerType"></label>
             <select asp-for="PassengerType" class="form-control"
                     asp-items="@Html.GetEnumSelectList<PassengerType>()">
@@ -67,7 +65,7 @@
             <option>Select type ...</option>
         </select>
         <span asp-validation-for="Gender" class="text-danger"></span>
-    </div>
+    </div>*@
 
     <input type="submit" class="btn btn-primary" />
 </form>

@@ -1,9 +1,5 @@
-﻿namespace PlaneSystem.Data
+﻿namespace AirportSystem.Data
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     public enum LuggageType
     {
         CarryOnBag = 1,

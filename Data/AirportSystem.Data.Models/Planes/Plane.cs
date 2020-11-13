@@ -1,9 +1,7 @@
-﻿namespace PlaneSystem.Data.Planes
+﻿namespace AirportSystem.Data.Planes
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Text;
 
     public class Plane
     {

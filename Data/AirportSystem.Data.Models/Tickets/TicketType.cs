@@ -1,9 +1,5 @@
-﻿namespace PlaneSystem.Data.Tickets
+﻿namespace AirportSystem.Data.Tickets
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Text;
-
     public enum TicketType
     {
         Economy = 1,

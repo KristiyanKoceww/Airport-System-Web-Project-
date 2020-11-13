@@ -1,7 +1,7 @@
 ﻿namespace AirportSystem.Services.Data.Luggages
 {
+    using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
-    using PlaneSystem.Data;
 
     public interface ILuggageService
     {
