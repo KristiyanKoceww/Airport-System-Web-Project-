@@ -11,7 +11,6 @@
     using AirportSystem.Services.Data;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Passengers;
-    using AirportSystem.Web.Controllers;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
@@ -31,19 +30,25 @@
 
         public IActionResult Add()
         {
+            var viewModel = new PassengerInputModel();
             return this.View();
         }
 
         [HttpPost]
         public IActionResult Add(PassengerInputModel passengerInputModel)
         {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(passengerInputModel);
+            }
+
             this.passengersService.Create(passengerInputModel);
 
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var passengerId = this.passengersService.GetPassengerId(passengerInputModel.FirstName, passengerInputModel.MiddleName, passengerInputModel.LastName);
 
             this.userPassengersService.Create(userId, passengerId);
-            return this.View();
+            return this.Redirect("/Passports/edit");
         }
     }
 }

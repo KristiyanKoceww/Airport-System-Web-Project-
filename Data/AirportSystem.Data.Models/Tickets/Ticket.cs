@@ -4,16 +4,14 @@
     using System.ComponentModel.DataAnnotations;
 
     using AirportSystem.Data;
+    using AirportSystem.Data.Common.Models;
 
-    public class Ticket
+    public class Ticket : BaseDeletableModel<string>
     {
         public Ticket()
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
-        [Required]
-        public string Id { get; set; }
 
         [Required]
         public string PassengerId { get; set; }

@@ -3,15 +3,14 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class Luggage
+    using AirportSystem.Data.Common.Models;
+
+    public class Luggage : BaseDeletableModel<string>
     {
         public Luggage()
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
-        [Required]
-        public string Id { get; set; }
 
         [Required]
         public virtual LuggageType LuggageType { get; set; }

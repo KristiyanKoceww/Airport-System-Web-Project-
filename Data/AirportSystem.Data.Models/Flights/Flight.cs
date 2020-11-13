@@ -5,18 +5,16 @@
     using System.ComponentModel.DataAnnotations;
     using System.Linq;
 
+    using AirportSystem.Data.Common.Models;
     using AirportSystem.Data.Planes;
 
-    public class Flight
+    public class Flight : BaseDeletableModel<string>
     {
         public Flight()
         {
             this.Id = Guid.NewGuid().ToString();
             this.Passengers = new HashSet<Passenger>();
         }
-
-        [Required]
-        public string Id { get; set; }
 
         [Required]
         public string PlaneId { get; set; }

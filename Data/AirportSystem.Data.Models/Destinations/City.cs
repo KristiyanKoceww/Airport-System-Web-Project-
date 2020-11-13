@@ -3,15 +3,14 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class City
+    using AirportSystem.Data.Common.Models;
+
+    public class City : BaseDeletableModel<string>
     {
         public City()
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
-        [Required]
-        public string Id { get; set; }
 
         [Required]
         public string Name { get; set; }

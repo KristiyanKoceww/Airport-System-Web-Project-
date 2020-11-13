@@ -4,10 +4,11 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
+    using AirportSystem.Data.Common.Models;
     using AirportSystem.Data.Passengers;
     using AirportSystem.Data.Tickets;
 
-    public class Passenger
+    public class Passenger : BaseDeletableModel<string>
     {
         public Passenger()
         {
@@ -15,9 +16,6 @@
             this.Luggage = new HashSet<Luggage>();
             this.Tickets = new HashSet<Ticket>();
         }
-
-        [Required]
-        public string Id { get; set; }
 
         [Required]
         public string FirstName { get; set; }

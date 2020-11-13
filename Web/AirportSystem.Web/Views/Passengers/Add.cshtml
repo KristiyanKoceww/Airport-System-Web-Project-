@@ -1,6 +1,12 @@
-﻿@using AirportSystem.Web.ViewModels
+﻿@using AirportSystem.Common
+@using AirportSystem.Data
+@using AirportSystem.Data.Passengers
 
-@model PassengerInputModel
+@model AirportSystem.Services.Data.InputModels.PassengerInputModel
+
+@{ 
+    this.ViewData["Title"] = "Create your travel profile";
+}
 
 <h1>Create your travell profile</h1>
 
@@ -56,6 +62,15 @@
                 <option>Select type ...</option>
             </select>
             <span asp-validation-for="PassengerType" class="text-danger"></span>
+        </div>*@
+
+    <div class="form-group col-md-6">
+            <label asp-for="PassengerType"></label>
+            <select asp-for="PassengerType" class="form-control"
+                    asp-items="@Html.GetEnumSelectList<PassengerType>()">
+                <option>Select type ...</option>
+            </select>
+            <span asp-validation-for="PassengerType" class="text-danger"></span>
         </div>
 
     <div class="form-group col-md-6">
@@ -65,7 +80,7 @@
             <option>Select type ...</option>
         </select>
         <span asp-validation-for="Gender" class="text-danger"></span>
-    </div>*@
+    </div>
 
     <input type="submit" class="btn btn-primary" />
 </form>

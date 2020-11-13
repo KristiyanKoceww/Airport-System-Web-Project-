@@ -35,8 +35,8 @@
                 Age = passengerInputModel.Age,
                 Phone = passengerInputModel.Phone,
                 PassportId = passengerInputModel.PassportId,
-                Gender = (Gender)Enum.Parse(typeof(Gender), passengerInputModel.Gender),
-                PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), passengerInputModel.PassengerType),
+                Gender = passengerInputModel.Gender, //(Gender)Enum.Parse(typeof(Gender), passengerInputModel.Gender),
+                PassengerType = passengerInputModel.PassengerType,//(PassengerType)Enum.Parse(typeof(PassengerType), passengerInputModel.PassengerType),
             };
 
             this.db.Passengers.Add(passenger);

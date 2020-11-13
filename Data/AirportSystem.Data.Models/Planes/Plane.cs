@@ -3,15 +3,14 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
-    public class Plane
+    using AirportSystem.Data.Common.Models;
+
+    public class Plane : BaseDeletableModel<string>
     {
         public Plane()
         {
             this.Id = Guid.NewGuid().ToString();
         }
-
-        [Required]
-        public string Id { get; set; }
 
         [Required]
         public string Make { get; set; }

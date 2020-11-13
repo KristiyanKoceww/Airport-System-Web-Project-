@@ -5,9 +5,10 @@
     using System.ComponentModel.DataAnnotations;
 
     using AirportSystem.Data;
+    using AirportSystem.Data.Common.Models;
     using AirportSystem.Data.Destinations;
 
-    public class Airport
+    public class Airport : BaseDeletableModel<string>
     {
         public Airport()
         {
@@ -15,9 +16,6 @@
             this.Flights = new HashSet<Flight>();
             this.AvioCompanies = new HashSet<AvioCompany>();
         }
-
-        [Required]
-        public string Id { get; set; }
 
         [Required]
         public string Name { get; set; }
