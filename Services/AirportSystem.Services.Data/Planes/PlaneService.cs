@@ -36,6 +36,7 @@
         {
             var planes = this.db.Planes.Select(x => new Plane
             {
+                Id = x.Id,
                 Make = x.Make,
                 Model = x.Model,
                 Seats = x.Seats,

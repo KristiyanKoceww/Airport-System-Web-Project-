@@ -3,13 +3,10 @@
     using System;
     using System.ComponentModel.DataAnnotations;
 
+    using AirportSystem.Data.Common.Models;
+
     public class Passport
     {
-        public Passport()
-        {
-            // this.Id = Guid.NewGuid().ToString();
-        }
-
         [Required]
         public string Id { get; set; }
 

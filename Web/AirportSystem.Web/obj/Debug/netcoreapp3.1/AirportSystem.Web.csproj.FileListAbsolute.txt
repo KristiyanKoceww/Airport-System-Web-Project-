@@ -462,3 +462,11 @@ C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\staticwebassets\AirportSystem.Web.StaticWebAssets.xml
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\AirportSystem.Web.genruntimeconfig.cache
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Passports\Edit.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\BookFlight.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Airports\Create.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\AvioCompanies\Create.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Planes\Create.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Planes\All.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\AvioCompanies\All.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\Create.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\All.cshtml.g.cs

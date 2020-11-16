@@ -9,10 +9,15 @@
     using AirportSystem.Data.Repositories;
     using AirportSystem.Data.Seeding;
     using AirportSystem.Services.Data;
+    using AirportSystem.Services.Data.Airport;
+    using AirportSystem.Services.Data.Airports;
     using AirportSystem.Services.Data.CitiesAndCountries;
+    using AirportSystem.Services.Data.Flights;
     using AirportSystem.Services.Data.Luggages;
     using AirportSystem.Services.Data.Passengers;
     using AirportSystem.Services.Data.Passports;
+    using AirportSystem.Services.Data.Planes;
+    using AirportSystem.Services.Data.Tickets;
     using AirportSystem.Services.Mapping;
     using AirportSystem.Services.Messaging;
     using AirportSystem.Web.ViewModels;
@@ -76,6 +81,11 @@
             services.AddTransient<IPassengersService, PassengersService>();
             services.AddTransient<IUserPassengersService, UserPassengersService>();
             services.AddTransient<IPassportService, PassportService>();
+            services.AddTransient<ITicketService, TicketService>();
+            services.AddTransient<IAirportService, AirportService>();
+            services.AddTransient<IAvioCompanyService, AvioCompanyService>();
+            services.AddTransient<IPlaneService, PlaneService>();
+            services.AddTransient<IFlightService, FlightService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

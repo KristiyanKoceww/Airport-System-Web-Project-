@@ -30,9 +30,10 @@
 
         public virtual TravelLine TravelLine { get; set; }
 
-        public string TravelRoute => this.TravelLine.CityId + "-" + this.TravelLine.City2Id;
+        //public string TravelRoute => this.TravelLine.CityId + "-" + this.TravelLine.City2Id;
+        public string TravelRoute { get; set; }
 
-        public DateTime FlightDuration { get; set; }
+        public TimeSpan FlightDuration { get; set; }
 
         public virtual ICollection<Passenger> Passengers { get; set; }
 

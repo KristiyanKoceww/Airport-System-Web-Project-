@@ -3,5 +3,6 @@
     public class AvioCompanyInputModel
     {
         public string Name { get; set; }
+
     }
 }

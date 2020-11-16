@@ -1,6 +1,7 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
     using AirportSystem.Services.Data.Airport;
+    using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Web.ViewModels;
     using Microsoft.AspNetCore.Mvc;
 
@@ -15,13 +16,14 @@
 
         public IActionResult Create()
         {
+            var viewModel = new AirportInputModel();
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult Create(CreateAirportViewModel createAirportViewModel)
+        public IActionResult Create(AirportInputModel input)
         {
-           // this.airportService.CreateAirport(createAirportViewModel);
+            this.airportService.CreateAirport(input);
             return this.View();
         }
     }

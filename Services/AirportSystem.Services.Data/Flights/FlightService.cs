@@ -24,7 +24,9 @@
                 DepartureTime = flightInputModel.DepartureTime,
                 ArrivalTime = flightInputModel.ArrivalTime,
                 FlightDuration = flightInputModel.FlightDuration,
-                FlightStatus = (FlightStatus)Enum.Parse(typeof(FlightStatus), flightInputModel.FlightStatus),
+                FlightStatus = flightInputModel.FlightStatus,
+                PlaneId = flightInputModel.PlaneId,
+                TravelRoute = flightInputModel.From + " - " + flightInputModel.To,
             };
 
             this.db.Flights.Add(flight);
@@ -35,6 +37,7 @@
         {
             var flights = this.db.Flights.Select(x => new Flight()
             {
+                TravelRoute = x.TravelRoute,
                 DepartureTime = x.DepartureTime,
                 ArrivalTime = x.ArrivalTime,
                 FlightDuration = x.FlightDuration,

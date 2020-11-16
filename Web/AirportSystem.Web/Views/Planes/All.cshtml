@@ -1,0 +1,50 @@
+﻿@inject AirportSystem.Services.Data.Planes.IPlaneService service
+
+@{
+    this.ViewData["Title"] = "All planes";
+}
+
+    <h1>All planes</h1>
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="page-header text-center">
+                        <h2 id="tables">Planes</h2>
+                    </div>
+
+                    <div class="component">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Id</th>
+                                    <th scope="col">Make</th>
+                                    <th scope="col">Model</th>
+                                    <th scope="col">Seats</th>
+                                    <th scope="col">Type</th>
+                                    <th scope="col">Available</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @{
+                                    var planes = this.service.GetAllPlanes();
+                                }
+                                @foreach (var item in planes)
+                                {
+                                    <tr class="table-light">
+                                        <th scope="row">@item.Id</th>
+                                        <td>@item.Make</td>
+                                        <td>@item.Model</td>
+                                        <td>@item.Seats</td>
+                                        <td>@item.PlaneType</td>
+                                        <td>@item.IsPlaneAvailable</td>
+
+                                    </tr>
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

@@ -1,6 +1,9 @@
 ﻿namespace AirportSystem.Services.Data.InputModels
 {
-    public class AirportInputModel
+    using AirportSystem.Data.Models.Airports;
+    using AirportSystem.Services.Mapping;
+
+    public class AirportInputModel : IMapFrom<Airport>
     {
         public string Name { get; set; }
 

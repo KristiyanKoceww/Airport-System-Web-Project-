@@ -100,8 +100,8 @@ namespace YourProjectName.Data.Migrations
                     b.Property<DateTime>("DepartureTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<DateTime>("FlightDuration")
-                        .HasColumnType("datetime2");
+                    b.Property<TimeSpan>("FlightDuration")
+                        .HasColumnType("time");
 
                     b.Property<int>("FlightStatus")
                         .HasColumnType("int");
@@ -121,6 +121,9 @@ namespace YourProjectName.Data.Migrations
 
                     b.Property<string>("TravelLineCityId")
                         .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("TravelRoute")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 

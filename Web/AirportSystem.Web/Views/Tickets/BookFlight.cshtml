@@ -1,0 +1,63 @@
+﻿@using AirportSystem.Data.Tickets
+@model AirportSystem.Web.ViewModels.BookTicketViewModel
+
+@{
+    this.ViewData["Title"] = "Book ticket";
+}
+
+<h1>Book your ticket</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="PassengerId"></label>
+        <input asp-for="PassengerId" class="form-control" />
+        <span asp-validation-for="PassengerId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="LuggageId"></label>
+        <input asp-for="LuggageId" class="form-control" />
+        <span asp-validation-for="LuggageId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="Price"></label>
+        <input asp-for="Price" class="form-control" />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="FlightId"></label>
+        <input asp-for="FlightId" class="form-control" />
+        <span asp-validation-for="FlightId" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="SeatNumber"></label>
+        <input asp-for="SeatNumber" class="form-control" />
+        <span asp-validation-for="SeatNumber" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="TicketRule"></label>
+        <select asp-for="TicketRule" class="form-control"
+                asp-items="@Html.GetEnumSelectList<TicketRule>()">
+            <option>Select type ...</option>
+        </select>
+        <span asp-validation-for="TicketRule" class="text-danger"></span>
+    </div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="TicketType"></label>
+        <select asp-for="TicketType" class="form-control"
+                asp-items="@Html.GetEnumSelectList<TicketType>()">
+            <option>Select type ...</option>
+        </select>
+        <span asp-validation-for="TicketType" class="text-danger"></span>
+    </div>
+
+    <input type="submit" class="btn btn-primary" />
+
+</form>
