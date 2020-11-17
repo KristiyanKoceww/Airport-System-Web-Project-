@@ -7,9 +7,9 @@
     using System.Threading.Tasks;
 
     using AirportSystem.Data.Common.Models;
-    using AirportSystem.Data.Destinations;
     using AirportSystem.Data.Models;
     using AirportSystem.Data.Models.Airports;
+    using AirportSystem.Data.Models.Destinations;
     using AirportSystem.Data.Models.Passengers;
     using AirportSystem.Data.Models.Payments;
     using AirportSystem.Data.Planes;

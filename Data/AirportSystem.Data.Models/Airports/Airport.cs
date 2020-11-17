@@ -6,7 +6,7 @@
 
     using AirportSystem.Data;
     using AirportSystem.Data.Common.Models;
-    using AirportSystem.Data.Destinations;
+    using AirportSystem.Data.Models.Destinations;
 
     public class Airport : BaseDeletableModel<string>
     {
@@ -21,7 +21,7 @@
         public string Name { get; set; }
 
         [Required]
-        public string CityId { get; set; }
+        public int CityId { get; set; }
 
         public virtual City City { get; set; }
 

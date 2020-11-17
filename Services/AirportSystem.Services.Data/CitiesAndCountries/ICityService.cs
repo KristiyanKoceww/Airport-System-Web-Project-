@@ -2,11 +2,12 @@
 {
     using System.Collections.Generic;
 
-    using AirportSystem.Data.Destinations;
+    using AirportSystem.Data.Models.Destinations;
+    using AirportSystem.Services.Data.InputModels;
 
     public interface ICityService
     {
-        void Create(string name);
+        void Create(CitiesInputModel citiesInputModel);
 
         IEnumerable<City> GetAll();
     }

@@ -1,15 +1,17 @@
-﻿namespace AirportSystem.Data.Destinations
+﻿namespace AirportSystem.Data.Models.Destinations
 {
     using System;
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.Text;
 
     using AirportSystem.Data.Common.Models;
 
-    public class Country : BaseDeletableModel<string>
+    public class Country : BaseDeletableModel<int>
     {
         public Country()
         {
-            this.Id = Guid.NewGuid().ToString();
+
         }
 
         [Required]

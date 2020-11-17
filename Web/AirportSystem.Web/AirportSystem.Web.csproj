@@ -50,4 +50,8 @@
   <ItemGroup>
     <None Include="Views\Luggages\Create.cshtml" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\js\boostrapDemo\" />
+  </ItemGroup>
 </Project>

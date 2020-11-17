@@ -19,67 +19,6 @@ namespace YourProjectName.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("AirportSystem.Data.Destinations.City", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CountryId")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CountryId");
-
-                    b.HasIndex("IsDeleted");
-
-                    b.ToTable("Cities");
-                });
-
-            modelBuilder.Entity("AirportSystem.Data.Destinations.Country", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime?>("DeletedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("IsDeleted");
-
-                    b.ToTable("Countries");
-                });
-
             modelBuilder.Entity("AirportSystem.Data.Flight", b =>
                 {
                     b.Property<string>("Id")
@@ -116,11 +55,11 @@ namespace YourProjectName.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("TravelLineCity2Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("TravelLineCity2Id")
+                        .HasColumnType("int");
 
-                    b.Property<string>("TravelLineCityId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("TravelLineCityId")
+                        .HasColumnType("int");
 
                     b.Property<string>("TravelRoute")
                         .HasColumnType("nvarchar(max)");
@@ -179,9 +118,8 @@ namespace YourProjectName.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<string>("CityId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -359,6 +297,71 @@ namespace YourProjectName.Data.Migrations
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
 
                     b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("AirportSystem.Data.Models.Destinations.City", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("CountryId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CountryId");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Cities");
+                });
+
+            modelBuilder.Entity("AirportSystem.Data.Models.Destinations.Country", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime?>("DeletedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IsDeleted");
+
+                    b.ToTable("Countries");
                 });
 
             modelBuilder.Entity("AirportSystem.Data.Models.Passengers.UserPassenger", b =>
@@ -608,11 +611,11 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.TravelLine", b =>
                 {
-                    b.Property<string>("CityId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("City2Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("City2Id")
+                        .HasColumnType("int");
 
                     b.HasKey("CityId", "City2Id");
 
@@ -723,13 +726,6 @@ namespace YourProjectName.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("AirportSystem.Data.Destinations.City", b =>
-                {
-                    b.HasOne("AirportSystem.Data.Destinations.Country", "Country")
-                        .WithMany()
-                        .HasForeignKey("CountryId");
-                });
-
             modelBuilder.Entity("AirportSystem.Data.Flight", b =>
                 {
                     b.HasOne("AirportSystem.Data.Models.Airports.Airport", null)
@@ -758,7 +754,7 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.Models.Airports.Airport", b =>
                 {
-                    b.HasOne("AirportSystem.Data.Destinations.City", "City")
+                    b.HasOne("AirportSystem.Data.Models.Destinations.City", "City")
                         .WithMany()
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -770,6 +766,15 @@ namespace YourProjectName.Data.Migrations
                     b.HasOne("AirportSystem.Data.Models.Airports.Airport", null)
                         .WithMany("AvioCompanies")
                         .HasForeignKey("AirportId");
+                });
+
+            modelBuilder.Entity("AirportSystem.Data.Models.Destinations.City", b =>
+                {
+                    b.HasOne("AirportSystem.Data.Models.Destinations.Country", "Country")
+                        .WithMany()
+                        .HasForeignKey("CountryId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("AirportSystem.Data.Models.Passengers.UserPassenger", b =>
@@ -843,7 +848,7 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.TravelLine", b =>
                 {
-                    b.HasOne("AirportSystem.Data.Destinations.City", "City")
+                    b.HasOne("AirportSystem.Data.Models.Destinations.City", "City")
                         .WithMany()
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Restrict)

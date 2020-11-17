@@ -2,15 +2,15 @@
 {
     using System.ComponentModel.DataAnnotations;
 
-    using AirportSystem.Data.Destinations;
+    using AirportSystem.Data.Models.Destinations;
 
     public class TravelLine
     {
         [Required]
-        public string CityId { get; set; }
+        public int CityId { get; set; }
 
         [Required]
-        public string City2Id { get; set; }
+        public int City2Id { get; set; }
 
         public City City { get; set; }
     }

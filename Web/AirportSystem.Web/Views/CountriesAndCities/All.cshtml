@@ -1,4 +1,5 @@
 ﻿@inject AirportSystem.Services.Data.CitiesAndCountries.ICityService city
+@inject AirportSystem.Services.Data.CitiesAndCountries.ICountryService country
 
 <div class="container">
     <div class="section">
@@ -19,16 +20,19 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @{ 
+                            @{
                                 var cities = city.GetAll();
+                                var countries = country.GetAll();
                             }
                             @foreach (var item in cities)
                             {
+
                                 <tr class="table-light">
                                     <th scope="row">@item.Id</th>
                                     <td>@item.Name</td>
                                     <td>@item.CountryId</td>
-                                    
+                                    <td>@item.Country.Name</td>
+
                                 </tr>
                             }
                         </tbody>

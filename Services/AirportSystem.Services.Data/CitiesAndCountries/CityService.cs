@@ -4,7 +4,8 @@
     using System.Linq;
 
     using AirportSystem.Data;
-    using AirportSystem.Data.Destinations;
+    using AirportSystem.Data.Models.Destinations;
+    using AirportSystem.Services.Data.InputModels;
 
     public class CityService : ICityService
     {
@@ -15,11 +16,12 @@
             this.db = db;
         }
 
-        public void Create(string name)
+        public void Create(CitiesInputModel citiesInputModel)
         {
             var city = new City()
             {
-                Name = name,
+                Name = citiesInputModel.Name,
+                CountryId = citiesInputModel.CountryId,
             };
 
             this.db.Cities.Add(city);
