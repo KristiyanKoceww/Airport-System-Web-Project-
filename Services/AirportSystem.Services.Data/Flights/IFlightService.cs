@@ -12,5 +12,6 @@
         Flight GetFlightById(string flightId);
 
         IEnumerable<Flight> GetAll();
+
     }
 }

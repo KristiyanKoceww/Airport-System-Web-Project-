@@ -7,11 +7,11 @@
 
     using AirportSystem.Data.Common.Models;
 
-    public class Country : BaseDeletableModel<int>
+    public class Country : BaseDeletableModel<string>
     {
         public Country()
         {
-
+            this.Id = Guid.NewGuid().ToString();
         }
 
         [Required]

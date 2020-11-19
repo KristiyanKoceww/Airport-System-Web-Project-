@@ -21,6 +21,7 @@
             {
                 Weight = luggageInputModel.Weight,
                 LuggageType = (LuggageType)Enum.Parse(typeof(LuggageType), luggageInputModel.LuggageType),
+                PassengerId = luggageInputModel.PassengerId,
             };
 
             this.db.Luggage.Add(luggage);

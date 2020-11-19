@@ -44,6 +44,7 @@
 
             this.passengersService.Create(passengerInputModel);
 
+           // var userId2 = await this._userManager.GetUserId(this.User);
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var passengerId = this.passengersService.GetPassengerId(passengerInputModel.FirstName, passengerInputModel.MiddleName, passengerInputModel.LastName);
 

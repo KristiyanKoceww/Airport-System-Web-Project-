@@ -17,6 +17,7 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
+                                <th scope="col">Flight Id</th>
                                 <th scope="col">Travel Route</th>
                                 <th scope="col">Departure Time</th>
                                 <th scope="col">Arrival Time</th>
@@ -34,6 +35,7 @@
                             @foreach (var item in fligts)
                             {
                                 <tr class="table-light">
+                                    <th scope="row">@item.Id</th>
                                     <th scope="row">@item.TravelRoute</th>
                                     <td>@item.DepartureTime</td>
                                     <td>@item.ArrivalTime</td>

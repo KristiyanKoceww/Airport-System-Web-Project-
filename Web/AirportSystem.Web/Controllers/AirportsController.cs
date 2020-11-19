@@ -1,10 +1,12 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
+    using AirportSystem.Common;
     using AirportSystem.Services.Data.Airport;
     using AirportSystem.Services.Data.InputModels;
-    using AirportSystem.Web.ViewModels;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class AirportsController : Controller
     {
         private readonly IAirportService airportService;
@@ -24,6 +26,11 @@
         public IActionResult Create(AirportInputModel input)
         {
             this.airportService.CreateAirport(input);
+            return this.View();
+        }
+
+        public IActionResult All()
+        {
             return this.View();
         }
     }

@@ -12,6 +12,6 @@
         public string Name { get; set; }
 
         [Required]
-        public int CityId { get; set; }
+        public string CityId { get; set; }
     }
 }

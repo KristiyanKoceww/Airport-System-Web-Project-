@@ -5,11 +5,12 @@
     public class LuggageInputModel
     {
         [Required]
-        [MaxLength(30)]
+        public string PassengerId { get; set; }
+
+        [Required]
         public string LuggageType { get; set; }
 
         [Required]
-        [MaxLength(30)]
         public decimal Weight { get; set; }
     }
 }

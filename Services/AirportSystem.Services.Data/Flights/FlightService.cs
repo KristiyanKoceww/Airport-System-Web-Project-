@@ -42,6 +42,7 @@
                 ArrivalTime = x.ArrivalTime,
                 FlightDuration = x.FlightDuration,
                 FlightStatus = x.FlightStatus,
+                PlaneId = x.PlaneId,
             }).ToList();
 
             return flights;

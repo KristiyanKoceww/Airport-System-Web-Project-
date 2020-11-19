@@ -31,6 +31,7 @@
         {
             var coutries = this.db.Countries.Select(x => new Country()
             {
+                Id = x.Id,
                 Name = x.Name,
             }).ToList();
 
