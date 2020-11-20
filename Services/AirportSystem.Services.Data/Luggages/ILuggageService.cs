@@ -7,8 +7,8 @@
     {
         void Create(LuggageInputModel luggageInputModel);
 
-        Luggage GetLuggageById(string luggageId);
+        Luggage GetLuggageById(int luggageId);
 
-        Luggage GetLuggageByPassengerId(string passengerId);
+        Luggage GetLuggageByPassengerId(int passengerId);
     }
 }

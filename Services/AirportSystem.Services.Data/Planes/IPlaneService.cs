@@ -9,7 +9,7 @@
     {
         void Create(PlaneInputModel planeInputModel);
 
-        Plane GetPlaneById(string id);
+        Plane GetPlaneById(int id);
 
         IEnumerable<Plane> GetAllPlanes();
     }

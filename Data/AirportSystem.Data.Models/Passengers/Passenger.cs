@@ -8,11 +8,10 @@
     using AirportSystem.Data.Passengers;
     using AirportSystem.Data.Tickets;
 
-    public class Passenger : BaseDeletableModel<string>
+    public class Passenger : BaseDeletableModel<int>
     {
         public Passenger()
         {
-            this.Id = Guid.NewGuid().ToString();
             this.Luggage = new HashSet<Luggage>();
             this.Tickets = new HashSet<Ticket>();
         }

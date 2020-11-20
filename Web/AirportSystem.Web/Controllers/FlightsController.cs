@@ -34,7 +34,7 @@
             return this.View();
         }
 
-        public IActionResult GetFlightById(string flightId)
+        public IActionResult GetFlightById(int flightId)
         {
             this.flightService.GetFlightById(flightId);
             return this.View();

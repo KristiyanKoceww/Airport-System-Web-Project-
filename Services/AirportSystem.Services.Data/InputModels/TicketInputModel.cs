@@ -5,10 +5,10 @@
     public class TicketInputModel
     {
         [Required]
-        public string PassengerId { get; set; }
+        public int PassengerId { get; set; }
 
         [Required]
-        public string LuggageId { get; set; }
+        public int LuggageId { get; set; }
 
         [Required]
         public decimal Price { get; set; }
@@ -17,7 +17,7 @@
         public string SeatNumber { get; set; }
 
         [Required]
-        public string FlightId { get; set; }
+        public int FlightId { get; set; }
 
         [Required]
         public string TicketType { get; set; }

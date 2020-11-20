@@ -5,10 +5,10 @@
     public class PaymentInputModel
     {
         [Required]
-        public string PassengerId { get; set; }
+        public int PassengerId { get; set; }
 
         [Required]
-        public string TicketId { get; set; }
+        public int TicketId { get; set; }
 
         [Required]
         public string PaymentStatus { get; set; }

@@ -2,6 +2,6 @@
 {
     public interface IUserPassengersService
     {
-        void Create(string userId, string passengerId);
+        void Create(string userId, int passengerId);
     }
 }

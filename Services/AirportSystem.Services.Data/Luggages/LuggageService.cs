@@ -28,13 +28,13 @@
             this.db.SaveChanges();
         }
 
-        public Luggage GetLuggageById(string luggageId)
+        public Luggage GetLuggageById(int luggageId)
         {
             var luggage = this.db.Luggage.Where(x => x.Id == luggageId).FirstOrDefault();
             return luggage;
         }
 
-        public Luggage GetLuggageByPassengerId(string passengerId)
+        public Luggage GetLuggageByPassengerId(int passengerId)
         {
             var luggage = this.db.Luggage.Where(x => x.PassengerId == passengerId).FirstOrDefault();
             return luggage;

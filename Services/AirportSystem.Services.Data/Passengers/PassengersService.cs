@@ -35,8 +35,8 @@
                 Age = passengerInputModel.Age,
                 Phone = passengerInputModel.Phone,
                 PassportId = passengerInputModel.PassportId,
-                Gender = passengerInputModel.Gender, //(Gender)Enum.Parse(typeof(Gender), passengerInputModel.Gender),
-                PassengerType = passengerInputModel.PassengerType,//(PassengerType)Enum.Parse(typeof(PassengerType), passengerInputModel.PassengerType),
+                Gender = passengerInputModel.Gender,
+                PassengerType = passengerInputModel.PassengerType,
             };
 
             this.db.Passengers.Add(passenger);
@@ -60,20 +60,20 @@
         }
 
         // TODO
-        public IEnumerable<Passenger> GetAllPassengersByFlightId(string flightId)
+        public IEnumerable<Passenger> GetAllPassengersByFlightId(int flightId)
         {
             var passengers = this.db.Flights.Where(x => x.Id == flightId).Select(x => x.Passengers).ToList();
             return (IEnumerable<Passenger>)passengers;
         }
 
-        public Passenger GetPassengerById(string id)
+        public Passenger GetPassengerById(int id)
         {
             var passenger = this.db.Passengers.Where(x => x.Id == id).FirstOrDefault();
 
             return passenger;
         }
 
-        public string GetPassengerId(string firstName, string middleName, string lastName)
+        public int GetPassengerId(string firstName, string middleName, string lastName)
         {
             var passengerId = this.db.Passengers.Where(x => x.FirstName == firstName && x.MiddleName == middleName && x.LastName == lastName)
                 .Select(x => x.Id).FirstOrDefault();

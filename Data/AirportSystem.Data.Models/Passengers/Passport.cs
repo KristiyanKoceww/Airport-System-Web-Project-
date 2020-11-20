@@ -13,5 +13,7 @@
         public DateTime CreatedOn { get; set; }
 
         public DateTime ExpiresOn { get; set; }
+
+        public string Country { get; set; }
     }
 }

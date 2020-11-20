@@ -28,7 +28,7 @@
             this.db.SaveChanges();
         }
 
-        public Airport GetAirportById(string airportId)
+        public Airport GetAirportById(int airportId)
         {
             var airport = this.db.Airports.Where(x => x.Id == airportId).FirstOrDefault();
             return airport;

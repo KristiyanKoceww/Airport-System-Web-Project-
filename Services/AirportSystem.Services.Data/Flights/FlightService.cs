@@ -48,7 +48,7 @@
             return flights;
         }
 
-        public Flight GetFlightById(string flightId)
+        public Flight GetFlightById(int flightId)
         {
             var flight = this.db.Flights.Where(x => x.Id == flightId).FirstOrDefault();
 

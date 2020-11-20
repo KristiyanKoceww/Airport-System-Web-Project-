@@ -9,7 +9,7 @@
     {
         void Create(FlightInputModel flightInputModel);
 
-        Flight GetFlightById(string flightId);
+        Flight GetFlightById(int flightId);
 
         IEnumerable<Flight> GetAll();
 

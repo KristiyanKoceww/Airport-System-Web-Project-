@@ -16,10 +16,10 @@
         public string To { get; set; }
 
         [Required]
-        public string AirportId { get; set; }
+        public int AirportId { get; set; }
 
         [Required]
-        public string PlaneId { get; set; }
+        public int PlaneId { get; set; }
 
         public DateTime DepartureTime { get; set; }
 

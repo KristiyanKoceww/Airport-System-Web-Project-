@@ -1,0 +1,19 @@
+﻿@model AirportSystem.Services.Data.InputModels.CountryInputModel
+
+@{
+    this.ViewData["Title"] = "Add new country";
+}
+
+<h1>Add new country</h1>
+
+<form method="post" enctype="multipart/form-data">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <input type="submit" class="btn btn-primary" />
+</form>

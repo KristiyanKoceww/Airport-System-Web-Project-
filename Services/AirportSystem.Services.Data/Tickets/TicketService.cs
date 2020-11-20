@@ -50,7 +50,7 @@
             return tickets;
         }
 
-        public IEnumerable<Ticket> GetAllByFlightId(string flightId)
+        public IEnumerable<Ticket> GetAllByFlightId(int flightId)
         {
             var tickets = this.db.Tickets.Where(x => x.Flight.Id == flightId).Select(x => new Ticket()
             {
@@ -66,7 +66,7 @@
             return tickets;
         }
 
-        public Ticket GetTicketByPassengerId(string passengerId)
+        public Ticket GetTicketByPassengerId(int passengerId)
         {
             var ticket = this.db.Tickets.Where(x => x.PassengerId == passengerId).Select(x => new Ticket()
             {

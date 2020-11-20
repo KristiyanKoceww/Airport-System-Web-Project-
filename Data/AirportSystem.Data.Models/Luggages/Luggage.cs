@@ -5,18 +5,14 @@
 
     using AirportSystem.Data.Common.Models;
 
-    public class Luggage : BaseDeletableModel<string>
+    public class Luggage : BaseDeletableModel<int>
     {
-        public Luggage()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
 
         [Required]
         public virtual LuggageType LuggageType { get; set; }
 
         [Required]
-        public string PassengerId { get; set; }
+        public int PassengerId { get; set; }
 
         public virtual Passenger Passenger { get; set; }
 

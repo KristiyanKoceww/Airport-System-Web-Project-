@@ -477,3 +477,4 @@ C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\AvioCompanies\AddPlane.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Airports\All.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\GetFlightById.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\Create2.cshtml.g.cs

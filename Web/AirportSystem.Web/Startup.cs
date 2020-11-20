@@ -73,7 +73,7 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
-            services.AddTransient<ISettingsService, SettingsService>();
+            
 
             services.AddTransient<ICountryService, CountryService>();
             services.AddTransient<ICityService, CityService>();

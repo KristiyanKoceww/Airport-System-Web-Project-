@@ -47,7 +47,7 @@
             return planes;
         }
 
-        public Plane GetPlaneById(string id)
+        public Plane GetPlaneById(int id)
         {
             var plane = this.db.Planes.Where(x => x.Id == id).FirstOrDefault();
 

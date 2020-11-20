@@ -5,18 +5,14 @@
 
     using AirportSystem.Data.Common.Models;
 
-    public class City : BaseDeletableModel<string>
+    public class City : BaseDeletableModel<int>
     {
-        public City()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
 
         [Required]
         public string Name { get; set; }
 
         [Required]
-        public string CountryId { get; set; }
+        public int CountryId { get; set; }
 
         public virtual Country Country { get; set; }
     }

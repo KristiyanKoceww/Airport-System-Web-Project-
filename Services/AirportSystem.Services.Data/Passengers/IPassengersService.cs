@@ -9,11 +9,11 @@
     {
         void Create(PassengerInputModel passengerInputModel);
 
-        Passenger GetPassengerById(string id);
+        Passenger GetPassengerById(int id);
 
-        string GetPassengerId(string firstName, string middleName, string lastName);
+        int GetPassengerId(string firstName, string middleName, string lastName);
 
-        IEnumerable<Passenger> GetAllPassengersByFlightId(string flightId);
+        IEnumerable<Passenger> GetAllPassengersByFlightId(int flightId);
 
         IEnumerable<Passenger> GetAll();
     }

@@ -9,9 +9,9 @@
     {
         void Create(TicketInputModel ticketInputModel);
 
-        Ticket GetTicketByPassengerId(string passengerId);
+        Ticket GetTicketByPassengerId(int passengerId);
 
-        IEnumerable<Ticket> GetAllByFlightId(string flightId);
+        IEnumerable<Ticket> GetAllByFlightId(int flightId);
 
         IEnumerable<Ticket> GetAll();
     }

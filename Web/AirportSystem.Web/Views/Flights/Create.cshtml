@@ -49,6 +49,15 @@
         <span asp-validation-for="FlightStatus" class="text-danger"></span>
     </div>
 
+    @*<div class="form-group col-md-6">
+        <label asp-for="FlightStatus"></label>
+        <select asp-for="FlightStatus" class="form-control"
+                asp-items="@Html.DropDownListFor<Views_Planes_All>()">
+            <option>Select type ...</option>
+        </select>
+        <span asp-validation-for="FlightStatus" class="text-danger"></span>
+    </div>*@
+
     <div class="form-group col-md-6">
         <label asp-for="AirportId"></label>
         <input asp-for="AirportId" class="form-control" />

@@ -2,7 +2,7 @@
 {
     public class UserPassenger
     {
-        public string PassengerId { get; set; }
+        public int PassengerId { get; set; }
 
         public virtual Passenger Passenger { get; set; }
 

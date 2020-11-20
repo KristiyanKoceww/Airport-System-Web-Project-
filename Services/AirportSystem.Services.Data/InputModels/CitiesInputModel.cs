@@ -14,6 +14,6 @@
         public string Name { get; set; }
 
         [Required]
-        public string CountryId { get; set; }
+        public int CountryId { get; set; }
     }
 }

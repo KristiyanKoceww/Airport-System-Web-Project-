@@ -8,16 +8,15 @@
     using AirportSystem.Data.Common.Models;
     using AirportSystem.Data.Planes;
 
-    public class Flight : BaseDeletableModel<string>
+    public class Flight : BaseDeletableModel<int>
     {
         public Flight()
         {
-            this.Id = Guid.NewGuid().ToString();
             this.Passengers = new HashSet<Passenger>();
         }
 
         [Required]
-        public string PlaneId { get; set; }
+        public int PlaneId { get; set; }
 
         public virtual Plane Plane { get; set; }
 
@@ -30,7 +29,6 @@
 
         public virtual TravelLine TravelLine { get; set; }
 
-        //public string TravelRoute => this.TravelLine.CityId + "-" + this.TravelLine.City2Id;
         public string TravelRoute { get; set; }
 
         public TimeSpan FlightDuration { get; set; }
@@ -39,6 +37,5 @@
 
         public int FreeSeats => this.Plane.Seats - this.Passengers.Count();
 
-        public int UsedSeats => this.Passengers.Count();
     }
 }

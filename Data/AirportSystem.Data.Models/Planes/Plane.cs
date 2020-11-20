@@ -5,12 +5,8 @@
 
     using AirportSystem.Data.Common.Models;
 
-    public class Plane : BaseDeletableModel<string>
+    public class Plane : BaseDeletableModel<int>
     {
-        public Plane()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
 
         [Required]
         public string Make { get; set; }

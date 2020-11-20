@@ -9,9 +9,12 @@
         [Required]
         public int CityId { get; set; }
 
+        public virtual City City { get; set; }
+
         [Required]
         public int City2Id { get; set; }
 
-        public City City { get; set; }
+        public virtual City City2 { get; set; }
+
     }
 }

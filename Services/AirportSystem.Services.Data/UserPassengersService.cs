@@ -12,7 +12,7 @@
             this.db = db;
         }
 
-        public void Create(string userId, string passengerId)
+        public void Create(string userId, int passengerId)
         {
             var userPassenger = new UserPassenger()
             {

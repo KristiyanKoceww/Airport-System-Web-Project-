@@ -6,19 +6,15 @@
     using AirportSystem.Data;
     using AirportSystem.Data.Common.Models;
 
-    public class Ticket : BaseDeletableModel<string>
+    public class Ticket : BaseDeletableModel<int>
     {
-        public Ticket()
-        {
-            this.Id = Guid.NewGuid().ToString();
-        }
 
         [Required]
-        public string PassengerId { get; set; }
+        public int PassengerId { get; set; }
 
         public virtual Passenger Passenger { get; set; }
 
-        public string LuggageId { get; set; }
+        public int LuggageId { get; set; }
 
         public virtual Luggage Luggage { get; set; }
 
@@ -29,9 +25,9 @@
         public string SeatNumber { get; set; }
 
         [Required]
-        public string FlightId { get; set; }
+        public int FlightId { get; set; }
 
-        public Flight Flight { get; set; }
+        public virtual Flight Flight { get; set; }
 
         [Required]
         public virtual TicketType TicketType { get; set; }

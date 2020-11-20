@@ -32,7 +32,7 @@
         }
 
         [HttpPost]
-        public IActionResult Search(string luggageId)
+        public IActionResult Search(int luggageId)
         {
             var luggage = this.luggageService.GetLuggageById(luggageId);
             return this.View();

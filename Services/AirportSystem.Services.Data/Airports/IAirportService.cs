@@ -11,7 +11,7 @@
 
         IEnumerable<Airport> GetAllAirports();
 
-        Airport GetAirportById(string airportId);
+        Airport GetAirportById(int airportId);
 
        
     }

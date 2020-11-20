@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
-namespace YourProjectName.Data.Migrations
+namespace AirportSystem.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
     partial class ApplicationDbContextModelSnapshot : ModelSnapshot
@@ -21,11 +21,13 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.Flight", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AirportId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("AirportId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("ArrivalTime")
                         .HasColumnType("datetime2");
@@ -51,9 +53,8 @@ namespace YourProjectName.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PlaneId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("PlaneId")
+                        .HasColumnType("int");
 
                     b.Property<int?>("TravelLineCity2Id")
                         .HasColumnType("int");
@@ -79,8 +80,10 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.Luggage", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -97,9 +100,8 @@ namespace YourProjectName.Data.Migrations
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PassengerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("PassengerId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Weight")
                         .HasColumnType("decimal(18,2)");
@@ -115,8 +117,10 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.Models.Airports.Airport", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<int>("CityId")
                         .HasColumnType("int");
@@ -148,11 +152,13 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.Models.Airports.AvioCompany", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AirportId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("AirportId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -366,8 +372,8 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.Models.Passengers.UserPassenger", b =>
                 {
-                    b.Property<string>("PassengerId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("PassengerId")
+                        .HasColumnType("int");
 
                     b.Property<string>("UserId")
                         .HasColumnType("nvarchar(450)");
@@ -381,11 +387,11 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.Models.Payments.Payment", b =>
                 {
-                    b.Property<string>("TicketId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("TicketId")
+                        .HasColumnType("int");
 
-                    b.Property<string>("PassengerId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("PassengerId")
+                        .HasColumnType("int");
 
                     b.Property<int>("PaymentStatus")
                         .HasColumnType("int");
@@ -431,8 +437,10 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.Passenger", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<string>("Address")
                         .IsRequired()
@@ -451,8 +459,8 @@ namespace YourProjectName.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("FlightId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("FlightId")
+                        .HasColumnType("int");
 
                     b.Property<int>("Gender")
                         .HasColumnType("int");
@@ -498,6 +506,9 @@ namespace YourProjectName.Data.Migrations
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
 
+                    b.Property<string>("Country")
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
@@ -511,11 +522,13 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.Planes.Plane", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<string>("AvioCompanyId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int?>("AvioCompanyId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -557,8 +570,10 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.Tickets.Ticket", b =>
                 {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
@@ -566,22 +581,20 @@ namespace YourProjectName.Data.Migrations
                     b.Property<DateTime?>("DeletedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("FlightId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("FlightId")
+                        .HasColumnType("int");
 
                     b.Property<bool>("IsDeleted")
                         .HasColumnType("bit");
 
-                    b.Property<string>("LuggageId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("LuggageId")
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("ModifiedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<string>("PassengerId")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<int>("PassengerId")
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(18,2)");
@@ -618,6 +631,8 @@ namespace YourProjectName.Data.Migrations
                         .HasColumnType("int");
 
                     b.HasKey("CityId", "City2Id");
+
+                    b.HasIndex("City2Id");
 
                     b.ToTable("TravelLines");
                 });
@@ -782,7 +797,7 @@ namespace YourProjectName.Data.Migrations
                     b.HasOne("AirportSystem.Data.Passenger", "Passenger")
                         .WithMany()
                         .HasForeignKey("PassengerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("AirportSystem.Data.Models.ApplicationUser", "User")
@@ -797,13 +812,13 @@ namespace YourProjectName.Data.Migrations
                     b.HasOne("AirportSystem.Data.Passenger", "Passenger")
                         .WithMany()
                         .HasForeignKey("PassengerId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
                     b.HasOne("AirportSystem.Data.Tickets.Ticket", "Ticket")
                         .WithMany()
                         .HasForeignKey("TicketId")
-                        .OnDelete(DeleteBehavior.Cascade)
+                        .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
                 });
 
@@ -837,7 +852,9 @@ namespace YourProjectName.Data.Migrations
 
                     b.HasOne("AirportSystem.Data.Luggage", "Luggage")
                         .WithMany()
-                        .HasForeignKey("LuggageId");
+                        .HasForeignKey("LuggageId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
 
                     b.HasOne("AirportSystem.Data.Passenger", "Passenger")
                         .WithMany("Tickets")
@@ -848,6 +865,12 @@ namespace YourProjectName.Data.Migrations
 
             modelBuilder.Entity("AirportSystem.Data.TravelLine", b =>
                 {
+                    b.HasOne("AirportSystem.Data.Models.Destinations.City", "City2")
+                        .WithMany()
+                        .HasForeignKey("City2Id")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("AirportSystem.Data.Models.Destinations.City", "City")
                         .WithMany()
                         .HasForeignKey("CityId")

@@ -7,11 +7,10 @@
     using AirportSystem.Data.Common.Models;
     using AirportSystem.Data.Planes;
 
-    public class AvioCompany : BaseDeletableModel<string>
+    public class AvioCompany : BaseDeletableModel<int>
     {
         public AvioCompany()
         {
-            this.Id = Guid.NewGuid().ToString();
             this.Planes = new HashSet<Plane>();
         }
 

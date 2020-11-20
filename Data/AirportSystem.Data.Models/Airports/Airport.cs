@@ -8,11 +8,10 @@
     using AirportSystem.Data.Common.Models;
     using AirportSystem.Data.Models.Destinations;
 
-    public class Airport : BaseDeletableModel<string>
+    public class Airport : BaseDeletableModel<int>
     {
         public Airport()
         {
-            this.Id = Guid.NewGuid().ToString();
             this.Flights = new HashSet<Flight>();
             this.AvioCompanies = new HashSet<AvioCompany>();
         }
@@ -21,7 +20,7 @@
         public string Name { get; set; }
 
         [Required]
-        public string CityId { get; set; }
+        public int CityId { get; set; }
 
         public virtual City City { get; set; }
 

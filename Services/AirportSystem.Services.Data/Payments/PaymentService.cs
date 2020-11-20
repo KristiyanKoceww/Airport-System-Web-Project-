@@ -43,14 +43,14 @@
             return payments;
         }
 
-        public Payment GetPaymentsByPassengerId(string passengerId)
+        public Payment GetPaymentsByPassengerId(int passengerId)
         {
             var peymant = this.db.Payments.Where(x => x.PassengerId == passengerId).FirstOrDefault();
 
             return peymant;
         }
 
-        public Payment GetPaymentsByTicketId(string ticketId)
+        public Payment GetPaymentsByTicketId(int ticketId)
         {
             var peymant = this.db.Payments.Where(x => x.TicketId == ticketId).FirstOrDefault();
 

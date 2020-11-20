@@ -9,9 +9,9 @@
     {
         void Create(PaymentInputModel paymentInputModel);
 
-        Payment GetPaymentsByPassengerId(string passengerId);
+        Payment GetPaymentsByPassengerId(int passengerId);
 
-        Payment GetPaymentsByTicketId(string ticketId);
+        Payment GetPaymentsByTicketId(int ticketId);
 
         IEnumerable<Payment> GetAll();
     }

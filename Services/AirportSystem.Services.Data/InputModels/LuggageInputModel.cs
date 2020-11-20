@@ -5,7 +5,7 @@
     public class LuggageInputModel
     {
         [Required]
-        public string PassengerId { get; set; }
+        public int PassengerId { get; set; }
 
         [Required]
         public string LuggageType { get; set; }
