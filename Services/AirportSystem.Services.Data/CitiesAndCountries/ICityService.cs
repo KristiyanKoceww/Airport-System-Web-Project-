@@ -4,11 +4,12 @@
 
     using AirportSystem.Data.Models.Destinations;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Web.ViewModels;
 
     public interface ICityService
     {
         void Create(CitiesInputModel citiesInputModel);
 
-        IEnumerable<City> GetAll();
+        IEnumerable<AllCityViewModel> GetAll();
     }
 }

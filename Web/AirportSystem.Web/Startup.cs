@@ -18,6 +18,7 @@
     using AirportSystem.Services.Data.Passports;
     using AirportSystem.Services.Data.Planes;
     using AirportSystem.Services.Data.Tickets;
+    using AirportSystem.Services.Data.TravelLines;
     using AirportSystem.Services.Mapping;
     using AirportSystem.Services.Messaging;
     using AirportSystem.Web.ViewModels;
@@ -73,7 +74,6 @@
 
             // Application services
             services.AddTransient<IEmailSender, NullMessageSender>();
-            
 
             services.AddTransient<ICountryService, CountryService>();
             services.AddTransient<ICityService, CityService>();
@@ -86,6 +86,7 @@
             services.AddTransient<IAvioCompanyService, AvioCompanyService>();
             services.AddTransient<IPlaneService, PlaneService>();
             services.AddTransient<IFlightService, FlightService>();
+            services.AddTransient<ITravelLinesService, TravelLinesService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

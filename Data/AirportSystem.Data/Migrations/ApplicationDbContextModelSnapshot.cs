@@ -56,13 +56,19 @@ namespace AirportSystem.Data.Migrations
                     b.Property<int>("PlaneId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TravelLineCity2Id")
+                    b.Property<decimal>("Price")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("TravelLineCity2Id")
                         .HasColumnType("int");
 
-                    b.Property<int?>("TravelLineCityId")
+                    b.Property<string>("TravelLineCity2Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("TravelLineCityId")
                         .HasColumnType("int");
 
-                    b.Property<string>("TravelRoute")
+                    b.Property<string>("TravelLineCityName")
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -507,6 +513,7 @@ namespace AirportSystem.Data.Migrations
                         .HasColumnType("nvarchar(450)");
 
                     b.Property<string>("Country")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("CreatedOn")
@@ -514,6 +521,10 @@ namespace AirportSystem.Data.Migrations
 
                     b.Property<DateTime>("ExpiresOn")
                         .HasColumnType("datetime2");
+
+                    b.Property<string>("Nationality")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -596,9 +607,6 @@ namespace AirportSystem.Data.Migrations
                     b.Property<int>("PassengerId")
                         .HasColumnType("int");
 
-                    b.Property<decimal>("Price")
-                        .HasColumnType("decimal(18,2)");
-
                     b.Property<string>("SeatNumber")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -629,6 +637,14 @@ namespace AirportSystem.Data.Migrations
 
                     b.Property<int>("City2Id")
                         .HasColumnType("int");
+
+                    b.Property<string>("CityName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("CityName2")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("CityId", "City2Id");
 
@@ -755,7 +771,9 @@ namespace AirportSystem.Data.Migrations
 
                     b.HasOne("AirportSystem.Data.TravelLine", "TravelLine")
                         .WithMany()
-                        .HasForeignKey("TravelLineCityId", "TravelLineCity2Id");
+                        .HasForeignKey("TravelLineCityId", "TravelLineCity2Id")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("AirportSystem.Data.Luggage", b =>

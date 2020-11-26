@@ -6,6 +6,7 @@
     using AirportSystem.Data;
     using AirportSystem.Data.Models.Destinations;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Web.ViewModels;
 
     public class CityService : ICityService
     {
@@ -28,13 +29,14 @@
             this.db.SaveChanges();
         }
 
-        public IEnumerable<City> GetAll()
+        public IEnumerable<AllCityViewModel> GetAll()
         {
-            var cities = this.db.Cities.Select(x => new City()
+            var cities = this.db.Cities.Select(x => new AllCityViewModel()
             {
                 Id = x.Id,
                 Name = x.Name,
                 CountryId = x.CountryId,
+                CountryName = x.Country.Name,
             }).ToList();
 
             return cities;

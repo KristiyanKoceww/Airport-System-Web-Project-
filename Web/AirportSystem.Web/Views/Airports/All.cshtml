@@ -1,4 +1,5 @@
 ﻿@inject AirportSystem.Services.Data.Airport.IAirportService service
+@model AirportSystem.Web.ViewModels.AllAirportViewModel
 
 @{
     this.ViewData["Title"] = "All airports";
@@ -19,6 +20,8 @@
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">Name</th>
+                                <th scope="col">City Id</th>
+                                <th scope="col">City Name</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -30,6 +33,8 @@
                                 <tr class="table-light">
                                     <th scope="row">@item.Id</th>
                                     <td>@item.Name</td>
+                                    <td>@item.CityId</td>
+                                    <td>@item.CityName</td>
                                 </tr>
                             }
                         </tbody>

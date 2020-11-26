@@ -7,7 +7,6 @@
 
     public class Plane : BaseDeletableModel<int>
     {
-
         [Required]
         public string Make { get; set; }
 
@@ -18,7 +17,6 @@
 
         public bool IsPlaneAvailable { get; set; }
 
-        [Required]
-        public virtual PlaneType PlaneType { get; set; }
+        public PlaneType PlaneType { get; set; }
     }
 }

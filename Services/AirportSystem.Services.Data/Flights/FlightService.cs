@@ -6,6 +6,7 @@
 
     using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Web.ViewModels;
 
     public class FlightService : IFlightService
     {
@@ -26,23 +27,35 @@
                 FlightDuration = flightInputModel.FlightDuration,
                 FlightStatus = flightInputModel.FlightStatus,
                 PlaneId = flightInputModel.PlaneId,
-                TravelRoute = flightInputModel.From + " - " + flightInputModel.To,
+                Price = flightInputModel.Price,
+                TravelLineCityId = flightInputModel.TravelLineCityId,
+                TravelLineCity2Id = flightInputModel.TravelLineCity2Id,
             };
+
+            var cityName = this.db.Cities.Where(x => x.Id == flightInputModel.TravelLineCityId).Select(x => x.Name).FirstOrDefault();
+            var city2Name = this.db.Cities.Where(x => x.Id == flightInputModel.TravelLineCity2Id).Select(x => x.Name).FirstOrDefault();
+            flight.TravelLineCityName = cityName;
+            flight.TravelLineCity2Name = city2Name;
 
             this.db.Flights.Add(flight);
             this.db.SaveChanges();
         }
 
-        public IEnumerable<Flight> GetAll()
+        public IEnumerable<AllFlightsViewModel> GetAll()
         {
-            var flights = this.db.Flights.Select(x => new Flight()
+            var flights = this.db.Flights.Select(x => new AllFlightsViewModel()
             {
-                TravelRoute = x.TravelRoute,
+                Id = x.Id,
+                TravelLineCityName = x.TravelLineCityName,
+                TravelLineCity2Name = x.TravelLineCity2Name,
                 DepartureTime = x.DepartureTime,
                 ArrivalTime = x.ArrivalTime,
                 FlightDuration = x.FlightDuration,
                 FlightStatus = x.FlightStatus,
-                PlaneId = x.PlaneId,
+                PlaneId = x.Plane.Id,
+                PlaneName = x.Plane.Make,
+                TravelLine = x.TravelLine,
+                Price = x.Price,
             }).ToList();
 
             return flights;

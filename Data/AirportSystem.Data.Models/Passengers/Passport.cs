@@ -14,6 +14,10 @@
 
         public DateTime ExpiresOn { get; set; }
 
+        [Required]
         public string Country { get; set; }
+
+        [Required]
+        public string Nationality { get; set; }
     }
 }

@@ -1,0 +1,40 @@
+﻿using AirportSystem.Data;
+using AirportSystem.Data.Planes;
+using AirportSystem.Services.Mapping;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace AirportSystem.Web.ViewModels
+{
+   public class AllFlightsViewModel : IMapFrom<Flight>
+    {
+        public int Id { get; set; }
+
+        public int PlaneId { get; set; }
+
+        public string PlaneName { get; set; }
+
+        public virtual Plane Plane { get; set; }
+
+        public DateTime DepartureTime { get; set; }
+
+        public DateTime ArrivalTime { get; set; }
+
+        public virtual FlightStatus FlightStatus { get; set; }
+
+        public decimal Price { get; set; }
+
+        public string TravelLineCityName { get; set; }
+
+        public string TravelLineCity2Name { get; set; }
+
+        public virtual TravelLine TravelLine { get; set; }
+
+        public TimeSpan FlightDuration { get; set; }
+
+        public virtual ICollection<Passenger> Passengers { get; set; }
+
+        public int FreeSeats => this.Plane.Seats - this.Passengers.Count;
+    }
+}

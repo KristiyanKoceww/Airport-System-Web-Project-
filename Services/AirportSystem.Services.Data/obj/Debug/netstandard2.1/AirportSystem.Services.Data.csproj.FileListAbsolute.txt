@@ -40,3 +40,5 @@ C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Data\obj\Debug
 C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.csproj.CopyComplete
 C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.dll
 C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.pdb
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Web.ViewModels.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Web.ViewModels.pdb

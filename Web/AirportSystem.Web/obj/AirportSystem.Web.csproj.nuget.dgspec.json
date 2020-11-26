@@ -363,6 +363,9 @@
               },
               "C:\\Users\\User\\Desktop\\Airport System WebProject\\Services\\AirportSystem.Services.Mapping\\AirportSystem.Services.Mapping.csproj": {
                 "projectPath": "C:\\Users\\User\\Desktop\\Airport System WebProject\\Services\\AirportSystem.Services.Mapping\\AirportSystem.Services.Mapping.csproj"
+              },
+              "C:\\Users\\User\\Desktop\\Airport System WebProject\\Web\\AirportSystem.Web.ViewModels\\AirportSystem.Web.ViewModels.csproj": {
+                "projectPath": "C:\\Users\\User\\Desktop\\Airport System WebProject\\Web\\AirportSystem.Web.ViewModels\\AirportSystem.Web.ViewModels.csproj"
               }
             }
           }
@@ -730,6 +733,10 @@
       "frameworks": {
         "netstandard2.1": {
           "dependencies": {
+            "Microsoft.AspNet.Mvc": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"

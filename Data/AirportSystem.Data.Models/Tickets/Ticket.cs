@@ -19,9 +19,6 @@
         public virtual Luggage Luggage { get; set; }
 
         [Required]
-        public decimal Price { get; set; }
-
-        [Required]
         public string SeatNumber { get; set; }
 
         [Required]
@@ -30,9 +27,9 @@
         public virtual Flight Flight { get; set; }
 
         [Required]
-        public virtual TicketType TicketType { get; set; }
+        public TicketType TicketType { get; set; }
 
         [Required]
-        public virtual TicketRule TicketRule { get; set; }
+        public TicketRule TicketRule { get; set; }
     }
 }

@@ -21,6 +21,8 @@
             var passportToEdit = this.db.Passports.Find(passportInputModel.Id);
             passportToEdit.CreatedOn = passportInputModel.CreatedOn;
             passportToEdit.ExpiresOn = passportInputModel.ExpiresOn;
+            passportToEdit.Country = passportInputModel.Country;
+            passportToEdit.Nationality = passportInputModel.Nationality;
 
             this.db.Passports.Update(passportToEdit);
             this.db.SaveChanges();

@@ -27,15 +27,20 @@
         [Required]
         public virtual FlightStatus FlightStatus { get; set; }
 
+        public int TravelLineCityId { get; set; }
+
+        public string TravelLineCityName { get; set; }
+
+        public int TravelLineCity2Id { get; set; }
+
+        public string TravelLineCity2Name { get; set; }
+
         public virtual TravelLine TravelLine { get; set; }
 
-        public string TravelRoute { get; set; }
+        public decimal Price { get; set; }
 
         public TimeSpan FlightDuration { get; set; }
 
         public virtual ICollection<Passenger> Passengers { get; set; }
-
-        public int FreeSeats => this.Plane.Seats - this.Passengers.Count();
-
     }
 }

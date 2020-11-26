@@ -1,5 +1,5 @@
-﻿@model AirportSystem.Data.Flight
-
+﻿
+@model AirportSystem.Services.Data.InputModels.GetFlightByIdInputModel
 
 @{
     this.ViewData["Title"] = "Information about flight";
@@ -14,6 +14,14 @@
                     <h2 id="tables">Flight</h2>
                 </div>
 
+                <div class="form-group col-md-6">
+                    <label asp-for="Id"></label>
+                    <input asp-for="Id" class="form-control" />
+                    <span asp-validation-for="Id" class="text-danger"></span>
+                </div>
+
+                <input type="submit" class="btn btn-primary" />
+
                 <div class="component">
                     <table class="table table-hover">
                         <thead>
@@ -27,19 +35,21 @@
                                 <th scope="col">Plane Id</th>
 
                             </tr>
+
+
                         </thead>
-                        <tbody>
-                                <tr class="table-light">
-                                    <th scope="row">@Model.Id</th>
-                                    <th scope="row">@Model.TravelRoute</th>
-                                    <td>@Model.DepartureTime</td>
-                                    <td>@Model.ArrivalTime</td>
-                                    <td>@Model.FlightDuration</td>
-                                    <td>@Model.FlightStatus</td>
-                                    <td>@Model.PlaneId</td>
-                                </tr>
-                            
-                        </tbody>
+                        @*<tbody>
+                                    <tr class="table-light">
+                                        <th scope="row">@Model.Id</th>
+                                        <th scope="row">@Model.TravelRoute</th>
+                                        <td>@Model.DepartureTime</td>
+                                        <td>@Model.ArrivalTime</td>
+                                        <td>@Model.FlightDuration</td>
+                                        <td>@Model.FlightStatus</td>
+                                        <td>@Model.PlaneId</td>
+                                    </tr>
+
+                            </tbody>*@
                     </table>
                 </div>
             </div>

@@ -4,6 +4,7 @@
 
     using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Web.ViewModels;
 
     public interface IFlightService
     {
@@ -11,7 +12,7 @@
 
         Flight GetFlightById(int flightId);
 
-        IEnumerable<Flight> GetAll();
+        IEnumerable<AllFlightsViewModel> GetAll();
 
     }
 }

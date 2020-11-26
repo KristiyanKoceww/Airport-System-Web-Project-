@@ -6,6 +6,7 @@
     using AirportSystem.Data;
     using AirportSystem.Data.Models.Airports;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Web.ViewModels;
 
     public class AirportService : IAirportService
     {
@@ -34,12 +35,25 @@
             return airport;
         }
 
-        public IEnumerable<Airport> GetAllAirports()
+        public IEnumerable<Airport> GetAirportNameAndId()
         {
             var airports = this.db.Airports.Select(x => new Airport
             {
-                 Name = x.Name,
-                 CityId = x.City.Id,
+                Id = x.Id,
+                Name = x.Name,
+            }).ToList();
+
+            return airports;
+        }
+
+        public IEnumerable<AllAirportViewModel> GetAllAirports()
+        {
+            var airports = this.db.Airports.Select(x => new AllAirportViewModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                CityId = x.City.Id,
+                CityName = x.City.Name,
             }).ToList();
 
             return airports;

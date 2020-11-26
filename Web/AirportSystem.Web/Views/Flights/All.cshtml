@@ -18,13 +18,15 @@
                         <thead>
                             <tr>
                                 <th scope="col">Flight Id</th>
-                                <th scope="col">Travel Route</th>
+                                <th scope="col">Origin</th>
+                                <th scope="col">Destination</th>
                                 <th scope="col">Departure Time</th>
                                 <th scope="col">Arrival Time</th>
                                 <th scope="col">Flight Duration</th>
                                 <th scope="col">Flight Status</th>
                                 <th scope="col">Plane Id</th>
-                               
+                                <th scope="col">Plane Name</th>
+                                <th scope="col">Price</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -35,12 +37,15 @@
                             {
                                 <tr class="table-light">
                                     <th scope="row">@item.Id</th>
-                                    <th scope="row">@item.TravelRoute</th>
+                                    <th scope="row">@item.TravelLine.CityName</th>
+                                    <th scope="row">@item.TravelLine.CityName2</th>
                                     <td>@item.DepartureTime</td>
                                     <td>@item.ArrivalTime</td>
                                     <td>@item.FlightDuration</td>
                                     <td>@item.FlightStatus</td>
                                     <td>@item.PlaneId</td>
+                                    <td>@item.PlaneName</td>
+                                    <td>@item.Price</td>
                                 </tr>
                             }
                         </tbody>

@@ -22,5 +22,9 @@
         [Display(Name = "Passport expiry date:")]
         [PassportDateValidationAttribute]
         public DateTime ExpiresOn { get; set; }
+
+        public string Country { get; set; }
+
+        public string Nationality { get; set; }
     }
 }

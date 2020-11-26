@@ -39,10 +39,10 @@
         public virtual Passport Passport { get; set; }
 
         [Required]
-        public virtual PassengerType PassengerType { get; set; }
+        public PassengerType PassengerType { get; set; }
 
         [Required]
-        public virtual Gender Gender { get; set; }
+        public Gender Gender { get; set; }
 
         public virtual ICollection<Luggage> Luggage { get; set; }
 

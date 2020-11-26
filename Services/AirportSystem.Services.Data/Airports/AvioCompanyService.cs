@@ -52,6 +52,7 @@
         {
             var companies = this.db.AvioCompanies.Select(x => new AvioCompany
             {
+                Id = x.Id,
                 Name = x.Name,
             }).ToList();
 

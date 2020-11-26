@@ -24,6 +24,8 @@
                 Id = passengerInputModel.PassportId,
                 CreatedOn = DateTime.UtcNow,
                 ExpiresOn = DateTime.UtcNow.AddDays(365),
+                Country = "Null",
+                Nationality = "Null",
             };
 
             var passenger = new Passenger()

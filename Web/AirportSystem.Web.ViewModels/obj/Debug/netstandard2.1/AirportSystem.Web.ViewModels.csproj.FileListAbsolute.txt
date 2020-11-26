@@ -10,7 +10,7 @@ C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web.ViewModels
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web.ViewModels\obj\Debug\netstandard2.1\AirportSystem.Web.ViewModels.csprojAssemblyReference.cache
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web.ViewModels\obj\Debug\netstandard2.1\AirportSystem.Web.ViewModels.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web.ViewModels\obj\Debug\netstandard2.1\AirportSystem.Web.ViewModels.AssemblyInfo.cs
-C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web.ViewModels\obj\Debug\netstandard2.1\AirportSystem.Web.ViewModels.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web.ViewModels\obj\Debug\netstandard2.1\AirportSystem.Web.ViewModels.csproj.CopyComplete
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web.ViewModels\obj\Debug\netstandard2.1\AirportSystem.Web.ViewModels.dll
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web.ViewModels\obj\Debug\netstandard2.1\AirportSystem.Web.ViewModels.pdb
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web.ViewModels\obj\Debug\netstandard2.1\AirportSystem.Web.ViewModels.csproj.CoreCompileInputs.cache

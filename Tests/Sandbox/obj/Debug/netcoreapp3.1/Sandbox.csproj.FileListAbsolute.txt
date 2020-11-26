@@ -184,3 +184,5 @@ C:\Users\User\Desktop\Airport System WebProject\Tests\Sandbox\obj\Debug\netcorea
 C:\Users\User\Desktop\Airport System WebProject\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.dll
 C:\Users\User\Desktop\Airport System WebProject\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.pdb
 C:\Users\User\Desktop\Airport System WebProject\Tests\Sandbox\obj\Debug\netcoreapp3.1\Sandbox.genruntimeconfig.cache
+C:\Users\User\Desktop\Airport System WebProject\Tests\Sandbox\bin\Debug\netcoreapp3.1\AirportSystem.Web.ViewModels.dll
+C:\Users\User\Desktop\Airport System WebProject\Tests\Sandbox\bin\Debug\netcoreapp3.1\AirportSystem.Web.ViewModels.pdb

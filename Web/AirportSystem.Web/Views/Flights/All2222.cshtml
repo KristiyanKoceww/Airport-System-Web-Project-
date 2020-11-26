@@ -1,0 +1,217 @@
+﻿@inject AirportSystem.Services.Data.Flights.IFlightService service
+@using AirportSystem.Data.Tickets
+@model AirportSystem.Web.ViewModels.BookTicketViewModel
+@{
+    var flights = this.service.GetAll();
+}
+
+<head>
+    <title>HC Airline Ticket Reservation System</title>
+    <link href="https://fonts.googleapis.com/css?family=Jockey+One" rel="stylesheet">
+    <link href="~/flight.css" rel="stylesheet" />
+    <script src="~/flight.js"></script>
+</head>
+
+<body>
+    <div class="maincontent overlay container-fluid">
+
+        <br />
+        <br />
+        <div class="flightList container">
+            <h3 class=" choosehead text-center">All Flights:</h3>
+            <div class="row flightHeader">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col" class="text-center">Flight Id</th>
+                            <th scope="col">Flight Id</th>
+                            <th scope="col">Flight Id</th>
+                            <th scope="col">Flight Id</th>
+                            <th scope="col">Flight Id</th>
+                            <th scope="col">Flight Id</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </table>
+                    @*<th scope="col">Flight Id</th>
+                    <div class="col-sm-2">
+                        <h4 class="text-center">Origin - Destination</h4>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="text-center">Departure Time</h4>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="text-center">Arrival Time</h4>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="text-center">Flight Status</h4>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="text-center">Flight Duration</h4>
+                    </div>
+                    <div class="col-sm-2">
+                        <h4 class="text-center">Price</h4>
+                    </div>*@
+
+
+</div>
+            <div class="flightsMain">
+                <div class="allFlights">
+
+                    @foreach (var item in flights)
+                    {
+                        <div class="row flight 4563" id="4563">
+
+                           *<div class="col-sm-2">
+                                <h5 class="text-center flno flightNo1"></h5>
+                                <h6>@item.TravelLineCityName - @item.TravelLineCity2Name</h6>
+                            </div>
+                            <div class="col-sm-2">
+                                <h5 class="text-center flnm flightNo1"></h5>
+                                <h6>@item.DepartureTime</h6>
+                            </div>
+                            <div class="col-sm-2">
+                                <h5 class="text-center flsrc flightNo1"></h5>
+                                <h6>@item.ArrivalTime</h6>
+                            </div>
+                            <div class="col-sm-1">
+                                <h5 class="text-center fldst flightNo1"></h5>
+                                <h6>@item.FlightStatus</h6>
+                            </div>
+                            <div class="col-sm-2">
+                                <h5 class="text-center flprc flightNo1"></h5>
+                                <h6>@item.FlightDuration</h6>
+                            </div>
+                            <div class="col-sm-2">
+                                <h5 class="text-center flprc flightNo1"></h5>
+                                <h6>@item.Price</h6>
+                            </div>
+                            <div class="col-sm-1 mr-1">
+                                <input type='button' id="@item.Id" class="text-center btn btn-info text-center" value='Book ticket' />
+                            </div>
+                        </div>
+                    }
+
+                </div>
+
+                <div id="returnError4"></div>
+
+
+                <div id="moreflights" class="flightcopy">
+                    <form id="moreFlight">
+                        <h4 class="text-center "> </h4>
+                        <h5 class="text-center">Find another flight</h5>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5 class="text-center">From City:</h5>
+                            </div>
+                            <div class="col-sm-6">
+                                <input id="fromCity" class="text-center" type="text" name="fCity" placeholder="eg: New York" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <h5 class="text-center">To City:</h5>
+                            </div>
+                            <div class="col-sm-6 text-left">
+                                <input id="toCity" class="text-center" type="text" name="tCity" placeholder="eg: London" required>
+                            </div>
+                        </div>
+
+
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <br />
+                                <div class="text-center">
+                                    <button type="button" id="searchFlight" class="text-center btn btn-info text-center ">Search for a flight</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="returnError3"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <br />
+    <br />
+
+    <div style="display:none" id="1111">
+        <h1>Book your ticket</h1>
+
+        <form method="post" enctype="multipart/form-data">
+            <div asp-validation-summary="All" class="text-danger"></div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="PassengerId"></label>
+                <input asp-for="PassengerId" class="form-control" />
+                <span asp-validation-for="PassengerId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="LuggageId"></label>
+                <input asp-for="LuggageId" class="form-control" />
+                <span asp-validation-for="LuggageId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="Price"></label>
+                <input asp-for="Price" class="form-control" disabled />
+                <span asp-validation-for="Price" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="FlightId"></label>
+                <input asp-for="FlightId" class="form-control" disabled /> @*//disabled*@
+                <span asp-validation-for="FlightId" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="SeatNumber"></label>
+                <input asp-for="SeatNumber" class="form-control" />
+                <span asp-validation-for="SeatNumber" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="TicketRule"></label>
+                <select asp-for="TicketRule" class="form-control"
+                        asp-items="@Html.GetEnumSelectList<TicketRule>()">
+                    <option>Select type ...</option>
+                </select>
+                <span asp-validation-for="TicketRule" class="text-danger"></span>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label asp-for="TicketType"></label>
+                <select asp-for="TicketType" class="form-control"
+                        asp-items="@Html.GetEnumSelectList<TicketType>()">
+                    <option>Select type ...</option>
+                </select>
+                <span asp-validation-for="TicketType" class="text-danger"></span>
+            </div>
+
+            <input type="submit" class="btn btn-primary" />
+
+        </form>
+    </div>
+</body>
+
+<script>
+    let buttons = document.querySelectorAll(".allFlights input");
+    let form = document.querySelector("#\\31 111");
+    let table = document.querySelector("body > div > main > div.maincontent.overlay.container-fluid");
+
+    let price = document.querySelector("#Price");
+    let flight = document.querySelector("#FlightId");
+
+    for (let k = 0; k < buttons.length; k++) {
+        let button = buttons[k];
+        button.addEventListener("click", () => {
+
+            form.style.display = "inline";
+            table.style.display = "none";
+            price.value = Price;
+        })
+    }
+</script>
