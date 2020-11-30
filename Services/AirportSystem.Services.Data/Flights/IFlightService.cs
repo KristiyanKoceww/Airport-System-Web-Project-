@@ -1,5 +1,6 @@
 ﻿namespace AirportSystem.Services.Data.Flights
 {
+    using System;
     using System.Collections.Generic;
 
     using AirportSystem.Data;
@@ -14,5 +15,6 @@
 
         IEnumerable<AllFlightsViewModel> GetAll();
 
+        IEnumerable<Flight> SearchForFlight(string origin, string destination);
     }
 }

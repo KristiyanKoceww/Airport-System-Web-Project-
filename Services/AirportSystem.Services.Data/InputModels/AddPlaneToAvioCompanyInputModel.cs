@@ -1,10 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
-namespace AirportSystem.Services.Data.InputModels
+﻿namespace AirportSystem.Services.Data.InputModels
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class AddPlaneToAvioCompanyInputModel
     {
         [Required]

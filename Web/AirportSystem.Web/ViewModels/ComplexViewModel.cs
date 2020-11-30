@@ -1,13 +1,14 @@
-﻿using AirportSystem.Data;
-using AirportSystem.Data.Models.Airports;
-using AirportSystem.Data.Planes;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text;
-
-namespace AirportSystem.Web.ViewModels
+﻿namespace AirportSystem.Web.ViewModels
 {
+    using System;
+    using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
+    using System.Text;
+
+    using AirportSystem.Data;
+    using AirportSystem.Data.Models.Airports;
+    using AirportSystem.Data.Planes;
+
     public class ComplexViewModel
     {
         public int AirportId { get; set; }

@@ -477,11 +477,9 @@ C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\AvioCompanies\AddPlane.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Airports\All.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\GetFlightById.cshtml.g.cs
-C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\Create22.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\All2.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Tickets\UserTicket.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\TravelLines\Create.cshtml.g.cs
-C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\All2222.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\System.Web.Mvc.dll
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\System.Web.Razor.dll
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\System.Web.Helpers.dll
@@ -490,3 +488,6 @@ C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\System.Web.WebPages.dll
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\Microsoft.Web.Infrastructure.dll
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\TravelLines\All.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\Search.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\SearchResults.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Passengers\PassengerInfo.cshtml.g.cs

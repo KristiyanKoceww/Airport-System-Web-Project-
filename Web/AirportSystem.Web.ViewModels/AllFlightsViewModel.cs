@@ -1,13 +1,13 @@
-﻿using AirportSystem.Data;
-using AirportSystem.Data.Planes;
-using AirportSystem.Services.Mapping;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AirportSystem.Web.ViewModels
+﻿namespace AirportSystem.Web.ViewModels
 {
-   public class AllFlightsViewModel : IMapFrom<Flight>
+    using System;
+    using System.Collections.Generic;
+
+    using AirportSystem.Data;
+    using AirportSystem.Data.Planes;
+    using AirportSystem.Services.Mapping;
+
+    public class AllFlightsViewModel : IMapFrom<Flight>
     {
         public int Id { get; set; }
 

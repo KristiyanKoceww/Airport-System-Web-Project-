@@ -5,6 +5,7 @@
     using System.Linq;
 
     using AirportSystem.Data;
+    using AirportSystem.Data.Models.Passengers;
     using AirportSystem.Data.Passengers;
     using AirportSystem.Services.Data.InputModels;
 
@@ -71,6 +72,13 @@
         public Passenger GetPassengerById(int id)
         {
             var passenger = this.db.Passengers.Where(x => x.Id == id).FirstOrDefault();
+
+            return passenger;
+        }
+
+        public UserPassenger GetPassengerByUserId(string id)
+        {
+            var passenger = this.db.UsersPassengers.Where(x => x.UserId == id).FirstOrDefault();
 
             return passenger;
         }

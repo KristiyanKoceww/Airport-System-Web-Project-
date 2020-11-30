@@ -67,5 +67,12 @@
 
             return flight;
         }
+
+        public IEnumerable<Flight> SearchForFlight(string origin, string destination)
+        {
+            var flight = this.db.Flights.Where(x => x.TravelLineCityName == origin && x.TravelLineCity2Name == destination).ToList();
+
+            return flight;
+        }
     }
 }

@@ -9,14 +9,6 @@
 
     public class FlightInputModel
     {
-        ////[Required]
-        //[MaxLength(30)]
-        //public string From { get; set; }
-
-        //[Required]
-        //[MaxLength(30)]
-        //public string To { get; set; }
-
         [Required]
         public int AirportId { get; set; }
 

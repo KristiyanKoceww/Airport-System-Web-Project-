@@ -3,14 +3,13 @@
     using System;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.Web.Mvc;
+
     using AirportSystem.Data;
     using AirportSystem.Data.Models.Airports;
     using AirportSystem.Data.Planes;
 
     public class AddFlightViewModel
     {
-       
         public int AirportId { get; set; }
 
         public string AirportName { get; set; }
@@ -46,7 +45,5 @@
         public FlightStatus FlightStatus { get; set; }
 
         public TimeSpan FlightDuration { get; set; }
-
-        
     }
 }

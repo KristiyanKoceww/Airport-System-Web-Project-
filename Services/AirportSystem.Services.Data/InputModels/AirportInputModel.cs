@@ -14,6 +14,5 @@
 
         [Required]
         public int CityId { get; set; }
-       
     }
 }

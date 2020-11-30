@@ -11,31 +11,30 @@
     using AirportSystem.Services.Data;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Passengers;
+    using AirportSystem.Web.ViewModels;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
     public class PassengersController : Controller
     {
-
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<ApplicationUser> userManager;
         private readonly IPassengersService passengersService;
         private readonly IUserPassengersService userPassengersService;
 
-        public PassengersController(UserManager<ApplicationUser> userManager, IPassengersService passengersService, IUserPassengersService userPassengersService )
+        public PassengersController(UserManager<ApplicationUser> userManager, IPassengersService passengersService, IUserPassengersService userPassengersService)
         {
-            this._userManager = userManager;
+            this.userManager = userManager;
             this.passengersService = passengersService;
             this.userPassengersService = userPassengersService;
         }
 
         public IActionResult Add()
         {
-            var viewModel = new PassengerInputModel();
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult Add(PassengerInputModel passengerInputModel)
+        public IActionResult Add(Services.Data.InputModels.PassengerInputModel passengerInputModel)
         {
             if (!this.ModelState.IsValid)
             {
@@ -43,13 +42,38 @@
             }
 
             this.passengersService.Create(passengerInputModel);
-
-           // var userId2 = await this._userManager.GetUserId(this.User);
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var passengerId = this.passengersService.GetPassengerId(passengerInputModel.FirstName, passengerInputModel.MiddleName, passengerInputModel.LastName);
 
             this.userPassengersService.Create(userId, passengerId);
             return this.Redirect("/Passports/edit");
+        }
+
+        public IActionResult PassengerInfo()
+        {
+            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+            var user = this.passengersService.GetPassengerByUserId(userId);
+            if (user == null)
+            {
+                return this.Redirect("/Passengers/Add");
+            }
+
+            var passenger = this.passengersService.GetPassengerById(user.PassengerId);
+
+            var viewModel = new PassengerInfoViewModel
+            {
+                FirstName = passenger.FirstName,
+                MiddleName = passenger.MiddleName,
+                LastName = passenger.LastName,
+                Address = passenger.Address,
+                Age = passenger.Age,
+                Phone = passenger.Phone,
+                PassportId = passenger.PassportId,
+            };
+            viewModel.Phone = passenger.Phone;
+            viewModel.PassengerId = user.PassengerId;
+
+            return this.View("PassengerInfo", viewModel);
         }
     }
 }

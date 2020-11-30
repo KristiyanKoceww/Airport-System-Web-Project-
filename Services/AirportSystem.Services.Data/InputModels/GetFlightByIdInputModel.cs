@@ -1,5 +1,4 @@
-﻿
-namespace AirportSystem.Services.Data.InputModels
+﻿namespace AirportSystem.Services.Data.InputModels
 {
     public class GetFlightByIdInputModel
     {

@@ -7,7 +7,6 @@
 
     public class CitiesInputModel
     {
-
         [Required]
         [MinLength(3)]
         [MaxLength(30)]

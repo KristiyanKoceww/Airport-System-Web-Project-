@@ -3,6 +3,7 @@
     using System.Collections.Generic;
 
     using AirportSystem.Data;
+    using AirportSystem.Data.Models.Passengers;
     using AirportSystem.Services.Data.InputModels;
 
     public interface IPassengersService
@@ -10,6 +11,8 @@
         void Create(PassengerInputModel passengerInputModel);
 
         Passenger GetPassengerById(int id);
+
+        UserPassenger GetPassengerByUserId(string id);
 
         int GetPassengerId(string firstName, string middleName, string lastName);
 

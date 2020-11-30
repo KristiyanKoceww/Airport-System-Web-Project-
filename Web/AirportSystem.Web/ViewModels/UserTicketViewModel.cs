@@ -1,9 +1,10 @@
-﻿using AirportSystem.Data.Tickets;
-using AirportSystem.Services.Mapping;
-using System;
-
-namespace AirportSystem.Web.ViewModels
+﻿namespace AirportSystem.Web.ViewModels
 {
+    using System;
+
+    using AirportSystem.Data.Tickets;
+    using AirportSystem.Services.Mapping;
+
     public class UserTicketViewModel : IMapFrom<Ticket>
     {
         public int PassengerId { get; set; }

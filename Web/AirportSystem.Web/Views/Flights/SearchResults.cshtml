@@ -1,0 +1,39 @@
+﻿@model IEnumerable<AirportSystem.Data.Flight>
+
+
+<link href="~/allFlights.css" rel="stylesheet" />
+
+<h2 style="color:black;"><b>Found flights:</b></h2>
+
+<div class="table-wrapper">
+
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Origin</th>
+                <th>Destination</th>
+                <th>Derparture Time</th>
+                <th>Arrival Time</th>
+                <th>Flight Duration</th>
+                <th>Flight Status</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.TravelLineCityName</td>
+                    <td>@item.TravelLineCity2Name</td>
+                    <td>@item.DepartureTime</td>
+                    <td>@item.ArrivalTime</td>
+                    <td>@item.FlightDuration</td>
+                    <td>@item.FlightStatus</td>
+                    <td>@item.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

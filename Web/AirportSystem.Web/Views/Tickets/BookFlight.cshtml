@@ -2,7 +2,7 @@
 @model AirportSystem.Web.ViewModels.BookTicketViewModel
 
 @{
-    this.ViewData["Title"] = "Book ticket";
+    this.ViewData["Title"] = "Book Ticket";
 }
 
 <h1>Book your ticket</h1>
@@ -10,6 +10,7 @@
 <form method="post" enctype="multipart/form-data">
     <div asp-validation-summary="All" class="text-danger"></div>
 
+    
     <div class="form-group col-md-6">
         <label asp-for="PassengerId"></label>
         <input asp-for="PassengerId" class="form-control" />

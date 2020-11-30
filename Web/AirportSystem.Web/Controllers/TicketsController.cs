@@ -26,13 +26,13 @@
             this.ticketService.Create(input);
 
             return this.View();
-            //return this.Redirect("Tickets/UserTicket");
+
+            // return this.Redirect("Tickets/UserTicket");
         }
 
         public IActionResult UserTicket()
         {
             return this.View();
         }
-
     }
 }

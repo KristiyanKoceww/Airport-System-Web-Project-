@@ -7,6 +7,5 @@
     [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class UsersController : Controller
     {
-
     }
 }

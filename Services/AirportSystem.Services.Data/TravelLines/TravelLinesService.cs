@@ -1,10 +1,11 @@
-﻿using AirportSystem.Data;
-using AirportSystem.Services.Data.InputModels;
-using System.Collections.Generic;
-using System.Linq;
-
-namespace AirportSystem.Services.Data.TravelLines
+﻿namespace AirportSystem.Services.Data.TravelLines
 {
+    using System.Collections.Generic;
+    using System.Linq;
+
+    using AirportSystem.Data;
+    using AirportSystem.Services.Data.InputModels;
+
     public class TravelLinesService : ITravelLinesService
     {
         private readonly ApplicationDbContext db;

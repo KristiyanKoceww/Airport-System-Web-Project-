@@ -1,17 +1,13 @@
-﻿using AirportSystem.Data;
-using AirportSystem.Data.Planes;
-using AirportSystem.Services.Mapping;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-
-using System.Threading.Tasks;
-
-namespace AirportSystem.Web.ViewModels
+﻿namespace AirportSystem.Web.ViewModels
 {
+    using System;
+
+    using AirportSystem.Data;
+    using AirportSystem.Data.Planes;
+    using AirportSystem.Services.Mapping;
+
     public class CreateFlightViewModel : IMapFrom<Flight>
     {
-
         public int PlaneId { get; set; }
 
         public virtual Plane Plane { get; set; }

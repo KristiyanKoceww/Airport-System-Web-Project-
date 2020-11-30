@@ -1,7 +1,6 @@
 ﻿<link href="~/allFlights.css" rel="stylesheet" />
 @inject AirportSystem.Services.Data.Flights.IFlightService service
 @using AirportSystem.Data.Tickets
-@*@model AirportSystem.Web.ViewModels.BookTicketViewModel*@
 @model AirportSystem.Web.ViewModels.ComplexViewModel
 
 @{
@@ -52,6 +51,7 @@
     <form method="post" enctype="multipart/form-data">
         <div asp-validation-summary="All" class="text-danger"></div>
 
+        
         <div class="form-group col-md-6">
             <label asp-for="@Model.BookTicketViewModel.PassengerId"></label>
             <input asp-for="@Model.BookTicketViewModel.PassengerId" class="form-control" />
@@ -66,13 +66,13 @@
 
         <div class="form-group col-md-6">
             <label asp-for="@Model.BookTicketViewModel.Price"></label>
-            <input asp-for="@Model.BookTicketViewModel.Price" class="form-control" disabled />
+            <input asp-for="@Model.BookTicketViewModel.Price" class="form-control"  />
             <span asp-validation-for="@Model.BookTicketViewModel.Price" class="text-danger"></span>
         </div>
 
         <div class="form-group col-md-6">
             <label asp-for="@Model.BookTicketViewModel.FlightId"></label>
-            <input asp-for="@Model.BookTicketViewModel.FlightId" class="form-control" disabled /> @*//disabled*@
+            <input asp-for="@Model.BookTicketViewModel.FlightId" class="form-control"  /> @*//disabled*@
             <span asp-validation-for="@Model.BookTicketViewModel.FlightId" class="text-danger"></span>
         </div>
 
@@ -120,7 +120,7 @@
 
             form.style.display = "inline";
             table.style.display = "none";
-            @*price.value = @Model.BookTicketViewModel.Price;*@
+            price.value = ViewBag.Price;
 
         })
     }

@@ -1,7 +1,5 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
-    using System.Collections.Generic;
-    using System.Web.WebPages.Html;
     using AirportSystem.Common;
     using AirportSystem.Services.Data.Flights;
     using AirportSystem.Services.Data.InputModels;
@@ -15,7 +13,7 @@
         private readonly IFlightService flightService;
         private readonly ITravelLinesService travelLinesService;
 
-        public FlightsController(IFlightService flightService,ITravelLinesService travelLinesService)
+        public FlightsController(IFlightService flightService, ITravelLinesService travelLinesService)
         {
             this.flightService = flightService;
             this.travelLinesService = travelLinesService;
@@ -48,7 +46,7 @@
 
         public IActionResult GetFlightById()
         {
-            var viewModel = new GetFlightByIdViewModel();
+            // var viewModel = new GetFlightByIdViewModel();
             return this.View();
         }
 
@@ -56,14 +54,34 @@
         public IActionResult GetFlightById(int flightId)
         {
             var flight = this.flightService.GetFlightById(flightId);
-            var viewModel = new GetFlightByIdViewModel();
-            viewModel.PlaneId = flight.PlaneId;
-            viewModel.FlightStatus = flight.FlightStatus;
-            viewModel.DepartureTime = flight.DepartureTime;
-            viewModel.ArrivalTime = flight.ArrivalTime;
-            viewModel.FlightDuration = flight.FlightDuration;
+            var viewModel = new GetFlightByIdViewModel
+            {
+                PlaneId = flight.PlaneId,
+                FlightStatus = flight.FlightStatus,
+                DepartureTime = flight.DepartureTime,
+                ArrivalTime = flight.ArrivalTime,
+                FlightDuration = flight.FlightDuration,
+            };
 
             return this.View(viewModel);
+        }
+
+        public IActionResult Search()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public IActionResult Search(SearchForFlightViewModel flight)
+        {
+            var flights = this.flightService.SearchForFlight(flight.Origin, flight.Destination);
+
+            if (flights == null)
+            {
+                return this.NotFound();
+            }
+
+            return this.View("SearchResults", flights);
         }
     }
 }

@@ -7,7 +7,7 @@
 
     public interface ICountryService
     {
-        void Create(CountryInputModel countryInputModel );
+        void Create(CountryInputModel countryInputModel);
 
         IEnumerable<Country> GetAll();
     }

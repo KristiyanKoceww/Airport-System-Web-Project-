@@ -1,7 +1,5 @@
 ﻿namespace AirportSystem.Services.Data.InputModels
 {
-
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
 
     using AirportSystem.Data;

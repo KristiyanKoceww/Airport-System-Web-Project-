@@ -12,24 +12,30 @@
     public class BookTicketViewModel
     {
         [Required]
+        [Display(Name = "Please enter your travel id")]
         public string PassengerId { get; set; }
 
         [Required]
+        [Display(Name = "Please enter your luggage id")]
         public string LuggageId { get; set; }
 
         [Required]
         public decimal Price { get; set; }
 
         [Required]
+        [Display(Name = "Seat number")]
         public string SeatNumber { get; set; }
 
         [Required]
+        [Display(Name = "Please enter id of the flight")]
         public string FlightId { get; set; }
 
         [Required]
-        public virtual TicketType TicketType { get; set; }
+        [Display(Name = "Please choose your ticket type")]
+        public TicketType TicketType { get; set; }
 
         [Required]
-        public virtual TicketRule TicketRule { get; set; }
+        [Display(Name = "Please choose your travel type")]
+        public TicketRule TicketRule { get; set; }
     }
 }

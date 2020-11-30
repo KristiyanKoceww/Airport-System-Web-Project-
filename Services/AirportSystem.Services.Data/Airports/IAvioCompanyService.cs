@@ -5,12 +5,12 @@
     using AirportSystem.Data.Models.Airports;
     using AirportSystem.Data.Planes;
     using AirportSystem.Services.Data.InputModels;
-    
+
     public interface IAvioCompanyService
     {
         void Create(AvioCompanyInputModel avioCompanyInputModel);
 
-        void AddPlanes (AddPlaneToAvioCompanyInputModel addPlaneToAvioCompanyInputModel);
+        void AddPlanes(AddPlaneToAvioCompanyInputModel addPlaneToAvioCompanyInputModel);
 
         IEnumerable<AvioCompany> GetAll();
     }

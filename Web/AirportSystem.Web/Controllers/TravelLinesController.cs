@@ -1,10 +1,11 @@
-﻿using AirportSystem.Services.Data.InputModels;
-using AirportSystem.Services.Data.TravelLines;
-using Microsoft.AspNetCore.Mvc;
-using System.Threading.Tasks;
-
-namespace AirportSystem.Web.Controllers
+﻿namespace AirportSystem.Web.Controllers
 {
+    using System.Threading.Tasks;
+
+    using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Services.Data.TravelLines;
+    using Microsoft.AspNetCore.Mvc;
+
     public class TravelLinesController : BaseController
     {
         private readonly ITravelLinesService travelLinesService;
@@ -31,6 +32,5 @@ namespace AirportSystem.Web.Controllers
         {
             return this.View();
         }
-
     }
 }
