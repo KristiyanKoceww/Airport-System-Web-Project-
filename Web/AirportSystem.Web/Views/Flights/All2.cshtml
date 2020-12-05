@@ -10,7 +10,7 @@
 <h2 style="color:black;"><b>All Flights</b></h2>
 <div class="table-wrapper">
 
-    <table class="fl-table">
+    <table class="fl-table" id="dataTable">
         <thead>
             <tr>
                 <th>Origin</th>
@@ -37,21 +37,24 @@
                     <td>@item.FlightStatus</td>
                     <td>@item.Price</td>
                     <td>
-                        <input type='button' id="@item.Id" class="text-center btn btn-info text-center" value='Book ticket' />
+                        @Html.ActionLink("Book Ticket", "BookFlight", "Tickets", new { id = item.Id }, new { @class = "btn btn-warning", @role = "button" })
+                        @*<input type="button" id="@item.Id" value="Book ticket" onclick="location.href='@Url.Action("BookFlight","Tickets",@item.Id)'">*@
+                        @*<input type='button' id="@item.Id" class="text-center btn btn-info text-center" value='Book ticket' />*@
                     </td>
                 </tr>
             }
         </tbody>
     </table>
+
 </div>
 
-<div style="display:none" id="1111">
+@*<div style="display:none" id="1111">
     <h1>Book your ticket</h1>
 
     <form method="post" enctype="multipart/form-data">
         <div asp-validation-summary="All" class="text-danger"></div>
 
-        
+
         <div class="form-group col-md-6">
             <label asp-for="@Model.BookTicketViewModel.PassengerId"></label>
             <input asp-for="@Model.BookTicketViewModel.PassengerId" class="form-control" />
@@ -66,47 +69,55 @@
 
         <div class="form-group col-md-6">
             <label asp-for="@Model.BookTicketViewModel.Price"></label>
-            <input asp-for="@Model.BookTicketViewModel.Price" class="form-control"  />
+            <input asp-for="@Model.BookTicketViewModel.Price" disabled class="form-control" />
             <span asp-validation-for="@Model.BookTicketViewModel.Price" class="text-danger"></span>
         </div>
 
         <div class="form-group col-md-6">
             <label asp-for="@Model.BookTicketViewModel.FlightId"></label>
-            <input asp-for="@Model.BookTicketViewModel.FlightId" class="form-control"  /> @*//disabled*@
-            <span asp-validation-for="@Model.BookTicketViewModel.FlightId" class="text-danger"></span>
+            <input asp-for="@Model.BookTicketViewModel.FlightId" class="form-control" /> @*//disabled
+<span asp-validation-for="@Model.BookTicketViewModel.FlightId" class="text-danger"></span>
         </div>
 
-        <div class="form-group col-md-6">
-            <label asp-for="@Model.BookTicketViewModel.SeatNumber"></label>
-            <input asp-for="@Model.BookTicketViewModel.SeatNumber" class="form-control" />
-            <span asp-validation-for="@Model.BookTicketViewModel.SeatNumber" class="text-danger"></span>
-        </div>
+<div class="form-group col-md-6">
+    <label asp-for="@Model.BookTicketViewModel.SeatNumber"></label>
+    <input asp-for="@Model.BookTicketViewModel.SeatNumber" class="form-control" />
+    <span asp-validation-for="@Model.BookTicketViewModel.SeatNumber" class="text-danger"></span>
+</div>
 
-        <div class="form-group col-md-6">
-            <label asp-for="@Model.BookTicketViewModel.TicketRule"></label>
-            <select asp-for="@Model.BookTicketViewModel.TicketRule" class="form-control"
-                    asp-items="@Html.GetEnumSelectList<TicketRule>()">
-                <option>Select type ...</option>
-            </select>
-            <span asp-validation-for="@Model.BookTicketViewModel.TicketRule" class="text-danger"></span>
-        </div>
+<div class="form-group col-md-6">
+    <label asp-for="@Model.BookTicketViewModel.TicketRule"></label>
+    <select asp-for="@Model.BookTicketViewModel.TicketRule" class="form-control"
+            asp-items="@Html.GetEnumSelectList<TicketRule>()">
+        <option>Select type ...</option>
+    </select>
+    <span asp-validation-for="@Model.BookTicketViewModel.TicketRule" class="text-danger"></span>
+</div>
 
-        <div class="form-group col-md-6">
-            <label asp-for="@Model.BookTicketViewModel.TicketType"></label>
-            <select asp-for="@Model.BookTicketViewModel.TicketType" class="form-control"
-                    asp-items="@Html.GetEnumSelectList<TicketType>()">
-                <option>Select type ...</option>
-            </select>
-            <span asp-validation-for="@Model.BookTicketViewModel.TicketType" class="text-danger"></span>
-        </div>
+<div class="form-group col-md-6">
+    <label asp-for="@Model.BookTicketViewModel.TicketType"></label>
+    <select asp-for="@Model.BookTicketViewModel.TicketType" class="form-control"
+            asp-items="@Html.GetEnumSelectList<TicketType>()">
+        <option>Select type ...</option>
+    </select>
+    <span asp-validation-for="@Model.BookTicketViewModel.TicketType" class="text-danger"></span>
+</div>
 
-        <input type="submit" class="btn btn-primary" />
+<input type="submit" class="btn btn-primary" />
 
     </form>
 </div>
+*@
 
 
-<script>
+@section Scripts
+                    {
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });</script>
+}
+@*<script>
     let buttons = document.querySelectorAll(".table-wrapper input");
     let form = document.querySelector("#\\31 111");
     let table = document.querySelector("body > div > main > div.table-wrapper");
@@ -120,8 +131,8 @@
 
             form.style.display = "inline";
             table.style.display = "none";
-            price.value = ViewBag.Price;
+            price.value = "500";
 
         })
     }
-</script>
+</script>*@

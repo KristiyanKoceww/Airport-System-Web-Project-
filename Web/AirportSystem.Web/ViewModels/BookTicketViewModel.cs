@@ -28,7 +28,7 @@
 
         [Required]
         [Display(Name = "Please enter id of the flight")]
-        public string FlightId { get; set; }
+        public int FlightId { get; set; }
 
         [Required]
         [Display(Name = "Please choose your ticket type")]

@@ -639,14 +639,14 @@
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "netstandard2.1"
+          "netcoreapp3.1"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "netstandard2.1": {
+          "netcoreapp3.1": {
             "projectReferences": {}
           }
         },
@@ -657,7 +657,7 @@
         }
       },
       "frameworks": {
-        "netstandard2.1": {
+        "netcoreapp3.1": {
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
@@ -681,7 +681,7 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "NETStandard.Library": {
+            "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
@@ -733,10 +733,6 @@
       "frameworks": {
         "netstandard2.1": {
           "dependencies": {
-            "Microsoft.AspNet.Mvc": {
-              "target": "Package",
-              "version": "[5.2.7, )"
-            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"
@@ -835,6 +831,10 @@
             "BuildBundlerMinifier": {
               "target": "Package",
               "version": "[3.2.449, )"
+            },
+            "DinkToPdf": {
+              "target": "Package",
+              "version": "[1.0.8, )"
             },
             "Microsoft.AspNetCore.Components": {
               "target": "Package",

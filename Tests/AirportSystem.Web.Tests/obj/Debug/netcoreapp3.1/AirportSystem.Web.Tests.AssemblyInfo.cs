@@ -13,6 +13,9 @@ using System.Reflection;
 
 [assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap4")]
 [assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("AirportSystem.Web, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null", "C:\\Users\\User\\Desktop\\Airport System WebProject\\Web\\AirportSystem.Web", "AirportSystem.Web.csproj", "0")]
+[assembly: Microsoft.AspNetCore.Mvc.Testing.WebApplicationFactoryContentRootAttribute("AirportSystem.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToke" +
+    "n=null", "C:\\Users\\User\\Desktop\\Airport System WebProject\\Web\\AirportSystem.Web.Infrastruct" +
+    "ure", "AirportSystem.Web.Infrastructure.csproj", "0")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("AirportSystem.Web.Tests")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]

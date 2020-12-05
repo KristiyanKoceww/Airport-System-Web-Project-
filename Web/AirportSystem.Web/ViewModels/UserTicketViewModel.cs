@@ -19,7 +19,9 @@
 
         public int FlightId { get; set; }
 
-        public string FlightTravelRoute { get; set; }
+        public string Origin { get; set; }
+
+        public string Destination { get; set; }
 
         public DateTime FlightDepartureTime { get; set; }
 

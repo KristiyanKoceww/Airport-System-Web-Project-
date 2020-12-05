@@ -22,7 +22,8 @@
     using AirportSystem.Services.Mapping;
     using AirportSystem.Services.Messaging;
     using AirportSystem.Web.ViewModels;
-
+    using DinkToPdf;
+    using DinkToPdf.Contracts;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -66,6 +67,8 @@
             services.AddRazorPages();
 
             services.AddSingleton(this.configuration);
+
+            services.AddSingleton(typeof(IConverter), new SynchronizedConverter(new PdfTools()));
 
             // Data repositories
             services.AddScoped(typeof(IDeletableEntityRepository<>), typeof(EfDeletableEntityRepository<>));
