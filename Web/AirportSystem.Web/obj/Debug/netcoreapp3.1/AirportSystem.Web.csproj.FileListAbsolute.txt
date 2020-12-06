@@ -481,7 +481,11 @@ C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\Search.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Flights\SearchResults.cshtml.g.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Passengers\PassengerInfo.cshtml.g.cs
-C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\DinkToPdf.dll
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\Select.Html.dep
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\Select.HtmlToPdf.dll
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\Syncfusion.Compression.Portable.dll
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\Syncfusion.HtmlConverter.Portable.dll
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\Syncfusion.Pdf.Portable.dll
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\AirportSystem.Web.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\AirportSystem.Web.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\AirportSystem.Web.MvcApplicationPartsAssemblyInfo.cache
