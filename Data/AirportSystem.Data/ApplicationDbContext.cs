@@ -12,6 +12,7 @@
     using AirportSystem.Data.Models.Destinations;
     using AirportSystem.Data.Models.Passengers;
     using AirportSystem.Data.Models.Payments;
+    using AirportSystem.Data.Models.Planes;
     using AirportSystem.Data.Planes;
     using AirportSystem.Data.Tickets;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
@@ -36,6 +37,8 @@
         public DbSet<Country> Countries { get; set; }
 
         public DbSet<Luggage> Luggage { get; set; }
+
+        public DbSet<Seat> Seats { get; set; }
 
         public DbSet<Passenger> Passengers { get; set; }
 

@@ -13,7 +13,7 @@
         public string Model { get; set; }
 
         [Required]
-        public int Seats { get; set; }
+        public int SeatsCount { get; set; }
 
         [Required]
         public string Type { get; set; }

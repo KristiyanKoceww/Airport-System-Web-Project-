@@ -409,6 +409,32 @@ namespace AirportSystem.Data.Migrations
                     b.ToTable("Payments");
                 });
 
+            modelBuilder.Entity("AirportSystem.Data.Models.Planes.Seat", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<bool>("IsAvailable")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int?>("PlaneId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PlaneId");
+
+                    b.ToTable("Seats");
+                });
+
             modelBuilder.Entity("AirportSystem.Data.Models.Setting", b =>
                 {
                     b.Property<int>("Id")
@@ -565,9 +591,6 @@ namespace AirportSystem.Data.Migrations
                         .HasColumnType("datetime2");
 
                     b.Property<int>("PlaneType")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Seats")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
@@ -838,6 +861,13 @@ namespace AirportSystem.Data.Migrations
                         .HasForeignKey("TicketId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("AirportSystem.Data.Models.Planes.Seat", b =>
+                {
+                    b.HasOne("AirportSystem.Data.Planes.Plane", null)
+                        .WithMany("Seats")
+                        .HasForeignKey("PlaneId");
                 });
 
             modelBuilder.Entity("AirportSystem.Data.Passenger", b =>

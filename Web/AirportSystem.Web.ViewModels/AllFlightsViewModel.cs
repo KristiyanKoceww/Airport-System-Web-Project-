@@ -34,7 +34,5 @@
         public TimeSpan FlightDuration { get; set; }
 
         public virtual ICollection<Passenger> Passengers { get; set; }
-
-        public int FreeSeats => this.Plane.Seats - this.Passengers.Count;
     }
 }

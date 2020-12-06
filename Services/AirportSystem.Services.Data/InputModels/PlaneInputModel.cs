@@ -1,6 +1,9 @@
 ﻿namespace AirportSystem.Services.Data.InputModels
 {
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+
+    using AirportSystem.Data.Models.Planes;
 
     public class PlaneInputModel
     {
@@ -13,12 +16,14 @@
         public string Model { get; set; }
 
         [Required]
-        public int Seats { get; set; }
+        [Range(20, 100)]
+        public int SeatsCount { get; set; }
 
         [Required]
         public string Type { get; set; }
 
         [Required]
         public bool IsPlaneAvailable { get; set; }
+
     }
 }

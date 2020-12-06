@@ -26,7 +26,6 @@
             {
                 Make = addPlaneToAvioCompanyInputModel.Make,
                 Model = addPlaneToAvioCompanyInputModel.Model,
-                Seats = addPlaneToAvioCompanyInputModel.Seats,
                 PlaneType = (PlaneType)Enum.Parse(typeof(PlaneType), addPlaneToAvioCompanyInputModel.Type),
                 IsPlaneAvailable = addPlaneToAvioCompanyInputModel.IsPlaneAvailable,
             };

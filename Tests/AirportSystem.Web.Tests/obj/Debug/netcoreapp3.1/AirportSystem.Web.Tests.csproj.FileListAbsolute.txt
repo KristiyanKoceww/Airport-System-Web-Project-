@@ -780,7 +780,6 @@ C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\ob
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.AssemblyInfo.cs
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.csproj.CoreCompileInputs.cache
-C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.RazorTargetAssemblyInfo.cache
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.csproj.CopyComplete
@@ -789,3 +788,9 @@ C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\ob
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.dll
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.pdb
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.genruntimeconfig.cache
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Select.HtmlToPdf.dll
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Syncfusion.Compression.Portable.dll
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Syncfusion.HtmlConverter.Portable.dll
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Syncfusion.Pdf.Portable.dll
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Select.Html.dep
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.MvcApplicationPartsAssemblyInfo.cs

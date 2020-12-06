@@ -23,11 +23,11 @@
         public decimal Price { get; set; }
 
         [Required]
-        [Display(Name = "Seat number")]
+        [Display(Name = "Please, choose your seat.")]
         public string SeatNumber { get; set; }
 
         [Required]
-        [Display(Name = "Please enter id of the flight")]
+        [Display(Name = "Flight id")]
         public int FlightId { get; set; }
 
         [Required]

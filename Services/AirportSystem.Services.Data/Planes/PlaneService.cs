@@ -5,6 +5,7 @@
     using System.Linq;
 
     using AirportSystem.Data;
+    using AirportSystem.Data.Models.Planes;
     using AirportSystem.Data.Planes;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Web.ViewModels;
@@ -24,7 +25,6 @@
             {
                 Make = planeInputModel.Make,
                 Model = planeInputModel.Model,
-                Seats = planeInputModel.Seats,
                 PlaneType = (PlaneType)Enum.Parse(typeof(PlaneType), planeInputModel.Type),
                 IsPlaneAvailable = planeInputModel.IsPlaneAvailable,
             };
@@ -40,9 +40,13 @@
                 Id = x.Id,
                 Make = x.Make,
                 Model = x.Model,
-                Seats = x.Seats,
                 PlaneType = x.PlaneType,
                 IsPlaneAvailable = x.IsPlaneAvailable,
+                Seats = x.Seats.Select(x => new Seat()
+                {
+                    Id = x.Id,
+                    IsAvailable = x.IsAvailable,
+                }).ToList(),
             }).ToList();
 
             return planes;

@@ -19,20 +19,17 @@
         private readonly ITicketService ticketService;
         private readonly IFlightService flightService;
         private readonly IPassengersService passengersService;
-        private readonly ILuggageService luggageService;
         private readonly IHostingEnvironment hostingEnvironment;
 
         public TicketsController(
             ITicketService ticketService,
             IFlightService flightService,
             IPassengersService passengersService,
-            ILuggageService luggageService,
             IHostingEnvironment hostingEnvironment)
         {
             this.ticketService = ticketService;
             this.flightService = flightService;
             this.passengersService = passengersService;
-            this.luggageService = luggageService;
             this.hostingEnvironment = hostingEnvironment;
         }
 
@@ -64,7 +61,6 @@
         {
             var passenger = this.passengersService.GetPassengerById(ticket.PassengerId);
             var flight = this.flightService.GetFlightById(ticket.FlightId);
-            var luggage = this.luggageService.GetLuggageById(ticket.LuggageId);
 
             var viewModel = new UserTicketViewModel()
             {
