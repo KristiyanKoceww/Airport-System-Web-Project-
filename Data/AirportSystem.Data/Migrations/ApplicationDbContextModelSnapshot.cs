@@ -399,6 +399,9 @@ namespace AirportSystem.Data.Migrations
                     b.Property<int>("PassengerId")
                         .HasColumnType("int");
 
+                    b.Property<decimal>("Amount")
+                        .HasColumnType("decimal(18,2)");
+
                     b.Property<int>("PaymentStatus")
                         .HasColumnType("int");
 

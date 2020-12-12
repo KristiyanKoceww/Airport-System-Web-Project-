@@ -25,6 +25,7 @@
                 PassengerId = paymentInputModel.PassengerId,
                 TicketId = paymentInputModel.TicketId,
                 PaymentStatus = (PaymentStatus)Enum.Parse(typeof(PaymentStatus), paymentInputModel.PaymentStatus),
+                Amount = paymentInputModel.Amount,
             };
 
             this.db.Payments.Add(payment);

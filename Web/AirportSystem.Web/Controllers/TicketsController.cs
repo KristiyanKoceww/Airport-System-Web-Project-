@@ -1,5 +1,6 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
+    using System;
     using System.IO;
 
     using AirportSystem.Data.Tickets;
@@ -50,11 +51,13 @@
         {
             this.ticketService.Create(input, input.FlightId);
 
+            var flight = this.flightService.GetFlightById(input.FlightId);
+
             var ticketId = this.ticketService.GetTicketByFlightId(input.FlightId);
 
             var ticket = this.ticketService.GetTicketById(ticketId);
 
-            return this.RedirectToAction("UserTicket", "Tickets", ticket);
+            return this.RedirectToAction("Charge", "Stripe", new { ticketId, flight.Id, flight.Price });
         }
 
         public IActionResult UserTicket(Ticket ticket)
@@ -106,5 +109,20 @@
 
             return fileStreamResult;
         }
+
+        //[HttpPost]
+        //public FileResult Export(string GridHtml)
+        //{
+        //    using (MemoryStream stream = new MemoryStream())
+        //    {
+        //        StringReader sr = new StringReader(GridHtml);
+        //        Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 100f, 0f);
+        //        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
+        //        pdfDoc.Open();
+        //        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
+        //        pdfDoc.Close();
+        //        return this.File(stream.ToArray(), "application/pdf", "Grid.pdf");
+        //    }
+        //}
     }
 }

@@ -11,6 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\js\boostrapDemo\**" />
+    <Content Remove="wwwroot\js\boostrapDemo\**" />
+    <EmbeddedResource Remove="wwwroot\js\boostrapDemo\**" />
+    <None Remove="wwwroot\js\boostrapDemo\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Remove="Views\Luggages\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -18,6 +25,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="iTextSharp" Version="5.5.13.2" />
+    <PackageReference Include="itextsharp.xmlworker" Version="5.5.13.2" />
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
@@ -30,11 +39,12 @@
     <PackageReference Include="Microsoft.Web.LibraryManager.Build" Version="2.1.113" />
     <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.9" />
-    <PackageReference Include="Select.HtmlToPdf.NetCore" Version="20.2.0" />
+    <PackageReference Include="Stripe.net" Version="39.30.0" />
     <PackageReference Include="StyleCop.Analyzers" Version="1.2.0-beta.205" PrivateAssets="all">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core" Version="18.3.0.47" />
+    <PackageReference Include="Syncfusion.HtmlToPdfConverter.QtWebKit.AspNet" Version="18.3.0.47" />
+    <PackageReference Include="Syncfusion.HtmlToPdfConverter.QtWebKit.WinForms" Version="18.3.0.47" />
     <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
   </ItemGroup>
 
@@ -56,6 +66,5 @@
 
   <ItemGroup>
     <Folder Include="System\Web\" />
-    <Folder Include="wwwroot\js\boostrapDemo\" />
   </ItemGroup>
 </Project>

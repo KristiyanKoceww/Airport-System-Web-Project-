@@ -42,10 +42,13 @@
           "Microsoft.EntityFrameworkCore.Design": "3.1.9",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.4",
           "Microsoft.Web.LibraryManager.Build": "2.1.113",
-          "Select.HtmlToPdf.NetCore": "20.2.0",
+          "Stripe.net": "39.30.0",
           "StyleCop.Analyzers": "1.2.0-beta.205",
-          "Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core": "18.3.0.47",
+          "Syncfusion.HtmlToPdfConverter.QtWebKit.AspNet": "18.3.0.47",
+          "Syncfusion.HtmlToPdfConverter.QtWebKit.WinForms": "18.3.0.47",
           "System.Configuration.ConfigurationManager": "4.7.0",
+          "iTextSharp": "5.5.13.2",
+          "itextsharp.xmlworker": "5.5.13.2",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Abstractions": "3.1.0.0",
           "Microsoft.AspNetCore.Authentication.Cookies": "3.1.0.0",
@@ -221,7 +224,7 @@
           "System.Net.WebSockets.Client": "4.1.2.0",
           "System.Net.WebSockets": "4.1.2.0",
           "System.Numerics": "4.0.0.0",
-          "System.Numerics.Vectors.Reference": "4.1.6.0",
+          "System.Numerics.Vectors": "4.1.6.0",
           "System.ObjectModel.Reference": "4.1.2.0",
           "System.Reflection.DispatchProxy": "4.0.6.0",
           "System.Reflection.Reference": "4.2.2.0",
@@ -322,7 +325,46 @@
           "lib/netstandard2.0/AutoMapper.dll": {}
         }
       },
+      "BouncyCastle/1.8.6.1": {
+        "runtime": {
+          "lib/BouncyCastle.Crypto.dll": {
+            "assemblyVersion": "1.8.6.0",
+            "fileVersion": "1.8.20052.1"
+          }
+        },
+        "compile": {
+          "lib/BouncyCastle.Crypto.dll": {}
+        }
+      },
       "BuildBundlerMinifier/3.2.449": {},
+      "iTextSharp/5.5.13.2": {
+        "dependencies": {
+          "BouncyCastle": "1.8.6.1"
+        },
+        "runtime": {
+          "lib/itextsharp.dll": {
+            "assemblyVersion": "5.5.13.2",
+            "fileVersion": "5.5.13.2"
+          }
+        },
+        "compile": {
+          "lib/itextsharp.dll": {}
+        }
+      },
+      "itextsharp.xmlworker/5.5.13.2": {
+        "dependencies": {
+          "iTextSharp": "5.5.13.2"
+        },
+        "runtime": {
+          "lib/itextsharp.xmlworker.dll": {
+            "assemblyVersion": "5.5.13.2",
+            "fileVersion": "5.5.13.2"
+          }
+        },
+        "compile": {
+          "lib/itextsharp.xmlworker.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authorization/3.1.9": {
         "dependencies": {
           "Microsoft.AspNetCore.Metadata": "3.1.9",
@@ -1597,26 +1639,6 @@
           }
         }
       },
-      "Select.HtmlToPdf.NetCore/20.2.0": {
-        "dependencies": {
-          "Newtonsoft.Json": "12.0.2",
-          "System.Buffers": "4.5.0",
-          "System.Drawing.Common": "4.7.0",
-          "System.Numerics.Vectors": "4.5.0",
-          "System.Security.Principal.Windows": "4.7.0",
-          "System.Text.Encoding.CodePages": "4.5.1",
-          "System.Threading.Tasks.Extensions": "4.5.3"
-        },
-        "runtime": {
-          "lib/netstandard2.0/Select.HtmlToPdf.dll": {
-            "assemblyVersion": "20.2.0.0",
-            "fileVersion": "20.2.0.0"
-          }
-        },
-        "compile": {
-          "lib/netstandard2.0/Select.HtmlToPdf.dll": {}
-        }
-      },
       "SendGrid/9.21.0": {
         "dependencies": {
           "Newtonsoft.Json": "12.0.2",
@@ -1643,31 +1665,54 @@
           "lib/netstandard2.1/StarkbankEcdsa.dll": {}
         }
       },
+      "Stripe.net/39.30.0": {
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.1",
+          "Newtonsoft.Json": "12.0.2",
+          "System.Configuration.ConfigurationManager": "4.7.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Stripe.net.dll": {
+            "assemblyVersion": "39.30.0.0",
+            "fileVersion": "39.30.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Stripe.net.dll": {}
+        }
+      },
       "StyleCop.Analyzers/1.2.0-beta.205": {
         "dependencies": {
           "StyleCop.Analyzers.Unstable": "1.2.0.205"
         }
       },
       "StyleCop.Analyzers.Unstable/1.2.0.205": {},
-      "Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core/18.3.0.47": {
+      "Syncfusion.HtmlToPdfConverter.QtWebKit.AspNet/18.3.0.47": {
         "runtime": {
-          "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {
-            "assemblyVersion": "18.3200.0.47",
-            "fileVersion": "18.3200.0.47"
+          "lib/net46/Syncfusion.Compression.Base.dll": {
+            "assemblyVersion": "18.3460.0.47",
+            "fileVersion": "18.3460.0.47"
           },
-          "lib/netstandard2.0/Syncfusion.HtmlConverter.Portable.dll": {
-            "assemblyVersion": "18.3200.0.47",
-            "fileVersion": "18.3200.0.47"
+          "lib/net46/Syncfusion.HtmlConverter.Base.dll": {
+            "assemblyVersion": "18.3460.0.47",
+            "fileVersion": "18.3460.0.47"
           },
-          "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll": {
-            "assemblyVersion": "18.3200.0.47",
-            "fileVersion": "18.3200.0.47"
+          "lib/net46/Syncfusion.Pdf.Base.dll": {
+            "assemblyVersion": "18.3460.0.47",
+            "fileVersion": "18.3460.0.47"
           }
         },
         "compile": {
-          "lib/netstandard2.0/Syncfusion.Compression.Portable.dll": {},
-          "lib/netstandard2.0/Syncfusion.HtmlConverter.Portable.dll": {},
-          "lib/netstandard2.0/Syncfusion.Pdf.Portable.dll": {}
+          "lib/net46/Syncfusion.Compression.Base.dll": {},
+          "lib/net46/Syncfusion.HtmlConverter.Base.dll": {},
+          "lib/net46/Syncfusion.Pdf.Base.dll": {}
+        }
+      },
+      "Syncfusion.HtmlToPdfConverter.QtWebKit.WinForms/18.3.0.47": {
+        "compile": {
+          "lib/net46/Syncfusion.Compression.Base.dll": {},
+          "lib/net46/Syncfusion.HtmlConverter.Base.dll": {},
+          "lib/net46/Syncfusion.Pdf.Base.dll": {}
         }
       },
       "System.AppContext/4.3.0": {
@@ -1675,7 +1720,15 @@
           "System.Runtime": "4.3.0"
         }
       },
-      "System.Buffers/4.5.0": {},
+      "System.Buffers/4.3.0": {
+        "dependencies": {
+          "System.Diagnostics.Debug": "4.3.0",
+          "System.Diagnostics.Tracing": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime": "4.3.0",
+          "System.Threading": "4.3.0"
+        }
+      },
       "System.Collections/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
@@ -1948,9 +2001,6 @@
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
           "Microsoft.Win32.SystemEvents": "4.7.0"
-        },
-        "compile": {
-          "ref/netcoreapp3.0/System.Drawing.Common.dll": {}
         }
       },
       "System.Globalization/4.3.0": {
@@ -2006,7 +2056,7 @@
       "System.IO.Compression/4.3.0": {
         "dependencies": {
           "Microsoft.NETCore.Platforms": "3.1.0",
-          "System.Buffers": "4.5.0",
+          "System.Buffers": "4.3.0",
           "System.Collections": "4.3.0",
           "System.Diagnostics.Debug": "4.3.0",
           "System.IO": "4.3.0",
@@ -2024,7 +2074,7 @@
       },
       "System.IO.Compression.ZipFile/4.3.0": {
         "dependencies": {
-          "System.Buffers": "4.5.0",
+          "System.Buffers": "4.3.0",
           "System.IO": "4.3.0",
           "System.IO.Compression": "4.3.0",
           "System.IO.FileSystem": "4.3.0",
@@ -2149,7 +2199,6 @@
           "System.Threading.Tasks": "4.3.0"
         }
       },
-      "System.Numerics.Vectors/4.5.0": {},
       "System.ObjectModel/4.3.0": {
         "dependencies": {
           "System.Collections": "4.3.0",
@@ -2635,7 +2684,8 @@
       },
       "AirportSystem.Common/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.1.9"
+          "Microsoft.EntityFrameworkCore": "3.1.9",
+          "Stripe.net": "39.30.0"
         },
         "runtime": {
           "AirportSystem.Common.dll": {}
@@ -2653,7 +2703,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9",
-          "Microsoft.Extensions.Configuration.UserSecrets": "3.1.9"
+          "Microsoft.Extensions.Configuration.UserSecrets": "3.1.9",
+          "Stripe.net": "39.30.0"
         },
         "runtime": {
           "AirportSystem.Data.dll": {}
@@ -2665,6 +2716,7 @@
       "AirportSystem.Data.Common/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.9",
+          "Stripe.net": "39.30.0",
           "System.ComponentModel.Annotations": "4.7.0"
         },
         "runtime": {
@@ -2679,7 +2731,8 @@
           "AirportSystem.Data.Common": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore": "3.1.9",
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9"
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9",
+          "Stripe.net": "39.30.0"
         },
         "runtime": {
           "AirportSystem.Data.Models.dll": {}
@@ -2690,7 +2743,8 @@
       },
       "AirportSystem.Services/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.1.9"
+          "Microsoft.EntityFrameworkCore": "3.1.9",
+          "Stripe.net": "39.30.0"
         },
         "runtime": {
           "AirportSystem.Services.dll": {}
@@ -2742,7 +2796,8 @@
       },
       "AirportSystem.Web.Infrastructure/1.0.0": {
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.1.9"
+          "Microsoft.EntityFrameworkCore": "3.1.9",
+          "Stripe.net": "39.30.0"
         },
         "runtime": {
           "AirportSystem.Web.Infrastructure.dll": {}
@@ -2755,7 +2810,8 @@
         "dependencies": {
           "AirportSystem.Data.Models": "1.0.0",
           "AirportSystem.Services.Mapping": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "3.1.9"
+          "Microsoft.EntityFrameworkCore": "3.1.9",
+          "Stripe.net": "39.30.0"
         },
         "runtime": {
           "AirportSystem.Web.ViewModels.dll": {}
@@ -3814,7 +3870,7 @@
         },
         "compileOnly": true
       },
-      "System.Numerics.Vectors.Reference/4.1.6.0": {
+      "System.Numerics.Vectors/4.1.6.0": {
         "compile": {
           "System.Numerics.Vectors.dll": {}
         },
@@ -4297,12 +4353,33 @@
       "path": "automapper/10.1.1",
       "hashPath": "automapper.10.1.1.nupkg.sha512"
     },
+    "BouncyCastle/1.8.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-rkqpuKmJkdcfTMBkIj1b5nMdBAWKwAyh+I/BQYeqqSD2jkIlhwc9qBNKmSbnpmmm5c29qHZGLpvBSTNWvDLtQA==",
+      "path": "bouncycastle/1.8.6.1",
+      "hashPath": "bouncycastle.1.8.6.1.nupkg.sha512"
+    },
     "BuildBundlerMinifier/3.2.449": {
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-uA9sYDy4VepL3xwzBTLcP2LyuVYMt0ZIT3gaSiXvGoX15Ob+rOP+hGydhevlSVd+rFo+Y+VQFEHDuWU8HBW+XA==",
       "path": "buildbundlerminifier/3.2.449",
       "hashPath": "buildbundlerminifier.3.2.449.nupkg.sha512"
+    },
+    "iTextSharp/5.5.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-8m9oT1nh9F4Z1tzWUey/8lEzZtMGFCDXQY5+8/SSmPgUWAAAWniRo8pimKUZyteNqJr5vtFBxjAhRwLxG7Q0zQ==",
+      "path": "itextsharp/5.5.13.2",
+      "hashPath": "itextsharp.5.5.13.2.nupkg.sha512"
+    },
+    "itextsharp.xmlworker/5.5.13.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GvvabJF8Rpy9NdIMqBT9DtEQUeLnIQjFIwH7xb9whe6xxEG77lZTQOEhe5HQjalTX4WxhBaOR9ffCq0cqjn7Fw==",
+      "path": "itextsharp.xmlworker/5.5.13.2",
+      "hashPath": "itextsharp.xmlworker.5.5.13.2.nupkg.sha512"
     },
     "Microsoft.AspNetCore.Authorization/3.1.9": {
       "type": "package",
@@ -4990,13 +5067,6 @@
       "path": "runtime.win-x86.runtime.native.system.data.sqlclient.sni/4.4.0",
       "hashPath": "runtime.win-x86.runtime.native.system.data.sqlclient.sni.4.4.0.nupkg.sha512"
     },
-    "Select.HtmlToPdf.NetCore/20.2.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-pdT0AbAEkKwpSbnf2unXHHODfe9g3/hQcNxV+e/8vORzXyVZyTY0BzMahtBcOGoDs7fEDIZNht4gIuiB1XmxGg==",
-      "path": "select.htmltopdf.netcore/20.2.0",
-      "hashPath": "select.htmltopdf.netcore.20.2.0.nupkg.sha512"
-    },
     "SendGrid/9.21.0": {
       "type": "package",
       "serviceable": true,
@@ -5010,6 +5080,13 @@
       "sha512": "sha512-hP53QPYOOEIR44EK9phz+DYliM6DEieDZxpb8GZzE+++qyrWqUscKcyHCC6L9yu/ehllYtqxtT4qrjWDsuQlUQ==",
       "path": "starkbank-ecdsa/1.2.0",
       "hashPath": "starkbank-ecdsa.1.2.0.nupkg.sha512"
+    },
+    "Stripe.net/39.30.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-fVazoGSfV5wUJNAPBpxvEh5XNmRZKmcb7YgoHpoIz223ENehm5rhOQ2SMAakPxDDbq0BMrzs74VTX3YrveRcCA==",
+      "path": "stripe.net/39.30.0",
+      "hashPath": "stripe.net.39.30.0.nupkg.sha512"
     },
     "StyleCop.Analyzers/1.2.0-beta.205": {
       "type": "package",
@@ -5025,12 +5102,19 @@
       "path": "stylecop.analyzers.unstable/1.2.0.205",
       "hashPath": "stylecop.analyzers.unstable.1.2.0.205.nupkg.sha512"
     },
-    "Syncfusion.HtmlToPdfConverter.QtWebKit.Net.Core/18.3.0.47": {
+    "Syncfusion.HtmlToPdfConverter.QtWebKit.AspNet/18.3.0.47": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-y3v8kVc5rnp3IOq6dKFFngxzg0Zkd8WioH7crTnok9bUlfI0IZs4dzB5g0VxOV2vaxSt4t+gVi9vArEflBN1pw==",
-      "path": "syncfusion.htmltopdfconverter.qtwebkit.net.core/18.3.0.47",
-      "hashPath": "syncfusion.htmltopdfconverter.qtwebkit.net.core.18.3.0.47.nupkg.sha512"
+      "sha512": "sha512-V9fEnFi/mK7Qs9SzWRXfCDY2ltzkXFvJ1M4w4QSklwn7j0D5jsbDwqjMNmMPwkBIuajOy8LYLxFI51iMb7krlw==",
+      "path": "syncfusion.htmltopdfconverter.qtwebkit.aspnet/18.3.0.47",
+      "hashPath": "syncfusion.htmltopdfconverter.qtwebkit.aspnet.18.3.0.47.nupkg.sha512"
+    },
+    "Syncfusion.HtmlToPdfConverter.QtWebKit.WinForms/18.3.0.47": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-eNdaHJ/nB78tg3IEUEbUy6ZNwgPq16jGohOdrAEozC1s1SJka3Y07pnW52i9eUqQD0K2WuGFk3kYCGVSnx4lKA==",
+      "path": "syncfusion.htmltopdfconverter.qtwebkit.winforms/18.3.0.47",
+      "hashPath": "syncfusion.htmltopdfconverter.qtwebkit.winforms.18.3.0.47.nupkg.sha512"
     },
     "System.AppContext/4.3.0": {
       "type": "package",
@@ -5039,12 +5123,12 @@
       "path": "system.appcontext/4.3.0",
       "hashPath": "system.appcontext.4.3.0.nupkg.sha512"
     },
-    "System.Buffers/4.5.0": {
+    "System.Buffers/4.3.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
-      "path": "system.buffers/4.5.0",
-      "hashPath": "system.buffers.4.5.0.nupkg.sha512"
+      "sha512": "sha512-ratu44uTIHgeBeI0dE8DWvmXVBSo4u7ozRZZHOMmK/JPpYyo0dAfgSiHlpiObMQ5lEtEyIXA40sKRYg5J6A8uQ==",
+      "path": "system.buffers/4.3.0",
+      "hashPath": "system.buffers.4.3.0.nupkg.sha512"
     },
     "System.Collections/4.3.0": {
       "type": "package",
@@ -5311,13 +5395,6 @@
       "sha512": "sha512-m6icV6TqQOAdgt5N/9I5KNpjom/5NFtkmGseEH+AK/hny8XrytLH3+b5M8zL/Ycg3fhIocFpUMyl/wpFnVRvdw==",
       "path": "system.net.sockets/4.3.0",
       "hashPath": "system.net.sockets.4.3.0.nupkg.sha512"
-    },
-    "System.Numerics.Vectors/4.5.0": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-QQTlPTl06J/iiDbJCiepZ4H//BVraReU4O4EoRw1U02H5TLUIT7xn3GnDp9AXPSlJUDyFs4uWjWafNX6WrAojQ==",
-      "path": "system.numerics.vectors/4.5.0",
-      "hashPath": "system.numerics.vectors.4.5.0.nupkg.sha512"
     },
     "System.ObjectModel/4.3.0": {
       "type": "package",
@@ -6594,7 +6671,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "System.Numerics.Vectors.Reference/4.1.6.0": {
+    "System.Numerics.Vectors/4.1.6.0": {
       "type": "referenceassembly",
       "serviceable": false,
       "sha512": ""

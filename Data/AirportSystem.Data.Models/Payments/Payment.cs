@@ -18,5 +18,7 @@
         public virtual Ticket Ticket { get; set; }
 
         public PaymentStatus PaymentStatus { get; set; }
+
+        public decimal Amount { get; set; }
     }
 }

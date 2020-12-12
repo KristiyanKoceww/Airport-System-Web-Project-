@@ -12,5 +12,7 @@
 
         [Required]
         public string PaymentStatus { get; set; }
+
+        public decimal Amount { get; set; }
     }
 }

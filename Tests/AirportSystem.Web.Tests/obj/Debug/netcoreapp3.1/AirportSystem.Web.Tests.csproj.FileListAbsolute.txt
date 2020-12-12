@@ -788,9 +788,11 @@ C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\ob
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.dll
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.pdb
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.genruntimeconfig.cache
-C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Select.HtmlToPdf.dll
-C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Syncfusion.Compression.Portable.dll
-C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Syncfusion.HtmlConverter.Portable.dll
-C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Syncfusion.Pdf.Portable.dll
-C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Select.Html.dep
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\BouncyCastle.Crypto.dll
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\itextsharp.dll
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\itextsharp.xmlworker.dll
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Stripe.net.dll
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Syncfusion.Compression.Base.dll
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Syncfusion.HtmlConverter.Base.dll
+C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\bin\Debug\netcoreapp3.1\Syncfusion.Pdf.Base.dll
 C:\Users\User\Desktop\Airport System WebProject\Tests\AirportSystem.Web.Tests\obj\Debug\netcoreapp3.1\AirportSystem.Web.Tests.MvcApplicationPartsAssemblyInfo.cs

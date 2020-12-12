@@ -740,6 +740,20 @@
           "lib/netstandard2.1/StarkbankEcdsa.dll": {}
         }
       },
+      "Stripe.net/39.30.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Bcl.AsyncInterfaces": "1.1.0",
+          "Newtonsoft.Json": "11.0.1",
+          "System.Configuration.ConfigurationManager": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/Stripe.net.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Stripe.net.dll": {}
+        }
+      },
       "StyleCop.Analyzers/1.2.0-beta.205": {
         "type": "package",
         "dependencies": {
@@ -893,7 +907,7 @@
           "System.Security.Permissions": "4.5.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Configuration.ConfigurationManager.dll": {}
@@ -1355,7 +1369,7 @@
           "System.Security.Principal.Windows": "4.5.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.AccessControl.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.AccessControl.dll": {}
@@ -1421,7 +1435,7 @@
           "System.Security.AccessControl": "4.5.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.Permissions.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.Permissions.dll": {}
@@ -1433,7 +1447,7 @@
           "Microsoft.NETCore.Platforms": "2.0.0"
         },
         "compile": {
-          "ref/netstandard2.0/_._": {}
+          "ref/netstandard2.0/System.Security.Principal.Windows.dll": {}
         },
         "runtime": {
           "lib/netstandard2.0/System.Security.Principal.Windows.dll": {}
@@ -1678,7 +1692,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.1.9"
+          "Microsoft.EntityFrameworkCore": "3.1.9",
+          "Stripe.net": "39.30.0"
         },
         "compile": {
           "bin/placeholder/AirportSystem.Common.dll": {}
@@ -1698,7 +1713,8 @@
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9",
-          "Microsoft.Extensions.Configuration.UserSecrets": "3.1.9"
+          "Microsoft.Extensions.Configuration.UserSecrets": "3.1.9",
+          "Stripe.net": "39.30.0"
         },
         "compile": {
           "bin/placeholder/AirportSystem.Data.dll": {}
@@ -1712,6 +1728,7 @@
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "3.1.9",
+          "Stripe.net": "39.30.0",
           "System.ComponentModel.Annotations": "4.7.0"
         },
         "compile": {
@@ -1728,7 +1745,8 @@
           "AirportSystem.Data.Common": "1.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.9",
           "Microsoft.EntityFrameworkCore": "3.1.9",
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9"
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.9",
+          "Stripe.net": "39.30.0"
         },
         "compile": {
           "bin/placeholder/AirportSystem.Data.Models.dll": {}
@@ -1741,7 +1759,8 @@
         "type": "project",
         "framework": ".NETStandard,Version=v2.1",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore": "3.1.9"
+          "Microsoft.EntityFrameworkCore": "3.1.9",
+          "Stripe.net": "39.30.0"
         },
         "compile": {
           "bin/placeholder/AirportSystem.Services.dll": {}
@@ -1803,7 +1822,8 @@
         "dependencies": {
           "AirportSystem.Data.Models": "1.0.0",
           "AirportSystem.Services.Mapping": "1.0.0",
-          "Microsoft.EntityFrameworkCore": "3.1.9"
+          "Microsoft.EntityFrameworkCore": "3.1.9",
+          "Stripe.net": "39.30.0"
         },
         "compile": {
           "bin/placeholder/AirportSystem.Web.ViewModels.dll": {}
@@ -3009,6 +3029,28 @@
         "lib/netstandard2.1/StarkbankEcdsa.dll",
         "starkbank-ecdsa.1.2.0.nupkg.sha512",
         "starkbank-ecdsa.nuspec"
+      ]
+    },
+    "Stripe.net/39.30.0": {
+      "sha512": "fVazoGSfV5wUJNAPBpxvEh5XNmRZKmcb7YgoHpoIz223ENehm5rhOQ2SMAakPxDDbq0BMrzs74VTX3YrveRcCA==",
+      "type": "package",
+      "path": "stripe.net/39.30.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE",
+        "icon.png",
+        "lib/net461/Stripe.net.dll",
+        "lib/net461/Stripe.net.pdb",
+        "lib/net461/Stripe.net.xml",
+        "lib/net5.0/Stripe.net.dll",
+        "lib/net5.0/Stripe.net.pdb",
+        "lib/net5.0/Stripe.net.xml",
+        "lib/netstandard2.0/Stripe.net.dll",
+        "lib/netstandard2.0/Stripe.net.pdb",
+        "lib/netstandard2.0/Stripe.net.xml",
+        "stripe.net.39.30.0.nupkg.sha512",
+        "stripe.net.nuspec"
       ]
     },
     "StyleCop.Analyzers/1.2.0-beta.205": {

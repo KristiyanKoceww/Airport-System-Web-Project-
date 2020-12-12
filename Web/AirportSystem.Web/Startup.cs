@@ -16,12 +16,14 @@
     using AirportSystem.Services.Data.Luggages;
     using AirportSystem.Services.Data.Passengers;
     using AirportSystem.Services.Data.Passports;
+    using AirportSystem.Services.Data.Payments;
     using AirportSystem.Services.Data.Planes;
     using AirportSystem.Services.Data.Seats;
     using AirportSystem.Services.Data.Tickets;
     using AirportSystem.Services.Data.TravelLines;
     using AirportSystem.Services.Mapping;
     using AirportSystem.Services.Messaging;
+    using AirportSystem.Web.StripeProps;
     using AirportSystem.Web.ViewModels;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
@@ -32,6 +34,7 @@
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.DependencyInjection;
     using Microsoft.Extensions.Hosting;
+    using Stripe;
 
     public class Startup
     {
@@ -88,11 +91,17 @@
             services.AddTransient<IFlightService, FlightService>();
             services.AddTransient<ITravelLinesService, TravelLinesService>();
             services.AddTransient<ISeatsService, SeatsService>();
+            services.AddTransient<IPaymentService, PaymentService>();
+
+            // Stripe service
+            services.Configure<StripeSettings>(this.configuration.GetSection("Stripe"));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            StripeConfiguration.SetApiKey(this.configuration.GetSection("Stripe")["SecretKey"]);
+
             AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
 
             // Seed data on application startup

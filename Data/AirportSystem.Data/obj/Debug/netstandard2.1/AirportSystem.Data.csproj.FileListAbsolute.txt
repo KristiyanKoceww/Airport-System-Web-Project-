@@ -13,7 +13,6 @@ C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\bin\Debu
 C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.csprojAssemblyReference.cache
 C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.AssemblyInfo.cs
-C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.csproj.CopyComplete
 C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.dll
 C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.pdb
@@ -38,3 +37,4 @@ C:\Users\User\Desktop\tryToRename\Data\AirportSystem.Data\obj\Debug\netstandard2
 C:\Users\User\Desktop\tryToRename\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.dll
 C:\Users\User\Desktop\tryToRename\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.pdb
 C:\Users\User\Desktop\tryToRename\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.genruntimeconfig.cache
+C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.csproj.CoreCompileInputs.cache
