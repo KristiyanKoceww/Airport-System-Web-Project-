@@ -1,0 +1,122 @@
+﻿[
+  {
+    "Name": "Berlin Airport",
+    "CityId": 6
+  },
+  {
+    "Name": "Madrid Aiport",
+    "CityId": 7
+  },
+  {
+    "Name": "Mancherster Airport",
+    "CityId": 10
+  },
+  {
+    "Name": "Liverpool Airport",
+    "CityId": 13
+  },
+  {
+    "Name": "London Airport",
+    "CityId": 19
+  },
+  {
+    "Name": "Amsterdam Airport",
+    "CityId": 25
+  },
+  {
+    "Name": "Milano Airport",
+    "CityId": 36
+  },
+  {
+    "Name": "Palma De Malorka Airport",
+    "CityId": 50
+  },
+  {
+    "Name": "Samara Airport",
+    "CityId": 52
+  },
+  {
+    "Name": "Florencia Airport",
+    "CityId": 53
+  },
+  {
+    "Name": "Silistra Airport",
+    "CityId": 61
+  },
+  {
+    "Name": "Burgas Airport",
+    "CityId": 62
+  },
+  {
+    "Name": "Varna Airport",
+    "CityId": 63
+  },
+  {
+    "Name": "Sofia Airport",
+    "CityId": 66
+  },
+  {
+    "Name": "Dormund Airport",
+    "CityId": 64
+  },
+  {
+    "Name": "Plovdiv Airport",
+    "CityId": 70
+  },
+  {
+    "Name": "Sankt Peterburg Airport",
+    "CityId": 55
+  },
+  {
+    "Name": "Frankfurt Airport",
+    "CityId": 71
+  },
+  {
+    "Name": "Moskva Airport",
+    "CityId": 80
+  },
+  {
+    "Name": "Munchen Airport",
+    "CityId": 73
+  },
+  {
+    "Name": "Marsilie Airport",
+    "CityId": 77
+  },
+  {
+    "Name": "Hamburget Airport",
+    "CityId": 75
+  },
+  {
+    "Name": "Bolnes Airport",
+    "CityId": 83
+  },
+  {
+    "Name": "Monreal Airport",
+    "CityId": 89
+  },
+  {
+    "Name": "Vancuver Airport",
+    "CityId": 90
+  },
+  {
+    "Name": "Toronto Airport",
+    "CityId": 91
+  },
+  {
+    "Name": "Atina Airport ",
+    "CityId": 96
+  },
+  {
+    "Name": "Ren Airport",
+    "CityId": 97
+  },
+  {
+    "Name": "Novosibirsk Airport",
+    "CityId": 101
+  },
+  {
+    "Name": "Lil Airport",
+    "CityId": 98
+  }
+]

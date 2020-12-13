@@ -50,6 +50,7 @@
             });
 
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
+
             var passenger = this.passengersService.GetPassengerByUserId(userId);
 
             var charge = charges.Create(new ChargeCreateOptions
@@ -61,7 +62,7 @@
                 ReceiptEmail = paymentInputModel.StripeEmail,
                 Metadata = new Dictionary<string, string>()
                 {
-                    { "PassengerId", passenger.PassengerId.ToString() },
+                    //{ "PassengerId", passenger.PassengerId.ToString() },
                     { "TicketId" , paymentInputModel.TicketId.ToString() },
                 },
             });

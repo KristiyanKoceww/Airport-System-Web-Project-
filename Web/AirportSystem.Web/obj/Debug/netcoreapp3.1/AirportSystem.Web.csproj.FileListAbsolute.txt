@@ -494,3 +494,4 @@ C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\AirportSystem.Web.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\Stripe.net.dll
 C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\obj\Debug\netcoreapp3.1\Razor\Views\Stripe\Charge.cshtml.g.cs
+C:\Users\User\Desktop\Airport System WebProject\Web\AirportSystem.Web\bin\Debug\netcoreapp3.1\JsonDb\Countries.json

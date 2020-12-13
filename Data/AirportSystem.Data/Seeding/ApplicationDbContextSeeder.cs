@@ -28,6 +28,15 @@
                               new RolesSeeder(),
                               new SettingsSeeder(),
                               new AccountSeeder(),
+                              new CountriesSeeder(),
+                              new CitiesSeeder(),
+                              new TravelLinesSeeder(),
+                              new AirportSeeder(),
+                              new AvioCompanySeeder(),
+                              new PlaneSeeder(),
+                              new PlaneSeatsSeeder(),
+                              new PassengerSeeder(),
+                              new FlightsSeeder(),
                           };
 
             foreach (var seeder in seeders)

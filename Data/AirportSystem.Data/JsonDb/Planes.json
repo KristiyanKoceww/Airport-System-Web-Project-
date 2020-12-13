@@ -1,0 +1,144 @@
+﻿[
+  {
+    "Make": "Boeing",
+    "Model": "B-50",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirBus",
+    "AvioCompanyId": 91
+  },
+  {
+    "Make": "Boeing",
+    "Model": "747",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirBus",
+    "AvioCompanyId": 92
+  },
+  {
+    "Make": "Boeing",
+    "Model": "X-43",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirBus",
+    "AvioCompanyId": 93
+  },
+  {
+    "Make": "Boeing",
+    "Model": "B-50",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirBus",
+    "AvioCompanyId": 94
+  },
+  {
+    "Make": "Boeing",
+    "Model": "X-43",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirBus",
+    "AvioCompanyId": 95
+  },
+  {
+    "Make": "Boeing",
+    "Model": "747",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirBus",
+    "AvioCompanyId": 96
+  },
+  {
+    "Make": "Boeing",
+    "Model": "X-43",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirBus",
+    "AvioCompanyId": 101
+  },
+  {
+    "Make": "Airbus",
+    "Model": "A340 ",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "Airbus",
+    "AvioCompanyId": 120
+  },
+  {
+    "Make": "Airbus",
+    "Model": "A340",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "Airbus",
+    "AvioCompanyId": 115
+  },
+  {
+    "Make": "Airbus",
+    "Model": "A340 ",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "Airbus",
+    "AvioCompanyId": 113
+  },
+  {
+    "Make": "Airbus",
+    "Model": "A340",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "Airbus",
+    "AvioCompanyId": 117
+  },
+  {
+    "Make": "Airbus",
+    "Model": "A340",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "Airbus",
+    "AvioCompanyId": 118
+  },
+  {
+    "Make": "Airbus",
+    "Model": "A340",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "Airbus",
+    "AvioCompanyId": 109
+  },
+  {
+    "Make": "Airbus",
+    "Model": "A340",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "Airbus",
+    "AvioCompanyId": 110
+  },
+  {
+    "Make": "Dassault",
+    "Model": "Falcon 2000",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirCraft",
+    "AvioCompanyId": 111
+
+  },
+  {
+    "Make": "Dassault",
+    "Model": "Falcon 2000",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirCraft",
+    "AvioCompanyId": 114
+  },
+  {
+    "Make": "Dassault",
+    "Model": "Falcon 2000",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirCraft",
+    "AvioCompanyId": 99
+  },
+  {
+    "Make": "Dassault",
+    "Model": "Falcon 2000",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirCraft",
+    "AvioCompanyId": 102
+  },
+  {
+    "Make": "Dassault",
+    "Model": "Falcon 2000",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirCraft",
+    "AvioCompanyId": 98
+  },
+  {
+    "Make": "Dassault",
+    "Model": "Falcon 2000",
+    "IsPlaneAvailable": "true",
+    "PlaneType": "AirCraft",
+    "AvioCompanyId": 119
+  }
+
+]

@@ -38,3 +38,4 @@ C:\Users\User\Desktop\tryToRename\Data\AirportSystem.Data\obj\Debug\netstandard2
 C:\Users\User\Desktop\tryToRename\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.pdb
 C:\Users\User\Desktop\tryToRename\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.genruntimeconfig.cache
 C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\obj\Debug\netstandard2.1\AirportSystem.Data.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\bin\Debug\netstandard2.1\JsonDb\Countries.json

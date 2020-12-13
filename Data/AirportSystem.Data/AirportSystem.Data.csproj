@@ -22,6 +22,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="JsonDb\Countries.json" />
+  </ItemGroup>
+
+  <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json" />
   </ItemGroup>
 
@@ -29,6 +33,11 @@
     <Content Include="appsettings.json">
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="JsonDb\Countries.json">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
     </Content>
   </ItemGroup>
 
