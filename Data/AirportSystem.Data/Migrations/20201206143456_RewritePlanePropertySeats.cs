@@ -1,7 +1,7 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace AirportSystem.Data.Migrations
+﻿namespace AirportSystem.Data.Migrations
 {
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class RewritePlanePropertySeats : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)

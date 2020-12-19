@@ -1,8 +1,8 @@
-﻿using AirportSystem.Services.Data.Seats;
-using Microsoft.AspNetCore.Mvc;
-
-namespace AirportSystem.Web.Controllers
+﻿namespace AirportSystem.Web.Controllers
 {
+    using AirportSystem.Services.Data.Seats;
+    using Microsoft.AspNetCore.Mvc;
+
     public class SeatsController : BaseController
     {
         private readonly ISeatsService seatsService;

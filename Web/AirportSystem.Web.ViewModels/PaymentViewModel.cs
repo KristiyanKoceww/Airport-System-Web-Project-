@@ -1,7 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace AirportSystem.Web.ViewModels
+﻿namespace AirportSystem.Web.ViewModels
 {
+    using System.ComponentModel.DataAnnotations;
+
     public class PaymentViewModel
     {
         [Required]

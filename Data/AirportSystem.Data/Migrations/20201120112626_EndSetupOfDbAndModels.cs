@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace AirportSystem.Data.Migrations
+﻿namespace AirportSystem.Data.Migrations
 {
+    using System;
+
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class EndSetupOfDbAndModels : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -18,7 +19,7 @@ namespace AirportSystem.Data.Migrations
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    DeletedOn = table.Column<DateTime>(nullable: true)
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -47,7 +48,7 @@ namespace AirportSystem.Data.Migrations
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
-                    DeletedOn = table.Column<DateTime>(nullable: true)
+                    DeletedOn = table.Column<DateTime>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -64,7 +65,7 @@ namespace AirportSystem.Data.Migrations
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
-                    Name = table.Column<string>(nullable: false)
+                    Name = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -78,7 +79,7 @@ namespace AirportSystem.Data.Migrations
                     Id = table.Column<string>(nullable: false),
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ExpiresOn = table.Column<DateTime>(nullable: false),
-                    Country = table.Column<string>(nullable: true)
+                    Country = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -96,7 +97,7 @@ namespace AirportSystem.Data.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: true),
-                    Value = table.Column<string>(nullable: true)
+                    Value = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -111,7 +112,7 @@ namespace AirportSystem.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     RoleId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
-                    ClaimValue = table.Column<string>(nullable: true)
+                    ClaimValue = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -132,7 +133,7 @@ namespace AirportSystem.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     UserId = table.Column<string>(nullable: false),
                     ClaimType = table.Column<string>(nullable: true),
-                    ClaimValue = table.Column<string>(nullable: true)
+                    ClaimValue = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -152,7 +153,7 @@ namespace AirportSystem.Data.Migrations
                     LoginProvider = table.Column<string>(nullable: false),
                     ProviderKey = table.Column<string>(nullable: false),
                     ProviderDisplayName = table.Column<string>(nullable: true),
-                    UserId = table.Column<string>(nullable: false)
+                    UserId = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -170,7 +171,7 @@ namespace AirportSystem.Data.Migrations
                 columns: table => new
                 {
                     UserId = table.Column<string>(nullable: false),
-                    RoleId = table.Column<string>(nullable: false)
+                    RoleId = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -196,7 +197,7 @@ namespace AirportSystem.Data.Migrations
                     UserId = table.Column<string>(nullable: false),
                     LoginProvider = table.Column<string>(nullable: false),
                     Name = table.Column<string>(nullable: false),
-                    Value = table.Column<string>(nullable: true)
+                    Value = table.Column<string>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -220,7 +221,7 @@ namespace AirportSystem.Data.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: false),
-                    CountryId = table.Column<int>(nullable: false)
+                    CountryId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -244,7 +245,7 @@ namespace AirportSystem.Data.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: false),
-                    CityId = table.Column<int>(nullable: false)
+                    CityId = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -262,7 +263,7 @@ namespace AirportSystem.Data.Migrations
                 columns: table => new
                 {
                     CityId = table.Column<int>(nullable: false),
-                    City2Id = table.Column<int>(nullable: false)
+                    City2Id = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -292,7 +293,7 @@ namespace AirportSystem.Data.Migrations
                     IsDeleted = table.Column<bool>(nullable: false),
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     Name = table.Column<string>(nullable: false),
-                    AirportId = table.Column<int>(nullable: true)
+                    AirportId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -320,7 +321,7 @@ namespace AirportSystem.Data.Migrations
                     Seats = table.Column<int>(nullable: false),
                     IsPlaneAvailable = table.Column<bool>(nullable: false),
                     PlaneType = table.Column<int>(nullable: false),
-                    AvioCompanyId = table.Column<int>(nullable: true)
+                    AvioCompanyId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -351,7 +352,7 @@ namespace AirportSystem.Data.Migrations
                     TravelLineCity2Id = table.Column<int>(nullable: true),
                     TravelRoute = table.Column<string>(nullable: true),
                     FlightDuration = table.Column<TimeSpan>(nullable: false),
-                    AirportId = table.Column<int>(nullable: true)
+                    AirportId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -395,7 +396,7 @@ namespace AirportSystem.Data.Migrations
                     PassportId = table.Column<string>(nullable: false),
                     PassengerType = table.Column<int>(nullable: false),
                     Gender = table.Column<int>(nullable: false),
-                    FlightId = table.Column<int>(nullable: true)
+                    FlightId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {
@@ -426,7 +427,7 @@ namespace AirportSystem.Data.Migrations
                     DeletedOn = table.Column<DateTime>(nullable: true),
                     LuggageType = table.Column<int>(nullable: false),
                     PassengerId = table.Column<int>(nullable: false),
-                    Weight = table.Column<decimal>(nullable: false)
+                    Weight = table.Column<decimal>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -444,7 +445,7 @@ namespace AirportSystem.Data.Migrations
                 columns: table => new
                 {
                     PassengerId = table.Column<int>(nullable: false),
-                    UserId = table.Column<string>(nullable: false)
+                    UserId = table.Column<string>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -479,7 +480,7 @@ namespace AirportSystem.Data.Migrations
                     SeatNumber = table.Column<string>(nullable: false),
                     FlightId = table.Column<int>(nullable: false),
                     TicketType = table.Column<int>(nullable: false),
-                    TicketRule = table.Column<int>(nullable: false)
+                    TicketRule = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {
@@ -510,7 +511,7 @@ namespace AirportSystem.Data.Migrations
                 {
                     PassengerId = table.Column<int>(nullable: false),
                     TicketId = table.Column<int>(nullable: false),
-                    PaymentStatus = table.Column<int>(nullable: false)
+                    PaymentStatus = table.Column<int>(nullable: false),
                 },
                 constraints: table =>
                 {

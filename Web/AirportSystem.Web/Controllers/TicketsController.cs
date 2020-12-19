@@ -142,15 +142,5 @@
         {
             return this.View(viewModel);
         }
-
-        [HttpPost]
-        public async Task<IActionResult> SendToEmail(int id)
-        {
-            var user = this.User;
-
-            // await this.emailSender.SendEmailAsync("Airport System", "Admin", "koceww@mail.com", "Ticket", html.ToString());
-
-            return this.Redirect("/Home/Index");
-        }
     }
 }

@@ -1,8 +1,9 @@
-﻿using System;
-using Microsoft.EntityFrameworkCore.Migrations;
-
-namespace AirportSystem.Data.Migrations
+﻿namespace AirportSystem.Data.Migrations
 {
+    using System;
+
+    using Microsoft.EntityFrameworkCore.Migrations;
+
     public partial class AddSeatsToPlane : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -26,7 +27,7 @@ namespace AirportSystem.Data.Migrations
                     CreatedOn = table.Column<DateTime>(nullable: false),
                     ModifiedOn = table.Column<DateTime>(nullable: true),
                     IsAvailable = table.Column<bool>(nullable: false),
-                    PlaneId = table.Column<int>(nullable: true)
+                    PlaneId = table.Column<int>(nullable: true),
                 },
                 constraints: table =>
                 {

@@ -1,7 +1,7 @@
-﻿using AirportSystem.Data.Common.Models;
-
-namespace AirportSystem.Data.Models.Planes
+﻿namespace AirportSystem.Data.Models.Planes
 {
+    using AirportSystem.Data.Common.Models;
+
     public class Seat : BaseModel<int>
     {
         public bool IsAvailable { get; set; }
