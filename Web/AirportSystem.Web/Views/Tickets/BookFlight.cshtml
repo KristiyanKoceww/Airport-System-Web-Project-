@@ -30,8 +30,8 @@
     </div>
 
     <div class="form-group col-md-6">
-        <label asp-for="FlightId"></label>
-        <input asp-for="FlightId" class="form-control" />
+        @*<label asp-for="FlightId"></label>*@
+        <input asp-for="FlightId" class="form-control" hidden />
         <span asp-validation-for="FlightId" class="text-danger"></span>
     </div>
 
@@ -48,6 +48,10 @@
             <option>Select type ...</option>
         </select>
         <span asp-validation-for="TicketRule" class="text-danger"></span>
+        <div>
+            <div><text>Note:</text></div>
+            <div><text>Selecting round trip double the prices of the ticket!</text></div>
+        </div>
     </div>
 
     <div class="form-group col-md-6">
@@ -57,10 +61,17 @@
             <option>Select type ...</option>
         </select>
         <span asp-validation-for="TicketType" class="text-danger"></span>
+        <div>
+            <text>Note: </text>
+        </div>
+        <div>
+            <div><text>* Selecting economy class ticket reduces price by 20%</text></div>
+            <div> <text>* Selecting bussiness class ticket increases price by 25%</text></div>
+            <div><text>* Selecting first class ticket increases price by 50%</text></div>
+        </div>
     </div>
 
     <input type="submit" class="btn btn-primary" />
-
 </form>
 
 

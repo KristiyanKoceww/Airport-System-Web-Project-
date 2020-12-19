@@ -11,6 +11,9 @@
         public int LuggageId { get; set; }
 
         [Required]
+        public decimal Price { get; set; }
+
+        [Required]
         public string SeatNumber { get; set; }
 
         [Required]

@@ -64,16 +64,27 @@
 
             var ticket = this.ticketService.GetTicketById(ticketId);
 
-            return this.RedirectToAction("Charge", "Stripe", new { ticketId, flight.Id, flight.Price });
-        }
+            var passenger = this.passengersService.GetPassengerById(input.PassengerId);
 
-        public IActionResult UserTicket(decimal price, int passengerId, int ticketId)
-        {
-            var ticket = this.ticketService.GetTicketById(ticketId);
-            var passenger = this.passengersService.GetPassengerById(passengerId);
-            var luggage = this.luggageService.GetLuggageByPassengerId(passengerId);
+            var luggage = this.luggageService.GetLuggageByPassengerId(input.PassengerId);
 
-            var flight = this.flightService.GetFlightById(ticket.FlightId);
+            if (input.TicketRule == "2")
+            {
+                flight.Price *= 2;
+            }
+
+            switch (input.TicketType)
+            {
+                case "1":
+                    flight.Price = flight.Price - (flight.Price * 0.2M);
+                    break;
+                case "2":
+                    flight.Price *= 1.5M;
+                    break;
+                case "3":
+                    flight.Price *= 1.25M;
+                    break;
+            }
 
             var viewModel = new UserTicketViewModel()
             {
@@ -94,6 +105,41 @@
                 Destination = flight.TravelLineCity2Name,
             };
 
+            return this.RedirectToAction("Confirmation", viewModel);
+        }
+
+        public IActionResult UserTicket(decimal price, int passengerId, int ticketId)
+        {
+            var ticket = this.ticketService.GetTicketById(ticketId);
+            var passenger = this.passengersService.GetPassengerById(passengerId);
+            var luggage = this.luggageService.GetLuggageByPassengerId(passengerId);
+
+            var flight = this.flightService.GetFlightById(ticket.FlightId);
+
+            var viewModel = new UserTicketViewModel()
+            {
+                LuggageType = luggage.LuggageType.ToString(),
+                LuggageWeight = luggage.Weight,
+                TicketId = ticketId,
+                PassengerId = ticket.PassengerId,
+                PassengerName = passenger.FirstName,
+                Price = price,
+                FlightArrivalTime = flight.ArrivalTime,
+                FlightDepartureTime = flight.DepartureTime,
+                SeatNumber = ticket.SeatNumber,
+                TicketRule = ticket.TicketRule,
+                TicketType = ticket.TicketType,
+                FlightId = flight.Id,
+                LuggageId = ticket.LuggageId,
+                Origin = flight.TravelLineCityName,
+                Destination = flight.TravelLineCity2Name,
+            };
+
+            return this.View(viewModel);
+        }
+
+        public async Task<IActionResult> Confirmation(UserTicketViewModel viewModel)
+        {
             return this.View(viewModel);
         }
 
