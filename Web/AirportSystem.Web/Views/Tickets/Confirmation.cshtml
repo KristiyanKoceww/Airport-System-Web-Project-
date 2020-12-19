@@ -1,0 +1,56 @@
+﻿@model UserTicketViewModel
+@{
+    this.ViewData["Title"] = "Confirm your order";
+}
+<link href="~/css/Confirmation.css" rel="stylesheet" />
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Confirm Order</title>
+    <link rel="stylesheet" type="text/css" href="buynow.css">
+</head>
+<body class="text-body">
+    <h1>confirm details</h1>
+    <div class="orderDetails" style="background-color: white">
+        <div>
+            <h3 class="bold">Order details</h3>
+
+            <h3>Flight : @Model.FlightId </h3>
+            <h3>From: @Model.Origin</h3>
+            <h3>To: @Model.Destination</h3>
+            <h3>Price : @Model.Price</h3>
+            <h3>Ticket: @Model.TicketRule , Type: @Model.TicketType</h3>
+            <h3>Seat: @Model.SeatNumber</h3>
+            <h3>Departure Time : @Model.FlightDepartureTime</h3>
+            <h3>Arrival Time: @Model.FlightArrivalTime</h3>
+        </div>
+        <br>
+
+        <div>
+            <h3 class="bold">Passenger details</h3>
+            <hr>
+            <label>Name</label>
+            <h3>@Model.PassengerName</h3>
+            <label>Travel id</label>
+            <h3>@Model.PassengerId</h3>
+        </div>
+        <br>
+
+        <div>
+            <h3 class="bold">Baggage information</h3>
+            <hr>
+            <label>Type</label>
+            <h3>@Model.LuggageType</h3>
+            <label>Weight</label>
+            <h3>@Model.LuggageWeight</h3>
+            <label>Luggage id</label>
+            <h3>@Model.LuggageId</h3>
+        </div>
+        <br>
+    </div>
+
+</body>
+@Html.ActionLink("Confirm", "Charge", "Stripe", new { price = Model.Price, passengerId = Model.PassengerId, ticketId = Model.TicketId });
+@Html.ActionLink("Back", "All", "Flights");
+</html>
