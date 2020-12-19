@@ -2,6 +2,8 @@
 {
     using System;
     using System.IO;
+    using System.Linq;
+    using System.Threading.Tasks;
 
     using AirportSystem.Data.Tickets;
     using AirportSystem.Services.Data.Flights;
@@ -9,11 +11,10 @@
     using AirportSystem.Services.Data.Luggages;
     using AirportSystem.Services.Data.Passengers;
     using AirportSystem.Services.Data.Tickets;
+    using AirportSystem.Services.Messaging;
     using AirportSystem.Web.ViewModels;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
-    using Syncfusion.HtmlConverter;
-    using Syncfusion.Pdf;
 
     public class TicketsController : Controller
     {
@@ -21,17 +22,23 @@
         private readonly IFlightService flightService;
         private readonly IPassengersService passengersService;
         private readonly IHostingEnvironment hostingEnvironment;
+        private readonly IEmailSender emailSender;
+        private readonly ILuggageService luggageService;
 
         public TicketsController(
             ITicketService ticketService,
             IFlightService flightService,
             IPassengersService passengersService,
-            IHostingEnvironment hostingEnvironment)
+            IHostingEnvironment hostingEnvironment,
+            IEmailSender emailSender,
+            ILuggageService luggageService)
         {
             this.ticketService = ticketService;
             this.flightService = flightService;
             this.passengersService = passengersService;
             this.hostingEnvironment = hostingEnvironment;
+            this.emailSender = emailSender;
+            this.luggageService = luggageService;
         }
 
         public IActionResult BookFlight(int id)
@@ -60,13 +67,19 @@
             return this.RedirectToAction("Charge", "Stripe", new { ticketId, flight.Id, flight.Price });
         }
 
-        public IActionResult UserTicket(Ticket ticket)
+        public IActionResult UserTicket(decimal price, int passengerId, int ticketId)
         {
-            var passenger = this.passengersService.GetPassengerById(ticket.PassengerId);
+            var ticket = this.ticketService.GetTicketById(ticketId);
+            var passenger = this.passengersService.GetPassengerById(passengerId);
+            var luggage = this.luggageService.GetLuggageByPassengerId(passengerId);
+
             var flight = this.flightService.GetFlightById(ticket.FlightId);
 
             var viewModel = new UserTicketViewModel()
             {
+                LuggageType = luggage.LuggageType.ToString(),
+                LuggageWeight = luggage.Weight,
+                TicketId = ticketId,
                 PassengerId = ticket.PassengerId,
                 PassengerName = passenger.FirstName,
                 Price = flight.Price,
@@ -84,45 +97,14 @@
             return this.View(viewModel);
         }
 
-        public IActionResult GeneratePdf(string url)
+        [HttpPost]
+        public async Task<IActionResult> SendToEmail(int id)
         {
-            HtmlToPdfConverter converter = new HtmlToPdfConverter();
+            var user = this.User;
 
-            WebKitConverterSettings settings = new WebKitConverterSettings();
+            // await this.emailSender.SendEmailAsync("Airport System", "Admin", "koceww@mail.com", "Ticket", html.ToString());
 
-            settings.WebKitPath = Path.Combine(this.hostingEnvironment.ContentRootPath, "QtBinariesWindows");
-
-            converter.ConverterSettings = settings;
-
-            // PdfDocument pdfDocument = converter.Convert(htmlString, url);
-
-            PdfDocument pdfDocument = converter.Convert(url);
-
-            MemoryStream ms = new MemoryStream();
-            pdfDocument.Save(ms);
-            pdfDocument.Close(true);
-
-            ms.Position = 0;
-
-            FileStreamResult fileStreamResult = new FileStreamResult(ms, "application/pdf");
-            fileStreamResult.FileDownloadName = "Ticket.pdf";
-
-            return fileStreamResult;
+            return this.Redirect("/Home/Index");
         }
-
-        //[HttpPost]
-        //public FileResult Export(string GridHtml)
-        //{
-        //    using (MemoryStream stream = new MemoryStream())
-        //    {
-        //        StringReader sr = new StringReader(GridHtml);
-        //        Document pdfDoc = new Document(PageSize.A4, 10f, 10f, 100f, 0f);
-        //        PdfWriter writer = PdfWriter.GetInstance(pdfDoc, stream);
-        //        pdfDoc.Open();
-        //        XMLWorkerHelper.GetInstance().ParseXHtml(writer, pdfDoc, sr);
-        //        pdfDoc.Close();
-        //        return this.File(stream.ToArray(), "application/pdf", "Grid.pdf");
-        //    }
-        //}
     }
 }

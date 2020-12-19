@@ -1,72 +1,184 @@
 ﻿@model UserTicketViewModel
 
-<link href="~/ticket.css" rel="stylesheet" />
-
-<body>
-    <div class="box" id="Grid">
-        <div id="pdfContainer">
-            <div class="ticket">
-                <span class="airline">Airport</span>
-                <span class="airline airlineslip">Airport</span>
-                <span class="boarding">Boarding pass</span>
-                <div class="content">
-                    <span class="font-weight-bold text-uppercase"><br />@Model.Origin</span>
-                    <span class="plane">
-                        <?xml version="1.0" ?>
-                        <svg clip-rule="evenodd" fill-rule="evenodd" height="60" width="60" image-rendering="optimizeQuality"
-                             shape-rendering="geometricPrecision" text-rendering="geometricPrecision"
-                             viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                            <g stroke="#222">
-                                <line fill="none" stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390" />
-                                <path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z"
-                                      fill="#222" stroke-linejoin="round" stroke-width="10" />
-                            </g>
-                        </svg>
-                        <span class="font-weight-bold text-uppercase">@Model.Destination</span>
-                    </span>
-                    <span class="plane planeslip">
-                        <?xml version="1.0" ?>
-                        <svg clip-rule="evenodd" fill-rule="evenodd" height="50" width="50"
-                             image-rendering="optimizeQuality"
-                             shape-rendering="geometricPrecision"
-                             text-rendering="geometricPrecision"
-                             viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
-                            <g stroke="#222">
-                                <line fill="none"
-                                      stroke-linecap="round" stroke-width="30" x1="300" x2="55" y1="390" y2="390" />
-                                <path d="M98 325c-9 10 10 16 25 6l311-156c24-17 35-25 42-50 2-15-46-11-78-7-15 1-34 10-42 16l-56 35 1-1-169-31c-14-3-24-5-37-1-10 5-18 10-27 18l122 72c4 3 5 7 1 9l-44 27-75-15c-10-2-18-4-28 0-8 4-14 9-20 15l74 63z" fill="#222" stroke-linejoin="round" stroke-width="10" />
-                            </g>
-                        </svg>
-                    </span>
-                    <div class="sub-content">
-                        <span class="watermark">Airport</span>
-                        <span class="name">PASSENGER NAME<br /><span>@Model.PassengerName</span></span>
-                        <span class="flight">FLIGHT N&deg;<br /><span>@Model.FlightId</span></span>
-                        <span class="gate">LUGG N&deg;<br /><span>@Model.LuggageId</span></span>
-                        <span class="seat">SEAT<br /><span>@Model.SeatNumber</span></span>
-                        <span class="boardingtime">BOARDING TIME<br /><span>@Model.FlightDepartureTime</span></span>
-                        @*<span class="text-justify">ARRIVAL TIME<br /><span>@Model.FlightArrivalTime</span></span>*@
-
-                        <span class="flight flightslip">TICKET<br /><span>@Model.TicketRule</span></span>
-                        <span class="seat seatslip">TYPE<br /><span>@Model.TicketType</span></span>
-                        <span class="name nameslip">PRICE<br /><span>@Model.Price</span></span>
-                    </div>
-                </div>
-                <div class="barcode"></div>
-                <div class="barcode slip"></div>
-            </div>
-        </div>
-    </div>
-   
-</body>
 
 
+<div style="background-color: white">
+    <table cellspacing="0" cellpadding="0" width="100%" style="border: 1px solid #000; max-width: 80%; margin: 0 auto; font-family: 'Montserrat', sans-serif; padding: 0 20px; " id="element-to-print">
+        <thead>
+            <tr>
+                <th style="padding: 20px 0 20px 15px; text-align: left; font-weight: 400; border-bottom: 1px solid #ccc;">
+                    <h1 style="color: #5191fa; margin:  0 0 5px; text-transform: uppercase; font-size: 35px;">E-Ticket</h1>
+                    <p style="margin: 0; font-size: 18px;">Flight id : @Model.FlightId</p>
+                </th>
+                <th align="right" style="padding-right: 15px; border-bottom: 1px solid #ccc;">
+                    <img src="~/Image/plane.jpg" alt="TripDesire" style="background-color: transparent" />
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td colspan="2" style="padding:15px 15px 20px;font-size:16px;">
+                    <p style="font-size:20px; margin: 0 0 5px;">Dear <strong>@Model.PassengerName</strong>,</p><p style="font-size:16px; margin: 0;">Congratulations, Your ticket has been booked successfully.</p>
+                </td>
+            </tr>
+            <!--Departure Flight Details Start-->
+            <tr>
+                <td colspan="2">
+                    <h4 style="font-size: 16px; background-color: #3782fb; text-align: center; padding: 5px 15px; color: #fff; font-weight: 400; margin: 10px 0 0px; letter-spacing: 1px;">@DateTime.Now Airport System</h4>
+                </td>
+            </tr>
+            <tr>
+                <td style="padding-right: 15px; padding-top: 15px;" colspan="2">
+                    <h3 style="text-transform: uppercase; margin: 0 0 5px;">Flight Details:</h3>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="padding:0;">
+                    <table cellpadding="0" cellspacing="0" width="100%" style="border-top:1px solid #ccc;padding:15px;border-bottom:1px solid #ccc">
+                        <tbody>
+                            <tr>
+                                <td style="font-size:18px; width: 25%;">
+                                    <p style="font-size:16px; margin: 5px 0 0; font-weight: 600;">@Model.Origin</p>
+                                </td>
+                                <td style="width: 25%; text-align: right; padding: 0 5px;">
+                                    <p style="margin:5px 0;font-weight:600; font-size: 18px; text-transform: uppercase;">@Model.Origin</p>
+                                    <span style="font-size:15px">@Model.FlightDepartureTime</span>
+                                </td>
+                                <td style="width: 25%; text-align: center;">
+                                    @{
+                                        var flightDuration = Model.FlightArrivalTime.Hour - Model.FlightDepartureTime.Hour;
+                                    }
+                                    <p style="margin:5px 0;font-weight:600; font-size: 18px;">@flightDuration</p>
+                                    <p style="font-size:15px; margin: 0;">@Model.TicketType</p>
+                                </td>
+                                <td style="width: 25%; padding: 0 5px;">
+                                    <p style="margin:5px 0;font-weight:600; font-size: 18px; text-transform: uppercase;">@Model.Destination</p>
+                                    <span style="font-size:15px">@Model.FlightArrivalTime</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
 
-<h1>
-    @Html.ActionLink("Download ticket", "GeneratePdf", "Tickets", new { url = Context.Request.Scheme + "://" + Context.Request.Host + Context.Request.Path + Context.Request.QueryString }, new { @class = "btn btn-primary", @role = "button" })
-    </h1>
-@*Html.ActionLink("Download ticket", "PdfSharpConvert", "Tickets", new { html = "babdga" }, new { @class = "btn btn-primary", @role = "button" })*@
+            <tr>
+                <td style="padding-right: 15px; padding-top: 35px;" colspan="2">
+                    <h3 style="text-transform: uppercase; margin: 0 0 5px;">Passenger Details:</h3>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <table cellspacing="0" cellpadding="0" width="100%" style="border: 1px solid #ccc; margin: 0 0 25px;">
+                        <thead>
+                            <tr>
+                                <th style="font-weight: 400; background-color: #5191fa; color: #fff; padding: 10px 15px; width: 30%">
+                                    Name
+                                </th>
+                                <th style="font-weight: 400; background-color: #5191fa; color: #fff; padding: 10px 15px; border-left: 1px solid #fff; width: 10%;">
+                                    Passenger Id
+                                </th>
+                                <th style="font-weight: 400; background-color: #5191fa; color: #fff; padding: 10px 15px; border-left: 1px solid #fff; width: 25%;">
+                                    Ticket Number
+                                </th>
+                                <th style="font-weight: 400; background-color: #5191fa; color: #fff; padding: 10px 15px; border-left: 1px solid #fff; width: 10%;">
+                                    Seat Number
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-size: 17px; padding: 15px; text-align: center;">
+                                    @Model.PassengerName
+                                </td>
+                                <td style="font-size: 17px; padding: 15px; text-align: center; border-left: 1px solid #ccc;">
+                                    @Model.PassengerId
+                                </td>
+                                <td style="font-size: 17px; padding: 15px; text-align: center; border-left: 1px solid #ccc;">
+                                    @Model.TicketId
+                                </td>
+                                <td style="font-size: 17px; padding: 15px; text-align: center; border-left: 1px solid #ccc;">
+                                    @Model.SeatNumber
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
 
+            <tr>
+                <td style="padding-right: 15px; padding-top: 10px;" colspan="2">
+                    <h3 style="text-transform: uppercase; margin: 0 0 5px;">Baggage Information:</h3>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <table cellspacing="0" cellpadding="0" width="100%" style="border: 1px solid #ccc; margin: 0 0 25px; font-size: 14px;">
+                        <thead>
+                            <tr>
+                                <th style="font-weight: 400; background-color: #5191fa; color: #fff; padding: 5px 15px; width: 25%;">
+                                    Type
+                                </th>
+                                <th style="font-weight: 400; background-color: #5191fa; color: #fff; padding: 10px 15px; border-left: 1px solid #fff; width: 25%;">
+                                    Weight
+                                </th>
 
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="font-size: 14px; padding: 5px 15px; text-align: center; width: 25%;">
+                                    @Model.LuggageType
+                                </td>
+                                <td style="font-size: 14px; padding: 5px 15px; text-align: center; border-left: 1px solid #ccc; width: 25%;">
+                                    @Model.LuggageWeight
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
 
+            <tr>
+                <td style="padding-right: 15px; padding-top: 25px;" colspan="2">
+                    <h6 style="text-transform: uppercase; margin: 0 0 5px;">Information for Passengers:</h6>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <ul style="margin: 10px 0 35px; flex-wrap">
+                        <li style="margin-bottom: 10px;">Check-in: Check-in desks will close 2 hours before departure.</li>
+                        <li style="margin-bottom: 10px;">Valid ID proof needed : Please carry a valid Passport</li>
+                        <li style="margin-bottom: 10px;">To Cancel or Modify this booking, please contact us </li>
+                        <li style="margin-bottom: 10px;">Amount Paid: <strong>@Model.Price</strong>/- (inclusive of GST and all the taxes).</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<br />
+<div class="text-center">
+    <button  class="btn-block btn-primary" style="width:1115px;height:60px;font-size: 40px;color: whitesmoke" onclick="generate()">
+        Download ticket on pdf
+    </button>
+</div>
+
+@section Scripts{
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous">
+    </script>
+    <script src="html2pdf.min.js">
+    </script>
+    <script>
+        function generate() {
+            var element = document.getElementById('element-to-print');
+            html2pdf(element, {
+                margin: 10,
+                filename: 'myfile.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { scale: 2, logging: true, dpi: 192, letterRendering: true },
+                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+            });
+        }
+    </script>
+}
 

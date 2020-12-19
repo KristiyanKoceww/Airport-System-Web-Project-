@@ -17,7 +17,13 @@
 
         public string SeatNumber { get; set; }
 
+        public string LuggageType { get; set; }
+
+        public decimal LuggageWeight { get; set; }
+
         public int FlightId { get; set; }
+
+        public int TicketId { get; set; }
 
         public string Origin { get; set; }
 

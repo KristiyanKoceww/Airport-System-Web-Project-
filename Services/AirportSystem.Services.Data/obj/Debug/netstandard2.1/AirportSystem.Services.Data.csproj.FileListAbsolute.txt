@@ -15,7 +15,6 @@ C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.csprojAssemblyReference.cache
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.AssemblyInfoInputs.cache
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.AssemblyInfo.cs
-C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.csproj.CoreCompileInputs.cache
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.csproj.CopyComplete
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.dll
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.pdb
@@ -43,3 +42,8 @@ C:\Users\User\Desktop\tryToRename\Services\AirportSystem.Services.Data\obj\Debug
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Web.ViewModels.dll
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\AirportSystem.Web.ViewModels.pdb
 C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\JsonDb\Countries.json
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\dll\x86\OpenCvSharpExtern.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\dll\x86\opencv_ffmpeg400.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\dll\x64\OpenCvSharpExtern.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\bin\Debug\netstandard2.1\dll\x64\opencv_ffmpeg400_64.dll
+C:\Users\User\Desktop\Airport System WebProject\Services\AirportSystem.Services.Data\obj\Debug\netstandard2.1\AirportSystem.Services.Data.csproj.CoreCompileInputs.cache

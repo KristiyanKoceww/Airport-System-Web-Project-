@@ -13,6 +13,7 @@
     using AirportSystem.Services.Data.Airports;
     using AirportSystem.Services.Data.CitiesAndCountries;
     using AirportSystem.Services.Data.Flights;
+    using AirportSystem.Services.Data.HtmlToPdf;
     using AirportSystem.Services.Data.Luggages;
     using AirportSystem.Services.Data.Passengers;
     using AirportSystem.Services.Data.Passports;
@@ -21,6 +22,7 @@
     using AirportSystem.Services.Data.Seats;
     using AirportSystem.Services.Data.Tickets;
     using AirportSystem.Services.Data.TravelLines;
+    using AirportSystem.Services.Data.ViewRender;
     using AirportSystem.Services.Mapping;
     using AirportSystem.Services.Messaging;
     using AirportSystem.Web.StripeProps;
@@ -76,7 +78,7 @@
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
             // Application services
-            services.AddTransient<IEmailSender, NullMessageSender>();
+            services.AddTransient<IEmailSender>(x => new SendGridEmailSender(this.configuration["SendGrid:ApiKey"]));
 
             services.AddTransient<ICountryService, CountryService>();
             services.AddTransient<ICityService, CityService>();
@@ -95,6 +97,11 @@
 
             // Stripe service
             services.Configure<StripeSettings>(this.configuration.GetSection("Stripe"));
+
+            // HtmlToPdf service 
+
+            services.AddScoped<IViewRenderService, ViewRenderService>();
+            services.AddScoped<IHtmlToPdfConverter, HtmlToPdfConverter>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -127,6 +134,7 @@
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
+            //app.UseSession();
             app.UseRouting();
 
             app.UseAuthentication();

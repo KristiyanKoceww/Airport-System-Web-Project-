@@ -28,11 +28,11 @@
             this.passengersService = passengersService;
         }
 
-        public IActionResult Charge(decimal Price , int ticketId)
+        public IActionResult Charge(decimal price, int ticketId)
         {
             var viewModel = new PaymentViewModel();
 
-            viewModel.Price = Price;
+            viewModel.Price = price;
             viewModel.TicketId = ticketId;
             return this.View(viewModel);
         }
@@ -62,7 +62,7 @@
                 ReceiptEmail = paymentInputModel.StripeEmail,
                 Metadata = new Dictionary<string, string>()
                 {
-                    //{ "PassengerId", passenger.PassengerId.ToString() },
+                    { "PassengerId", passenger.PassengerId.ToString() },
                     { "TicketId" , paymentInputModel.TicketId.ToString() },
                 },
             });
@@ -80,7 +80,7 @@
                 };
 
                 this.paymentService.Create(paymentModel);
-                return this.View();
+                return this.RedirectToAction("UserTicket", "Tickets", new { price = paymentModel.Amount, passengerId = paymentModel.PassengerId, ticketId = paymentModel.TicketId });
             }
 
             return this.View();

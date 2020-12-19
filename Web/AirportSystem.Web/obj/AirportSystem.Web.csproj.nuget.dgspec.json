@@ -399,9 +399,17 @@
               "target": "Package",
               "version": "[2.2.0, )"
             },
+            "Microsoft.AspNetCore.Mvc.Razor": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[3.1.9, )"
+            },
+            "OpenCvSharp3-AnyCPU": {
+              "target": "Package",
+              "version": "[4.0.0.20181129, )"
             },
             "StyleCop.Analyzers": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers",
@@ -904,25 +912,9 @@
               "target": "Package",
               "version": "[1.2.0-beta.205, )"
             },
-            "Syncfusion.HtmlToPdfConverter.QtWebKit.AspNet": {
-              "target": "Package",
-              "version": "[18.3.0.47, )"
-            },
-            "Syncfusion.HtmlToPdfConverter.QtWebKit.WinForms": {
-              "target": "Package",
-              "version": "[18.3.0.47, )"
-            },
             "System.Configuration.ConfigurationManager": {
               "target": "Package",
               "version": "[4.7.0, )"
-            },
-            "iTextSharp": {
-              "target": "Package",
-              "version": "[5.5.13.2, )"
-            },
-            "itextsharp.xmlworker": {
-              "target": "Package",
-              "version": "[5.5.13.2, )"
             }
           },
           "imports": [
