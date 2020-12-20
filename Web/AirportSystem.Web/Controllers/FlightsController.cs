@@ -51,7 +51,6 @@
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> GetFlightById()
         {
-            // var viewModel = new GetFlightByIdViewModel();
             return this.View();
         }
 

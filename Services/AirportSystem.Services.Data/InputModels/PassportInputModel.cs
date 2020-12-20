@@ -27,11 +27,13 @@
         [Required]
         [MinLength(3)]
         [MaxLength(30)]
+        [RegularExpression("[A-Za-z]+", ErrorMessage = "Country must contains only letters")]
         public string Country { get; set; }
 
         [Required]
         [MinLength(3)]
         [MaxLength(30)]
+        [RegularExpression("[A-Za-z]+", ErrorMessage = "Nationality must contains only letters")]
         public string Nationality { get; set; }
     }
 }

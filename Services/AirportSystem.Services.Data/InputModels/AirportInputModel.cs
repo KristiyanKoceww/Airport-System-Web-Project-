@@ -11,6 +11,7 @@
         [Required]
         [MinLength(3)]
         [MaxLength(30)]
+        [RegularExpression("[A-Za-z]+", ErrorMessage = "Name must contains only letters")]
         public string Name { get; set; }
 
         [Required]

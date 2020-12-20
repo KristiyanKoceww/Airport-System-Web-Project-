@@ -6,10 +6,12 @@
     {
         [Required]
         [MaxLength(30)]
+        [RegularExpression("[A-Za-z]+", ErrorMessage = "Name must contains only letters")]
         public string Make { get; set; }
 
         [Required]
         [MaxLength(30)]
+        [RegularExpression("[A-Za-z]+", ErrorMessage = "Name must contains only letters")]
         public string Model { get; set; }
 
         [Required]
