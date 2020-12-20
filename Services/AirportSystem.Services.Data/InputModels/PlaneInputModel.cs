@@ -8,10 +8,12 @@
     public class PlaneInputModel
     {
         [Required]
+        [MinLength(3)]
         [MaxLength(30)]
         public string Make { get; set; }
 
         [Required]
+        [MinLength(3)]
         [MaxLength(30)]
         public string Model { get; set; }
 

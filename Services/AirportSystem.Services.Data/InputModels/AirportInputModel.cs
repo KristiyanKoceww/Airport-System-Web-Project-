@@ -6,13 +6,15 @@
     using AirportSystem.Data.Models.Destinations;
     using AirportSystem.Services.Mapping;
 
-    public class AirportInputModel : IMapFrom<Airport>
+    public class AirportInputModel
     {
         [Required]
+        [MinLength(3)]
         [MaxLength(30)]
         public string Name { get; set; }
 
         [Required]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "CityId contains only digits!")]
         public int CityId { get; set; }
     }
 }

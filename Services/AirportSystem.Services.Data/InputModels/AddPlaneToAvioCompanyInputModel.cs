@@ -21,6 +21,8 @@
         [Required]
         public bool IsPlaneAvailable { get; set; }
 
+        [Required]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "AvioCompanyId contains only digits!")]
         public int AvioCompanyId { get; set; }
     }
 }

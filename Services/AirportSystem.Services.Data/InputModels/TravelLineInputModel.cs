@@ -11,10 +11,12 @@
         public int City2Id { get; set; }
 
         [Required]
+        [MinLength(3)]
         [MaxLength(40)]
         public string CityName { get; set; }
 
         [Required]
+        [MinLength(3)]
         [MaxLength(40)]
         public string City2Name { get; set; }
     }

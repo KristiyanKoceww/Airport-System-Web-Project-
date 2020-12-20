@@ -8,6 +8,7 @@
     public class PassportInputModel
     {
         [Required]
+        [RegularExpression("^[0-9]*$", ErrorMessage = "Passport Id contains only digits!")]
         [Display(Name = "Passport identification number")]
         public string Id { get; set; }
 
@@ -23,8 +24,14 @@
         [PassportDateValidationAttribute]
         public DateTime ExpiresOn { get; set; }
 
+        [Required]
+        [MinLength(3)]
+        [MaxLength(30)]
         public string Country { get; set; }
 
+        [Required]
+        [MinLength(3)]
+        [MaxLength(30)]
         public string Nationality { get; set; }
     }
 }
