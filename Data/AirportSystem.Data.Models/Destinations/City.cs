@@ -7,7 +7,6 @@
 
     public class City : BaseDeletableModel<int>
     {
-
         [Required]
         public string Name { get; set; }
 

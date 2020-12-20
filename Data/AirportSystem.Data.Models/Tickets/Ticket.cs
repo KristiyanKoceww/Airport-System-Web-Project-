@@ -8,7 +8,6 @@
 
     public class Ticket : BaseDeletableModel<int>
     {
-
         [Required]
         public int PassengerId { get; set; }
 

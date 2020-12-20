@@ -25,8 +25,7 @@
             await CreateUser(
               userManager,
               roleManager,
-              GlobalConstants.UserEmail
-              );
+              GlobalConstants.UserEmail);
         }
 
         private static async Task CreateUser(

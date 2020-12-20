@@ -69,7 +69,6 @@
             var ticketId = this.db.Tickets.Where(x => x.FlightId == id).Select(x => x.Id).FirstOrDefault();
 
             return ticketId;
-
         }
 
         public Ticket GetTicketById(int id)

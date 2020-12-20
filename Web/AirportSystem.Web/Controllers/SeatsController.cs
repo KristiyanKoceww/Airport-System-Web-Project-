@@ -1,10 +1,14 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
-    using AirportSystem.Services.Data.Seats;
-    using Microsoft.AspNetCore.Mvc;
     using System.Threading.Tasks;
 
-    public class SeatsController : BaseController
+    using AirportSystem.Services.Data.Seats;
+    using AirportSystem.Web.Areas.Administration.Controllers;
+    using Microsoft.AspNetCore.Authorization;
+    using Microsoft.AspNetCore.Mvc;
+
+    [Authorize]
+    public class SeatsController : AdminController
     {
         private readonly ISeatsService seatsService;
 

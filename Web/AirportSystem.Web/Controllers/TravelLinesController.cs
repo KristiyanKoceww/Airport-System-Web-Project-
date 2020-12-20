@@ -4,9 +4,12 @@
 
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.TravelLines;
+    using AirportSystem.Web.Areas.Administration.Controllers;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
-    public class TravelLinesController : BaseController
+    [Authorize]
+    public class TravelLinesController : AdminController
     {
         private readonly ITravelLinesService travelLinesService;
 

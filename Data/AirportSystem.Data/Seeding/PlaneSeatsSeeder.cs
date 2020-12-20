@@ -31,7 +31,6 @@
                     {
                         IsAvailable = true,
                     });
-
                 }
             }
 

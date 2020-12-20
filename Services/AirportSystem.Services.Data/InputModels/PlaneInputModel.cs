@@ -24,6 +24,5 @@
 
         [Required]
         public bool IsPlaneAvailable { get; set; }
-
     }
 }

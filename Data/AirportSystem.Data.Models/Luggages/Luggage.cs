@@ -7,7 +7,6 @@
 
     public class Luggage : BaseDeletableModel<int>
     {
-
         [Required]
         public virtual LuggageType LuggageType { get; set; }
 

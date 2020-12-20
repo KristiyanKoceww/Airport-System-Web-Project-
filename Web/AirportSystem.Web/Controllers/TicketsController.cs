@@ -14,9 +14,11 @@
     using AirportSystem.Services.Data.Tickets;
     using AirportSystem.Services.Messaging;
     using AirportSystem.Web.ViewModels;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Mvc;
 
+    [Authorize]
     public class TicketsController : Controller
     {
         private readonly ITicketService ticketService;

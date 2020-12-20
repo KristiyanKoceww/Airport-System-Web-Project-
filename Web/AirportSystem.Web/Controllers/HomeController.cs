@@ -2,8 +2,8 @@
 {
     using System.Diagnostics;
     using System.Threading.Tasks;
-    using AirportSystem.Web.ViewModels;
 
+    using AirportSystem.Web.ViewModels;
     using Microsoft.AspNetCore.Mvc;
 
     public class HomeController : BaseController

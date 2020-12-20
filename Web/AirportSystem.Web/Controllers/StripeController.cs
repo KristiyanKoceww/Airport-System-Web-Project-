@@ -3,15 +3,18 @@
     using System.Collections.Generic;
     using System.Security.Claims;
     using System.Threading.Tasks;
+
     using AirportSystem.Data.Models;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Passengers;
     using AirportSystem.Services.Data.Payments;
     using AirportSystem.Web.ViewModels;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Stripe;
 
+    [Authorize]
     public class StripeController : BaseController
     {
         private readonly UserManager<ApplicationUser> userManager;

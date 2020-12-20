@@ -21,6 +21,5 @@
         public string CityName2 { get; set; }
 
         public virtual City City2 { get; set; }
-
     }
 }

@@ -35,6 +35,7 @@
                     dbContext.Countries.Add(countries[i]);
                 }
             }
+
             await dbContext.SaveChangesAsync();
         }
     }

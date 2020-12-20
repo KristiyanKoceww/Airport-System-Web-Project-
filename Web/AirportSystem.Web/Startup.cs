@@ -1,5 +1,6 @@
 ﻿namespace AirportSystem.Web
 {
+    using System;
     using System.Reflection;
 
     using AirportSystem.Data;
@@ -95,7 +96,13 @@
 
             // Stripe service
             services.Configure<StripeSettings>(this.configuration.GetSection("Stripe"));
-            
+
+            // Sessions
+            services.AddSession(opt =>
+            {
+                opt.Cookie.HttpOnly = true;
+                opt.Cookie.IsEssential = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -128,7 +135,7 @@
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            //app.UseSession();
+            app.UseSession();
             app.UseRouting();
 
             app.UseAuthentication();

@@ -12,9 +12,11 @@
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Passengers;
     using AirportSystem.Web.ViewModels;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
 
+    [Authorize]
     public class PassengersController : Controller
     {
         private readonly UserManager<ApplicationUser> userManager;

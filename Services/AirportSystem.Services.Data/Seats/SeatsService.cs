@@ -15,7 +15,7 @@
             this.db = db;
         }
 
-        public IEnumerable<Seat> Create(bool isAvailable, int seatsCount,int planeId)
+        public IEnumerable<Seat> Create(bool isAvailable, int seatsCount, int planeId)
         {
             var seats = new List<Seat>();
             var plane = this.db.Planes.Where(x => x.Id == planeId).FirstOrDefault();

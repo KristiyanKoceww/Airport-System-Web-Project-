@@ -1,11 +1,14 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
+    using System.Threading.Tasks;
+
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Luggages;
     using AirportSystem.Web.ViewModels;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using System.Threading.Tasks;
 
+    [Authorize]
     public class LuggagesController : Controller
     {
         private readonly ILuggageService luggageService;

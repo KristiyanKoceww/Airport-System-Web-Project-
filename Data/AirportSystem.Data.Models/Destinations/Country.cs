@@ -9,7 +9,6 @@
 
     public class Country : BaseDeletableModel<int>
     {
-
         [Required]
         public string Name { get; set; }
     }

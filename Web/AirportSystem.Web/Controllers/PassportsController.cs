@@ -7,8 +7,10 @@
 
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Passports;
+    using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
 
+    [Authorize]
     public class PassportsController : Controller
     {
         private readonly IPassportService passportService;

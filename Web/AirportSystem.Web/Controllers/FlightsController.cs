@@ -1,5 +1,8 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+
     using AirportSystem.Common;
     using AirportSystem.Services.Data.Flights;
     using AirportSystem.Services.Data.InputModels;
@@ -7,8 +10,8 @@
     using AirportSystem.Web.ViewModels;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using System.Threading.Tasks;
 
+    [Authorize]
     public class FlightsController : Controller
     {
         private readonly IFlightService flightService;
@@ -45,12 +48,14 @@
             return this.View();
         }
 
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> GetFlightById()
         {
             // var viewModel = new GetFlightByIdViewModel();
             return this.View();
         }
 
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         [HttpPost]
         public async Task<IActionResult> GetFlightById(int flightId)
         {
@@ -77,9 +82,9 @@
         {
             var flights = this.flightService.SearchForFlight(flight.Origin, flight.Destination);
 
-            if (flights == null)
+            if (flights.Count() == 0)
             {
-                return this.NotFound();
+                return this.View("NotFound");
             }
 
             return this.View("SearchResults", flights);

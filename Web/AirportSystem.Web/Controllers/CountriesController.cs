@@ -1,14 +1,16 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
+    using System.Threading.Tasks;
+
     using AirportSystem.Common;
     using AirportSystem.Services.Data.CitiesAndCountries;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Web.Areas.Administration.Controllers;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using System.Threading.Tasks;
 
-    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-    public class CountriesController : Controller
+    [Authorize]
+    public class CountriesController : AdminController
     {
         private readonly ICountryService countryService;
 

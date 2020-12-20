@@ -1,15 +1,16 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
+    using System.Threading.Tasks;
+
     using AirportSystem.Common;
     using AirportSystem.Services.Data.Airports;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Web.Areas.Administration.Controllers;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
-    using System.Threading.Tasks;
 
-    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-    public class AvioCompaniesController : Controller
+    [Authorize]
+    public class AvioCompaniesController : AdminController
     {
         private readonly IAvioCompanyService avioCompanyService;
 

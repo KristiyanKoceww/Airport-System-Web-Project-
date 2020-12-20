@@ -12,7 +12,6 @@
 
     internal class AvioCompanySeeder : ISeeder
     {
-
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
             if (dbContext.AvioCompanies.Any())
