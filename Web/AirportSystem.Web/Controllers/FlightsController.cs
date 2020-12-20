@@ -7,6 +7,7 @@
     using AirportSystem.Web.ViewModels;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
 
     public class FlightsController : Controller
     {
@@ -20,38 +21,38 @@
         }
 
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             return this.View();
         }
 
         [HttpPost]
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-        public IActionResult Create(FlightInputModel flightInputModel)
+        public async Task<IActionResult> Create(FlightInputModel flightInputModel)
         {
             this.flightService.Create(flightInputModel);
             return this.View();
         }
 
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-        public IActionResult All()
+        public async Task<IActionResult> All()
         {
             return this.View();
         }
 
-        public IActionResult All2()
+        public async Task<IActionResult> All2()
         {
             return this.View();
         }
 
-        public IActionResult GetFlightById()
+        public async Task<IActionResult> GetFlightById()
         {
             // var viewModel = new GetFlightByIdViewModel();
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult GetFlightById(int flightId)
+        public async Task<IActionResult> GetFlightById(int flightId)
         {
             var flight = this.flightService.GetFlightById(flightId);
             var viewModel = new GetFlightByIdViewModel
@@ -66,13 +67,13 @@
             return this.View(viewModel);
         }
 
-        public IActionResult Search()
+        public async Task<IActionResult> Search()
         {
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult Search(SearchForFlightViewModel flight)
+        public async Task<IActionResult> Search(SearchForFlightViewModel flight)
         {
             var flights = this.flightService.SearchForFlight(flight.Origin, flight.Destination);
 

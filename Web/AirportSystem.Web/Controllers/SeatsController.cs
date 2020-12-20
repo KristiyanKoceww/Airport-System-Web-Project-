@@ -2,6 +2,7 @@
 {
     using AirportSystem.Services.Data.Seats;
     using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
 
     public class SeatsController : BaseController
     {
@@ -12,13 +13,13 @@
             this.seatsService = seatsService;
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult Create(bool isAvailable, int seatsCount, int planeId)
+        public async Task<IActionResult> Create(bool isAvailable, int seatsCount, int planeId)
         {
             this.seatsService.Create(isAvailable, seatsCount, planeId);
 

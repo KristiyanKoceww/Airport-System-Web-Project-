@@ -1,32 +1,40 @@
-﻿@{ this.Layout = null;}
-    <link href="~/Seats.css" rel="stylesheet" />
-<div id="mask">
-</div>
+﻿@model AirportSystem.Web.ViewModels.SeatsViewModel
+@inject AirportSystem.Services.Data.Seats.ISeatsService service
+@{
+    this.Layout = null;
+    var seats = this.service.GetSeatsByPlaneId(Model.PlaneId);
 
-<asp:Panel ID="PanelPop" runat="server" Style="display: none; cursor: pointer; width: 250px;
-        z-index: 111; background-color: White; position: absolute; left: 35%; top: 12%;
-        border: outset 2px gray; text-align: center; padding: 10px" class="popUp">
-    <p>
-        <asp:Label ID="Label1" runat="server" Text="Name" AssociatedControlID="txtName"></asp:Label>
-        <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator1" ControlToValidate="txtName" runat="server" Display="Dynamic" ErrorMessage="Name is required.">*</asp:RequiredFieldValidator>
-    </p>
-    <p>
-        <asp:Label ID="Label2" runat="server" Text="Phone" AssociatedControlID="txtPhone"></asp:Label>
-        <asp:TextBox ID="txtPhone" runat="server"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" ControlToValidate="txtPhone" runat="server" Display="Dynamic" ErrorMessage="Phone is required.">*</asp:RequiredFieldValidator>
-    </p>
-    <p>
-        <asp:Label ID="Label3" runat="server" Text="Amount" AssociatedControlID="txtAmount"></asp:Label>
-        <asp:TextBox ID="txtAmount" runat="server" ReadOnly="true"></asp:TextBox>
-        <asp:RequiredFieldValidator ID="RequiredFieldValidator3" runat="server" ControlToValidate="txtAmount" Display="Dynamic" ErrorMessage="Amount is required.">*</asp:RequiredFieldValidator>
-    </p>
-    <p>
-        <asp:Label ID="Label4" runat="server" Text="Seat" AssociatedControlID="txtSeatNo"></asp:Label>
-        <asp:TextBox ID="txtSeatNo" runat="server" ReadOnly="true"></asp:TextBox>
-    </p>
-    <p>
-        <asp:Button ID="btnSave" runat="server" Text="Save" OnClick="btnSave_Click" />
-        <input type="button" id="btnCancel" value="Cancel" onclick="HidePopup();" />
-    </p>
-</asp:Panel>
+    var rows = seats.Count() / 6;
+}
+
+<link href="https://dl.dropboxusercontent.com/u/30657696/practice/reset.css" rel="stylesheet">
+<link href="~/Seats.css" rel="stylesheet" />
+<script src="~/js/Seats.js"></script>
+
+<body>
+    <header class="seats-header">
+        <h1>RESERVE A SEAT</h1>
+    </header>
+    <section id="seats">
+
+        <div class="seating-chart">
+            
+            <ol class="first-class">
+                @for (int i = 1; i <= rows; i++)
+                {
+                    <li class="row">
+                        <ol>
+                            <li><a class="available" data-seat="1a" >@i A</a></li>
+                            <li><a class="available" data-seat="1b" >@i B</a></li>
+                            <li><a class="available" data-seat="1c" >@i C</a></li>
+                            <li><a class="available" data-seat="1d" >@i D</a></li>
+                            <li><a class="available" data-seat="1d" >@i E</a></li>
+                            <li><a class="available" data-seat="1d" >@i F</a></li>
+                        </ol>
+                    </li>
+                }
+            </ol>
+        </div>
+    </section>
+</body>
+

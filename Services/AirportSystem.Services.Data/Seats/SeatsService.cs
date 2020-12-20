@@ -42,12 +42,9 @@
 
         public IEnumerable<Seat> GetSeatsByPlaneId(int planeId)
         {
-            throw new System.NotImplementedException();
-        }
+            var seats = this.db.Seats.Where(x => x.PlaneId == planeId).ToList();
 
-        //public IEnumerable<Seat> GetSeatsByPlaneId(int planeId)
-        //{
-        //    var seats = this.db.Planes.Where(x=>x.Seats)
-        //}
+            return seats;
+        }
     }
 }

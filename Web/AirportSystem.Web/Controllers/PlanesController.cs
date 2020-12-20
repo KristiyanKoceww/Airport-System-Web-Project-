@@ -5,6 +5,7 @@
     using AirportSystem.Services.Data.Planes;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
 
     [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class PlanesController : Controller
@@ -16,19 +17,19 @@
             this.planeService = planeService;
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult Create(PlaneInputModel planeInputModel)
+        public async Task<IActionResult> Create(PlaneInputModel planeInputModel)
         {
             this.planeService.Create(planeInputModel);
             return this.View();
         }
 
-        public IActionResult All()
+        public async Task<IActionResult> All()
         {
             return this.View();
         }

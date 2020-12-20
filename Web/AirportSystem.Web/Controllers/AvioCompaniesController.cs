@@ -6,6 +6,7 @@
     using AirportSystem.Web.Areas.Administration.Controllers;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
 
     [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class AvioCompaniesController : Controller
@@ -17,30 +18,30 @@
             this.avioCompanyService = avioCompanyService;
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult Create(AvioCompanyInputModel input)
+        public async Task<IActionResult> Create(AvioCompanyInputModel input)
         {
             this.avioCompanyService.Create(input);
             return this.View();
         }
 
-        public IActionResult All()
+        public async Task<IActionResult> All()
         {
             return this.View();
         }
 
-        public IActionResult AddPlane()
+        public async Task<IActionResult> AddPlane()
         {
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult AddPlane(AddPlaneToAvioCompanyInputModel addPlaneToAvioCompanyInputModel)
+        public async Task<IActionResult> AddPlane(AddPlaneToAvioCompanyInputModel addPlaneToAvioCompanyInputModel)
         {
             this.avioCompanyService.AddPlanes(addPlaneToAvioCompanyInputModel);
             return this.View();

@@ -18,13 +18,13 @@
             this.passportService = passportService;
         }
 
-        public IActionResult Edit()
+        public async Task<IActionResult> Edit()
         {
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult Edit(PassportInputModel input)
+        public async Task<IActionResult> Edit(PassportInputModel input)
         {
             this.passportService.Edit(input);
             return this.View();

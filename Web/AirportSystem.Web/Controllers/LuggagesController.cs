@@ -4,6 +4,7 @@
     using AirportSystem.Services.Data.Luggages;
     using AirportSystem.Web.ViewModels;
     using Microsoft.AspNetCore.Mvc;
+    using System.Threading.Tasks;
 
     public class LuggagesController : Controller
     {
@@ -14,25 +15,25 @@
             this.luggageService = luggageService;
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult Create(LuggageInputModel luggageInputModel)
+        public async Task<IActionResult> Create(LuggageInputModel luggageInputModel)
         {
             this.luggageService.Create(luggageInputModel);
             return this.View();
         }
 
-        public IActionResult Search()
+        public async Task<IActionResult> Search()
         {
             return this.View();
         }
 
         [HttpPost]
-        public IActionResult Search(int luggageId)
+        public async Task<IActionResult> Search(int luggageId)
         {
             var luggage = this.luggageService.GetLuggageById(luggageId);
             return this.View();

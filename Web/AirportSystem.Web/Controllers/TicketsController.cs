@@ -45,7 +45,7 @@
             this.seatsService = seatsService;
         }
 
-        public IActionResult BookFlight(int id)
+        public async Task<IActionResult> BookFlight(int id)
         {
             var flight = this.flightService.GetFlightById(id);
 
@@ -58,7 +58,7 @@
         }
 
         [HttpPost]
-        public IActionResult BookFlight(TicketInputModel input)
+        public async Task<IActionResult> BookFlight(TicketInputModel input)
         {
             this.ticketService.Create(input, input.FlightId);
 
@@ -112,7 +112,7 @@
             return this.RedirectToAction("Confirmation", viewModel);
         }
 
-        public IActionResult UserTicket(decimal price, int passengerId, int ticketId)
+        public async Task<IActionResult> UserTicket(decimal price, int passengerId, int ticketId)
         {
             var ticket = this.ticketService.GetTicketById(ticketId);
             var passenger = this.passengersService.GetPassengerById(passengerId);
@@ -147,11 +147,17 @@
             return this.View(viewModel);
         }
 
-        public async Task<IActionResult> BookSeats()
+        public async Task<IActionResult> BookSeats(int planeId)
         {
-           //var seats = this.seatsService
+            var seats = this.seatsService.GetSeatsByPlaneId(planeId);
 
-            return this.View();
+            var viewModel = new SeatsViewModel
+            {
+                PlaneId = planeId,
+                IsAvailable = true,
+            };
+
+            return this.View(viewModel);
         }
     }
 }

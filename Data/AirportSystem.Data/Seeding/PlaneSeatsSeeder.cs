@@ -12,6 +12,11 @@
     {
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
+            if (dbContext.Seats.Any())
+            {
+                return;
+            }
+
             var planes = dbContext.Planes.ToList();
 
             Random random = new Random();

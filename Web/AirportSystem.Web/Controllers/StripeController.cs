@@ -2,7 +2,7 @@
 {
     using System.Collections.Generic;
     using System.Security.Claims;
-
+    using System.Threading.Tasks;
     using AirportSystem.Data.Models;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Passengers;
@@ -28,7 +28,7 @@
             this.passengersService = passengersService;
         }
 
-        public IActionResult Charge(decimal price, int ticketId)
+        public async Task<IActionResult> Charge(decimal price, int ticketId)
         {
             var viewModel = new PaymentViewModel();
 
@@ -38,7 +38,7 @@
         }
 
         [HttpPost]
-        public IActionResult Charge(PaymentModel paymentInputModel)
+        public async Task<IActionResult> Charge(PaymentModel paymentInputModel)
         {
             var customers = new CustomerService();
             var charges = new ChargeService();

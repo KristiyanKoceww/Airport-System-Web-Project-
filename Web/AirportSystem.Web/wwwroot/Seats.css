@@ -1,21 +1,107 @@
-﻿#mask {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    z-index: 4;
-    opacity: 0.4;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)"; /* first!*/
-    filter: alpha(opacity=40); /* second!*/
-    background-color: gray;
-    display: none;
-    width: 100%;
-    height: 100%;
+﻿body {
+    background-color: rgba(77,64,50,0.25);
+    color: #fff;
+    font-family: 'Lucida Sans';
+    text-align: center;
+    width: 800px;
 }
 
-.popUp label {
-    width: 4em;
-    float: left;
-    text-align: right;
-    margin-right: 0em;
-    display: block;
+a {
+    text-decoration: none
 }
+
+h1, h3 {
+    text-transform: uppercase;
+}
+
+h1 {
+    color: #444;
+}
+
+h3 {
+    color: #cc3e2e;
+}
+
+#seats .seating-chart h3 {
+    font: bold 1.3em "YanoneKaffeesatzBold", "Lucida Sans", Geneva, sans-serif;
+}
+
+#seats ol ol li {
+    display: inline-block;
+    margin-bottom: 5px;
+    margin-top: 0;
+}
+
+#seats ol ol a {
+    display: inline-block;
+    width: 38px;
+    background: rgba(180,180,180,.5);
+    border-radius: 5px;
+    font: bold 1.2em/35px 'Lucida Sans';
+    color: rgba(176, 162, 136, 1);
+}
+
+.row, .row ol {
+    margin: 0px;
+}
+
+ol.first-class li.row li {
+    height: 40px;
+}
+
+ol.economy-class li.row li {
+    height: 40px;
+}
+
+#seats ol.first-class a {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+}
+
+#seats ol ol a.available {
+    border: 0;
+    border-bottom: 3px solid rgba(50,50,50,.3);
+    background: rgba(100,100,100,.5);
+    color: rgba(230, 230, 230, 1);
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+    box-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+#seats ol ol a.selected {
+    color: rgba(230, 230, 230, 1);
+    border-bottom: 0px solid rgba(50,50,50,.3);
+    background: rgba(230,50,50,.7);
+    -webkit-transform: translate(0,2px);
+}
+
+#seats .first-class ol li:nth-child(2) {
+    margin-right: 15px;
+}
+
+#seats .economy-class ol li:nth-child(3) {
+    margin-right: 15px;
+}
+
+#flight-navigation li {
+    display: inline-block;
+}
+
+    #flight-navigation li a {
+        font: 1em/40px normal 'Lucida Sans';
+        color: rgba(230, 230, 230, 1);
+        text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+        display: block;
+        margin: 0 auto;
+        height: 40px;
+        width: 120px;
+        border-radius: 4px;
+        border: 1px solid rgba(10,10,10,1);
+        background: #98a6a7 url('https://d2uh6sdzjue8na.cloudfront.net/assets/bg-btn-419e9015b95dca1625fe984c85d38aaa.png');
+        -webkit-box-shadow: inset 1px 1px 0 0 rgba(255,255,255,0.3);
+    }
+
+        #flight-navigation li a:hover {
+            background: rgba(225, 149,109, 1);
+        }
