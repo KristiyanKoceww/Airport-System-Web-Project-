@@ -18,7 +18,7 @@
 
             for (int i = 0; i < planes.Count; i++)
             {
-                var count = random.Next(70, 100);
+                var count = random.Next(40, 80);
 
                 for (int k = 0; k <= count; k++)
                 {

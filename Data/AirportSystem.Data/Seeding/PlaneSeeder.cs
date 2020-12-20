@@ -19,15 +19,15 @@
                 return;
             }
 
-            var avioCompanies = new List<Plane>();
+            var planes = new List<Plane>();
 
             using (StreamReader r = File.OpenText(@"C:\Users\User\Desktop\Airport System WebProject\Data\AirportSystem.Data\JsonDb\Planes.json"))
             {
                 string json = r.ReadToEnd();
-                avioCompanies = JsonConvert.DeserializeObject<List<Plane>>(json);
+                planes = JsonConvert.DeserializeObject<List<Plane>>(json);
             }
 
-            await dbContext.Planes.AddRangeAsync(avioCompanies);
+            await dbContext.Planes.AddRangeAsync(planes);
 
             await dbContext.SaveChangesAsync();
         }

@@ -7,5 +7,7 @@
     public interface ISeatsService
     {
         IEnumerable<Seat> Create(bool isAvailable, int seatsCount,int planeId);
+
+        IEnumerable<Seat> GetSeatsByPlaneId(int planeId);
     }
 }

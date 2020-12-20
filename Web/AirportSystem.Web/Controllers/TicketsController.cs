@@ -10,6 +10,7 @@
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Luggages;
     using AirportSystem.Services.Data.Passengers;
+    using AirportSystem.Services.Data.Seats;
     using AirportSystem.Services.Data.Tickets;
     using AirportSystem.Services.Messaging;
     using AirportSystem.Web.ViewModels;
@@ -24,6 +25,7 @@
         private readonly IHostingEnvironment hostingEnvironment;
         private readonly IEmailSender emailSender;
         private readonly ILuggageService luggageService;
+        private readonly ISeatsService seatsService;
 
         public TicketsController(
             ITicketService ticketService,
@@ -31,7 +33,8 @@
             IPassengersService passengersService,
             IHostingEnvironment hostingEnvironment,
             IEmailSender emailSender,
-            ILuggageService luggageService)
+            ILuggageService luggageService,
+            ISeatsService seatsService)
         {
             this.ticketService = ticketService;
             this.flightService = flightService;
@@ -39,6 +42,7 @@
             this.hostingEnvironment = hostingEnvironment;
             this.emailSender = emailSender;
             this.luggageService = luggageService;
+            this.seatsService = seatsService;
         }
 
         public IActionResult BookFlight(int id)
@@ -141,6 +145,13 @@
         public async Task<IActionResult> Confirmation(UserTicketViewModel viewModel)
         {
             return this.View(viewModel);
+        }
+
+        public async Task<IActionResult> BookSeats()
+        {
+           //var seats = this.seatsService
+
+            return this.View();
         }
     }
 }

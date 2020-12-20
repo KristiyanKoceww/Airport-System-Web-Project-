@@ -39,5 +39,15 @@
 
             return seats;
         }
+
+        public IEnumerable<Seat> GetSeatsByPlaneId(int planeId)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        //public IEnumerable<Seat> GetSeatsByPlaneId(int planeId)
+        //{
+        //    var seats = this.db.Planes.Where(x=>x.Seats)
+        //}
     }
 }
