@@ -1,5 +1,6 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
+
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -71,8 +72,13 @@
             return this.View(viewModel);
         }
 
-        public async Task<IActionResult> Search()
+        public async Task<IActionResult> Search(string origin, string destinaton)
         {
+            var query = this.HttpContext.Response;
+            var query2 = this.HttpContext.Request;
+            this.ViewBag.From = origin;
+            this.ViewBag.To = destinaton;
+
             return this.View();
         }
 
