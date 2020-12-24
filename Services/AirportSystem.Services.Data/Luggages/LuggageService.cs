@@ -2,7 +2,7 @@
 {
     using System;
     using System.Linq;
-
+    using System.Threading.Tasks;
     using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
 
@@ -19,6 +19,7 @@
         {
             var luggage = new Luggage()
             {
+                PassengerFirstName = luggageInputModel.PassengerFirstName,
                 Weight = luggageInputModel.Weight,
                 LuggageType = (LuggageType)Enum.Parse(typeof(LuggageType), luggageInputModel.LuggageType),
                 PassengerId = luggageInputModel.PassengerId,

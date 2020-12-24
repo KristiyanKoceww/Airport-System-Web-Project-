@@ -13,6 +13,8 @@
         [Required]
         public int PassengerId { get; set; }
 
+        public string PassengerFirstName { get; set; }
+
         public virtual Passenger Passenger { get; set; }
 
         [Required]

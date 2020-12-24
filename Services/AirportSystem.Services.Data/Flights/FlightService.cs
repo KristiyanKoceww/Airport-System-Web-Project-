@@ -17,9 +17,14 @@
             this.db = db;
         }
 
+        public void AddPassengerToFlight(Flight flight, Passenger passenger)
+        {
+            flight.Passengers.Add(passenger);
+            this.db.SaveChanges();
+        }
+
         public void Create(FlightInputModel flightInputModel)
         {
-            // TODO think how to map others properties
             var flight = new Flight()
             {
                 DepartureTime = flightInputModel.DepartureTime,
@@ -41,6 +46,13 @@
             this.db.SaveChanges();
         }
 
+        public IEnumerable<Flight> FlightsByDestination(string destination)
+        {
+            var flights = this.db.Flights.Where(x => x.TravelLineCity2Name == destination).ToList();
+
+            return flights;
+        }
+
         public IEnumerable<AllFlightsViewModel> GetAll()
         {
             var flights = this.db.Flights.Select(x => new AllFlightsViewModel()
@@ -56,6 +68,8 @@
                 PlaneName = x.Plane.Make,
                 TravelLine = x.TravelLine,
                 Price = x.Price,
+                PlaneSeatsCount = x.Plane.Seats.Count,
+                FreeSeats = x.Plane.Seats.Count - x.Passengers.Count,
             }).ToList();
 
             return flights;

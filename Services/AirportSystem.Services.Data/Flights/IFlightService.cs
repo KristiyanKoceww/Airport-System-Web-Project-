@@ -9,7 +9,11 @@
 
     public interface IFlightService
     {
+        void AddPassengerToFlight(Flight flight, Passenger passenger);
+
         void Create(FlightInputModel flightInputModel);
+
+        IEnumerable<Flight> FlightsByDestination(string destination);
 
         Flight GetFlightById(int flightId);
 

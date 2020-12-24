@@ -8,14 +8,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-    @*
-        <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
-        <meta charset="utf-8" />
-             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-            <link href="~/css/home.css" rel="stylesheet" />
-                 <link href="~/css/site.css" rel="stylesheet" />
-                 <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />*@
+    @*<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="~/css/home.css" rel="stylesheet" />
+    <link href="~/css/site.css" rel="stylesheet" />
+    <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />*@
 
 
 
@@ -44,8 +44,8 @@
     <link href="~/assets/css/themify-icons.css" rel="stylesheet" />
 
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
-
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+   
+    <link href="~/Table.css" rel="stylesheet" />
 
 </head>
 
@@ -62,7 +62,6 @@
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
                     <div class="column">
-
                         <ul class="navbar-nav flex-grow-1">
                             @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
                             {
@@ -134,9 +133,7 @@
                                     </div>
                                 </li>
                                 <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Add
-                                    </a>
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add</a>
                                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <a class="nav-link text-dark" asp-area="" asp-controller="Cities" asp-action="Add"><b>Add new city</b></a>
                                         <a class="nav-link text-dark" asp-area="" asp-controller="Countries" asp-action="Add"><b>Add country</b></a>
@@ -181,12 +178,6 @@
         <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
         <script src="~/js/site.min.js" asp-append-version="true"></script>
         <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" asp-append-version="true"></script>*@
-
-
-
-
-
-
 
 
     <!-- All JS Custom Plugins Link Here here -->

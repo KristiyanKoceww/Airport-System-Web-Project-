@@ -57,28 +57,28 @@
 
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         [HttpPost]
-        public async Task<IActionResult> GetFlightById(int flightId)
+        public async Task<IActionResult> GetFlightById(int Id)
         {
-            var flight = this.flightService.GetFlightById(flightId);
+            var flight = this.flightService.GetFlightById(Id);
+
             var viewModel = new GetFlightByIdViewModel
             {
+                Id = flight.Id,
                 PlaneId = flight.PlaneId,
                 FlightStatus = flight.FlightStatus,
                 DepartureTime = flight.DepartureTime,
                 ArrivalTime = flight.ArrivalTime,
                 FlightDuration = flight.FlightDuration,
+                TravelLineCityName = flight.TravelLineCityName,
+                TravelLineCity2Name = flight.TravelLineCity2Name,
+                Price = flight.Price,
             };
 
-            return this.View(viewModel);
+            return this.View("GetFlightByIdResult", viewModel);
         }
 
         public async Task<IActionResult> Search(string origin, string destinaton)
         {
-            var query = this.HttpContext.Response;
-            var query2 = this.HttpContext.Request;
-            this.ViewBag.From = origin;
-            this.ViewBag.To = destinaton;
-
             return this.View();
         }
 
@@ -86,6 +86,18 @@
         public async Task<IActionResult> Search(SearchForFlightViewModel flight)
         {
             var flights = this.flightService.SearchForFlight(flight.Origin, flight.Destination);
+
+            if (flights.Count() == 0)
+            {
+                return this.View("NotFound");
+            }
+
+            return this.View("SearchResults", flights);
+        }
+
+        public async Task<IActionResult> SearchByDestination(string destination)
+        {
+            var flights = this.flightService.FlightsByDestination(destination);
 
             if (flights.Count() == 0)
             {

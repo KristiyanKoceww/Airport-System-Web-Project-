@@ -1,7 +1,7 @@
-﻿<link href="~/allFlights.css" rel="stylesheet" />
+﻿
 @inject AirportSystem.Services.Data.Flights.IFlightService service
 @using AirportSystem.Data.Tickets
-@model AirportSystem.Web.ViewModels.ComplexViewModel
+@*@model AirportSystem.Web.ViewModels.ComplexViewModel*@
 
 @{
     var flights = this.service.GetAll();
@@ -20,6 +20,8 @@
                 <th>Flight Duration</th>
                 <th>Flight Status</th>
                 <th>Price</th>
+                <th>Seats left</th>
+                <th>Free seats</th>
                 <th>Book</th>
             </tr>
         </thead>
@@ -36,11 +38,14 @@
                     <td>@item.FlightDuration</td>
                     <td>@item.FlightStatus</td>
                     <td>@item.Price</td>
+                    <td>@item.PlaneSeatsCount</td>
+                    <td>@item.FreeSeats</td>
                     <td>
                         @Html.ActionLink("Book Ticket", "BookFlight", "Tickets", new { id = item.Id }, new { @class = "btn btn-warning", @role = "button" })
                     </td>
                 </tr>
             }
+       
         </tbody>
     </table>
 

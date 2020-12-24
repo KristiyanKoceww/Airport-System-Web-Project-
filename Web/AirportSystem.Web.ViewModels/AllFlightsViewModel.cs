@@ -4,6 +4,7 @@
     using System.Collections.Generic;
 
     using AirportSystem.Data;
+    using AirportSystem.Data.Models.Airports;
     using AirportSystem.Data.Planes;
     using AirportSystem.Services.Mapping;
 
@@ -14,6 +15,10 @@
         public int PlaneId { get; set; }
 
         public string PlaneName { get; set; }
+
+        public int PlaneSeatsCount { get; set; }
+
+        public int FreeSeats { get; set; }
 
         public virtual Plane Plane { get; set; }
 

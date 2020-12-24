@@ -1,0 +1,18 @@
+﻿@model AirportSystem.Web.ViewModels.SearchForFlightViewModel
+@{
+    this.ViewData["Title"] = "Search for flight";
+}
+
+<h1>Search flight</h1>
+
+<form method="post" enctype="multipart/form-data" class="column-2">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="@Model.Destination"></label>
+        <input asp-for="@Model.Destination" class="form-control" />
+        <span asp-validation-for="@Model.Destination" class="text-danger"></span>
+    </div>
+
+    <input type="submit" class="btn btn-primary" />
+</form>

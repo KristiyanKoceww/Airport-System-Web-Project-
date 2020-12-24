@@ -1,0 +1,31 @@
+﻿@model GetFlightByIdViewModel
+
+<div class="component">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Flight Id</th>
+                <th scope="col">Departure Time</th>
+                <th scope="col">Arrival Time</th>
+                <th scope="col">Flight Duration</th>
+                <th scope="col">Flight Status</th>
+                <th scope="col">Plane Id</th>
+                <th scope="col">Origin</th>
+                <th scope="col">Destination</th>
+                <th scope="col">Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="table-light">
+                <td>@Model.Id</td>
+                <td>@Model.DepartureTime</td>
+                <td>@Model.ArrivalTime</td>
+                <td>@Model.FlightDuration</td>
+                <td>@Model.FlightStatus</td>
+                <td>@Model.PlaneId</td>
+                <td>@Model.TravelLineCityName</td>
+                <td>@Model.TravelLineCity2Name</td>
+                <td>@Model.Price</td>
+            </tr>
+        </tbody>
+</div>

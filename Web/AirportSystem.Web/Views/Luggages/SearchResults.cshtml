@@ -1,0 +1,29 @@
+﻿
+@model SearchLuggageViewModel
+<h2 style="color:black;"><b>Found luggages:</b></h2>
+
+<div class="table-wrapper">
+
+    <table class="fl-table">
+        <thead>
+            <tr>
+                <th>Luggage Number</th>
+                <th>Passenger Number</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Weight</th>
+
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>@Model.Id</td>
+                <td>@Model.PassengerId</td>
+                <td>@Model.PassengerFirstName</td>
+                <td>@Model.LuggageType</td>
+                <td>@Model.Weight</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

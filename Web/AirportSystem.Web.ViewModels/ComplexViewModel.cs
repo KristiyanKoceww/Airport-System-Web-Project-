@@ -37,6 +37,8 @@
 
         public string PlaneName { get; set; }
 
+        public int PlaneSeats { get; set; }
+
         public virtual Plane Plane { get; set; }
 
         public DateTime DepartureTime { get; set; }

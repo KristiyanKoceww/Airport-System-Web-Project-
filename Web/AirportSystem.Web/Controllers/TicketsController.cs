@@ -10,6 +10,7 @@
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Luggages;
     using AirportSystem.Services.Data.Passengers;
+    using AirportSystem.Services.Data.Planes;
     using AirportSystem.Services.Data.Seats;
     using AirportSystem.Services.Data.Tickets;
     using AirportSystem.Services.Messaging;
@@ -28,6 +29,7 @@
         private readonly IEmailSender emailSender;
         private readonly ILuggageService luggageService;
         private readonly ISeatsService seatsService;
+        private readonly IPlaneService planeService;
 
         public TicketsController(
             ITicketService ticketService,
@@ -36,7 +38,8 @@
             IHostingEnvironment hostingEnvironment,
             IEmailSender emailSender,
             ILuggageService luggageService,
-            ISeatsService seatsService)
+            ISeatsService seatsService,
+            IPlaneService planeService)
         {
             this.ticketService = ticketService;
             this.flightService = flightService;
@@ -45,6 +48,7 @@
             this.emailSender = emailSender;
             this.luggageService = luggageService;
             this.seatsService = seatsService;
+            this.planeService = planeService;
         }
 
         public async Task<IActionResult> BookFlight(int id)
@@ -73,6 +77,10 @@
             var passenger = this.passengersService.GetPassengerById(input.PassengerId);
 
             var luggage = this.luggageService.GetLuggageByPassengerId(input.PassengerId);
+
+            var plane = this.planeService.GetPlaneById(flight.PlaneId);
+
+            this.flightService.AddPassengerToFlight(flight, passenger);
 
             if (input.TicketRule == "2")
             {

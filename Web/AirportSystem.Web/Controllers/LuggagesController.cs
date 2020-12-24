@@ -36,10 +36,20 @@
         }
 
         [HttpPost]
-        public async Task<IActionResult> Search(int luggageId)
+        public async Task<IActionResult> Search(int Id)
         {
-            var luggage = this.luggageService.GetLuggageById(luggageId);
-            return this.View();
+            var luggage = this.luggageService.GetLuggageById(Id);
+
+            var viewModel = new SearchLuggageViewModel()
+            {
+                Id = luggage.Id,
+                PassengerId = luggage.PassengerId,
+                PassengerFirstName = luggage.PassengerFirstName,
+                LuggageType = luggage.LuggageType,
+                Weight = luggage.Weight,
+            };
+
+            return this.View("SearchResults", viewModel);
         }
     }
 }

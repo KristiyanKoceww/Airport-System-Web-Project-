@@ -6,53 +6,23 @@
 }
 
 <h1> Flight </h1>
-<div class="container">
-    <div class="section">
-        <div class="row">
-            <div class="col-md-8 offset-md-2">
-                <div class="page-header text-center">
-                    <h2 id="tables">Flight</h2>
-                </div>
 
-                <div class="form-group col-md-6">
-                    <label asp-for="Id"></label>
-                    <input asp-for="Id" class="form-control" />
-                    <span asp-validation-for="Id" class="text-danger"></span>
-                </div>
-
-                <input type="submit" class="btn btn-primary" />
-
-                <div class="component">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Flight Id</th>
-                                <th scope="col">Travel Route</th>
-                                <th scope="col">Departure Time</th>
-                                <th scope="col">Arrival Time</th>
-                                <th scope="col">Flight Duration</th>
-                                <th scope="col">Flight Status</th>
-                                <th scope="col">Plane Id</th>
-
-                            </tr>
-
-
-                        </thead>
-                        @*<tbody>
-                                    <tr class="table-light">
-                                        <th scope="row">@Model.Id</th>
-                                        <th scope="row">@Model.TravelRoute</th>
-                                        <td>@Model.DepartureTime</td>
-                                        <td>@Model.ArrivalTime</td>
-                                        <td>@Model.FlightDuration</td>
-                                        <td>@Model.FlightStatus</td>
-                                        <td>@Model.PlaneId</td>
-                                    </tr>
-
-                            </tbody>*@
-                    </table>
+<form method="post">
+    <div class="container">
+        <div class="section">
+            <div class="row">
+                <div>
+                    <div class="page-header text-center">
+                        <h2 id="tables">Flight</h2>
+                    </div>
+                    <div class="form-group col-md-10">
+                        <label asp-for="Id"></label>
+                        <input asp-for="Id" class="form-control" />
+                        <span asp-validation-for="Id" class="text-danger"></span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+    <input type="submit" class="btn btn-primary" />
+</form>

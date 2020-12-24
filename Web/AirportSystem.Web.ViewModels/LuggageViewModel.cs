@@ -19,5 +19,8 @@
 
         [Required]
         public decimal Weight { get; set; }
+
+        [Required]
+        public string PassengerFirstName { get; set; }
     }
 }
