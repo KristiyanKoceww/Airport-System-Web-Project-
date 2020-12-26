@@ -27,5 +27,12 @@
             this.db.Passports.Update(passportToEdit);
             this.db.SaveChanges();
         }
+
+        public Passport FindPassportById(string passportId)
+        {
+            var passport = this.db.Passports.Find(passportId);
+
+            return passport;
+        }
     }
 }

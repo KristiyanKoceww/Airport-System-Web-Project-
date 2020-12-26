@@ -28,6 +28,18 @@
         [HttpPost]
         public async Task<IActionResult> Edit(PassportInputModel input)
         {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View();
+            }
+
+            var passport = this.passportService.FindPassportById(input.Id);
+
+            if (passport == null)
+            {
+                return this.View("PassportNotFound");
+            }
+
             this.passportService.Edit(input);
             return this.View();
         }

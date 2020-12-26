@@ -4,18 +4,24 @@
     this.ViewData["Title"] = "Create avio company";
 }
 
-<h1>Create new company</h1>
+<h1 class="text-center">Create new company</h1>
+<br />
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="column">
+            <form method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger"></div>
 
-<form method="post" enctype="multipart/form-data">
-    <div asp-validation-summary="All" class="text-danger"></div>
-
-    <div class="form-group col-md-6">
-        <label asp-for="Name"></label>
-        <input asp-for="Name" class="form-control" />
-        <span asp-validation-for="Name" class="text-danger"></span>
+                <div class="form-group col-md-12">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+                <br />
+                <div class="d-flex justify-content-md-center">
+                    <button type="submit" class="btn btn-block btn-primary text-white mb-3">Create</button>
+                </div>
+            </form>
+        </div>
     </div>
-
-    <div class="d-flex justify-content-md-center">
-        <button type="submit" class="btn btn-block btn-primary text-white mb-3">Create</button>
-    </div>
-</form>
+</div>

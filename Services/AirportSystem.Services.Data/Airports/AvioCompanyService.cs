@@ -47,6 +47,13 @@
             this.db.SaveChanges();
         }
 
+        public AvioCompany FindCompanyById(int id)
+        {
+            var company = this.db.AvioCompanies.Find(id);
+
+            return company;
+        }
+
         public IEnumerable<AvioCompany> GetAll()
         {
             var companies = this.db.AvioCompanies.Select(x => new AvioCompany

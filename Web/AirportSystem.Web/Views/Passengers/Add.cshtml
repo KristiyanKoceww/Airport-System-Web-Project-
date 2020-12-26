@@ -4,7 +4,7 @@
 
 @model AirportSystem.Services.Data.InputModels.PassengerInputModel
 
-@{ 
+@{
     this.ViewData["Title"] = "Create your travel profile";
 }
 
@@ -16,19 +16,19 @@
     <div class="form-group col-md-6">
         <label asp-for="FirstName"></label>
         <input asp-for="FirstName" class="form-control" />
-        <span asp-validation-for="FirstName" class="text-danger"></span>
+        @*<span asp-validation-for="FirstName" class="text-danger"></span>*@
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="MiddleName"></label>
         <input asp-for="MiddleName" class="form-control" />
-        <span asp-validation-for="MiddleName" class="text-danger"></span>
+        @*<span asp-validation-for="MiddleName" class="text-danger"></span>*@
     </div>
 
     <div class="form-group col-md-6">
         <label asp-for="LastName"></label>
         <input asp-for="LastName" class="form-control" />
-        <span asp-validation-for="LastName" class="text-danger"></span>
+        @*<span asp-validation-for="LastName" class="text-danger"></span>*@
     </div>
 
     <div class="form-group col-md-6">
@@ -56,13 +56,13 @@
     </div>
 
     <div class="form-group col-md-6">
-            <label asp-for="PassengerType"></label>
-            <select asp-for="PassengerType" class="form-control"
-                    asp-items="@Html.GetEnumSelectList<PassengerType>()">
-                <option>Select type ...</option>
-            </select>
-            <span asp-validation-for="PassengerType" class="text-danger"></span>
-        </div>
+        <label asp-for="PassengerType"></label>
+        <select asp-for="PassengerType" class="form-control"
+                asp-items="@Html.GetEnumSelectList<PassengerType>()">
+            <option>Select type ...</option>
+        </select>
+        <span asp-validation-for="PassengerType" class="text-danger"></span>
+    </div>
 
     <div class="form-group col-md-6">
         <label asp-for="Gender"></label>

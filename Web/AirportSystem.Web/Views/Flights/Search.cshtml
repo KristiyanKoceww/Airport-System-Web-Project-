@@ -1,23 +1,31 @@
 ﻿@model AirportSystem.Web.ViewModels.SearchForFlightViewModel
-@{ 
+@{
     this.ViewData["Title"] = "Search for flight";
 }
 
-<h1>Search flight</h1>
+<h1 class="text-center">Search flight</h1>
 
-<form method="post" enctype="multipart/form-data" class="column-2">
-    <div asp-validation-summary="All" class="text-danger"></div>
+<div class="container">
+    <div class="row justify-content-md-center">
+        <div class="column">
+            <form method="post" enctype="multipart/form-data" class="column-2">
+                <div asp-validation-summary="All" class="text-danger"></div>
 
-    <div class="form-group col-md-6">
-        <label asp-for="@Model.Origin"></label>
-        <input asp-for="@Model.Origin" class="form-control" />
-        <span asp-validation-for="@Model.Origin" class="text-danger"></span>
+                <div class="form-group col-md-12">
+                    <label asp-for="@Model.Origin"></label>
+                    <input asp-for="@Model.Origin" class="form-control" />
+                    <span asp-validation-for="@Model.Origin" class="text-danger"></span>
+                </div>
+                <div class="form-group col-md-12">
+                    <label asp-for="@Model.Destination"></label>
+                    <input asp-for="@Model.Destination" class="form-control" />
+                    <span asp-validation-for="@Model.Destination" class="text-danger"></span>
+                </div>
+
+                <div class="d-flex justify-content-end">
+                    <button type="submit" class="btn btn-block btn-primary">Submit</button>
+                </div>
+            </form>
+        </div>
     </div>
-    <div class="form-group col-md-6">
-        <label asp-for="@Model.Destination"></label>
-        <input asp-for="@Model.Destination" class="form-control" />
-        <span asp-validation-for="@Model.Destination" class="text-danger"></span>
-    </div>
-
-    <input type="submit" class="btn btn-primary" />
-</form>
+</div>

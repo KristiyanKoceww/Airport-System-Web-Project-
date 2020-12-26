@@ -3,6 +3,7 @@
     using System.Threading.Tasks;
 
     using AirportSystem.Services.Data.Airport;
+    using AirportSystem.Services.Data.CitiesAndCountries;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Web.Areas.Administration.Controllers;
     using Microsoft.AspNetCore.Authorization;
@@ -12,10 +13,12 @@
     public class AirportsController : AdminController
     {
         private readonly IAirportService airportService;
+        private readonly ICityService cityService;
 
-        public AirportsController(IAirportService airportService)
+        public AirportsController(IAirportService airportService, ICityService cityService)
         {
             this.airportService = airportService;
+            this.cityService = cityService;
         }
 
         public async Task<IActionResult> Create()
@@ -27,6 +30,13 @@
         [HttpPost]
         public async Task<IActionResult> Create(AirportInputModel input)
         {
+            var city = this.cityService.FindCityById(input.CityId);
+
+            if (city == null)
+            {
+                return this.View("CityNotFound");
+            }
+
             this.airportService.CreateAirport(input);
             return this.View();
         }

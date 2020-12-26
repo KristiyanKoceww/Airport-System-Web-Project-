@@ -15,6 +15,7 @@
 
         [Required]
         [RegularExpression("^[0-9]*$", ErrorMessage = "CountryId contains only digits!")]
+        [Display(Name = "Country Id")]
         public int CountryId { get; set; }
     }
 }

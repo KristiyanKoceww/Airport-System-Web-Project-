@@ -10,5 +10,7 @@
         void Create(CountryInputModel countryInputModel);
 
         IEnumerable<Country> GetAll();
+
+        Country FindCountryById(int countryId);
     }
 }

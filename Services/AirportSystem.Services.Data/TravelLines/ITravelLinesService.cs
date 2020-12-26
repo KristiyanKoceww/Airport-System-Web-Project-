@@ -10,5 +10,7 @@
         void CreateTravelLine(TravelLineInputModel travelLineInputModel);
 
         IEnumerable<TravelLine> GetAll();
+
+        TravelLine FindTravelLineByCityId(int cityId, int city2Id);
     }
 }

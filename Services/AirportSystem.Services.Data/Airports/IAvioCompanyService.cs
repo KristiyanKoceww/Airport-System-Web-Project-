@@ -12,6 +12,8 @@
 
         void AddPlanes(AddPlaneToAvioCompanyInputModel addPlaneToAvioCompanyInputModel);
 
+        AvioCompany FindCompanyById(int id);
+
         IEnumerable<AvioCompany> GetAll();
     }
 }

@@ -27,6 +27,13 @@
             this.db.SaveChanges();
         }
 
+        public Country FindCountryById(int countryId)
+        {
+            var country = this.db.Countries.Find(countryId);
+
+            return country;
+        }
+
         public IEnumerable<Country> GetAll()
         {
             var coutries = this.db.Countries.Select(x => new Country()

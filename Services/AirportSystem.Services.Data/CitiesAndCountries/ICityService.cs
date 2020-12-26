@@ -11,5 +11,7 @@
         void Create(CitiesInputModel citiesInputModel);
 
         IEnumerable<AllCityViewModel> GetAll();
+
+        City FindCityById(int CityId);
     }
 }

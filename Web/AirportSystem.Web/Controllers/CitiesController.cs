@@ -13,10 +13,12 @@
     public class CitiesController : AdminController
     {
         private readonly ICityService cityService;
+        private readonly ICountryService countryService;
 
-        public CitiesController(ICityService cityService)
+        public CitiesController(ICityService cityService, ICountryService countryService)
         {
             this.cityService = cityService;
+            this.countryService = countryService;
         }
 
         public async Task<IActionResult> Add()
@@ -27,6 +29,13 @@
         [HttpPost]
         public async Task<IActionResult> Add(CitiesInputModel citiesInputModel)
         {
+            var country = this.countryService.FindCountryById(citiesInputModel.CountryId);
+
+            if (country == null)
+            {
+                return this.View("CountryNotFound");
+            }
+
             this.cityService.Create(citiesInputModel);
             return this.View();
         }

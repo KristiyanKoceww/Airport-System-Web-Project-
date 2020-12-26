@@ -80,6 +80,12 @@
 
             var plane = this.planeService.GetPlaneById(flight.PlaneId);
 
+            if (passenger.Tickets.Any(x => x.Id == ticketId))
+            {
+                return this.Redirect("/");
+            }
+
+            passenger.Tickets.Add(ticket);
             this.flightService.AddPassengerToFlight(flight, passenger);
 
             if (input.TicketRule == "2")

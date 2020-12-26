@@ -44,6 +44,13 @@
         [HttpPost]
         public async Task<IActionResult> AddPlane(AddPlaneToAvioCompanyInputModel addPlaneToAvioCompanyInputModel)
         {
+            var avioCompany = this.avioCompanyService.FindCompanyById(addPlaneToAvioCompanyInputModel.AvioCompanyId);
+
+            if (avioCompany == null)
+            {
+                return this.View();
+            }
+
             this.avioCompanyService.AddPlanes(addPlaneToAvioCompanyInputModel);
             return this.View();
         }

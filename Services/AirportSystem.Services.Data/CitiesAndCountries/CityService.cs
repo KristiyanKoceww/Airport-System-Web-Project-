@@ -29,6 +29,13 @@
             this.db.SaveChanges();
         }
 
+        public City FindCityById(int CityId)
+        {
+            var city = this.db.Cities.Find(CityId);
+
+            return city;
+        }
+
         public IEnumerable<AllCityViewModel> GetAll()
         {
             var cities = this.db.Cities.Select(x => new AllCityViewModel()

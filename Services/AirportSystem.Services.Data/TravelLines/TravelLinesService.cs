@@ -29,6 +29,13 @@
             this.db.SaveChanges();
         }
 
+        public TravelLine FindTravelLineByCityId(int cityId, int city2Id)
+        {
+            var travelLine = this.db.TravelLines.Where(x => x.CityId == cityId && x.City2Id == city2Id).FirstOrDefault();
+
+            return travelLine;
+        }
+
         public IEnumerable<TravelLine> GetAll()
         {
             var lines = this.db.TravelLines.Select(x => new TravelLine()

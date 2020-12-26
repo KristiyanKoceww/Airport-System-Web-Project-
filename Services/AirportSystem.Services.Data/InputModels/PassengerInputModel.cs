@@ -10,26 +10,26 @@
         [Required]
         [MinLength(3)]
         [MaxLength(15)]
-        [RegularExpression("[A-Za-z0-9]+", ErrorMessage = "Name must contains only letters and numbers")]
+        [RegularExpression("[A-Za-z]+", ErrorMessage = "Name must contains only letters")]
         [Display(Name = "First Name")]
         public string FirstName { get; set; }
 
         [Required]
         [MinLength(3)]
         [MaxLength(15)]
-        [RegularExpression("[A-Za-z0-9]+", ErrorMessage = "Name must contains only letters and numbers")]
+        [RegularExpression("[A-Za-z]+", ErrorMessage = "Name must contains only letters")]
         [Display(Name = "Middle Name")]
         public string MiddleName { get; set; }
 
         [Required]
         [MinLength(3)]
         [MaxLength(15)]
-        [RegularExpression("[A-Za-z0-9]+", ErrorMessage = "Name must contains only letters and numbers")]
+        [RegularExpression("[A-Za-z]+", ErrorMessage = "Name must contains only letters")]
         [Display(Name = "Last Name")]
         public string LastName { get; set; }
 
         [Required]
-        [Range(18, 85)]
+        [Range(18, 99)]
         public int Age { get; set; }
 
         [Required]
@@ -39,7 +39,6 @@
         [Required]
         [MinLength(6)]
         [MaxLength(30)]
-        [RegularExpression("[A-Za-z0-9]+", ErrorMessage = "Address must contains only letters and numbers")]
         public string Address { get; set; }
 
         [Required]

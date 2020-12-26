@@ -7,6 +7,7 @@
     using AirportSystem.Common;
     using AirportSystem.Services.Data.Flights;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Services.Data.Planes;
     using AirportSystem.Services.Data.TravelLines;
     using AirportSystem.Web.ViewModels;
     using Microsoft.AspNetCore.Authorization;
@@ -17,11 +18,13 @@
     {
         private readonly IFlightService flightService;
         private readonly ITravelLinesService travelLinesService;
+        private readonly IPlaneService planeService;
 
-        public FlightsController(IFlightService flightService, ITravelLinesService travelLinesService)
+        public FlightsController(IFlightService flightService, ITravelLinesService travelLinesService, IPlaneService planeService)
         {
             this.flightService = flightService;
             this.travelLinesService = travelLinesService;
+            this.planeService = planeService;
         }
 
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
@@ -34,6 +37,21 @@
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public async Task<IActionResult> Create(FlightInputModel flightInputModel)
         {
+            var travelLine = this.travelLinesService.FindTravelLineByCityId(flightInputModel.TravelLineCityId, flightInputModel.TravelLineCity2Id);
+            var plane = this.planeService.GetPlaneById(flightInputModel.PlaneId);
+
+            if (travelLine == null)
+            {
+                this.ViewBag.Massage = "Travel line not found";
+                return this.View("TravelLineOrPlaneNotFound");
+            }
+            else if (plane == null)
+            {
+
+                this.ViewBag.Massage = "Plane not found";
+                return this.View("TravelLineOrPlaneNotFound");
+            }
+
             this.flightService.Create(flightInputModel);
             return this.View();
         }
@@ -60,6 +78,11 @@
         public async Task<IActionResult> GetFlightById(int Id)
         {
             var flight = this.flightService.GetFlightById(Id);
+
+            if (flight == null)
+            {
+                return this.View("FlightByIdNotFound");
+            }
 
             var viewModel = new GetFlightByIdViewModel
             {
@@ -89,7 +112,7 @@
 
             if (flights.Count() == 0)
             {
-                return this.View("NotFound");
+                return this.View("FlightNotFound");
             }
 
             return this.View("SearchResults", flights);

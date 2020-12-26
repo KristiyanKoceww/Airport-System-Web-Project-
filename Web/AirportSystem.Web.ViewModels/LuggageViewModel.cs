@@ -12,15 +12,20 @@
     public class LuggageViewModel : IMapFrom<Luggage>
     {
         [Required]
+        [Display(Name = "Please select luggage type")]
         public LuggageType LuggageType { get; set; }
 
         [Required]
+        [Display(Name = "Your travel id")]
         public string PassengerId { get; set; }
 
         [Required]
+        [Range(1,100)]
+        [Display(Name = "luggage weight")]
         public decimal Weight { get; set; }
 
         [Required]
+        [Display(Name = "Your first name")]
         public string PassengerFirstName { get; set; }
     }
 }
