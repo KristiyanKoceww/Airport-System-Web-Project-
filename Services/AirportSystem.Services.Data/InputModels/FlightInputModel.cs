@@ -12,7 +12,6 @@
         [Required]
         public int AirportId { get; set; }
 
-        [Required]
         [MaxLength(30)]
         [RegularExpression("[A-Za-z]+", ErrorMessage = "Name must contains only letters")]
         public string AirportName { get; set; }
@@ -23,7 +22,6 @@
         [RegularExpression("^[0-9]*$", ErrorMessage = "TravelLineCityId contains only digits!")]
         public int TravelLineCityId { get; set; }
 
-        [Required]
         [RegularExpression("[A-Za-z]+", ErrorMessage = "Name must contains only letters")]
         public string TravelLineCityName { get; set; }
 
@@ -31,7 +29,6 @@
         [RegularExpression("^[0-9]*$", ErrorMessage = "TravelLineCityId contains only digits!")]
         public int TravelLineCity2Id { get; set; }
 
-        [Required]
         [RegularExpression("[A-Za-z]+", ErrorMessage = "Name must contains only letters")]
         public string TravelLineCity2Name { get; set; }
 
@@ -44,7 +41,6 @@
         [RegularExpression("^[0-9]*$", ErrorMessage = "PlaneId contains only digits!")]
         public int PlaneId { get; set; }
 
-        [Required]
         [RegularExpression("[A-Za-z]+", ErrorMessage = "PlaneName must contains only letters")]
         public string PlaneName { get; set; }
 

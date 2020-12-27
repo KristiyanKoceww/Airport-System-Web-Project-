@@ -1,6 +1,9 @@
 ﻿namespace AirportSystem.Services.Data.InputModels
 {
+    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+
+    using AirportSystem.Data.Models.Planes;
 
     public class TicketInputModel
     {
@@ -24,5 +27,7 @@
 
         [Required]
         public string TicketRule { get; set; }
+
+        public virtual ICollection<Seat> Seats { get; set; }
     }
 }

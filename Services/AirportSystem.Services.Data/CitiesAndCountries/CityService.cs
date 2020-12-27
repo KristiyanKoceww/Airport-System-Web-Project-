@@ -48,5 +48,17 @@
 
             return cities;
         }
+
+        public IEnumerable<City> GetAllCities()
+        {
+            var cities = this.db.Cities.Select(x => new City()
+            {
+                Id = x.Id,
+                Name = x.Name,
+                CountryId = x.CountryId,
+            }).ToList();
+
+            return cities;
+        }
     }
 }

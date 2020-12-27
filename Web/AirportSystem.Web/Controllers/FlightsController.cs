@@ -118,6 +118,7 @@
             return this.View("SearchResults", flights);
         }
 
+        [HttpGet]
         public async Task<IActionResult> SearchByDestination(string destination)
         {
             var flights = this.flightService.FlightsByDestination(destination);
@@ -128,6 +129,21 @@
             }
 
             return this.View("SearchResults", flights);
+        }
+
+        public async Task<IActionResult> Remove()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Remove(int id)
+        {
+            var flight = this.flightService.GetFlightById(id);
+
+            this.flightService.Remove(flight);
+
+            return this.View();
         }
     }
 }

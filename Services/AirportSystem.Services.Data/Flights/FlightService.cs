@@ -55,7 +55,7 @@
 
         public IEnumerable<AllFlightsViewModel> GetAll()
         {
-            var flights = this.db.Flights.Select(x => new AllFlightsViewModel()
+            var flights = this.db.Flights.Where(x => x.IsDeleted == false).Select(x => new AllFlightsViewModel()
             {
                 Id = x.Id,
                 TravelLineCityName = x.TravelLineCityName,
@@ -80,6 +80,12 @@
             var flight = this.db.Flights.Where(x => x.Id == flightId).FirstOrDefault();
 
             return flight;
+        }
+
+        public void Remove(Flight flight)
+        {
+            flight.IsDeleted = true;
+            this.db.SaveChanges();
         }
 
         public IEnumerable<Flight> SearchForFlight(string origin, string destination)

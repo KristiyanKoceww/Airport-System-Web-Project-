@@ -1,78 +1,105 @@
 ﻿@using AirportSystem.Data.Tickets
 @model AirportSystem.Web.ViewModels.BookTicketViewModel
-
+@inject AirportSystem.Services.Data.Planes.IPlaneService planeService
+@inject AirportSystem.Services.Data.Flights.IFlightService flightService
 @{
     this.ViewData["Title"] = "Book Ticket";
+    //var flight = this.flightService.GetFlightById(Model.FlightId);
+    //var plane = this.planeService.GetPlaneById(flight.PlaneId);
+
+    //ViewBag.Seats = plane.Seats.Count;
+
 }
+@*<link rel="stylesheet" href="style.css">*@
+<link href="~/ChooseSeats.css" rel="stylesheet" />
+<br />
+<br />
+<br />
+<br />
 
-<h1>Book your ticket</h1>
+<div class="container">
+    <div class="row">
+        <div class="col-5">
+            <form method="post" enctype="multipart/form-data">
+                <div asp-validation-summary="All" class="text-danger"></div>
 
-<form method="post" enctype="multipart/form-data">
-    <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group col-md-6">
+                    <label asp-for="PassengerId"></label>
+                    <input asp-for="PassengerId" class="form-control" />
+                    <span asp-validation-for="PassengerId" class="text-danger"></span>
+                </div>
 
+                <div class="form-group col-md-6">
+                    <label asp-for="LuggageId"></label>
+                    <input asp-for="LuggageId" class="form-control" />
+                    <span asp-validation-for="LuggageId" class="text-danger"></span>
+                </div>
 
-    <div class="form-group col-md-6">
-        <label asp-for="PassengerId"></label>
-        <input asp-for="PassengerId" class="form-control" />
-        <span asp-validation-for="PassengerId" class="text-danger"></span>
-    </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="Price"></label>
+                    <input asp-for="Price" class="form-control" disabled />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
 
-    <div class="form-group col-md-6">
-        <label asp-for="LuggageId"></label>
-        <input asp-for="LuggageId" class="form-control" />
-        <span asp-validation-for="LuggageId" class="text-danger"></span>
-    </div>
+                <div class="form-group col-md-6">
+                    @*<label asp-for="FlightId"></label>*@
+                    <input asp-for="FlightId" class="form-control" hidden />
+                    <span asp-validation-for="FlightId" class="text-danger"></span>
+                </div>
 
-    <div class="form-group col-md-6">
-        <label asp-for="Price"></label>
-        <input asp-for="Price" class="form-control" disabled />
-        <span asp-validation-for="Price" class="text-danger"></span>
-    </div>
+                <div class="form-group col-md-6">
+                    <label asp-for="SeatNumber"></label>
+                    <input asp-for="SeatNumber" class="form-control" />
+                    <span asp-validation-for="SeatNumber" class="text-danger"></span>
+                </div>
 
-    <div class="form-group col-md-6">
-        @*<label asp-for="FlightId"></label>*@
-        <input asp-for="FlightId" class="form-control" hidden />
-        <span asp-validation-for="FlightId" class="text-danger"></span>
-    </div>
+                <div class="form-group col-md-6">
+                    <div>
+                        <label asp-for="TicketRule"></label>
+                    </div>
+                    <select asp-for="TicketRule" class="form-control"
+                            asp-items="@Html.GetEnumSelectList<TicketRule>()">
+                        <option>Select type ...</option>
+                    </select>
+                    <span asp-validation-for="TicketRule" class="text-danger"></span>
+                    <br />
+                    <br />
+                    <div>
+                        <div><text>Note:</text></div>
+                        <div><text>* Selecting round trip double the prices of the ticket!</text></div>
+                    </div>
+                </div>
+                <br />
+                <div class="form-group col-md-6">
+                    <div>
+                        <label asp-for="TicketType"></label>
+                    </div>
+                    <select asp-for="TicketType" class="form-control"
+                            asp-items="@Html.GetEnumSelectList<TicketType>()">
+                        <option>Select type ...</option>
+                    </select>
+                    <span asp-validation-for="TicketType" class="text-danger"></span>
+                    <br />
+                    <br />
+                    <div>
+                        <text>Note: </text>
+                    </div>
+                    <div>
+                        <div><text>* Selecting economy class ticket reduces price by 20%</text></div>
+                        <div> <text>* Selecting bussiness class ticket increases price by 25%</text></div>
+                        <div><text>* Selecting first class ticket increases price by 50%</text></div>
+                    </div>
+                </div>
 
-    <div class="form-group col-md-6">
-        <label asp-for="SeatNumber"></label>
-        <input asp-for="SeatNumber" class="form-control" />
-        <span asp-validation-for="SeatNumber" class="text-danger"></span>
-    </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
 
-    <div class="form-group col-md-6">
-        <label asp-for="TicketRule"></label>
-        <select asp-for="TicketRule" class="form-control"
-                asp-items="@Html.GetEnumSelectList<TicketRule>()">
-            <option>Select type ...</option>
-        </select>
-        <span asp-validation-for="TicketRule" class="text-danger"></span>
-        <div>
-            <div><text>Note:</text></div>
-            <div><text>Selecting round trip double the prices of the ticket!</text></div>
+        <div class="col-5">
+            <partial name="_ChooseSeatPartial" />
         </div>
     </div>
-
-    <div class="form-group col-md-6">
-        <label asp-for="TicketType"></label>
-        <select asp-for="TicketType" class="form-control"
-                asp-items="@Html.GetEnumSelectList<TicketType>()">
-            <option>Select type ...</option>
-        </select>
-        <span asp-validation-for="TicketType" class="text-danger"></span>
-        <div>
-            <text>Note: </text>
-        </div>
-        <div>
-            <div><text>* Selecting economy class ticket reduces price by 20%</text></div>
-            <div> <text>* Selecting bussiness class ticket increases price by 25%</text></div>
-            <div><text>* Selecting first class ticket increases price by 50%</text></div>
-        </div>
-    </div>
-
-    <input type="submit" class="btn btn-primary" />
-</form>
+</div>
 
 
 

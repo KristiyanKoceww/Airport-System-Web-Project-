@@ -66,24 +66,23 @@
         [HttpPost]
         public async Task<IActionResult> BookFlight(TicketInputModel input)
         {
-            this.ticketService.Create(input, input.FlightId);
-
-            var flight = this.flightService.GetFlightById(input.FlightId);
-
-            var ticketId = this.ticketService.GetTicketByFlightId(input.FlightId);
-
-            var ticket = this.ticketService.GetTicketById(ticketId);
+            var ticket = this.ticketService.Create(input, input.FlightId);
 
             var passenger = this.passengersService.GetPassengerById(input.PassengerId);
+
+            var flight = this.flightService.GetFlightById(input.FlightId);
 
             var luggage = this.luggageService.GetLuggageByPassengerId(input.PassengerId);
 
             var plane = this.planeService.GetPlaneById(flight.PlaneId);
 
-            if (passenger.Tickets.Any(x => x.Id == ticketId))
+            if (!plane.Seats.Any(x => x.IsAvailable == true))
             {
-                return this.Redirect("/");
+                return this.View();
             }
+
+            var seat = plane.Seats.FirstOrDefault();
+            seat.IsAvailable = false;
 
             passenger.Tickets.Add(ticket);
             this.flightService.AddPassengerToFlight(flight, passenger);
@@ -110,7 +109,7 @@
             {
                 LuggageType = luggage.LuggageType.ToString(),
                 LuggageWeight = luggage.Weight,
-                TicketId = ticketId,
+                TicketId = ticket.Id,
                 PassengerId = ticket.PassengerId,
                 PassengerName = passenger.FirstName,
                 Price = flight.Price,

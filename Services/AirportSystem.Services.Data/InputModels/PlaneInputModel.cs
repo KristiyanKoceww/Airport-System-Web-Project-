@@ -20,7 +20,7 @@
         public string Model { get; set; }
 
         [Required]
-        [Range(20, 100)]
+        [Range(2, 100)]
         public int SeatsCount { get; set; }
 
         [Required]

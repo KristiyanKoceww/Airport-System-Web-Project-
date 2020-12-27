@@ -13,6 +13,8 @@
 
         void Create(FlightInputModel flightInputModel);
 
+        void Remove(Flight flight);
+
         IEnumerable<Flight> FlightsByDestination(string destination);
 
         Flight GetFlightById(int flightId);

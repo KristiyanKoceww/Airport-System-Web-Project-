@@ -30,6 +30,7 @@
   <ItemGroup>
     <ProjectReference Include="..\..\Data\AirportSystem.Data\AirportSystem.Data.csproj" />
     <ProjectReference Include="..\..\Services\AirportSystem.Services.Data\AirportSystem.Services.Data.csproj" />
+    <ProjectReference Include="..\..\Web\AirportSystem.Web\AirportSystem.Web.csproj" />
   </ItemGroup>
 
 </Project>

@@ -17,7 +17,7 @@
             this.db = db;
         }
 
-        public void Create(TicketInputModel ticketInputModel, int flightId)
+        public Ticket Create(TicketInputModel ticketInputModel, int flightId)
         {
             var ticket = new Ticket()
             {
@@ -32,6 +32,8 @@
 
             this.db.Tickets.Add(ticket);
             this.db.SaveChanges();
+
+            return ticket;
         }
 
         public IEnumerable<Ticket> GetAll()

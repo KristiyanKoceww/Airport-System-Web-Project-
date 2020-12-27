@@ -40,6 +40,11 @@
 
         public DbSet<Seat> Seats { get; set; }
 
+        public object FirstOrDefault()
+        {
+            throw new NotImplementedException();
+        }
+
         public DbSet<Passenger> Passengers { get; set; }
 
         public DbSet<Plane> Planes { get; set; }

@@ -7,7 +7,7 @@
 
     public interface ITicketService
     {
-        void Create(TicketInputModel ticketInputModel, int flightId);
+        Ticket Create(TicketInputModel ticketInputModel, int flightId);
 
         Ticket GetTicketByPassengerId(int passengerId);
 

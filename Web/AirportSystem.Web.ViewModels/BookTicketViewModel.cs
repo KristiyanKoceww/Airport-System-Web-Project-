@@ -7,6 +7,7 @@
     using System.Threading.Tasks;
 
     using AirportSystem.Data;
+    using AirportSystem.Data.Models.Planes;
     using AirportSystem.Data.Tickets;
 
     public class BookTicketViewModel
@@ -37,5 +38,6 @@
         [Required]
         [Display(Name = "Please choose your travel type")]
         public TicketRule TicketRule { get; set; }
+
     }
 }

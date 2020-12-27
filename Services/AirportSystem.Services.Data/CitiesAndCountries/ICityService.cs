@@ -12,6 +12,8 @@
 
         IEnumerable<AllCityViewModel> GetAll();
 
+        IEnumerable<City> GetAllCities();
+
         City FindCityById(int CityId);
     }
 }

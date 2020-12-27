@@ -1,0 +1,24 @@
+﻿@model RemoveFlightViewModel
+@{
+    this.ViewData["Title"] = "Create flight";
+}
+
+
+<h1>Remove flight</h1>
+
+
+<form method="post" enctype="multipart/form-data" class="column-2">
+    <div asp-validation-summary="All" class="text-danger"></div>
+
+    <div class="form-group col-md-6">
+        <label asp-for="@Model.Id"></label>
+        <input asp-for="@Model.Id" class="form-control" />
+        <span asp-validation-for="@Model.Id" class="text-danger"></span>
+    </div>
+
+    <div>
+        <button type="submit" class="btn btn-block btn-primary text-white mb-3">Remove</button>
+    </div>
+</form>
+
+

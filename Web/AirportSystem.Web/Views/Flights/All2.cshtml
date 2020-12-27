@@ -1,7 +1,7 @@
 ﻿
 @inject AirportSystem.Services.Data.Flights.IFlightService service
 @using AirportSystem.Data.Tickets
-@*@model AirportSystem.Web.ViewModels.ComplexViewModel*@
+
 
 @{
     var flights = this.service.GetAll();
@@ -20,8 +20,7 @@
                 <th>Flight Duration</th>
                 <th>Flight Status</th>
                 <th>Price</th>
-                <th>Seats left</th>
-                <th>Free seats</th>
+                <th>Free seats left</th>
                 <th>Book</th>
             </tr>
         </thead>
@@ -29,6 +28,10 @@
         <tbody>
             @foreach (var item in flights)
             {
+                @if (item.FreeSeats == 0)
+                {
+                    continue;
+                }
                 var price = item.Price;
                 <tr>
                     <td>@item.TravelLineCityName</td>
@@ -38,14 +41,14 @@
                     <td>@item.FlightDuration</td>
                     <td>@item.FlightStatus</td>
                     <td>@item.Price</td>
-                    <td>@item.PlaneSeatsCount</td>
                     <td>@item.FreeSeats</td>
                     <td>
-                        @Html.ActionLink("Book Ticket", "BookFlight", "Tickets", new { id = item.Id }, new { @class = "btn btn-warning", @role = "button" })
+                        @* @Html.ActionLink("Book Ticket", "BookFlight", "Tickets", new { id = item.Id }, new { @class = "btn btn-warning", @role = "button" })*@
+                        <a asp-controller="Tickets" asp-action="BookFlight" asp-route-id="@item.Id" class="btn btn-warning black-color" role="button">Book Ticket</a>
                     </td>
                 </tr>
             }
-       
+
         </tbody>
     </table>
 
