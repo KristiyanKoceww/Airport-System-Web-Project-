@@ -139,28 +139,5 @@
 
             Assert.Empty(result);
         }
-
-        [Fact]
-        public async Task EnsureGetAllAirportsWorkProperly()
-        {
-            var service = new AirportService(this.DbContext);
-
-            var airport = new AllAirportViewModel()
-            {
-                Id = 1,
-                Name = "GermanyAirport",
-                CityId = 1,
-                CityName = "Berlin",
-            };
-
-            
-           
-            await this.DbContext.SaveChangesAsync();
-
-            var result = service.GetAllAirports();
-
-            Assert.Equal(2, result.Count());
-        }
-
     }
 }

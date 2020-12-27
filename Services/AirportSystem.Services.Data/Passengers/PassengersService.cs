@@ -62,13 +62,6 @@
             return passengers;
         }
 
-        // TODO
-        public IEnumerable<Passenger> GetAllPassengersByFlightId(int flightId)
-        {
-            var passengers = this.db.Flights.Where(x => x.Id == flightId).Select(x => x.Passengers).ToList();
-            return (IEnumerable<Passenger>)passengers;
-        }
-
         public Passenger GetPassengerById(int id)
         {
             var passenger = this.db.Passengers.Where(x => x.Id == id).FirstOrDefault();
