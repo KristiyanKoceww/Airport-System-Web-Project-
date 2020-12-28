@@ -152,6 +152,5 @@
 
   <ItemGroup>
     <Folder Include="System\Web\" />
-    <Folder Include="ViewModels\" />
   </ItemGroup>
 </Project>

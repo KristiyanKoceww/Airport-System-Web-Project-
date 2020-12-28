@@ -34,8 +34,8 @@
                 plane.Seats.Add(seat);
             }
 
-            this.db.Seats.AddRange(seats);
-            this.db.SaveChanges();
+            this.db.Seats.AddRangeAsync(seats);
+            this.db.SaveChangesAsync();
 
             return seats;
         }

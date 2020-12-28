@@ -4,7 +4,7 @@
     using System.IO;
     using System.Linq;
     using System.Threading.Tasks;
-
+    using AirportSystem.Data.Models.Planes;
     using AirportSystem.Data.Tickets;
     using AirportSystem.Services.Data.Flights;
     using AirportSystem.Services.Data.InputModels;
@@ -76,6 +76,8 @@
 
             var plane = this.planeService.GetPlaneById(flight.PlaneId);
 
+            plane.Seats.Add(new Seat() { Id = 1351351, IsAvailable = true });
+
             if (!plane.Seats.Any(x => x.IsAvailable == true))
             {
                 return this.View();
@@ -85,7 +87,7 @@
             seat.IsAvailable = false;
 
             passenger.Tickets.Add(ticket);
-            this.flightService.AddPassengerToFlight(flight, passenger);
+            await this.flightService.AddPassengerToFlight(flight, passenger);
 
             if (input.TicketRule == "2")
             {

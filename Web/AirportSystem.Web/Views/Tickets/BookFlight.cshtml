@@ -1,14 +1,8 @@
 ﻿@using AirportSystem.Data.Tickets
 @model AirportSystem.Web.ViewModels.BookTicketViewModel
-@inject AirportSystem.Services.Data.Planes.IPlaneService planeService
-@inject AirportSystem.Services.Data.Flights.IFlightService flightService
+
 @{
     this.ViewData["Title"] = "Book Ticket";
-    //var flight = this.flightService.GetFlightById(Model.FlightId);
-    //var plane = this.planeService.GetPlaneById(flight.PlaneId);
-
-    //ViewBag.Seats = plane.Seats.Count;
-
 }
 @*<link rel="stylesheet" href="style.css">*@
 <link href="~/ChooseSeats.css" rel="stylesheet" />
@@ -90,13 +84,12 @@
                         <div><text>* Selecting first class ticket increases price by 50%</text></div>
                     </div>
                 </div>
-
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
 
-        <div class="col-5">
-            <partial name="_ChooseSeatPartial" />
+        <div  class="col-5">
+            <vc:flight-seats title="Seats" flight-id="@Model.FlightId"></vc:flight-seats>
         </div>
     </div>
 </div>

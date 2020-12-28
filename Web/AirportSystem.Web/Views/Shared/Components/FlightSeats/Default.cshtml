@@ -1,0 +1,124 @@
+﻿@model AirportSystem.Web.ViewModels.BookSeatsViewModel
+@{
+
+    this.Layout = null;
+}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<title>@Model.Title</title>
+<ul class="showcase">
+    <li>
+        <div class="seat"></div>
+        <small>N/A</small>
+    </li>
+    <li>
+        <div class="seat selected"></div>
+        <small>Selected</small>
+    </li>
+    <li>
+        <div class="seat occupied"></div>
+        <small>Occupied</small>
+    </li>
+</ul>
+@{
+    var number = 1;
+}
+
+<div class="container">
+    <div class="row-container">
+        <div class="row">
+            @foreach (var item in Model.IsSeatAvailable)
+            {
+
+                @if (item.Value == true)
+                {
+                    <div class="col">
+                        <div class="seat text-center N/A">@number</div>
+                    </div>
+                }
+                else
+                {
+                    <div class="col">
+                        <div class="seat text-center occupied">@number</div>
+                    </div>
+                }
+
+                number++;
+            }
+        </div>
+    </div>
+</div>
+@*<div class="container">
+        <div class="row-container">
+            <div class="row">
+                <div class="seat text-center selected">1</div>
+                <div class="seat text-center">1</div>
+                <div class="seat text-center">1</div>
+                <div class="seat text-center">1</div>
+                <div class="seat text-center">1</div>
+                <div class="seat text-center">1</div>
+
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+
+            </div>
+
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+
+            </div>
+            <div class="row">
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat"></div>
+                <div class="seat occupied"></div>
+                <div class="seat"></div>
+            </div>
+        </div>
+    </div>*@
+
+@section Scripts {
+    <script src="~/ChooseSeats.js"></script>
+}

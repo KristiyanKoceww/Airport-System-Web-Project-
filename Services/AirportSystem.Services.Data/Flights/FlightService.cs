@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-
+    using System.Threading.Tasks;
     using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Web.ViewModels;
@@ -17,10 +17,11 @@
             this.db = db;
         }
 
-        public void AddPassengerToFlight(Flight flight, Passenger passenger)
+        public async Task AddPassengerToFlight(Flight flight, Passenger passenger)
         {
             flight.Passengers.Add(passenger);
-            this.db.SaveChanges();
+
+            await this.db.SaveChangesAsync();
         }
 
         public void Create(FlightInputModel flightInputModel)

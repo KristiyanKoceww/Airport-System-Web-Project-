@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Threading.Tasks;
 
     using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
@@ -9,7 +10,7 @@
 
     public interface IFlightService
     {
-        void AddPassengerToFlight(Flight flight, Passenger passenger);
+        Task AddPassengerToFlight(Flight flight, Passenger passenger);
 
         void Create(FlightInputModel flightInputModel);
 
