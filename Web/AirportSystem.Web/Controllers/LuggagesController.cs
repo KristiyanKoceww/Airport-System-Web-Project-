@@ -24,33 +24,31 @@
             this.passengersService = passengersService;
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(LuggageInputModel luggageInputModel)
+        public IActionResult Create(LuggageInputModel luggageInputModel)
         {
-
             var passenger = this.passengersService.GetPassengerById(luggageInputModel.PassengerId);
             if (passenger == null)
             {
                 return this.View();
-
             }
 
             this.luggageService.Create(luggageInputModel);
             return this.View();
         }
 
-        public async Task<IActionResult> Search()
+        public IActionResult Search()
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Search(int Id)
+        public IActionResult Search(int Id)
         {
             var luggage = this.luggageService.GetLuggageById(Id);
 

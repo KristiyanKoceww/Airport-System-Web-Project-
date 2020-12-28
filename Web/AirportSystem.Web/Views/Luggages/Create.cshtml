@@ -37,9 +37,27 @@
                     </div>
                     <select asp-for="LuggageType" class="form-control"
                             asp-items="@Html.GetEnumSelectList<LuggageType>()">
-                        <option>Select type ...</option>
                     </select>
                     <span asp-validation-for="LuggageType" class="text-danger"></span>
+                    <br />
+                    <br />
+                    <br />
+                    <div>
+                        <text>Note: </text>
+                    </div>
+                    <div>
+                        <div><text>* Selecting carry on bag doesn't effect the ticket price!</text></div>
+                        <div> <text>* Selecting trolley bag increases price by 15%</text></div>
+                        <div><text>* Selecting checked in bag increases price by 25%</text></div>
+                    </div>
+                    <br />
+                    <div>
+                        <div><text>* Permissible weight for carry on bag is 10 kg!</text></div>
+                        <div><text>* Permissible weight for trolley bag is 20 kg!</text></div>
+                        <div><text>* Permissible weight for checked in bag is 100 kg!</text></div>
+                        <br />
+                        <div><text>* Luggage will be checked at the airport.</text></div>
+                    </div>
                 </div>
 
                 <br />

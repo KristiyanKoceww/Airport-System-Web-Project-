@@ -28,7 +28,6 @@
                 Phone = "254655655",
                 PassportId = "15552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), "Vip"),
             };
 
             service.Create(passenger);
@@ -53,7 +52,6 @@
                 Phone = "254655655",
                 PassportId = "15552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), "Vip"),
             };
 
             var passenger2 = new PassengerInputModel()
@@ -66,7 +64,6 @@
                 Phone = "2521155",
                 PassportId = "1335552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), "Vip"),
             };
 
             service.Create(passenger);
@@ -104,7 +101,7 @@
                 Phone = "254655655",
                 PassportId = "15552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), "Vip"),
+                
             };
 
             var passenger2 = new PassengerInputModel()
@@ -117,7 +114,7 @@
                 Phone = "2521155",
                 PassportId = "1335552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), "Vip"),
+                
             };
 
             service.Create(passenger);
@@ -150,7 +147,7 @@
                 Phone = "254655655",
                 PassportId = "15552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), "Vip"),
+               
             };
 
             var passenger2 = new PassengerInputModel()
@@ -163,7 +160,7 @@
                 Phone = "2521155",
                 PassportId = "1335552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), "Vip"),
+                
             };
 
             service.Create(passenger);
@@ -226,7 +223,7 @@
                 Phone = "254655655",
                 PassportId = "15552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), "Vip"),
+                
             };
 
             var passenger2 = new PassengerInputModel()
@@ -239,7 +236,7 @@
                 Phone = "2521155",
                 PassportId = "1335552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), "Vip"),
+                
             };
 
             service.Create(passenger);
@@ -270,7 +267,7 @@
                 Phone = "2521155",
                 PassportId = "1335552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                PassengerType = (PassengerType)Enum.Parse(typeof(PassengerType), "Vip"),
+                
             };
 
             service.Create(passenger);

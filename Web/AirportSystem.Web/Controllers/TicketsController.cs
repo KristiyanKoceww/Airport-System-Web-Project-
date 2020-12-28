@@ -51,7 +51,7 @@
             this.planeService = planeService;
         }
 
-        public async Task<IActionResult> BookFlight(int id)
+        public IActionResult BookFlight(int id)
         {
             var flight = this.flightService.GetFlightById(id);
 
@@ -66,6 +66,11 @@
         [HttpPost]
         public async Task<IActionResult> BookFlight(TicketInputModel input)
         {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View();
+            }
+
             var ticket = this.ticketService.Create(input);
 
             var passenger = this.passengersService.GetPassengerById(input.PassengerId);
@@ -76,36 +81,23 @@
 
             var plane = this.planeService.GetPlaneById(flight.PlaneId);
 
-            plane.Seats.Add(new Seat() { Id = 1351351, IsAvailable = true });
+            var seats = this.seatsService.GetSeatsByPlaneId(plane.Id);
 
-            if (!plane.Seats.Any(x => x.IsAvailable == true))
+            var seat = plane.Seats.Where(x => x.SeatNumber == input.SeatNumber).FirstOrDefault();
+
+            var isSeatAvailable = this.seatsService.CheckSeatsIfIsAvailableAndEquipSeat(seat);
+
+            if (!isSeatAvailable)
             {
-                return this.View();
+                return this.View("SeatAlreadyTaken");
             }
 
-            var seat = plane.Seats.FirstOrDefault();
-            seat.IsAvailable = false;
+            var price = this.ticketService.CalculatePrice(flight.Price, input.TicketRule, input.TicketType);
+
+            price = this.luggageService.CalculatePrice(price,luggage.LuggageType);
 
             passenger.Tickets.Add(ticket);
-            await this.flightService.AddPassengerToFlight(flight, passenger);
 
-            if (input.TicketRule == "2")
-            {
-                flight.Price *= 2;
-            }
-
-            switch (input.TicketType)
-            {
-                case "1":
-                    flight.Price = flight.Price - (flight.Price * 0.2M);
-                    break;
-                case "2":
-                    flight.Price *= 1.5M;
-                    break;
-                case "3":
-                    flight.Price *= 1.25M;
-                    break;
-            }
 
             var viewModel = new UserTicketViewModel()
             {
@@ -114,7 +106,7 @@
                 TicketId = ticket.Id,
                 PassengerId = ticket.PassengerId,
                 PassengerName = passenger.FirstName,
-                Price = flight.Price,
+                Price = price,
                 FlightArrivalTime = flight.ArrivalTime,
                 FlightDepartureTime = flight.DepartureTime,
                 SeatNumber = ticket.SeatNumber,

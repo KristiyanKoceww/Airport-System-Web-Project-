@@ -53,7 +53,6 @@
                     </div>
                     <select asp-for="TicketRule" class="form-control"
                             asp-items="@Html.GetEnumSelectList<TicketRule>()">
-                        <option>Select type ...</option>
                     </select>
                     <span asp-validation-for="TicketRule" class="text-danger"></span>
                     <br />
@@ -70,7 +69,6 @@
                     </div>
                     <select asp-for="TicketType" class="form-control"
                             asp-items="@Html.GetEnumSelectList<TicketType>()">
-                        <option>Select type ...</option>
                     </select>
                     <span asp-validation-for="TicketType" class="text-danger"></span>
                     <br />

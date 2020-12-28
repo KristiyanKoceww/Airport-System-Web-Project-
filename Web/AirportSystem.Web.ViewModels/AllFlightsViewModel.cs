@@ -37,7 +37,5 @@
         public virtual TravelLine TravelLine { get; set; }
 
         public TimeSpan FlightDuration { get; set; }
-
-        public virtual ICollection<Passenger> Passengers { get; set; }
     }
 }

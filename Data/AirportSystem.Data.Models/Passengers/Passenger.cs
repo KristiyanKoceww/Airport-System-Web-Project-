@@ -37,10 +37,7 @@
         public string PassportId { get; set; }
 
         public virtual Passport Passport { get; set; }
-
-        [Required]
-        public PassengerType PassengerType { get; set; }
-
+        
         [Required]
         public Gender Gender { get; set; }
 

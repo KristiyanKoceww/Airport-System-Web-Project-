@@ -39,14 +39,9 @@
     <link href="~/assets/css/slick.css" rel="stylesheet" />
     <link href="~/assets/css/slicknav.css" rel="stylesheet" />
     <link href="~/assets/css/style.css" rel="stylesheet" />
-
-    <link href="~/lib/datatables/media/css/jquery.dataTables.css" rel="stylesheet" />
-    <link href="~/assets/css/themify-icons.css" rel="stylesheet" />
-
-  
     
+    <link href="~/assets/css/themify-icons.css" rel="stylesheet" />
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.css">
-
     <link href="~/Table.css" rel="stylesheet" />
 
 </head>
@@ -56,10 +51,6 @@
         <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">@GlobalConstants.SystemName</a>
-                @*<button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>*@
 
                 <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
                     <partial name="_LoginPartial" />
@@ -94,11 +85,10 @@
     </footer>
 
 
-    @*<script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
-        <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.min.js" asp-append-version="true"></script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-        <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" asp-append-version="true"></script>*@
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
+    <script src="~/js/site.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.js" asp-append-version="true"></script>
 
 
     <!-- All JS Custom Plugins Link Here here -->
@@ -137,7 +127,6 @@
             src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js">
     </script>
 
-    
 
     @await this.RenderSectionAsync("Scripts", required: false)
 </body>

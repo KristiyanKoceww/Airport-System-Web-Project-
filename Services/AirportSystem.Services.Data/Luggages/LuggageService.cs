@@ -15,6 +15,24 @@
             this.db = db;
         }
 
+        public decimal CalculatePrice(decimal price, LuggageType luggageType)
+        {
+
+            switch (luggageType.ToString())
+            {
+                case "CarryOnBag":
+                    return price;
+                case "TrolleyBag":
+                    price = price * 1.15M;
+                    break;
+                case "CheckedInBag":
+                    price = price * 1.25M;
+                    break;
+            }
+
+            return price;
+        }
+
         public void Create(LuggageInputModel luggageInputModel)
         {
             var luggage = new Luggage()

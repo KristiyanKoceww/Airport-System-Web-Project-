@@ -19,19 +19,19 @@
             this.countryService = countryService;
         }
 
-        public async Task<IActionResult> Add()
+        public IActionResult Add()
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(CountryInputModel countryInputModel)
+        public IActionResult Add(CountryInputModel countryInputModel)
         {
             this.countryService.Create(countryInputModel);
             return this.View();
         }
 
-        public async Task<IActionResult> All()
+        public IActionResult All()
         {
             return this.View();
         }

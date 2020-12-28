@@ -17,13 +17,13 @@
             this.seatsService = seatsService;
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(bool isAvailable, int seatsCount, int planeId)
+        public IActionResult Create(bool isAvailable, int seatsCount, int planeId)
         {
             this.seatsService.Create(isAvailable, seatsCount, planeId);
 

@@ -10,8 +10,6 @@
 
     public interface IFlightService
     {
-        Task AddPassengerToFlight(Flight flight, Passenger passenger);
-
         void Create(FlightInputModel flightInputModel);
 
         void Remove(Flight flight);

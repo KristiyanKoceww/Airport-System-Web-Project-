@@ -50,13 +50,13 @@
             {
                 new Seat()
                 {
-                    Id = 1,
+                    
                     PlaneId = 1,
                     IsAvailable = true,
                 },
                 new Seat()
                 {
-                    Id = 2,
+                    
                     PlaneId = 1,
                     IsAvailable = true,
                 },
@@ -65,13 +65,13 @@
             {
                 new Seat()
                 {
-                    Id = 3,
+                    
                     PlaneId = 1,
                     IsAvailable = true,
                 },
                 new Seat()
                 {
-                    Id = 4,
+                    
                     PlaneId = 1,
                     IsAvailable = true,
                 },
@@ -125,13 +125,13 @@
             {
                 new Seat()
                 {
-                    Id = 1,
+                    
                     PlaneId = 1,
                     IsAvailable = true,
                 },
                 new Seat()
                 {
-                    Id = 2,
+                   
                     PlaneId = 1,
                     IsAvailable = true,
                 },
@@ -167,13 +167,13 @@
             {
                 new Seat()
                 {
-                    Id = 1,
+                   
                     PlaneId = 1,
                     IsAvailable = true,
                 },
                 new Seat()
                 {
-                    Id = 2,
+                   
                     PlaneId = 1,
                     IsAvailable = true,
                 },
@@ -182,13 +182,13 @@
             {
                 new Seat()
                 {
-                    Id = 3,
+                   
                     PlaneId = 1,
                     IsAvailable = true,
                 },
                 new Seat()
                 {
-                    Id = 4,
+                   
                     PlaneId = 1,
                     IsAvailable = true,
                 },

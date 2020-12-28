@@ -10,5 +10,7 @@
         Luggage GetLuggageById(int luggageId);
 
         Luggage GetLuggageByPassengerId(int passengerId);
+
+        decimal CalculatePrice(decimal price, LuggageType luggageType);
     }
 }

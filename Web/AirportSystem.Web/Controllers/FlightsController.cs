@@ -28,18 +28,23 @@
         }
 
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return this.View();
         }
 
         [HttpPost]
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-        public async Task<IActionResult> Create(FlightInputModel flightInputModel)
+        public IActionResult Create(FlightInputModel flightInputModel)
         {
             var travelLine = this.travelLinesService.FindTravelLineByCityId(flightInputModel.TravelLineCityId, flightInputModel.TravelLineCity2Id);
             var plane = this.planeService.GetPlaneById(flightInputModel.PlaneId);
 
+            if (plane.IsPlaneAvailable == false)
+            {
+                this.ViewBag.Massage = "This plane is already taken by another flight!";
+                return this.View("TravelLineOrPlaneNotFound");
+            }
             if (travelLine == null)
             {
                 this.ViewBag.Massage = "Travel line not found";
@@ -57,25 +62,25 @@
         }
 
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-        public async Task<IActionResult> All()
+        public IActionResult All()
         {
             return this.View();
         }
 
-        public async Task<IActionResult> All2()
+        public IActionResult All2()
         {
             return this.View();
         }
 
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-        public async Task<IActionResult> GetFlightById()
+        public IActionResult GetFlightById()
         {
             return this.View();
         }
 
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         [HttpPost]
-        public async Task<IActionResult> GetFlightById(int Id)
+        public IActionResult GetFlightById(int Id)
         {
             var flight = this.flightService.GetFlightById(Id);
 
@@ -100,13 +105,13 @@
             return this.View("GetFlightByIdResult", viewModel);
         }
 
-        public async Task<IActionResult> Search(string origin, string destinaton)
+        public IActionResult Search(string origin, string destinaton)
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Search(SearchForFlightViewModel flight)
+        public IActionResult Search(SearchForFlightViewModel flight)
         {
             var flights = this.flightService.SearchForFlight(flight.Origin, flight.Destination);
 
@@ -119,7 +124,7 @@
         }
 
         [HttpGet]
-        public async Task<IActionResult> SearchByDestination(string destination)
+        public IActionResult SearchByDestination(string destination)
         {
             var flights = this.flightService.FlightsByDestination(destination);
 
@@ -131,13 +136,13 @@
             return this.View("SearchResults", flights);
         }
 
-        public async Task<IActionResult> Remove()
+        public IActionResult Remove()
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Remove(int id)
+        public IActionResult Remove(int id)
         {
             var flight = this.flightService.GetFlightById(id);
 

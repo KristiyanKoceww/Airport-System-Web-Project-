@@ -30,13 +30,13 @@
             this.userPassengersService = userPassengersService;
         }
 
-        public async Task<IActionResult> Add()
+        public IActionResult Add()
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(Services.Data.InputModels.PassengerInputModel passengerInputModel)
+        public IActionResult Add(Services.Data.InputModels.PassengerInputModel passengerInputModel)
         {
             if (!this.ModelState.IsValid)
             {
@@ -51,7 +51,7 @@
             return this.Redirect("/Passports/edit");
         }
 
-        public async Task<IActionResult> PassengerInfo()
+        public IActionResult PassengerInfo()
         {
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
             var user = this.passengersService.GetPassengerByUserId(userId);

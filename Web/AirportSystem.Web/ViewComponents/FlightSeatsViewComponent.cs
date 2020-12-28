@@ -26,6 +26,7 @@
         public IViewComponentResult Invoke(int flightId, string title)
         {
             var flight = this.flightService.GetFlightById(flightId);
+
             var seats = this.seatsService.GetSeatsByPlaneId(flight.PlaneId);
 
             var AreSeatsAvailable = new Dictionary<Seat, bool>();

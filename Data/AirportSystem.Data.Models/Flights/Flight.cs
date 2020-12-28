@@ -10,10 +10,6 @@
 
     public class Flight : BaseDeletableModel<int>
     {
-        public Flight()
-        {
-            this.Passengers = new HashSet<Passenger>();
-        }
 
         [Required]
         public int PlaneId { get; set; }
@@ -40,7 +36,5 @@
         public decimal Price { get; set; }
 
         public TimeSpan FlightDuration { get; set; }
-
-        public virtual ICollection<Passenger> Passengers { get; set; }
     }
 }

@@ -1,10 +1,10 @@
 ﻿[
   {
-    "TravelLineCityId": "6",
-    "TravelLineCity2Id": "7",
+    "TravelLineCityId": "7",
+    "TravelLineCity2Id": "3",
     "DepartureTime": "2020-02-28T14:53:04",
     "ArrivalTime": "2020-02-28T17:53:04",
-    "FlightDuration": "23:00:00",
+    "FlightDuration": "03:00:00",
     "FlightStatus": 1,
     "PlaneId": 2,
     "Price": 500,
@@ -13,86 +13,86 @@
     "TravelLineCity2Name": "Madrid"
   },
   {
-    "TravelLineCityId": "6",
-    "TravelLineCity2Id": "10",
+    "TravelLineCityId": "11",
+    "TravelLineCity2Id": "24",
     "DepartureTime": "2020-04-28T14:53:04",
     "ArrivalTime": "2020-04-28T17:53:04",
     "FlightDuration": "04:00:00",
     "FlightStatus": 1,
     "PlaneId": 3,
     "Price": 340,
-    "AirportId": 1,
-    "TravelLineCityName": "Berlin",
-    "TravelLineCity2Name": "Manchester"
+    "AirportId": 2,
+    "TravelLineCityName": "Lester",
+    "TravelLineCity2Name": "Valencia"
   },
   {
-    "TravelLineCityId": "10",
-    "TravelLineCity2Id": "7",
+    "TravelLineCityId": "12",
+    "TravelLineCity2Id": "77",
     "DepartureTime": "2020-06-14T14:53:04",
     "ArrivalTime": "2020-06-14T17:53:04",
     "FlightDuration": "03:00:00",
     "FlightStatus": 1,
-    "PlaneId": 3,
+    "PlaneId": 4,
     "Price": 220,
     "AirportId": 27,
-    "TravelLineCityName": "Manchester",
-    "TravelLineCity2Name": "Madrid"
+    "TravelLineCityName": "Barcelona",
+    "TravelLineCity2Name": "Sofia"
   },
   {
     "TravelLineCityId": "13",
-    "TravelLineCity2Id": "10",
+    "TravelLineCity2Id": "15",
     "DepartureTime": "2020-02-21T14:53:04",
     "ArrivalTime": "2020-02-21T15:53:04",
     "FlightDuration": "01:00:00",
     "FlightStatus": 1,
     "PlaneId": 6,
     "Price": 310,
-    "AirportId": 1,
-    "TravelLineCityName": "Liverpool",
-    "TravelLineCity2Name": "Manchester"
+    "AirportId": 3,
+    "TravelLineCityName": "Bristal",
+    "TravelLineCity2Name": "London"
   },
   {
-    "TravelLineCityId": "19",
-    "TravelLineCity2Id": "25",
+    "TravelLineCityId": "17",
+    "TravelLineCity2Id": "76",
     "DepartureTime": "2020-07-11T14:53:04",
     "ArrivalTime": "2020-07-11T18:53:04",
     "FlightDuration": "04:00:00",
     "FlightStatus": 1,
     "PlaneId": 2,
-    "Price": 600,
-    "AirportId": 1,
-    "TravelLineCityName": "London",
-    "TravelLineCity2Name": "Amsterdam"
+    "Price": 250,
+    "AirportId": 22,
+    "TravelLineCityName": "Berlin",
+    "TravelLineCity2Name": "Drezden"
   },
   {
-    "TravelLineCityId": "36",
-    "TravelLineCity2Id": "29",
+    "TravelLineCityId": "20",
+    "TravelLineCity2Id": "82",
     "DepartureTime": "2020-09-16T10:53:04",
     "ArrivalTime": "2020-09-16T12:53:04",
     "FlightDuration": "02:00:00",
     "FlightStatus": 1,
     "PlaneId": 7,
     "Price": 130,
-    "AirportId": 1,
-    "TravelLineCityName": "Milano",
-    "TravelLineCity2Name": "Sevila"
+    "AirportId": 15,
+    "TravelLineCityName": "Munchen",
+    "TravelLineCity2Name": "Yokohama"
   },
   {
-    "TravelLineCityId": "36",
-    "TravelLineCity2Id": "50",
+    "TravelLineCityId": "26",
+    "TravelLineCity2Id": "44",
     "DepartureTime": "2020-10-05T09:53:04",
     "ArrivalTime": "2020-10-05T11:53:04",
     "FlightDuration": "02:00:00",
     "FlightStatus": 1,
     "PlaneId": 6,
     "Price": 423,
-    "AirportId": 1,
-    "TravelLineCityName": "Milano",
-    "TravelLineCity2Name": "Palma De Malorka"
+    "AirportId": 19,
+    "TravelLineCityName": "Saragosa",
+    "TravelLineCity2Name": "Kordoba"
   },
   {
-    "TravelLineCityId": "66",
-    "TravelLineCity2Id": "55",
+    "TravelLineCityId": "28",
+    "TravelLineCity2Id": "29",
     "DepartureTime": "2020-02-28T14:53:04",
     "ArrivalTime": "2020-02-28T17:53:04",
     "FlightDuration": "23:00:00",
@@ -100,12 +100,12 @@
     "PlaneId": 9,
     "Price": 399,
     "AirportId": 1,
-    "TravelLineCityName": "Sofia",
-    "TravelLineCity2Name": "Sankt Peterburg"
+    "TravelLineCityName": "Genua",
+    "TravelLineCity2Name": "Palerno"
   },
   {
-    "TravelLineCityId": "75",
-    "TravelLineCity2Id": "70",
+    "TravelLineCityId": "32",
+    "TravelLineCity2Id": "92",
     "DepartureTime": "2020-02-28T14:53:04",
     "ArrivalTime": "2020-02-28T17:53:04",
     "FlightDuration": "18:00:00",
@@ -113,12 +113,12 @@
     "PlaneId": 10,
     "Price": 223,
     "AirportId": 1,
-    "TravelLineCityName": "Hamburger",
-    "TravelLineCity2Name": "Dortmund"
+    "TravelLineCityName": "Milano",
+    "TravelLineCity2Name": "Bordo"
   },
   {
-    "TravelLineCityId": "96",
-    "TravelLineCity2Id": "97",
+    "TravelLineCityId": "36",
+    "TravelLineCity2Id": "30",
     "DepartureTime": "2020-02-28T14:53:04",
     "ArrivalTime": "2020-02-28T17:53:04",
     "FlightDuration": "23:00:00",
@@ -126,38 +126,38 @@
     "PlaneId": 16,
     "Price": 245,
     "AirportId": 1,
-    "TravelLineCityName": "Atina",
-    "TravelLineCity2Name": "Ren"
+    "TravelLineCityName": "Krajova",
+    "TravelLineCity2Name": "Torino"
   },
   {
-    "TravelLineCityId": "101",
-    "TravelLineCity2Id": "98",
+    "TravelLineCityId": "42",
+    "TravelLineCity2Id": "43",
     "DepartureTime": "2020-11-11T19:53:04",
     "ArrivalTime": "2020-11-11T22:53:04",
     "FlightDuration": "07:00:00",
     "FlightStatus": 1,
     "PlaneId": 2,
     "Price": 325,
-    "AirportId": 1,
-    "TravelLineCityName": "Novosibirsk",
-    "TravelLineCity2Name": "Lil"
+    "AirportId": 28,
+    "TravelLineCityName": "Nish",
+    "TravelLineCity2Name": "Belgrad"
   },
   {
-    "TravelLineCityId": "71",
-    "TravelLineCity2Id": "80",
+    "TravelLineCityId": "78",
+    "TravelLineCity2Id": "79",
     "DepartureTime": "2020-01-26T14:53:04",
     "ArrivalTime": "2020-01-26T17:53:04",
     "FlightDuration": "03:00:00",
     "FlightStatus": 1,
     "PlaneId": 2,
     "Price": 395,
-    "AirportId": 1,
-    "TravelLineCityName": "Frankfurt",
-    "TravelLineCity2Name": "Moskva"
+    "AirportId": 23,
+    "TravelLineCityName": "Plovid",
+    "TravelLineCity2Name": "MosVarnakva"
   },
   {
-    "TravelLineCityId": "63",
-    "TravelLineCity2Id": "66",
+    "TravelLineCityId": "89",
+    "TravelLineCity2Id": "61",
     "DepartureTime": "2020-12-12T13:53:04",
     "ArrivalTime": "2020-12-12T19:53:04",
     "FlightDuration": "23:00:00",
@@ -165,20 +165,7 @@
     "PlaneId": 18,
     "Price": 231,
     "AirportId": 1,
-    "TravelLineCityName": "Varna",
-    "TravelLineCity2Name": "Sofia"
-  },
-  {
-    "TravelLineCityId": "73",
-    "TravelLineCity2Id": "77",
-    "DepartureTime": "2020-07-07T14:53:04",
-    "ArrivalTime": "2020-07-07T17:53:04",
-    "FlightDuration": "23:00:00",
-    "FlightStatus": 1,
-    "PlaneId": 17,
-    "Price": 168,
-    "AirportId": 1,
-    "TravelLineCityName": "Munchen",
-    "TravelLineCity2Name": "Marsilie"
+    "TravelLineCityName": "Lion",
+    "TravelLineCity2Name": "Toronto"
   }
 ]

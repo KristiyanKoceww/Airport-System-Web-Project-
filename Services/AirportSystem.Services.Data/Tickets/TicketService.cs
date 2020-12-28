@@ -17,13 +17,36 @@
             this.db = db;
         }
 
+        public decimal CalculatePrice(decimal price, string ticketRule, string ticketType)
+        {
+            if (ticketRule == "2")
+            {
+                price *= 2;
+            }
+
+            switch (ticketType)
+            {
+                case "1":
+                    price = price - (price * 0.2M);
+                    break;
+                case "2":
+                    price *= 1.5M;
+                    break;
+                case "3":
+                    price = 1.25M;
+                    break;
+            }
+
+            return price;
+        }
+
         public Ticket Create(TicketInputModel ticketInputModel)
         {
             var ticket = new Ticket()
             {
                 LuggageId = ticketInputModel.LuggageId,
                 PassengerId = ticketInputModel.PassengerId,
-                SeatNumber = ticketInputModel.SeatNumber,
+                SeatNumber = ticketInputModel.SeatNumber.ToString(),
                 TicketRule = (TicketRule)Enum.Parse(typeof(TicketRule), ticketInputModel.TicketRule),
                 TicketType = (TicketType)Enum.Parse(typeof(TicketType), ticketInputModel.TicketType),
             };

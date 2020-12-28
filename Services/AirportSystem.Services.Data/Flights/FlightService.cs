@@ -17,13 +17,6 @@
             this.db = db;
         }
 
-        public async Task AddPassengerToFlight(Flight flight, Passenger passenger)
-        {
-            flight.Passengers.Add(passenger);
-
-            await this.db.SaveChangesAsync();
-        }
-
         public void Create(FlightInputModel flightInputModel)
         {
             var flight = new Flight()
@@ -40,6 +33,9 @@
 
             var cityName = this.db.Cities.Where(x => x.Id == flightInputModel.TravelLineCityId).Select(x => x.Name).FirstOrDefault();
             var city2Name = this.db.Cities.Where(x => x.Id == flightInputModel.TravelLineCity2Id).Select(x => x.Name).FirstOrDefault();
+            var plane = this.db.Planes.Where(x => x.Id == flightInputModel.PlaneId).FirstOrDefault();
+
+            plane.IsPlaneAvailable = false;
             flight.TravelLineCityName = cityName;
             flight.TravelLineCity2Name = city2Name;
 
@@ -70,7 +66,6 @@
                 TravelLine = x.TravelLine,
                 Price = x.Price,
                 PlaneSeatsCount = x.Plane.Seats.Count,
-                FreeSeats = x.Plane.Seats.Count - x.Passengers.Count,
             }).ToList();
 
             return flights;

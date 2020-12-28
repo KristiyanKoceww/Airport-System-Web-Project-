@@ -20,13 +20,13 @@
             this.cityService = cityService;
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
            return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(TravelLineInputModel travelLineInputModel)
+        public IActionResult Create(TravelLineInputModel travelLineInputModel)
         {
             var city = this.cityService.FindCityById(travelLineInputModel.CityId);
             var city2 = this.cityService.FindCityById(travelLineInputModel.City2Id);
@@ -41,7 +41,7 @@
             return this.View();
         }
 
-        public async Task<IActionResult> All()
+        public IActionResult All()
         {
             return this.View();
         }

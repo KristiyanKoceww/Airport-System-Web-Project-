@@ -30,7 +30,6 @@
         {
         }
 
-        public DbSet<Setting> Settings { get; set; }
 
         public DbSet<City> Cities { get; set; }
 
@@ -39,11 +38,6 @@
         public DbSet<Luggage> Luggage { get; set; }
 
         public DbSet<Seat> Seats { get; set; }
-
-        public object FirstOrDefault()
-        {
-            throw new NotImplementedException();
-        }
 
         public DbSet<Passenger> Passengers { get; set; }
 
@@ -128,6 +122,12 @@
             {
                 x.PassengerId,
                 x.UserId,
+            });
+
+            builder.Entity<Seat>().HasKey(x => new
+            {
+                x.SeatNumber,
+                x.PlaneId,
             });
         }
 

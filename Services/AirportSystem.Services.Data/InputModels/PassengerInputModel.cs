@@ -47,10 +47,6 @@
         [Display(Name = "Passport identification number")]
         public string PassportId { get; set; }
 
-        [Required]
-        [Display(Name = "Select your type")]
-        [EnumDataType(typeof(PassengerType))]
-        public PassengerType PassengerType { get; set; }
 
         [Required]
         [EnumDataType(typeof(Gender))]

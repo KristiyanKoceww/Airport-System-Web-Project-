@@ -48,10 +48,6 @@
         [Display(Name = "Passport identification number")]
         public string PassportId { get; set; }
 
-        [Required]
-        [Display(Name = "Select your type")]
-        public PassengerType PassengerType { get; set; }
-
         public Gender Gender { get; set; }
     }
 }

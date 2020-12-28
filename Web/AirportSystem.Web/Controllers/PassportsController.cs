@@ -20,13 +20,13 @@
             this.passportService = passportService;
         }
 
-        public async Task<IActionResult> Edit()
+        public IActionResult Edit()
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(PassportInputModel input)
+        public IActionResult Edit(PassportInputModel input)
         {
             if (!this.ModelState.IsValid)
             {

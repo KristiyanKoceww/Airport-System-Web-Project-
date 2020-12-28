@@ -39,7 +39,6 @@
                 Phone = passengerInputModel.Phone,
                 PassportId = passengerInputModel.PassportId,
                 Gender = passengerInputModel.Gender,
-                PassengerType = passengerInputModel.PassengerType,
             };
 
             this.db.Passengers.Add(passenger);

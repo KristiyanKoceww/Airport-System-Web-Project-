@@ -19,30 +19,30 @@
             this.avioCompanyService = avioCompanyService;
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(AvioCompanyInputModel input)
+        public IActionResult Create(AvioCompanyInputModel input)
         {
             this.avioCompanyService.Create(input);
             return this.View();
         }
 
-        public async Task<IActionResult> All()
+        public IActionResult All()
         {
             return this.View();
         }
 
-        public async Task<IActionResult> AddPlane()
+        public IActionResult AddPlane()
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddPlane(AddPlaneToAvioCompanyInputModel addPlaneToAvioCompanyInputModel)
+        public IActionResult AddPlane(AddPlaneToAvioCompanyInputModel addPlaneToAvioCompanyInputModel)
         {
             var avioCompany = this.avioCompanyService.FindCompanyById(addPlaneToAvioCompanyInputModel.AvioCompanyId);
 

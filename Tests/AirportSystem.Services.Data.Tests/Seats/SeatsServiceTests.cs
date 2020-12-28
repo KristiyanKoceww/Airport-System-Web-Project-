@@ -58,14 +58,14 @@
 
             var seat = new Seat()
             {
-                Id = 2,
+                
                 PlaneId = 1,
                 IsAvailable = true,
             };
 
             var seat2 = new Seat()
             {
-                Id = 1,
+               
                 PlaneId = 1,
                 IsAvailable = true,
             };

@@ -15,18 +15,21 @@
             this.db = db;
         }
 
-        public IEnumerable<Seat> Create(bool isAvailable, int seatsCount, int planeId)
+        public void Create(bool isAvailable, int seatsCount, int planeId)
         {
             var seats = new List<Seat>();
             var plane = this.db.Planes.Where(x => x.Id == planeId).FirstOrDefault();
-
+            var number = 1;
             for (int i = 0; i < seatsCount; i++)
             {
                 var seat = new Seat()
                 {
-                    IsAvailable = true,
+                    SeatNumber = number,
+                    IsAvailable = isAvailable,
                 };
                 seats.Add(seat);
+
+                number++;
             }
 
             foreach (var seat in seats)
@@ -36,8 +39,26 @@
 
             this.db.Seats.AddRangeAsync(seats);
             this.db.SaveChangesAsync();
+        }
 
-            return seats;
+        public bool CheckSeatsIfIsAvailableAndEquipSeat(Seat seat)
+        {
+            bool result = true;
+
+            if (seat == null)
+            {
+                result = false;
+            }
+
+            if (seat.IsAvailable == false)
+            {
+                result = false;
+            }
+
+            seat.IsAvailable = false;
+            this.db.SaveChangesAsync();
+
+            return result;
         }
 
         public IEnumerable<Seat> GetSeatsByPlaneId(int planeId)

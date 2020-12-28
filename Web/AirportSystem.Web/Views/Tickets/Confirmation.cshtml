@@ -9,6 +9,7 @@
 <head>
     <title>Confirm Order</title>
     <link rel="stylesheet" type="text/css" href="buynow.css">
+    
 </head>
 <body class="text-body">
     <h1>confirm details</h1>
@@ -47,10 +48,17 @@
             <label>Luggage id</label>
             <h3>@Model.LuggageId</h3>
         </div>
+
+        <div>
+            @Html.ActionLink("Confirm", "Charge", "Stripe", new { price = Model.Price, passengerId = Model.PassengerId, ticketId = Model.TicketId }, new { @class="btn btn-primary" })
+           
+        </div>
+        <div>
+            <a asp-controller="Flights" asp-action="All2" class="btn btn-warning black-color" role="button">Back</a>
+        </div>
         <br>
     </div>
-
 </body>
-@Html.ActionLink("Confirm", "Charge", "Stripe", new { price = Model.Price, passengerId = Model.PassengerId, ticketId = Model.TicketId });
-@Html.ActionLink("Back", "All", "Flights");
 </html>
+
+  

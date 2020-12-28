@@ -1,117 +1,81 @@
 [
-
   {
-    "CityId": "6",
-    "City2Id": "7",
+    "CityId": "7",
+    "City2Id": "3",
     "CityName": "Berlin",
     "CityName2": "Madrid"
   },
   {
-    "CityId": "6",
-    "City2Id": "10",
-    "CityName": "Berlin",
-    "CityName2": "Manchester"
-  },
-  {
-    "CityId": "10",
-    "City2Id": "7",
-    "CityName": "Manchester",
-    "CityName2": "Madrid"
-  },
-  {
-    "CityId": "13",
-    "City2Id": "10",
-    "CityName": "Liverpool",
-    "CityName2": "Manchester"
-  },
-  {
-    "CityId": "19",
-    "City2Id": "25",
-    "CityName": "London",
-    "CityName2": "Amsterdam"
+    "CityId": "42",
+    "City2Id": "43",
+    "CityName": "Nish",
+    "CityName2": "Belgrad"
   },
   {
     "CityId": "36",
-    "City2Id": "29",
+    "City2Id": "30",
+    "CityName": "Krajova",
+    "CityName2": "Torino"
+  },
+  {
+    "CityId": "32",
+    "City2Id": "92",
     "CityName": "Milano",
-    "CityName2": "Sevila"
+    "CityName2": "Bordo"
   },
   {
-    "CityId": "52",
-    "City2Id": "53",
-    "CityName": "Samara",
-    "CityName2": "Florencia"
-  },
-  {
-    "CityId": "61",
-    "City2Id": "62",
-    "CityName": "Silistra",
-    "CityName2": "Burgas"
-  },
-  {
-    "CityId": "63",
-    "City2Id": "66",
-    "CityName": "Varna",
-    "CityName2": "Sofia"
-  },
-  {
-    "CityId": "64",
-    "City2Id": "70",
-    "CityName": "Dortmund",
-    "CityName2": "Plovid"
-  },
-  {
-    "CityId": "73",
-    "City2Id": "77",
-    "CityName": "Munchen",
-    "CityName2": "Marsilie"
-  },
-  {
-    "CityId": "71",
-    "City2Id": "80",
-    "CityName": "Frankfurt",
-    "CityName2": "Moskva"
-  },
-  {
-    "CityId": "90",
-    "City2Id": "91",
-    "CityName": "Vancuver",
+    "CityId": "89",
+    "City2Id": "61",
+    "CityName": "Lion",
     "CityName2": "Toronto"
   },
   {
-    "CityId": "101",
-    "City2Id": "98",
-    "CityName": "Novosibirsk",
-    "CityName2": "Lil"
+    "CityId": "28",
+    "City2Id": "29",
+    "CityName": "Genua",
+    "CityName2": "Palerno"
   },
   {
-    "CityId": "96",
-    "City2Id": "97",
-    "CityName": "Atina",
-    "CityName2": "Ren"
+    "CityId": "13",
+    "City2Id": "15",
+    "CityName": "Bristal",
+    "CityName2": "London"
   },
   {
-    "CityId": "83",
-    "City2Id": "89",
-    "CityName": "Bolnes",
-    "CityName2": "Monreal"
+    "CityId": "12",
+    "City2Id": "77",
+    "CityName": "Barcelona",
+    "CityName2": "Sofia"
   },
   {
-    "CityId": "75",
-    "City2Id": "70",
-    "CityName": "Hamburger",
-    "CityName2": "Dortmund"
+    "CityId": "78",
+    "City2Id": "79",
+    "CityName": "Plovid",
+    "CityName2": "Varna"
   },
   {
-    "CityId": "66",
-    "City2Id": "55",
-    "CityName": "Sofia",
-    "CityName2": "Sankt Peterburg"
+    "CityId": "17",
+    "City2Id": "76",
+    "CityName": "Berlin",
+    "CityName2": "Drezden"
   },
   {
-    "CityId": "36",
-    "City2Id": "50",
-    "CityName": "Milano",
-    "CityName2": "Palma De Malorka"
+    "CityId": "20",
+    "City2Id": "82",
+    "CityName": "Munchen",
+    "CityName2": "Yokohama"
+  },
+  {
+    "CityId": "11",
+    "City2Id": "24",
+    "CityName": "Lester",
+    "CityName2": "Valencia"
+  },
+  {
+    "CityId": "26",
+    "City2Id": "44",
+    "CityName": "Saragosa",
+    "CityName2": "Kordoba"
   }
+
 ]

@@ -17,15 +17,15 @@
         public decimal Price { get; set; }
 
         [Required]
-        public string SeatNumber { get; set; }
+        public int SeatNumber { get; set; }
 
         [Required]
         public int FlightId { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string TicketType { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "This field is required")]
         public string TicketRule { get; set; }
 
         public virtual ICollection<Seat> Seats { get; set; }

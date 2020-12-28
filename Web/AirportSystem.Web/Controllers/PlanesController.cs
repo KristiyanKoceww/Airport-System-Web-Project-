@@ -20,19 +20,19 @@
             this.planeService = planeService;
         }
 
-        public async Task<IActionResult> Create()
+        public IActionResult Create()
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(PlaneInputModel planeInputModel)
+        public IActionResult Create(PlaneInputModel planeInputModel)
         {
             this.planeService.Create(planeInputModel);
             return this.View();
         }
 
-        public async Task<IActionResult> All()
+        public IActionResult All()
         {
             return this.View();
         }

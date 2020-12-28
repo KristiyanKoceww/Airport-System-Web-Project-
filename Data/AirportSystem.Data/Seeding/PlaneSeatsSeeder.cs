@@ -24,13 +24,17 @@
             for (int i = 0; i < planes.Count; i++)
             {
                 var count = random.Next(40, 80);
+                var number = 1;
 
                 for (int k = 0; k <= count; k++)
                 {
                     planes[i].Seats.Add(new Seat
                     {
                         IsAvailable = true,
+                        SeatNumber = number,
                     });
+
+                    number++;
                 }
             }
 

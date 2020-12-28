@@ -44,7 +44,7 @@
                 IsPlaneAvailable = x.IsPlaneAvailable,
                 Seats = x.Seats.Select(x => new Seat()
                 {
-                    Id = x.Id,
+                    SeatNumber = x.SeatNumber,
                     IsAvailable = x.IsAvailable,
                 }).ToList(),
             }).ToList();
@@ -54,7 +54,7 @@
 
         public Plane GetPlaneById(int id)
         {
-            var plane = this.db.Planes.Where(x => x.Id == id).FirstOrDefault();
+            var plane = this.db.Planes.Find(id);
 
             return plane;
         }

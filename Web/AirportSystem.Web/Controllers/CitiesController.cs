@@ -21,13 +21,13 @@
             this.countryService = countryService;
         }
 
-        public async Task<IActionResult> Add()
+        public IActionResult Add()
         {
             return this.View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Add(CitiesInputModel citiesInputModel)
+        public IActionResult Add(CitiesInputModel citiesInputModel)
         {
             var country = this.countryService.FindCountryById(citiesInputModel.CountryId);
 
@@ -40,7 +40,7 @@
             return this.View();
         }
 
-        public async Task<IActionResult> All()
+        public IActionResult All()
         {
             return this.View();
         }
