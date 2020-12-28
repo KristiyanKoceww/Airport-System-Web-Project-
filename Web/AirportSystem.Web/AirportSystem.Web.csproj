@@ -57,6 +57,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="..\..\.editorconfig" Link=".editorconfig" />
     <None Include="Views\Luggages\Create.cshtml" />
     <None Include="wwwroot\assets\fonts\fa-brands-400.svg" />
     <None Include="wwwroot\assets\fonts\fa-brands-400.woff2" />

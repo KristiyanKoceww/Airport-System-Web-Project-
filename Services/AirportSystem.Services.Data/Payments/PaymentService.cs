@@ -8,6 +8,7 @@
     using AirportSystem.Data.Models.Payment;
     using AirportSystem.Data.Models.Payments;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Web.ViewModels;
 
     public class PaymentService : IPaymentService
     {
@@ -32,13 +33,18 @@
             this.db.SaveChanges();
         }
 
-        public IEnumerable<Payment> GetAll()
+        public IEnumerable<PaymentsViewModel> GetAll()
         {
-            var payments = this.db.Payments.Select(x => new Payment()
+            var payments = this.db.Payments.Select(x => new PaymentsViewModel()
             {
+                Amount = x.Amount,
                 PassengerId = x.PassengerId,
                 TicketId = x.TicketId,
                 PaymentStatus = x.PaymentStatus,
+                PassengerFirstName = x.Passenger.FirstName,
+                PassengerLastName = x.Passenger.LastName,
+                TicketTicketRule = x.Ticket.TicketRule,
+                TicketTicketType = x.Ticket.TicketType,
             }).ToList();
 
             return payments;

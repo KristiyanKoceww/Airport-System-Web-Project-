@@ -1,9 +1,10 @@
-﻿using AirportSystem.Data.Models.Passengers;
-using System.Linq;
-using Xunit;
-
-namespace AirportSystem.Services.Data.Tests.UserPassengers
+﻿namespace AirportSystem.Services.Data.Tests.UserPassengers
 {
+    using System.Linq;
+
+    using AirportSystem.Data.Models.Passengers;
+    using Xunit;
+
     public class UserPassengersServiceTests : BaseServiceTests
     {
         [Fact]

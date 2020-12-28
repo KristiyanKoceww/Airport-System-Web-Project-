@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Threading.Tasks;
+
     using AirportSystem.Data.Models.Planes;
     using AirportSystem.Data.Planes;
     using AirportSystem.Services.Data.Seats;
@@ -32,7 +33,7 @@
             var isAvailable = true;
             var planeId = 1;
 
-            var seats = service.Create(isAvailable, count, planeId);
+            service.Create(isAvailable, count, planeId);
             var planeInDb = this.DbContext.Planes.Find(planeId);
             var expectedCount = 5;
             var seat = planeInDb.Seats.FirstOrDefault();
@@ -58,14 +59,14 @@
 
             var seat = new Seat()
             {
-                
+                SeatNumber = 1,
                 PlaneId = 1,
                 IsAvailable = true,
             };
 
             var seat2 = new Seat()
             {
-               
+                SeatNumber = 2,
                 PlaneId = 1,
                 IsAvailable = true,
             };
@@ -86,7 +87,6 @@
 
             Assert.Equal(expectedCount, seats.Count());
             Assert.Equal(expectedSeatValue, planeSeat.IsAvailable);
-
         }
 
         [Fact]

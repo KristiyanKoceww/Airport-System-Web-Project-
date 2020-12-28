@@ -11,7 +11,6 @@
 
     [Authorize]
     public class PlanesController : AdminController
-
     {
         private readonly IPlaneService planeService;
 

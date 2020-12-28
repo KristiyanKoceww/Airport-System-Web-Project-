@@ -1,11 +1,7 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
-    using System;
-    using System.IO;
     using System.Linq;
-    using System.Threading.Tasks;
-    using AirportSystem.Data.Models.Planes;
-    using AirportSystem.Data.Tickets;
+
     using AirportSystem.Services.Data.Flights;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Luggages;
@@ -55,16 +51,17 @@
         {
             var flight = this.flightService.GetFlightById(id);
 
-            var viewModel = new BookTicketViewModel();
-
-            viewModel.FlightId = flight.Id;
-            viewModel.Price = flight.Price;
+            var viewModel = new BookTicketViewModel
+            {
+                FlightId = flight.Id,
+                Price = flight.Price,
+            };
 
             return this.View(viewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> BookFlight(TicketInputModel input)
+        public IActionResult BookFlight(TicketInputModel input)
         {
             if (!this.ModelState.IsValid)
             {
@@ -94,10 +91,9 @@
 
             var price = this.ticketService.CalculatePrice(flight.Price, input.TicketRule, input.TicketType);
 
-            price = this.luggageService.CalculatePrice(price,luggage.LuggageType);
+            price = this.luggageService.CalculatePrice(price, luggage.LuggageType);
 
             passenger.Tickets.Add(ticket);
-
 
             var viewModel = new UserTicketViewModel()
             {
@@ -121,7 +117,7 @@
             return this.RedirectToAction("Confirmation", viewModel);
         }
 
-        public async Task<IActionResult> UserTicket(decimal price, int passengerId, int ticketId)
+        public IActionResult UserTicket(decimal price, int passengerId, int ticketId)
         {
             var ticket = this.ticketService.GetTicketById(ticketId);
             var passenger = this.passengersService.GetPassengerById(passengerId);
@@ -151,12 +147,12 @@
             return this.View(viewModel);
         }
 
-        public async Task<IActionResult> Confirmation(UserTicketViewModel viewModel)
+        public IActionResult Confirmation(UserTicketViewModel viewModel)
         {
             return this.View(viewModel);
         }
 
-        public async Task<IActionResult> BookSeats(int planeId)
+        public IActionResult BookSeats(int planeId)
         {
             var seats = this.seatsService.GetSeatsByPlaneId(planeId);
 
@@ -167,6 +163,13 @@
             };
 
             return this.View(viewModel);
+        }
+
+        public IActionResult GetAllTickets()
+        {
+            var tickets = this.ticketService.GetAll();
+
+            return this.View(tickets);
         }
     }
 }

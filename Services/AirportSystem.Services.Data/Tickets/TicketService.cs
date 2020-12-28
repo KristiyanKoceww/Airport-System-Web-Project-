@@ -7,6 +7,7 @@
     using AirportSystem.Data;
     using AirportSystem.Data.Tickets;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Web.ViewModels;
 
     public class TicketService : ITicketService
     {
@@ -27,7 +28,7 @@
             switch (ticketType)
             {
                 case "1":
-                    price = price - (price * 0.2M);
+                    price -= price * 0.2M;
                     break;
                 case "2":
                     price *= 1.5M;
@@ -59,16 +60,23 @@
             return ticket;
         }
 
-        public IEnumerable<Ticket> GetAll()
+        public IEnumerable<GetAllTicketsViewModel> GetAll()
         {
-            var tickets = this.db.Tickets.Select(x => new Ticket()
+            var tickets = this.db.Tickets.Select(x => new GetAllTicketsViewModel()
             {
+                Id = x.Id,
                 FlightId = x.FlightId,
                 LuggageId = x.LuggageId,
                 PassengerId = x.PassengerId,
                 SeatNumber = x.SeatNumber,
                 TicketRule = x.TicketRule,
                 TicketType = x.TicketType,
+                FlightPrice = x.Flight.Price,
+                FlightTravelLineCity2Name = x.Flight.TravelLineCity2Name,
+                FlightTravelLineCityName = x.Flight.TravelLineCityName,
+                PassengerFirstName = x.Passenger.FirstName,
+                PassengerLastName = x.Passenger.LastName,
+                LuggageWeight = x.Luggage.Weight,
             }).ToList();
 
             return tickets;

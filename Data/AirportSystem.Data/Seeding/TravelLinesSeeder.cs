@@ -10,7 +10,6 @@
 
     internal class TravelLinesSeeder : ISeeder
     {
-
         public async Task SeedAsync(ApplicationDbContext dbContext, IServiceProvider serviceProvider)
         {
             if (dbContext.TravelLines.Any())

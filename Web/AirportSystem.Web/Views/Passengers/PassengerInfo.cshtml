@@ -11,28 +11,34 @@
     <table class="table table-hover">
         <thead>
             <tr>
-                <th scope="col">Travel Id</th>
+                <th scope="col">Travel number</th>
                 <th scope="col">First Name</th>
                 <th scope="col">Middle Name</th>
                 <th scope="col">Last Name</th>
                 <th scope="col">Age</th>
                 <th scope="col">Phone</th>
                 <th scope="col">Address</th>
-                <th scope="col">Passport Id</th>
+                <th scope="col">Passport number</th>
+                <th scope="col">Luggage number</th>
             </tr>
         </thead>
-        <tb
-                <tr class="table-light">
-                   
-                    <td>@Model.PassengerId</td>
-                    <td>@Model.FirstName</td>
-                    <td>@Model.MiddleName</td>
-                    <td>@Model.LastName</td>
-                    <td>@Model.Age</td>
-                    <td>@Model.Phone</td>
-                    <td>@Model.Address</td>
-                    <td>@Model.PassportId</td>
-                </tr>
+        <tbody>
+            <tr class="table-light">
+
+                <td>@Model.PassengerId</td>
+                <td>@Model.FirstName</td>
+                <td>@Model.MiddleName</td>
+                <td>@Model.LastName</td>
+                <td>@Model.Age</td>
+                <td>@Model.Phone</td>
+                <td>@Model.Address</td>
+                <td>@Model.PassportId</td>
+                @if (Model.LuggageId != 0)
+                {
+                    <td>@Model.LuggageId</td>
+                }
+
+            </tr>
         </tbody>
     </table>
 </div>

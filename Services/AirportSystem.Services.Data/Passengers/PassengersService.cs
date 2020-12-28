@@ -50,12 +50,15 @@
         {
             var passengers = this.db.Passengers.Select(x => new Passenger
             {
+                Id = x.Id,
                 FirstName = x.FirstName,
                 MiddleName = x.MiddleName,
                 LastName = x.LastName,
                 Address = x.Address,
                 Age = x.Age,
                 Phone = x.Phone,
+                Gender = x.Gender,
+                PassportId = x.PassportId,
             }).ToList();
 
             return passengers;

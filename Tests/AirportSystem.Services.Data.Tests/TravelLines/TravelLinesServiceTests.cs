@@ -1,10 +1,8 @@
 ﻿namespace AirportSystem.Services.Data.Tests.TravelLines
 {
-    using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
+
     using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.TravelLines;
@@ -22,7 +20,7 @@
                 CityId = 1,
                 CityName = "Sofia",
                 City2Id = 2,
-                City2Name = "Varna"
+                City2Name = "Varna",
             };
 
             var model2 = new TravelLineInputModel()
@@ -30,7 +28,7 @@
                 CityId = 3,
                 CityName = "Plovid",
                 City2Id = 4,
-                City2Name = "Burgas"
+                City2Name = "Burgas",
             };
 
             service.CreateTravelLine(model);

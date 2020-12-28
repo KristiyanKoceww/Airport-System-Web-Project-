@@ -1,0 +1,62 @@
+﻿@model IEnumerable<AirportSystem.Web.ViewModels.PaymentsViewModel>
+
+@{
+
+    this.ViewData["Title"] = "All payments";
+}
+
+<h1 class="text-center">All payments</h1>
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col-md-8 offset-md-2">
+                <div class="page-header text-center">
+                    <h2 id="tables">Payments</h2>
+                </div>
+
+                <div class="component">
+                    <table class="table table-hover table-bordered" id="dataTable">
+                        <thead>
+                            <tr class="table-warning ">
+                                <th scope="col">Passenger Id</th>
+                                <th scope="col">Passenger First Name</th>
+                                <th scope="col">Passenger Last Name</th>
+                                <th scope="col">Amount</th>
+                                <th scope="col">Payment Status</th>
+                                <th scope="col">Ticket Id</th>
+                                <th scope="col">Ticket type</th>
+                                <th scope="col">Ticket</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @foreach (var item in Model)
+                            {
+                                <tr class="table-hover">
+                                    <td scope="row">@item.PassengerId</td>
+                                    <td scope="row">@item.PassengerFirstName</td>
+                                    <td scope="row">@item.PassengerLastName</td>
+                                    <td scope="row">@item.Amount</td>
+                                    <td scope="row">@item.PaymentStatus</td>
+                                    <td scope="row">@item.TicketId</td>
+                                    <td scope="row">@item.TicketTicketType</td>
+                                    <td scope="row">@item.TicketTicketRule</td>
+                                </tr>
+                            }
+
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+                    {
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });</script>
+}

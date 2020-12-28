@@ -40,6 +40,5 @@
         [EnumDataType(typeof(TicketRule))]
         [Display(Name = "Please choose your travel type")]
         public TicketRule? TicketRule { get; set; }
-
     }
 }

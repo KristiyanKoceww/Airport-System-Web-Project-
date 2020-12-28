@@ -1,22 +1,8 @@
 ﻿@using AirportSystem.Common
-@{
-    //if (User.IsInRole("Admin"))
-    //{
-    //    this.Layout = "_ViewStart";
-    //}
-}
+
 <!DOCTYPE html>
 <html>
 <head>
-
-    @*<link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" asp-append-version="true" />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-        <link href="~/css/home.css" rel="stylesheet" />
-        <link href="~/css/site.css" rel="stylesheet" />
-        <link href="~/css/site.min.css" rel="stylesheet" asp-append-version="true" />*@
-
 
 
     <meta charset="utf-8">
@@ -56,7 +42,7 @@
                     <partial name="_LoginPartial" />
                     <div class="column">
                         <ul class="navbar-nav flex-grow-1">
-                            <partial name="Bar" />
+                            <partial name="_navBarPartial" />
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>

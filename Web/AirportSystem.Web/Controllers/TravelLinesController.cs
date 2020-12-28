@@ -1,6 +1,5 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
-    using System.Threading.Tasks;
     using AirportSystem.Services.Data.CitiesAndCountries;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.TravelLines;
@@ -14,7 +13,7 @@
         private readonly ITravelLinesService travelLinesService;
         private readonly ICityService cityService;
 
-        public TravelLinesController(ITravelLinesService travelLinesService,ICityService cityService)
+        public TravelLinesController(ITravelLinesService travelLinesService, ICityService cityService)
         {
             this.travelLinesService = travelLinesService;
             this.cityService = cityService;
@@ -22,7 +21,7 @@
 
         public IActionResult Create()
         {
-           return this.View();
+            return this.View();
         }
 
         [HttpPost]

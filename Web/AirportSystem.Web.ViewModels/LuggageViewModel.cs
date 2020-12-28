@@ -20,7 +20,7 @@
         public string PassengerId { get; set; }
 
         [Required]
-        [Range(1,100)]
+        [Range(1, 100)]
         [Display(Name = "luggage weight")]
         public decimal Weight { get; set; }
 

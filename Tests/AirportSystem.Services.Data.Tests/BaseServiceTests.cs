@@ -1,11 +1,12 @@
-﻿using AirportSystem.Data;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AirportSystem.Services.Data.Tests
+﻿namespace AirportSystem.Services.Data.Tests
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Text;
+
+    using AirportSystem.Data;
+    using Microsoft.EntityFrameworkCore;
+
     public abstract class BaseServiceTests : IDisposable
     {
         public BaseServiceTests()

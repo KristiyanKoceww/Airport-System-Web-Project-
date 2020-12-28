@@ -22,13 +22,13 @@
                 name: "CityName",
                 table: "TravelLines",
                 nullable: false,
-                defaultValue: "");
+                defaultValue: string.Empty);
 
             migrationBuilder.AddColumn<string>(
                 name: "CityName2",
                 table: "TravelLines",
                 nullable: false,
-                defaultValue: "");
+                defaultValue: string.Empty);
 
             migrationBuilder.AlterColumn<string>(
                 name: "Country",
@@ -42,7 +42,7 @@
                 name: "Nationality",
                 table: "Passports",
                 nullable: false,
-                defaultValue: "");
+                defaultValue: string.Empty);
 
             migrationBuilder.AlterColumn<int>(
                 name: "TravelLineCityId",

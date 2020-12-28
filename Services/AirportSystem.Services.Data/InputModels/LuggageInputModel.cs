@@ -17,7 +17,7 @@
         public string LuggageType { get; set; }
 
         [Required]
-        [Range(10,100)]
+        [Range(10, 100)]
         public decimal Weight { get; set; }
     }
 }

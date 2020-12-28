@@ -31,17 +31,18 @@
             this.passengersService = passengersService;
         }
 
-        public async Task<IActionResult> Charge(decimal price, int ticketId)
+        public IActionResult Charge(decimal price, int ticketId)
         {
-            var viewModel = new PaymentViewModel();
-
-            viewModel.Price = price;
-            viewModel.TicketId = ticketId;
+            var viewModel = new PaymentViewModel
+            {
+                Price = price,
+                TicketId = ticketId,
+            };
             return this.View(viewModel);
         }
 
         [HttpPost]
-        public async Task<IActionResult> Charge(PaymentModel paymentInputModel)
+        public IActionResult Charge(PaymentModel paymentInputModel)
         {
             var customers = new CustomerService();
             var charges = new ChargeService();
@@ -66,7 +67,7 @@
                 Metadata = new Dictionary<string, string>()
                 {
                     { "PassengerId", passenger.PassengerId.ToString() },
-                    { "TicketId" , paymentInputModel.TicketId.ToString() },
+                    { "TicketId", paymentInputModel.TicketId.ToString() },
                 },
             });
 
@@ -87,6 +88,13 @@
             }
 
             return this.View();
+        }
+
+        public IActionResult GetAllPayments()
+        {
+            var payments = this.paymentService.GetAll();
+
+            return this.View(payments);
         }
     }
 }

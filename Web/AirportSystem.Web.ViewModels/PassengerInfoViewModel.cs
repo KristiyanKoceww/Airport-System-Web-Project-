@@ -17,5 +17,7 @@
         public string Address { get; set; }
 
         public string PassportId { get; set; }
+
+        public int LuggageId { get; set; }
     }
 }

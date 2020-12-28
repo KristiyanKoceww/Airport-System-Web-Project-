@@ -10,6 +10,7 @@
     using AirportSystem.Data.Models.Passengers;
     using AirportSystem.Services.Data;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Services.Data.Luggages;
     using AirportSystem.Services.Data.Passengers;
     using AirportSystem.Web.ViewModels;
     using Microsoft.AspNetCore.Authorization;
@@ -22,12 +23,14 @@
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IPassengersService passengersService;
         private readonly IUserPassengersService userPassengersService;
+        private readonly ILuggageService luggageService;
 
-        public PassengersController(UserManager<ApplicationUser> userManager, IPassengersService passengersService, IUserPassengersService userPassengersService)
+        public PassengersController(UserManager<ApplicationUser> userManager, IPassengersService passengersService, IUserPassengersService userPassengersService, ILuggageService luggageService)
         {
             this.userManager = userManager;
             this.passengersService = passengersService;
             this.userPassengersService = userPassengersService;
+            this.luggageService = luggageService;
         }
 
         public IActionResult Add()
@@ -61,7 +64,7 @@
             }
 
             var passenger = this.passengersService.GetPassengerById(user.PassengerId);
-
+            var luggage = this.luggageService.GetLuggageByPassengerId(passenger.Id);
             var viewModel = new PassengerInfoViewModel
             {
                 FirstName = passenger.FirstName,
@@ -75,7 +78,19 @@
             viewModel.Phone = passenger.Phone;
             viewModel.PassengerId = user.PassengerId;
 
+            if (luggage != null)
+            {
+                viewModel.LuggageId = luggage.Id;
+            }
+
             return this.View("PassengerInfo", viewModel);
+        }
+
+        public IActionResult GetAllPassengers()
+        {
+            var passegers = this.passengersService.GetAll();
+
+            return this.View(passegers);
         }
     }
 }

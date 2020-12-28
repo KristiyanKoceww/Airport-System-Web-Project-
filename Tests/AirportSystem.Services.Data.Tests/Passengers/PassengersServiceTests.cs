@@ -1,20 +1,18 @@
 ﻿namespace AirportSystem.Services.Data.Tests
 {
-    using AirportSystem.Data;
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
+
     using AirportSystem.Data.Passengers;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Passengers;
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
     using Xunit;
 
     public class PassengersServiceTests : BaseServiceTests
     {
         [Fact]
-        public async Task EnsureCreatePassengerWorkProperly()
+        public void EnsureCreatePassengerWorkProperly()
         {
             var service = new PassengersService(this.DbContext);
 
@@ -38,7 +36,7 @@
         }
 
         [Fact]
-        public async Task EnsureGetAllPassengerWorkProperly()
+        public void EnsureGetAllPassengerWorkProperly()
         {
             var service = new PassengersService(this.DbContext);
 
@@ -77,7 +75,7 @@
         }
 
         [Fact]
-        public async Task EnsureGetAllPassengerReturnZeroWhenDbIsEmpty()
+        public void EnsureGetAllPassengerReturnZeroWhenDbIsEmpty()
         {
             var service = new PassengersService(this.DbContext);
             var passengers = service.GetAll().Count();
@@ -87,7 +85,7 @@
         }
 
         [Fact]
-        public async Task EnsureGetPassengerByIdWorkProperly()
+        public void EnsureGetPassengerByIdWorkProperly()
         {
             var service = new PassengersService(this.DbContext);
 
@@ -101,7 +99,6 @@
                 Phone = "254655655",
                 PassportId = "15552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                
             };
 
             var passenger2 = new PassengerInputModel()
@@ -114,7 +111,6 @@
                 Phone = "2521155",
                 PassportId = "1335552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                
             };
 
             service.Create(passenger);
@@ -133,7 +129,7 @@
         }
 
         [Fact]
-        public async Task EnsureGetPassengerByIdReturnNullWhenNoMatch()
+        public void EnsureGetPassengerByIdReturnNullWhenNoMatch()
         {
             var service = new PassengersService(this.DbContext);
 
@@ -147,7 +143,6 @@
                 Phone = "254655655",
                 PassportId = "15552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-               
             };
 
             var passenger2 = new PassengerInputModel()
@@ -160,7 +155,6 @@
                 Phone = "2521155",
                 PassportId = "1335552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                
             };
 
             service.Create(passenger);
@@ -171,7 +165,7 @@
         }
 
         [Fact]
-        public async Task EnsureGetPassengerByIdReturnNullWhenDbIsEmpty()
+        public void EnsureGetPassengerByIdReturnNullWhenDbIsEmpty()
         {
             var service = new PassengersService(this.DbContext);
 
@@ -181,7 +175,7 @@
         }
 
         [Fact]
-        public async Task EnsureGetPassengerByUserIdIsWorking()
+        public void EnsureGetPassengerByUserIdIsWorking()
         {
             var passengerService = new PassengersService(this.DbContext);
             var userPassengerService = new UserPassengersService(this.DbContext);
@@ -198,7 +192,7 @@
         }
 
         [Fact]
-        public async Task EnsureGetPassengerByUserIdReturnNullWhenNoMatchAndDbIsEmpty()
+        public void EnsureGetPassengerByUserIdReturnNullWhenNoMatchAndDbIsEmpty()
         {
             var passengerService = new PassengersService(this.DbContext);
 
@@ -209,7 +203,7 @@
         }
 
         [Fact]
-        public async Task EnsureGetPassengerIdIsWorkingCorrect()
+        public void EnsureGetPassengerIdIsWorkingCorrect()
         {
             var service = new PassengersService(this.DbContext);
 
@@ -223,7 +217,6 @@
                 Phone = "254655655",
                 PassportId = "15552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                
             };
 
             var passenger2 = new PassengerInputModel()
@@ -236,15 +229,14 @@
                 Phone = "2521155",
                 PassportId = "1335552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                
             };
 
             service.Create(passenger);
             service.Create(passenger2);
 
-            var passengerId = service.GetPassengerId(passenger.FirstName,passenger.MiddleName,passenger.LastName);
+            var passengerId = service.GetPassengerId(passenger.FirstName, passenger.MiddleName, passenger.LastName);
 
-            var passenger2Id = service.GetPassengerId(passenger2.FirstName,passenger2.MiddleName,passenger2.LastName);
+            var passenger2Id = service.GetPassengerId(passenger2.FirstName, passenger2.MiddleName, passenger2.LastName);
 
             var expectedId = 1;
             var expectedId2 = 2;
@@ -253,7 +245,7 @@
         }
 
         [Fact]
-        public async Task EnsureGetPassengerIdReturnNullWhenNoMatch()
+        public void EnsureGetPassengerIdReturnNullWhenNoMatch()
         {
             var service = new PassengersService(this.DbContext);
 
@@ -267,13 +259,12 @@
                 Phone = "2521155",
                 PassportId = "1335552",
                 Gender = (Gender)Enum.Parse(typeof(Gender), "Male"),
-                
             };
 
             service.Create(passenger);
-            var LastName = "Kirov";
+            var lastName = "Kirov";
 
-            var passengerId = service.GetPassengerId(passenger.FirstName, passenger.MiddleName, LastName);
+            var passengerId = service.GetPassengerId(passenger.FirstName, passenger.MiddleName, lastName);
 
             Assert.Equal(0, passengerId);
         }

@@ -47,7 +47,6 @@
         [Display(Name = "Passport identification number")]
         public string PassportId { get; set; }
 
-
         [Required]
         [EnumDataType(typeof(Gender))]
         public Gender Gender { get; set; }

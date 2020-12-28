@@ -1,17 +1,16 @@
-﻿using AirportSystem.Data;
-using AirportSystem.Services.Data.InputModels;
-using AirportSystem.Services.Data.Luggages;
-using System;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace AirportSystem.Services.Data.Tests.Luggages
+﻿namespace AirportSystem.Services.Data.Tests.Luggages
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Services.Data.Luggages;
+    using Xunit;
+
     public class LuggagesServiceTests : BaseServiceTests
     {
         [Fact]
-        public async Task EnsureCreateWorkProperly()
+        public void EnsureCreateWorkProperly()
         {
             var service = new LuggageService(this.DbContext);
 
@@ -31,7 +30,7 @@ namespace AirportSystem.Services.Data.Tests.Luggages
         }
 
         [Fact]
-        public async Task EnsureGetLuggageByIdIsWorking()
+        public void EnsureGetLuggageByIdIsWorking()
         {
             var service = new LuggageService(this.DbContext);
 
@@ -44,7 +43,7 @@ namespace AirportSystem.Services.Data.Tests.Luggages
             };
 
             service.Create(luggage);
-            
+
             var expected = 1;
             var result = service.GetLuggageById(1);
 
@@ -52,7 +51,7 @@ namespace AirportSystem.Services.Data.Tests.Luggages
         }
 
         [Fact]
-        public async Task EnsureGetLuggageByIdReturnNullWhenThereIsNoMatch()
+        public void EnsureGetLuggageByIdReturnNullWhenThereIsNoMatch()
         {
             var service = new LuggageService(this.DbContext);
 
@@ -72,7 +71,7 @@ namespace AirportSystem.Services.Data.Tests.Luggages
         }
 
         [Fact]
-        public async Task EnsureGetLuggageByPassengerIdWorkProperly()
+        public void EnsureGetLuggageByPassengerIdWorkProperly()
         {
             var service = new LuggageService(this.DbContext);
 
@@ -93,7 +92,7 @@ namespace AirportSystem.Services.Data.Tests.Luggages
         }
 
         [Fact]
-        public async Task EnsureGetLuggageByPassengerIdReturnNullWHenNoMatch()
+        public void EnsureGetLuggageByPassengerIdReturnNullWHenNoMatch()
         {
             var service = new LuggageService(this.DbContext);
 

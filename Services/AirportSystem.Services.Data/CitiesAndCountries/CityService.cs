@@ -29,9 +29,9 @@
             this.db.SaveChanges();
         }
 
-        public City FindCityById(int CityId)
+        public City FindCityById(int cityId)
         {
-            var city = this.db.Cities.Find(CityId);
+            var city = this.db.Cities.Find(cityId);
 
             return city;
         }

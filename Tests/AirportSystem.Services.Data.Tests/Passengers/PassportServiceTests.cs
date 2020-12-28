@@ -8,7 +8,7 @@
     using AirportSystem.Services.Data.Passports;
     using Xunit;
 
-   public class PassportServiceTests : BaseServiceTests
+    public class PassportServiceTests : BaseServiceTests
     {
         [Fact]
         public void EnsureEditPassportIsWorkingCorrect()
@@ -38,8 +38,8 @@
 
             service.Edit(newPassportInfo);
 
-            Assert.Equal(passportToEdit.Country,newPassportInfo.Country);
-            Assert.Equal(passportToEdit.Nationality,newPassportInfo.Nationality);
+            Assert.Equal(passportToEdit.Country, newPassportInfo.Country);
+            Assert.Equal(passportToEdit.Nationality, newPassportInfo.Nationality);
         }
 
         [Fact]
@@ -74,8 +74,7 @@
             var foundPassport = service.FindPassportById(passportId);
 
             Assert.NotNull(foundPassport);
-            Assert.Equal(passportId,foundPassport.Id);
-
+            Assert.Equal(passportId, foundPassport.Id);
         }
 
         [Fact]

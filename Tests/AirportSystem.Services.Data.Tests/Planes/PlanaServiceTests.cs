@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using System.Threading.Tasks;
+
     using AirportSystem.Data.Models.Planes;
     using AirportSystem.Data.Planes;
     using AirportSystem.Services.Data.InputModels;
@@ -50,13 +51,13 @@
             {
                 new Seat()
                 {
-                    
+                    SeatNumber = 1,
                     PlaneId = 1,
                     IsAvailable = true,
                 },
                 new Seat()
                 {
-                    
+                    SeatNumber = 2,
                     PlaneId = 1,
                     IsAvailable = true,
                 },
@@ -65,13 +66,13 @@
             {
                 new Seat()
                 {
-                    
+                    SeatNumber = 3,
                     PlaneId = 1,
                     IsAvailable = true,
                 },
                 new Seat()
                 {
-                    
+                    SeatNumber = 4,
                     PlaneId = 1,
                     IsAvailable = true,
                 },
@@ -125,13 +126,13 @@
             {
                 new Seat()
                 {
-                    
+                    SeatNumber = 1,
                     PlaneId = 1,
                     IsAvailable = true,
                 },
                 new Seat()
                 {
-                   
+                    SeatNumber = 2,
                     PlaneId = 1,
                     IsAvailable = true,
                 },
@@ -167,13 +168,13 @@
             {
                 new Seat()
                 {
-                   
+                    SeatNumber = 1,
                     PlaneId = 1,
                     IsAvailable = true,
                 },
                 new Seat()
                 {
-                   
+                    SeatNumber = 2,
                     PlaneId = 1,
                     IsAvailable = true,
                 },
@@ -182,13 +183,13 @@
             {
                 new Seat()
                 {
-                   
+                    SeatNumber = 3,
                     PlaneId = 1,
                     IsAvailable = true,
                 },
                 new Seat()
                 {
-                   
+                    SeatNumber = 4,
                     PlaneId = 1,
                     IsAvailable = true,
                 },

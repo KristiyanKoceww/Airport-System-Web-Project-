@@ -15,7 +15,7 @@
     public class AirportServiceTests : BaseServiceTests
     {
         [Fact]
-        public async Task EnsureCreateAirportWorkProperly()
+        public void EnsureCreateAirportWorkProperly()
         {
             var service = new AirportService(this.DbContext);
 
@@ -97,7 +97,7 @@
         }
 
         [Fact]
-        public async Task EnsureGetAirportByIdReturnNullDbIsEmpty()
+        public void EnsureGetAirportByIdReturnNullDbIsEmpty()
         {
             var service = new AirportService(this.DbContext);
 
@@ -131,7 +131,7 @@
         }
 
         [Fact]
-        public async Task EnsureGetAirportNameAndIdReturnNullWhenEmptyDb()
+        public void EnsureGetAirportNameAndIdReturnNullWhenEmptyDb()
         {
             var service = new AirportService(this.DbContext);
 

@@ -1,5 +1,5 @@
 ﻿<ul class="navbar-nav">
-    @if (User.Identity.IsAuthenticated && !User.IsInRole("Admin"))
+    @if (User.Identity.IsAuthenticated)
     {
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -20,7 +20,6 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                 <a class="nav-link text-dark" asp-area="" asp-controller="Flights" asp-action="Search"><b>Search for flights</b></a>
                 <a class="nav-link text-dark" asp-area="" asp-controller="Flights" asp-action="All2"><b>All flights for users</b></a>
-                <a class="nav-link text-dark" asp-area="" asp-controller="Flights" asp-action="Search"><b>Search for Flight</b></a>
                 <div class="dropdown-divider"></div>
             </div>
         </li>
@@ -35,7 +34,7 @@
             </div>
         </li>
     }
-    else if (this.User.IsInRole("Admin"))
+    @if (this.User.IsInRole("Admin"))
     {
         <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -66,6 +65,18 @@
                 <a class="nav-link text-dark" asp-area="" asp-controller="Flights" asp-action="Search"><b>Search for Flight</b></a>
                 <a class="nav-link text-dark" asp-area="" asp-controller="Luggages" asp-action="Search"><b>Search for luggage</b></a>
                 <div class="dropdown-divider"></div>
+            </div>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                More options
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="nav-link text-dark" asp-area="" asp-controller="Passengers" asp-action="GetAllPassengers"><b>All Passengers</b></a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Stripe" asp-action="GetAllPayments"><b>All Payments</b></a>
+                <a class="nav-link text-dark" asp-area="" asp-controller="Tickets" asp-action="GetAllTickets"><b>All Tickets</b></a>
+                <div class="dropdown-divider"></div>
+
             </div>
         </li>
         <li class="nav-item dropdown">

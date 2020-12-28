@@ -1,16 +1,15 @@
-﻿using AirportSystem.Data.Models.Payment;
-using AirportSystem.Data.Models.Payments;
-using AirportSystem.Services.Data.InputModels;
-using AirportSystem.Services.Data.Payments;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace AirportSystem.Services.Data.Tests.Payments
+﻿namespace AirportSystem.Services.Data.Tests.Payments
 {
+    using System;
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using AirportSystem.Data.Models.Payment;
+    using AirportSystem.Data.Models.Payments;
+    using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Services.Data.Payments;
+    using Xunit;
+
     public class PaymentsSertviceTests : BaseServiceTests
     {
         [Fact]
@@ -104,7 +103,6 @@ namespace AirportSystem.Services.Data.Tests.Payments
             await this.DbContext.Payments.AddAsync(payment);
             await this.DbContext.SaveChangesAsync();
 
-            
             var passengerId = 3;
             var paymentByPassenger = service.GetPaymentsByPassengerId(passengerId);
 

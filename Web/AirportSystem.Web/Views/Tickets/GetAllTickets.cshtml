@@ -1,0 +1,67 @@
+﻿@model IEnumerable<AirportSystem.Web.ViewModels.GetAllTicketsViewModel>
+
+@{
+
+    this.ViewData["Title"] = "All tickets";
+}
+
+<h1 class="text-center">All tickets</h1>
+
+<div class="text-center">
+    <div class="component">
+        <table class="table table-hover table-bordered" id="dataTable">
+            <thead>
+                <tr class="table-warning ">
+                    <th scope="col">Ticket Id</th>
+                    <th scope="col">Ticket</th>
+                    <th scope="col">Ticket Type</th>
+                    <th scope="col">Seat Number</th>
+                    <th scope="col">Passenger Id</th>
+                    <th scope="col">Passenger First Name</th>
+                    <th scope="col">Passenger Last Name</th>
+                    <th scope="col">Flight Id</th>
+                    <th scope="col">Origin</th>
+                    <th scope="col">Destination</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Luggage Id</th>
+                    <th scope="col">Luggage Weight</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @foreach (var item in Model)
+                {
+                    <tr class="table-hover">
+                        <td scope="row">@item.Id</td>
+                        <td scope="row">@item.TicketRule</td>
+                        <td scope="row">@item.TicketType</td>
+                        <td scope="row">@item.SeatNumber</td>
+                        <td scope="row">@item.PassengerId</td>
+                        <td scope="row">@item.PassengerFirstName</td>
+                        <td scope="row">@item.PassengerLastName</td>
+                        <td scope="row">@item.FlightId</td>
+                        <td scope="row">@item.FlightTravelLineCityName</td>
+                        <td scope="row">@item.FlightTravelLineCity2Name</td>
+                        <td scope="row">@item.FlightPrice</td>
+                        <td scope="row">@item.LuggageId</td>
+                        <td scope="row">@item.LuggageWeight</td>
+                    </tr>
+
+                }
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+</div>
+
+
+@section Scripts
+                    {
+    <script>
+        $(document).ready(function () {
+            $('#dataTable').DataTable();
+        });</script>
+}

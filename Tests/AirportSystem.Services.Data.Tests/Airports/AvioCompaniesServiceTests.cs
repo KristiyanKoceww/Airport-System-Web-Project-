@@ -1,13 +1,14 @@
-﻿using AirportSystem.Data.Models.Airports;
-using AirportSystem.Data.Planes;
-using AirportSystem.Services.Data.Airports;
-using AirportSystem.Services.Data.InputModels;
-using System.Linq;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace AirportSystem.Services.Data.Tests.Airports
+﻿namespace AirportSystem.Services.Data.Tests.Airports
 {
+    using System.Linq;
+    using System.Threading.Tasks;
+
+    using AirportSystem.Data.Models.Airports;
+    using AirportSystem.Data.Planes;
+    using AirportSystem.Services.Data.Airports;
+    using AirportSystem.Services.Data.InputModels;
+    using Xunit;
+
     public class AvioCompaniesServiceTests : BaseServiceTests
     {
         [Fact]
@@ -93,7 +94,7 @@ namespace AirportSystem.Services.Data.Tests.Airports
         }
 
         [Fact]
-        public async Task EnsureGetCompanyByIdReturnNullWhenDbIsEmpty()
+        public void EnsureGetCompanyByIdReturnNullWhenDbIsEmpty()
         {
             var service = new AvioCompanyService(this.DbContext);
 
@@ -103,7 +104,7 @@ namespace AirportSystem.Services.Data.Tests.Airports
         }
 
         [Fact]
-        public async Task EnsureCreateCompanyWorkProperly()
+        public void EnsureCreateCompanyWorkProperly()
         {
             var service = new AvioCompanyService(this.DbContext);
 
@@ -125,7 +126,7 @@ namespace AirportSystem.Services.Data.Tests.Airports
         }
 
         [Fact]
-        public async Task EnsureGetAllCompanyWorkProperly()
+        public void EnsureGetAllCompanyWorkProperly()
         {
             var service = new AvioCompanyService(this.DbContext);
 
@@ -147,7 +148,7 @@ namespace AirportSystem.Services.Data.Tests.Airports
         }
 
         [Fact]
-        public async Task EnsureGetAllCompanyReturnZeroWhenDbIsEmpty()
+        public void EnsureGetAllCompanyReturnZeroWhenDbIsEmpty()
         {
             var service = new AvioCompanyService(this.DbContext);
 
@@ -155,6 +156,5 @@ namespace AirportSystem.Services.Data.Tests.Airports
 
             Assert.Empty(company);
         }
-
     }
 }

@@ -14,6 +14,6 @@
 
         IEnumerable<City> GetAllCities();
 
-        City FindCityById(int CityId);
+        City FindCityById(int cityId);
     }
 }

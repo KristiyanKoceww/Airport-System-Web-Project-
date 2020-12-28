@@ -1,9 +1,8 @@
 ﻿namespace AirportSystem.Services.Data.Flights
 {
-    using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Threading.Tasks;
+
     using AirportSystem.Data;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Web.ViewModels;

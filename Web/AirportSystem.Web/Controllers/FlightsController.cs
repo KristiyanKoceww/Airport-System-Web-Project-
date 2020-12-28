@@ -1,6 +1,5 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
-
     using System.Linq;
     using System.Threading.Tasks;
 
@@ -45,6 +44,7 @@
                 this.ViewBag.Massage = "This plane is already taken by another flight!";
                 return this.View("TravelLineOrPlaneNotFound");
             }
+
             if (travelLine == null)
             {
                 this.ViewBag.Massage = "Travel line not found";
@@ -52,7 +52,6 @@
             }
             else if (plane == null)
             {
-
                 this.ViewBag.Massage = "Plane not found";
                 return this.View("TravelLineOrPlaneNotFound");
             }
@@ -80,9 +79,9 @@
 
         [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         [HttpPost]
-        public IActionResult GetFlightById(int Id)
+        public IActionResult GetFlightById(int id)
         {
-            var flight = this.flightService.GetFlightById(Id);
+            var flight = this.flightService.GetFlightById(id);
 
             if (flight == null)
             {
@@ -117,7 +116,7 @@
 
             if (flights.Count() == 0)
             {
-                return this.View("FlightNotFound");
+                return this.View("NotFoundDestination");
             }
 
             return this.View("SearchResults", flights);
@@ -130,17 +129,19 @@
 
             if (flights.Count() == 0)
             {
-                return this.View("NotFound");
+                return this.View("NotFoundDestination");
             }
 
             return this.View("SearchResults", flights);
         }
 
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         public IActionResult Remove()
         {
             return this.View();
         }
 
+        [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
         [HttpPost]
         public IActionResult Remove(int id)
         {

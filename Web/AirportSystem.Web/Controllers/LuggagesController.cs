@@ -18,7 +18,6 @@
         public LuggagesController(
             ILuggageService luggageService,
             IPassengersService passengersService)
-
         {
             this.luggageService = luggageService;
             this.passengersService = passengersService;
@@ -48,9 +47,9 @@
         }
 
         [HttpPost]
-        public IActionResult Search(int Id)
+        public IActionResult Search(int id)
         {
-            var luggage = this.luggageService.GetLuggageById(Id);
+            var luggage = this.luggageService.GetLuggageById(id);
 
             if (luggage == null)
             {

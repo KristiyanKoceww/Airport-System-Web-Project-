@@ -41,7 +41,8 @@
             }
 
             this.passportService.Edit(input);
-            return this.View();
+
+            return this.Redirect("/Luggages/Create");
         }
     }
 }

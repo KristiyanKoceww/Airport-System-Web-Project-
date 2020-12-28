@@ -19,7 +19,7 @@
     public class CitiesServiceTests : BaseServiceTests
     {
         [Fact]
-        public async Task ShouldReturnCitiesCorrectlyWhenEmptyDb()
+        public void ShouldReturnCitiesCorrectlyWhenEmptyDb()
         {
             var service = new CityService(this.DbContext);
 
@@ -55,7 +55,7 @@
         }
 
         [Fact]
-        public async Task ShouldReturnNullGetByIdWhenIdIsNull()
+        public void ShouldReturnNullGetByIdWhenIdIsNull()
         {
             var service = new CityService(this.DbContext);
 
@@ -67,7 +67,7 @@
         }
 
         [Fact]
-        public async Task CreateShouldWorkCorrectly()
+        public void CreateShouldWorkCorrectly()
         {
             var service = new CityService(this.DbContext);
 
@@ -92,7 +92,7 @@
         }
 
         [Fact]
-        public async Task GetAllCitiesShouldReturnCitiesCorrectlyWhenEmptyDb()
+        public void GetAllCitiesShouldReturnCitiesCorrectlyWhenEmptyDb()
         {
             var service = new CityService(this.DbContext);
 

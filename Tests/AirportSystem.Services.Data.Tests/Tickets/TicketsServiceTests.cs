@@ -1,10 +1,9 @@
 ﻿namespace AirportSystem.Services.Data.Tests.Tickets
 {
     using System;
-    using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
     using System.Threading.Tasks;
+
     using AirportSystem.Data;
     using AirportSystem.Data.Tickets;
     using AirportSystem.Services.Data.InputModels;
@@ -22,7 +21,7 @@
             {
                 LuggageId = 1,
                 PassengerId = 1,
-                SeatNumber = "12",
+                SeatNumber = 12,
                 TicketRule = "RoundTrip",
                 TicketType = "Economy",
                 FlightId = 1,
@@ -268,6 +267,5 @@
 
             Assert.Null(actual);
         }
-
     }
 }

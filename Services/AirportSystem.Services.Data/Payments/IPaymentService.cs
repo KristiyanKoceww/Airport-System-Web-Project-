@@ -4,6 +4,7 @@
 
     using AirportSystem.Data.Models.Payments;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Web.ViewModels;
 
     public interface IPaymentService
     {
@@ -13,6 +14,6 @@
 
         Payment GetPaymentsByTicketId(int ticketId);
 
-        IEnumerable<Payment> GetAll();
+        IEnumerable<PaymentsViewModel> GetAll();
     }
 }

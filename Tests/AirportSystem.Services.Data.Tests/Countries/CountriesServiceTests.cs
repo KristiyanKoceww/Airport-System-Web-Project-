@@ -1,21 +1,21 @@
-﻿using AirportSystem.Data.Models.Destinations;
-using AirportSystem.Services.Data.CitiesAndCountries;
-using AirportSystem.Services.Data.InputModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
-
-namespace AirportSystem.Services.Data.Tests.Countries
+﻿namespace AirportSystem.Services.Data.Tests.Countries
 {
+    using System;
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Text;
+    using System.Threading.Tasks;
+
+    using AirportSystem.Data.Models.Destinations;
+    using AirportSystem.Services.Data.CitiesAndCountries;
+    using AirportSystem.Services.Data.InputModels;
+    using Xunit;
+
     public class CountriesServiceTests : BaseServiceTests
     {
         [Fact]
-        public async Task EnsureCreateWorkingProperly()
+        public void EnsureCreateWorkingProperly()
         {
-
             var service = new CountryService(this.DbContext);
 
             var model = new CountryInputModel()
@@ -36,7 +36,6 @@ namespace AirportSystem.Services.Data.Tests.Countries
         [Fact]
         public async Task EnsureFindCountryByIdWorkProperly()
         {
-
             var service = new CountryService(this.DbContext);
 
             var country = new Country()
@@ -54,17 +53,15 @@ namespace AirportSystem.Services.Data.Tests.Countries
             var result = countrY.Id;
 
             Assert.Equal(expected, result);
-
         }
 
         [Fact]
-        public async Task EnsureFindCountryByIdReturnNullWhenNoMatch()
+        public void EnsureFindCountryByIdReturnNullWhenNoMatch()
         {
             var service = new CountryService(this.DbContext);
             var countrY = service.FindCountryById(1);
 
             Assert.Null(countrY);
-
         }
 
         [Fact]
@@ -94,7 +91,7 @@ namespace AirportSystem.Services.Data.Tests.Countries
         }
 
         [Fact]
-        public async Task EnsureGetAllRetunZeroWhenDbIsEmpty()
+        public void EnsureGetAllRetunZeroWhenDbIsEmpty()
         {
             var service = new CountryService(this.DbContext);
             var expected = 0;

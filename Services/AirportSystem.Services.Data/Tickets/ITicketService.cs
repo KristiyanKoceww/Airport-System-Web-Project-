@@ -1,9 +1,10 @@
 ﻿namespace AirportSystem.Services.Data.Tickets
 {
     using System.Collections.Generic;
-    using AirportSystem.Data;
+
     using AirportSystem.Data.Tickets;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Web.ViewModels;
 
     public interface ITicketService
     {
@@ -15,7 +16,7 @@
 
         IEnumerable<Ticket> GetAllByFlightId(int flightId);
 
-        IEnumerable<Ticket> GetAll();
+        IEnumerable<GetAllTicketsViewModel> GetAll();
 
         decimal CalculatePrice(decimal price, string ticketRule, string ticketType);
     }

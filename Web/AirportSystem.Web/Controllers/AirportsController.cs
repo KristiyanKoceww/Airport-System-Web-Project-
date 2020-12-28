@@ -23,7 +23,6 @@
 
         public IActionResult Create()
         {
-            var viewModel = new AirportInputModel();
             return this.View();
         }
 

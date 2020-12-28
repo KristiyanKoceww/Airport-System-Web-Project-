@@ -8,18 +8,18 @@
 
     public class HomeController : BaseController
     {
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
             return this.View();
         }
 
-        public async Task<IActionResult> Privacy()
+        public IActionResult Privacy()
         {
             return this.View();
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public async Task<IActionResult> Error()
+        public IActionResult Error()
         {
             return this.View(
                 new ErrorViewModel { RequestId = Activity.Current?.Id ?? this.HttpContext.TraceIdentifier });

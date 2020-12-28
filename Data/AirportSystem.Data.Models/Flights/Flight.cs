@@ -10,7 +10,6 @@
 
     public class Flight : BaseDeletableModel<int>
     {
-
         [Required]
         public int PlaneId { get; set; }
 
