@@ -118,6 +118,8 @@
             };
 
             await this.DbContext.Flights.AddAsync(flight);
+            await this.DbContext.Passengers.AddAsync(passenger);
+            await this.DbContext.Passengers.AddAsync(passenger2);
             await this.DbContext.SaveChangesAsync();
 
             service.AddPassengerToFlight(flight, passenger);

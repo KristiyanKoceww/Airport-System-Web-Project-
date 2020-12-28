@@ -17,7 +17,7 @@
             this.db = db;
         }
 
-        public Ticket Create(TicketInputModel ticketInputModel, int flightId)
+        public Ticket Create(TicketInputModel ticketInputModel)
         {
             var ticket = new Ticket()
             {
@@ -28,7 +28,7 @@
                 TicketType = (TicketType)Enum.Parse(typeof(TicketType), ticketInputModel.TicketType),
             };
 
-            ticket.FlightId = flightId;
+            ticket.FlightId = ticketInputModel.FlightId;
 
             this.db.Tickets.Add(ticket);
             this.db.SaveChanges();
@@ -64,13 +64,6 @@
             }).ToList();
 
             return tickets;
-        }
-
-        public int GetTicketByFlightId(int id)
-        {
-            var ticketId = this.db.Tickets.Where(x => x.FlightId == id).Select(x => x.Id).FirstOrDefault();
-
-            return ticketId;
         }
 
         public Ticket GetTicketById(int id)

@@ -66,7 +66,7 @@
         [HttpPost]
         public async Task<IActionResult> BookFlight(TicketInputModel input)
         {
-            var ticket = this.ticketService.Create(input, input.FlightId);
+            var ticket = this.ticketService.Create(input);
 
             var passenger = this.passengersService.GetPassengerById(input.PassengerId);
 

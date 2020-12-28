@@ -7,13 +7,11 @@
 
     public interface ITicketService
     {
-        Ticket Create(TicketInputModel ticketInputModel, int flightId);
+        Ticket Create(TicketInputModel ticketInputModel);
 
         Ticket GetTicketByPassengerId(int passengerId);
 
         Ticket GetTicketById(int id);
-
-        int GetTicketByFlightId(int id);
 
         IEnumerable<Ticket> GetAllByFlightId(int flightId);
 
