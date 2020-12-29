@@ -1,7 +1,7 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
     using System.Linq;
-
+    using System.Security.Claims;
     using AirportSystem.Services.Data.Flights;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Luggages;
@@ -50,11 +50,27 @@
         public IActionResult BookFlight(int id)
         {
             var flight = this.flightService.GetFlightById(id);
+            var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
 
+            var user = this.passengersService.GetPassengerByUserId(userId);
+            if (user == null)
+            {
+                return this.Redirect("/Passengers/Add");
+            }
+            var luggageOfPassenger = this.luggageService.GetLuggageByPassengerId(user.PassengerId);
+
+            if (luggageOfPassenger == null)
+            {
+                return this.Redirect("/Luggages/Create");
+            }
+
+            var luggageId = luggageOfPassenger.Id;
             var viewModel = new BookTicketViewModel
             {
                 FlightId = flight.Id,
                 Price = flight.Price,
+                PassengerId = user.PassengerId.ToString(),
+                LuggageId = luggageId.ToString(),
             };
 
             return this.View(viewModel);

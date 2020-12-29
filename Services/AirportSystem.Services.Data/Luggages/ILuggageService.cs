@@ -5,7 +5,9 @@
 
     public interface ILuggageService
     {
-        void Create(LuggageInputModel luggageInputModel);
+        Luggage Create(LuggageInputModel luggageInputModel);
+
+        void Edit(Luggage luggage, LuggageInputModel luggageInputModel);
 
         Luggage GetLuggageById(int luggageId);
 

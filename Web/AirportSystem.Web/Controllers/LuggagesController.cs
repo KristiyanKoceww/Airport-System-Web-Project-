@@ -37,8 +37,27 @@
                 return this.View();
             }
 
-            this.luggageService.Create(luggageInputModel);
+            var luggage = this.luggageService.Create(luggageInputModel);
+
+            passenger.Luggage.Add(luggage);
+
+            return this.Redirect("/Passengers/PassengerInfo");
+        }
+
+        [HttpGet]
+        public IActionResult Edit()
+        {
             return this.View();
+        }
+
+        [HttpPost]
+        public IActionResult Edit(int id, LuggageInputModel luggageInputModel)
+        {
+            var luggage = this.luggageService.GetLuggageById(id);
+
+            this.luggageService.Edit(luggage, luggageInputModel);
+
+            return this.Redirect("/Passengers/PassengerInfo");
         }
 
         public IActionResult Search()

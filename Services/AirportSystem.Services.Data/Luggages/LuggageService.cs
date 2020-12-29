@@ -32,7 +32,7 @@
             return price;
         }
 
-        public void Create(LuggageInputModel luggageInputModel)
+        public Luggage Create(LuggageInputModel luggageInputModel)
         {
             var luggage = new Luggage()
             {
@@ -43,7 +43,25 @@
             };
 
             this.db.Luggage.Add(luggage);
-            this.db.SaveChanges();
+            this.db.SaveChangesAsync();
+
+            return luggage;
+        }
+
+        public void Edit(Luggage luggage, LuggageInputModel luggageInputModel)
+        {
+            var newLuggage = new Luggage()
+            {
+                PassengerFirstName = luggageInputModel.PassengerFirstName,
+                Weight = luggageInputModel.Weight,
+                LuggageType = (LuggageType)Enum.Parse(typeof(LuggageType), luggageInputModel.LuggageType),
+                PassengerId = luggageInputModel.PassengerId,
+            };
+
+            luggage.IsDeleted = true;
+
+            this.db.Luggage.AddAsync(newLuggage);
+            this.db.SaveChangesAsync();
         }
 
         public Luggage GetLuggageById(int luggageId)

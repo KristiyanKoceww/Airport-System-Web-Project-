@@ -9,7 +9,7 @@
         {
             value = (DateTime)value;
 
-            // This assumes inclusivity, i.e. exactly six years ago is okay
+            // This assumes inclusivity, i.e. exactly 10 years ago is okay
             if (DateTime.Now.AddYears(-10).CompareTo(value) <= 0 && DateTime.Now.AddYears(10).CompareTo(value) >= 0)
             {
                 return ValidationResult.Success;

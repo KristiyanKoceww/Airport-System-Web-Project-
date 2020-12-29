@@ -8,7 +8,7 @@
 </div>
 
 <div class="component">
-    <table class="table table-hover">
+    <table class="table table-hover text-center">
         <thead>
             <tr>
                 <th scope="col">Travel number</th>
@@ -36,6 +36,7 @@
                 @if (Model.LuggageId != 0)
                 {
                     <td>@Model.LuggageId</td>
+                    <td><a asp-action="Edit" asp-controller="Luggages" asp-route-id="@Model.LuggageId" class="btn btn-warning" role="button">Edit luggage</a></td>
                 }
 
             </tr>

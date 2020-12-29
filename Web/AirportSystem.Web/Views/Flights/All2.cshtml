@@ -7,7 +7,7 @@
     var flights = this.service.GetAll();
 }
 
-<h2 style="color:black;"><b>All Flights</b></h2>
+<h1 class="text-center" style="color:black;"><b>All Flights</b></h1>
 <div class="table-wrapper" id="Grid">
 
     <table class="fl-table" id="dataTable">
@@ -20,7 +20,6 @@
                 <th>Flight Duration</th>
                 <th>Flight Status</th>
                 <th>Price</th>
-                @*<th>Free seats left</th>*@
                 <th>Book</th>
             </tr>
         </thead>
@@ -28,11 +27,6 @@
         <tbody>
             @foreach (var item in flights)
             {
-                @*@if (item.FreeSeats == 0)
-                {
-                    continue;
-                }*@
-                
                 <tr>
                     <td>@item.TravelLineCityName</td>
                     <td>@item.TravelLineCity2Name</td>
@@ -41,9 +35,7 @@
                     <td>@item.FlightDuration</td>
                     <td>@item.FlightStatus</td>
                     <td>@item.Price</td>
-                    @*<td>@item.FreeSeats</td>*@
                     <td>
-                        @* @Html.ActionLink("Book Ticket", "BookFlight", "Tickets", new { id = item.Id }, new { @class = "btn btn-warning", @role = "button" })*@
                         <a asp-controller="Tickets" asp-action="BookFlight" asp-route-id="@item.Id" class="btn btn-warning black-color" role="button">Book Ticket</a>
                     </td>
                 </tr>

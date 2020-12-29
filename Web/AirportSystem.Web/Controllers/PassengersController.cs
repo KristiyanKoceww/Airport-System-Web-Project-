@@ -78,7 +78,7 @@
             viewModel.Phone = passenger.Phone;
             viewModel.PassengerId = user.PassengerId;
 
-            if (luggage != null)
+            if (luggage != null && !luggage.IsDeleted)
             {
                 viewModel.LuggageId = luggage.Id;
             }
