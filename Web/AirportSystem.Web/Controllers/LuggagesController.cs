@@ -39,8 +39,6 @@
 
             var luggage = this.luggageService.Create(luggageInputModel);
 
-            passenger.Luggage.Add(luggage);
-
             return this.Redirect("/Passengers/PassengerInfo");
         }
 

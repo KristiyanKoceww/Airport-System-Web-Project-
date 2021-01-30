@@ -41,6 +41,12 @@
                 LuggageType = (LuggageType)Enum.Parse(typeof(LuggageType), luggageInputModel.LuggageType),
                 PassengerId = luggageInputModel.PassengerId,
             };
+            var passenger = this.db.Passengers.Where(x => x.Id == luggageInputModel.PassengerId).FirstOrDefault();
+
+            if (passenger != null)
+            {
+                passenger.Luggage.Add(luggage);
+            }
 
             this.db.Luggage.Add(luggage);
             this.db.SaveChangesAsync();

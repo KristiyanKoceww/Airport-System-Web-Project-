@@ -57,6 +57,7 @@
             {
                 return this.Redirect("/Passengers/Add");
             }
+
             var luggageOfPassenger = this.luggageService.GetLuggageByPassengerId(user.PassengerId);
 
             if (luggageOfPassenger == null)
