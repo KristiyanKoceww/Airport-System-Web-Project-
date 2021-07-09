@@ -1,13 +1,12 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
     using System.Security.Claims;
-    using AirportSystem.Data;
+
     using AirportSystem.Data.Models;
     using AirportSystem.Services.Data;
     using AirportSystem.Services.Data.Luggages;
     using AirportSystem.Services.Data.Passengers;
     using AirportSystem.Web.ViewModels;
-    using AutoMapper;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
@@ -54,7 +53,6 @@
         public IActionResult GetAllPassengers()
         {
             var passegers = this.passengersService.GetAll();
-
             return this.View(passegers);
         }
 

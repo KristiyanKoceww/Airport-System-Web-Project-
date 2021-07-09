@@ -155,4 +155,8 @@
     <None Include="wwwroot\Travel Doc\syntax-highlighter\scripts\shCore.js" />
     <None Include="wwwroot\Travel Doc\syntax-highlighter\scripts\shLegacy.js" />
   </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
 </Project>
