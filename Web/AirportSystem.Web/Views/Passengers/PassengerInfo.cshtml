@@ -19,7 +19,13 @@
                 <th scope="col">Phone</th>
                 <th scope="col">Address</th>
                 <th scope="col">Passport number</th>
-                <th scope="col">Luggage number</th>
+                <th scope="col">Luggage registered</th>
+                @if (Model.Luggages.Count() > 0)
+                {
+                    <th scope="col">Luggage number</th>
+                    <th scope="col">Luggage Weight</th>
+                }
+
             </tr>
         </thead>
         <tbody>
@@ -33,12 +39,14 @@
                 <td>@Model.Phone</td>
                 <td>@Model.Address</td>
                 <td>@Model.PassportId</td>
-                @if (Model.LuggageId != 0)
+                <td>@Model.Luggages.Count()</td>
+                @foreach (var luggage in Model.Luggages)
                 {
-                    <td>@Model.LuggageId</td>
-                    <td><a asp-action="Edit" asp-controller="Luggages" asp-route-id="@Model.LuggageId" class="btn btn-warning" role="button">Edit luggage</a></td>
-                }
 
+                    <td>@luggage.Id</td>
+                    <td>@luggage.Weight</td>
+                    <td><a asp-action="Edit" asp-controller="Luggages" asp-route-id="@luggage.Id" class="btn btn-warning" role="button">Edit luggage</a></td>
+                }
             </tr>
         </tbody>
     </table>

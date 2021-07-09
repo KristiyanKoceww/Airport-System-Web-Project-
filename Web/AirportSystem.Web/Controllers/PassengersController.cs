@@ -1,18 +1,13 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
     using System.Security.Claims;
-    using System.Threading.Tasks;
-
+    using AirportSystem.Data;
     using AirportSystem.Data.Models;
-    using AirportSystem.Data.Models.Passengers;
     using AirportSystem.Services.Data;
-    using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Luggages;
     using AirportSystem.Services.Data.Passengers;
     using AirportSystem.Web.ViewModels;
+    using AutoMapper;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
@@ -25,12 +20,14 @@
         private readonly IUserPassengersService userPassengersService;
         private readonly ILuggageService luggageService;
 
+
         public PassengersController(UserManager<ApplicationUser> userManager, IPassengersService passengersService, IUserPassengersService userPassengersService, ILuggageService luggageService)
         {
             this.userManager = userManager;
             this.passengersService = passengersService;
             this.userPassengersService = userPassengersService;
             this.luggageService = luggageService;
+
         }
 
         public IActionResult Add()
@@ -54,6 +51,13 @@
             return this.Redirect("/Passports/edit");
         }
 
+        public IActionResult GetAllPassengers()
+        {
+            var passegers = this.passengersService.GetAll();
+
+            return this.View(passegers);
+        }
+
         public IActionResult PassengerInfo()
         {
             var userId = this.User.FindFirstValue(ClaimTypes.NameIdentifier);
@@ -63,34 +67,11 @@
                 return this.Redirect("/Passengers/Add");
             }
 
-            var passenger = this.passengersService.GetPassengerById(user.PassengerId);
-            var luggage = this.luggageService.GetLuggageByPassengerId(passenger.Id);
-            var viewModel = new PassengerInfoViewModel
-            {
-                FirstName = passenger.FirstName,
-                MiddleName = passenger.MiddleName,
-                LastName = passenger.LastName,
-                Address = passenger.Address,
-                Age = passenger.Age,
-                Phone = passenger.Phone,
-                PassportId = passenger.PassportId,
-            };
-            viewModel.Phone = passenger.Phone;
+            var viewModel = this.passengersService.GetOnePassenger<PassengerInfoViewModel>(user.PassengerId);
+            var luggages = this.luggageService.GetLuggagesPassengerByPassId(user.PassengerId);
             viewModel.PassengerId = user.PassengerId;
-
-            if (luggage != null && !luggage.IsDeleted)
-            {
-                viewModel.LuggageId = luggage.Id;
-            }
-
-            return this.View("PassengerInfo", viewModel);
-        }
-
-        public IActionResult GetAllPassengers()
-        {
-            var passegers = this.passengersService.GetAll();
-
-            return this.View(passegers);
+            viewModel.Luggages = luggages;
+            return this.View(viewModel);
         }
     }
 }

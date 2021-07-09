@@ -11,9 +11,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="System\**" />
     <Compile Remove="wwwroot\js\boostrapDemo\**" />
+    <Content Remove="System\**" />
     <Content Remove="wwwroot\js\boostrapDemo\**" />
+    <EmbeddedResource Remove="System\**" />
     <EmbeddedResource Remove="wwwroot\js\boostrapDemo\**" />
+    <None Remove="System\**" />
     <None Remove="wwwroot\js\boostrapDemo\**" />
   </ItemGroup>
 
@@ -25,6 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="8.1.1" />
     <PackageReference Include="Microsoft.AspNetCore.Components" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="3.1.9">
@@ -149,9 +154,5 @@
     <None Include="wwwroot\Travel Doc\syntax-highlighter\scripts\shBrushXml.js" />
     <None Include="wwwroot\Travel Doc\syntax-highlighter\scripts\shCore.js" />
     <None Include="wwwroot\Travel Doc\syntax-highlighter\scripts\shLegacy.js" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="System\Web\" />
   </ItemGroup>
 </Project>

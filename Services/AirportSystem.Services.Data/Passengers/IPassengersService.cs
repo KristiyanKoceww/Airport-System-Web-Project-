@@ -18,5 +18,7 @@
         int GetPassengerId(string firstName, string middleName, string lastName);
 
         IEnumerable<Passenger> GetAll();
+
+        T GetOnePassenger<T>(int id);
     }
 }

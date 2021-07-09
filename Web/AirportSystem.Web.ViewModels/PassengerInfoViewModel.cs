@@ -1,6 +1,11 @@
 ﻿namespace AirportSystem.Web.ViewModels
 {
-    public class PassengerInfoViewModel
+    using System.Collections.Generic;
+
+    using AirportSystem.Data;
+    using AirportSystem.Services.Mapping;
+
+    public class PassengerInfoViewModel : IMapFrom<Passenger>
     {
         public int PassengerId { get; set; }
 
@@ -18,6 +23,6 @@
 
         public string PassportId { get; set; }
 
-        public int LuggageId { get; set; }
+        public IEnumerable<Luggage> Luggages { get; set; }
     }
 }

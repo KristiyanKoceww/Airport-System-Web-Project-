@@ -8,6 +8,7 @@
     using AirportSystem.Data.Models.Passengers;
     using AirportSystem.Data.Passengers;
     using AirportSystem.Services.Data.InputModels;
+    using AirportSystem.Services.Mapping;
 
     public class PassengersService : IPassengersService
     {
@@ -62,6 +63,12 @@
             }).ToList();
 
             return passengers;
+        }
+
+        public T GetOnePassenger<T>(int id)
+        {
+            var passenger = this.db.Passengers.Where(x => x.Id == id).To<T>().FirstOrDefault();
+            return passenger;
         }
 
         public Passenger GetPassengerById(int id)

@@ -26,6 +26,7 @@
     using AirportSystem.Services.Messaging;
     using AirportSystem.Web.StripeProps;
     using AirportSystem.Web.ViewModels;
+    using AutoMapper;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -49,6 +50,8 @@
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+           
+
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(this.configuration.GetConnectionString("DefaultConnection")));
 
@@ -93,6 +96,7 @@
             services.AddTransient<ITravelLinesService, TravelLinesService>();
             services.AddTransient<ISeatsService, SeatsService>();
             services.AddTransient<IPaymentService, PaymentService>();
+
 
             // Stripe service
             services.Configure<StripeSettings>(this.configuration.GetSection("Stripe"));

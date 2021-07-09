@@ -1,6 +1,7 @@
 ﻿namespace AirportSystem.Services.Data.Luggages
 {
     using System;
+    using System.Collections.Generic;
     using System.Linq;
 
     using AirportSystem.Data;
@@ -34,6 +35,8 @@
 
         public Luggage Create(LuggageInputModel luggageInputModel)
         {
+            CheckLuggageWeight(luggageInputModel);
+
             var luggage = new Luggage()
             {
                 PassengerFirstName = luggageInputModel.PassengerFirstName,
@@ -49,13 +52,15 @@
             }
 
             this.db.Luggage.Add(luggage);
-            this.db.SaveChangesAsync();
+            this.db.SaveChanges();
 
             return luggage;
         }
 
         public void Edit(Luggage luggage, LuggageInputModel luggageInputModel)
         {
+            CheckLuggageWeight(luggageInputModel);
+
             var newLuggage = new Luggage()
             {
                 PassengerFirstName = luggageInputModel.PassengerFirstName,
@@ -66,8 +71,10 @@
 
             luggage.IsDeleted = true;
 
-            this.db.Luggage.AddAsync(newLuggage);
-            this.db.SaveChangesAsync();
+            var passenger = this.db.Passengers.Where(x => x.Id == luggageInputModel.PassengerId).FirstOrDefault();
+            passenger.Luggage.Add(newLuggage);
+            this.db.Luggage.Add(newLuggage);
+            this.db.SaveChanges();
         }
 
         public Luggage GetLuggageById(int luggageId)
@@ -80,6 +87,29 @@
         {
             var luggage = this.db.Luggage.Where(x => x.PassengerId == passengerId).FirstOrDefault();
             return luggage;
+        }
+
+        public IEnumerable<Luggage> GetLuggagesPassengerByPassId(int passengerId)
+        {
+            var luggage = this.db.Luggage.Where(x => x.PassengerId == passengerId).ToList();
+            return luggage;
+        }
+
+        private static void CheckLuggageWeight(LuggageInputModel luggageInputModel)
+        {
+
+            if (luggageInputModel.Weight > 0 && luggageInputModel.Weight <= 10)
+            {
+                luggageInputModel.LuggageType = "1";
+            }
+            else if (luggageInputModel.Weight > 10 && luggageInputModel.Weight <= 20)
+            {
+                luggageInputModel.LuggageType = "2";
+            }
+            else if (luggageInputModel.Weight > 20 && luggageInputModel.Weight <= 100)
+            {
+                luggageInputModel.LuggageType = "3";
+            }
         }
     }
 }
