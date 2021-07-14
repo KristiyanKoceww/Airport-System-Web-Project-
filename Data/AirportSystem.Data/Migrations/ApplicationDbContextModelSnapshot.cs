@@ -386,36 +386,6 @@ namespace AirportSystem.Data.Migrations
                     b.ToTable("Countries");
                 });
 
-            modelBuilder.Entity("AirportSystem.Data.Models.Image", b =>
-                {
-                    b.Property<string>("Id")
-                        .HasColumnType("nvarchar(450)");
-
-                    b.Property<string>("CityId")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("CityId1")
-                        .HasColumnType("int");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Extension")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("ModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("RemoteImageUrl")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CityId1");
-
-                    b.ToTable("Images");
-                });
-
             modelBuilder.Entity("AirportSystem.Data.Models.Passengers.UserPassenger", b =>
                 {
                     b.Property<int>("PassengerId")
@@ -671,6 +641,33 @@ namespace AirportSystem.Data.Migrations
                     b.ToTable("TravelLines");
                 });
 
+            modelBuilder.Entity("Image", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("CityId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Extension")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime?>("ModifiedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("RemoteImageUrl")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CityId");
+
+                    b.ToTable("Images");
+                });
+
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.Property<int>("Id")
@@ -828,13 +825,6 @@ namespace AirportSystem.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("AirportSystem.Data.Models.Image", b =>
-                {
-                    b.HasOne("AirportSystem.Data.Models.Destinations.City", "City")
-                        .WithMany("Images")
-                        .HasForeignKey("CityId1");
-                });
-
             modelBuilder.Entity("AirportSystem.Data.Models.Passengers.UserPassenger", b =>
                 {
                     b.HasOne("AirportSystem.Data.Passenger", "Passenger")
@@ -921,6 +911,15 @@ namespace AirportSystem.Data.Migrations
 
                     b.HasOne("AirportSystem.Data.Models.Destinations.City", "City")
                         .WithMany()
+                        .HasForeignKey("CityId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Image", b =>
+                {
+                    b.HasOne("AirportSystem.Data.Models.Destinations.City", "City")
+                        .WithMany("Images")
                         .HasForeignKey("CityId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();

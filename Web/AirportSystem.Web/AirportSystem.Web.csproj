@@ -158,5 +158,30 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\images\" />
+    <Folder Include="wwwroot\images\cities\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\images\cities\308e1193-34ea-480a-84ad-92e4020b2d1f.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\images\cities\5de150cc-f80a-4536-98a9-abfa1162d15a.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\images\cities\78e32a9c-d359-45e1-a281-f41028bfe5d7.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\images\cities\87cea98b-bdea-4e34-9db5-47a01a6a8594.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\images\cities\8e0b670d-481a-4949-aaaf-b2881c42f6c4.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\images\cities\923e5074-7dab-4b0f-ab2d-1546b3cb5cde.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\images\cities\d7f77fbb-db6c-4c1e-a911-b33862de965e.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
 </Project>

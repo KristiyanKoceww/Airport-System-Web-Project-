@@ -22,15 +22,18 @@
             this.db = db;
         }
 
-        public async Task AddImageAndDescriptionToCity(ExtendCityInputModel extendCityInputModel, string imagePath)
+        public void Create(CitiesInputModel citiesInputModel, string imagePath)
         {
-            var city = this.FindCityByName(extendCityInputModel.CityName);
-
-            city.Description = extendCityInputModel.Description;
-            city.OriginalUrl = extendCityInputModel.OriginalUrl;
+            var city = new City()
+            {
+                Name = citiesInputModel.Name,
+                CountryId = citiesInputModel.CountryId,
+                OriginalUrl = citiesInputModel.OriginalUrl,
+                Description = citiesInputModel.Description,
+            };
 
             Directory.CreateDirectory($"{imagePath}/cities/");
-            foreach (var image in extendCityInputModel.Images)
+            foreach (var image in citiesInputModel.Images)
             {
                 var extension = Path.GetExtension(image.FileName).TrimStart('.');
                 if (!this.allowedExtensions.Any(x => extension.EndsWith(x)))
@@ -41,29 +44,22 @@
                 var dbImage = new Image
                 {
                     City = city,
-                    CityId = city.Id.ToString(),
+                    CityId = city.Id,
                     Extension = extension,
+                    RemoteImageUrl = imagePath,
                 };
 
                 city.Images.Add(dbImage);
-                this.db.Cities.Update(city);
-                await this.db.Images.AddAsync(dbImage);
 
                 var physicalPath = $"{imagePath}/cities/{dbImage.Id}.{extension}";
-                using Stream fileStream = new FileStream(physicalPath, FileMode.Create);
-                await image.CopyToAsync(fileStream);
+
+                this.db.Images.Add(dbImage);
+
+                using (Stream fileStream = new FileStream(physicalPath, FileMode.Create))
+                {
+                    image.CopyToAsync(fileStream);
+                }
             }
-
-            await this.db.SaveChangesAsync();
-        }
-
-        public void Create(CitiesInputModel citiesInputModel)
-        {
-            var city = new City()
-            {
-                Name = citiesInputModel.Name,
-                CountryId = citiesInputModel.CountryId,
-            };
 
             this.db.Cities.Add(city);
             this.db.SaveChanges();
@@ -103,6 +99,22 @@
                 Name = x.Name,
                 CountryId = x.CountryId,
             }).ToList();
+
+            return cities;
+        }
+
+        public IEnumerable<City> GetRandomCities()
+        {
+            var cities = this.db.Cities.Where(x => x.Images.Count > 0).Select(x => new City()
+            {
+                Id = x.Id,
+                Country = x.Country,
+                CountryId = x.CountryId,
+                Description = x.Description,
+                Name = x.Name,
+                OriginalUrl = x.OriginalUrl,
+                Images = x.Images,
+            }).Take(6).ToList();
 
             return cities;
         }

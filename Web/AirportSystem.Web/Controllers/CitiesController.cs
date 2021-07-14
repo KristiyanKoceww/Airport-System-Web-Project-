@@ -9,6 +9,7 @@
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Hosting;
+    using System;
 
     [Authorize]
     public class CitiesController : AdminController
@@ -23,20 +24,6 @@
             this.countryService = countryService;
             this.environment = environment;
         }
-
-        public IActionResult ExtendCity()
-        {
-            return this.View();
-        }
-
-        [HttpPost]
-        public IActionResult ExtendCity(ExtendCityInputModel input)
-        {
-            this.cityService.AddImageAndDescriptionToCity(input, $"{this.environment.WebRootPath}/images");
-            this.TempData["Message"] = "Extend city was successfully.";
-            return this.View("succsessfuly");
-        }
-
 
         public IActionResult Add()
         {
@@ -53,8 +40,17 @@
                 return this.View("CountryNotFound");
             }
 
-            this.cityService.Create(citiesInputModel);
-            return this.View();
+            try
+            {
+                this.cityService.Create(citiesInputModel, $"{this.environment.WebRootPath}/images");
+            }
+            catch (Exception ex)
+            {
+
+                this.ModelState.AddModelError(string.Empty, ex.Message);
+                return this.View();
+            }
+            return this.RedirectToAction("All");
         }
 
         public IActionResult All()
