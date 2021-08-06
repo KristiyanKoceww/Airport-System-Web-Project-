@@ -1,16 +1,12 @@
 ﻿namespace AirportSystem.Web.Controllers
 {
-    using System.Threading.Tasks;
-
-    using AirportSystem.Common;
+    using System;
     using AirportSystem.Services.Data.CitiesAndCountries;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Web.Areas.Administration.Controllers;
     using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Hosting;
-    using System;
-    using CloudinaryDotNet;
+    using Microsoft.AspNetCore.Mvc;
 
     [Authorize]
     public class CitiesController : AdminController
@@ -25,6 +21,7 @@
             this.countryService = countryService;
             this.environment = environment;
         }
+
         public IActionResult Add()
         {
             return this.View();

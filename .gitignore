@@ -333,3 +333,4 @@ ASALocalRun/
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
 /appsettings.Development.json
+/Web/AirportSystem.Web/appsettings.Production.json

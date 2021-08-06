@@ -176,7 +176,7 @@
                             <div class="card" style="width:400px">
                                 @*<img class="card-img-top responsive-image-nav" src="~/images/cities/@(city.Images.First().Id).jpg"*@
                                 <img class="card-img-top responsive-image-nav" src="@city.Images.FirstOrDefault().RemoteImageUrl"
-                                     height="100" width="100"
+                                     height="200" width="200"
                                      asp-append-version="true" alt="@city.Name">
                                 <div class="card-body">
                                     <h5 class="card-title">@city.Name</h5>

@@ -27,6 +27,7 @@
     using AirportSystem.Web.StripeProps;
     using AirportSystem.Web.ViewModels;
     using AutoMapper;
+    using CloudinaryDotNet;
     using Microsoft.AspNetCore.Builder;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Http;
@@ -113,6 +114,10 @@
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             StripeConfiguration.SetApiKey(this.configuration.GetSection("Stripe")["SecretKey"]);
+
+            CloudinaryConfiguration.CloudName = this.configuration.GetSection("Cloudinary")["CloundName"];
+            CloudinaryConfiguration.ApiKey = this.configuration.GetSection("Cloudinary")["CloudApiKey"];
+            CloudinaryConfiguration.ApiSecret = this.configuration.GetSection("Cloudinary")["CloudApiSecret"];
 
             AutoMapperConfig.RegisterMappings(typeof(ErrorViewModel).GetTypeInfo().Assembly);
 

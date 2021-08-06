@@ -55,10 +55,7 @@
 
                 //var physicalPath = $"{imagePath}/cities/{dbImage.Id}.{extension}";
 
-                Account account = new Account(
-             Common.GlobalConstants.CloundName,
-             Common.GlobalConstants.CloudApiKey,
-             Common.GlobalConstants.CloudApiSecret);
+                Account account = new Account();
 
                 Cloudinary cloudinary = new Cloudinary(account);
                 cloudinary.Api.Secure = true;
