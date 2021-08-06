@@ -11,6 +11,8 @@
     using AirportSystem.Data.Models.Destinations;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Web.ViewModels;
+    using CloudinaryDotNet;
+    using CloudinaryDotNet.Actions;
 
     public class CityService : ICityService
     {
@@ -32,7 +34,6 @@
                 Description = citiesInputModel.Description,
             };
 
-            Directory.CreateDirectory($"{imagePath}/cities/");
             foreach (var image in citiesInputModel.Images)
             {
                 var extension = Path.GetExtension(image.FileName).TrimStart('.');
@@ -46,19 +47,28 @@
                     City = city,
                     CityId = city.Id,
                     Extension = extension,
-                    RemoteImageUrl = imagePath,
+                    RemoteImageUrl = citiesInputModel.ImageUrl,
                 };
 
                 city.Images.Add(dbImage);
-
-                var physicalPath = $"{imagePath}/cities/{dbImage.Id}.{extension}";
-
                 this.db.Images.Add(dbImage);
 
-                using (Stream fileStream = new FileStream(physicalPath, FileMode.Create))
+                //var physicalPath = $"{imagePath}/cities/{dbImage.Id}.{extension}";
+
+                Account account = new Account(
+             Common.GlobalConstants.CloundName,
+             Common.GlobalConstants.CloudApiKey,
+             Common.GlobalConstants.CloudApiSecret);
+
+                Cloudinary cloudinary = new Cloudinary(account);
+                cloudinary.Api.Secure = true;
+
+                var uploadParams = new ImageUploadParams()
                 {
-                    image.CopyToAsync(fileStream);
-                }
+                    File = new FileDescription($"{citiesInputModel.ImageUrl}"),
+                };
+
+                var uploadResult = cloudinary.Upload(uploadParams);
             }
 
             this.db.Cities.Add(city);

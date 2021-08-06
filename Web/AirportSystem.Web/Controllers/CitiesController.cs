@@ -10,6 +10,7 @@
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.AspNetCore.Hosting;
     using System;
+    using CloudinaryDotNet;
 
     [Authorize]
     public class CitiesController : AdminController
@@ -24,7 +25,6 @@
             this.countryService = countryService;
             this.environment = environment;
         }
-
         public IActionResult Add()
         {
             return this.View();

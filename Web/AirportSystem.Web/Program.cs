@@ -1,5 +1,6 @@
 ﻿namespace AirportSystem.Web
 {
+    using CloudinaryDotNet;
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.Extensions.Hosting;
 
