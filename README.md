@@ -3,6 +3,7 @@ This is my first ASP NET CORE web project. It is flight service where you can se
 The template I used was by Nikolay Kostov - a lecturer at Soft Uni.
 
 Used technologies:
+
 Stripe - for payment system.
 
 Cloudinary 
