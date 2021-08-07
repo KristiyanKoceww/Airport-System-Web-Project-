@@ -36,6 +36,7 @@ User selection of existing flights:
 
 Booking ticket:
 
-![Екранна снимка 2021-08-07 152409](https://user-images.githubusercontent.com/62842615/128600025-303426de-8e91-441a-8b08-f3dc64839b11.png)
+![Екранна снимка 2021-08-07 152409](https://user-images.githubusercontent.com/62842615/128600048-9f167fdb-f1d5-4db9-8f09-0aca4077ff9b.png)
+
 
 
