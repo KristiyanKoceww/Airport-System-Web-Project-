@@ -5,9 +5,11 @@
     using System.Threading.Tasks;
 
     using AirportSystem.Data.Models;
+    using AirportSystem.Services.Data.Flights;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Passengers;
     using AirportSystem.Services.Data.Payments;
+    using AirportSystem.Services.Data.Tickets;
     using AirportSystem.Web.ViewModels;
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Identity;
@@ -20,15 +22,21 @@
         private readonly UserManager<ApplicationUser> userManager;
         private readonly IPaymentService paymentService;
         private readonly IPassengersService passengersService;
+        private readonly ITicketService ticketService;
+        private readonly IFlightService flightService;
 
         public StripeController(
             UserManager<ApplicationUser> userManager,
             IPaymentService paymentService,
-            IPassengersService passengersService)
+            IPassengersService passengersService,
+            ITicketService ticketService,
+            IFlightService flightService)
         {
             this.userManager = userManager;
             this.paymentService = paymentService;
             this.passengersService = passengersService;
+            this.ticketService = ticketService;
+            this.flightService = flightService;
         }
 
         public IActionResult Charge(decimal price, int ticketId)
@@ -57,9 +65,20 @@
 
             var passenger = this.passengersService.GetPassengerByUserId(userId);
 
+            var ticket = this.ticketService.GetTicketById(paymentInputModel.TicketId);
+            decimal flightPrice = 0;
+            if (ticket != null)
+            {
+                flightPrice = this.flightService.GetFlightById(ticket.FlightId).Price;
+            }
+            else
+            {
+                return this.View();
+            }
+
             var charge = charges.Create(new ChargeCreateOptions
             {
-                Amount = (int)paymentInputModel.Price * 100,
+                Amount = (int)flightPrice * 100,
                 Description = "Test Payment",
                 Currency = "BGN",
                 Customer = customer.Id,
@@ -77,14 +96,14 @@
 
                 var paymentModel = new PaymentInputModel()
                 {
-                    Amount = paymentInputModel.Price,
+                    Amount = flightPrice,
                     PassengerId = passenger.PassengerId,
                     TicketId = paymentInputModel.TicketId,
                     PaymentStatus = "PaymentRecieved",
                 };
 
                 this.paymentService.Create(paymentModel);
-                return this.RedirectToAction("UserTicket", "Tickets", new { price = paymentModel.Amount, passengerId = paymentModel.PassengerId, ticketId = paymentModel.TicketId });
+                return this.RedirectToAction("UserTicket", "Tickets", new { price = flightPrice, passengerId = paymentModel.PassengerId, ticketId = paymentModel.TicketId });
             }
 
             return this.View();

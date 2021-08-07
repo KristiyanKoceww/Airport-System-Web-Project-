@@ -121,7 +121,7 @@
                 Name = x.Name,
                 OriginalUrl = x.OriginalUrl,
                 Images = x.Images,
-            }).Take(6).ToList();
+            }).OrderBy(x => Guid.NewGuid()).Take(6).ToList();
 
             return cities;
         }
