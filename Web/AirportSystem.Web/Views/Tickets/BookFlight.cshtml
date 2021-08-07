@@ -18,13 +18,13 @@
                 <div asp-validation-summary="All" class="text-danger"></div>
 
                 <div class="form-group col-md-6">
-                    <label asp-for="PassengerId"></label>
+                    <label asp-for="PassengerId">Please enter your travel number</label>
                     <input asp-for="PassengerId" class="form-control" />
                     <span asp-validation-for="PassengerId" class="text-danger"></span>
                 </div>
 
                 <div class="form-group col-md-6">
-                    <label asp-for="LuggageId"></label>
+                    <label asp-for="LuggageId">Please enter your luggage number</label>
                     <input asp-for="LuggageId" class="form-control" />
                     <span asp-validation-for="LuggageId" class="text-danger"></span>
                 </div>
@@ -41,9 +41,9 @@
                     <span asp-validation-for="FlightId" class="text-danger"></span>
                 </div>
 
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-6" id="seat">
                     <label asp-for="SeatNumber"></label>
-                    <input asp-for="SeatNumber" class="form-control" />
+                    <textarea asp-for="SeatNumber" class="form-control"> </textarea>
                     <span asp-validation-for="SeatNumber" class="text-danger"></span>
                 </div>
 
@@ -86,11 +86,21 @@
             </form>
         </div>
 
-        <div  class="col-5">
+        <div class="col-5">
             <vc:flight-seats title="Seats" flight-id="@Model.FlightId"></vc:flight-seats>
         </div>
     </div>
 </div>
+
+@section Scripts{
+
+    <script>
+
+    </script>
+
+
+}
+
 
 
 

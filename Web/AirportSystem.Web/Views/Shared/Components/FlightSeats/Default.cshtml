@@ -7,6 +7,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+
+        function SelectItem(number) {
+           
+            let item = document.getElementById(number);
+            
+            item.classList.add("seat");
+            item.classList.add("selected");
+
+            let seat = document.getElementById("SeatNumber");
+            seat.textContent = number;
+            
+        }
+
+        function DeSelectItem(number) {
+
+            let item = document.getElementById(number);
+            item.classList.remove("selected");
+
+            let seat = document.getElementById("SeatNumber");
+            seat.textContent = "";
+        }
+    </script>
+
+
 </head>
 
 <title>@Model.Title</title>
@@ -37,13 +62,14 @@
                 @if (item.Value == true)
                 {
                     <div class="col">
-                        <div class="seat text-center N/A">@number</div>
+                        <div class="seat text-center N/A" onclick="SelectItem(@number) "onmouseover="DeSelectItem(@number)" id="@number">@number</div>
                     </div>
+
                 }
                 else
                 {
                     <div class="col">
-                        <div class="seat text-center occupied">@number</div>
+                        <div class="seat text-center occupied" onclick="SelectItem(@number)" onmouseover="DeSelectItem(@number)"  id="@number">@number</div>
                     </div>
                 }
 
@@ -53,7 +79,8 @@
     </div>
 </div>
 
-
-@section Scripts {
-    <script src="~/ChooseSeats.js"></script>
+@section Scripts
+                    {
+    <script src="~/ChooseSeats.js">onclick</script>
+   
 }
