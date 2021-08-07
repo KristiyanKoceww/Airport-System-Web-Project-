@@ -34,3 +34,8 @@ These are some of the functionalities to which only the administrator is entitle
 User selection of existing flights:
 ![Flights](https://user-images.githubusercontent.com/62842615/128597247-20337746-fb25-4e94-adad-988dd9ecd9fc.png)
 
+Booking ticket:
+
+![Екранна снимка 2021-08-07 152409](https://user-images.githubusercontent.com/62842615/128600025-303426de-8e91-441a-8b08-f3dc64839b11.png)
+
+
