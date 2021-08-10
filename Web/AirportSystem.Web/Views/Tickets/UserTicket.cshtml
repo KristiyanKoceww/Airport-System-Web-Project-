@@ -159,9 +159,17 @@
 <br />
 <div class="text-center">
     <button  class="btn-block btn-primary" style="width:1115px;height:60px;font-size: 40px;color: whitesmoke" onclick="generate()">
-        Download ticket on pdf
+        Download ticket on pdf.
     </button>
 </div>
+
+<form method="post" asp-action="SendToEmail" asp-route-id="@Model.TicketId" >
+    <div class="text-center">
+    <button  class="btn-block btn-warning">Send to your email.</button>
+    </div>
+
+</form>
+
 
 @section Scripts{
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.8.1/html2pdf.bundle.min.js" integrity="sha512-vDKWohFHe2vkVWXHp3tKvIxxXg0pJxeid5eo+UjdjME3DBFBn2F8yWOE0XmiFcFbXxrEOR1JriWEno5Ckpn15A==" crossorigin="anonymous">

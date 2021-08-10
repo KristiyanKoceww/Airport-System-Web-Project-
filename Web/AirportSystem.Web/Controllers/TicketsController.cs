@@ -2,6 +2,9 @@
 {
     using System.Linq;
     using System.Security.Claims;
+    using System.Text;
+    using System.Threading.Tasks;
+
     using AirportSystem.Services.Data.Flights;
     using AirportSystem.Services.Data.InputModels;
     using AirportSystem.Services.Data.Luggages;
@@ -35,7 +38,8 @@
             IEmailSender emailSender,
             ILuggageService luggageService,
             ISeatsService seatsService,
-            IPlaneService planeService)
+            IPlaneService planeService
+            )
         {
             this.ticketService = ticketService;
             this.flightService = flightService;
@@ -45,6 +49,7 @@
             this.luggageService = luggageService;
             this.seatsService = seatsService;
             this.planeService = planeService;
+
         }
 
         public IActionResult BookFlight(int id)
@@ -187,6 +192,31 @@
             var tickets = this.ticketService.GetAll();
 
             return this.View(tickets);
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> SendToEmail(int id)
+        {
+            var ticket = this.ticketService.GetTicketById(id);
+            var html = new StringBuilder();
+            var passenger = this.passengersService.GetPassengerById(ticket.PassengerId);
+
+            // TODO : Generate pdf from view with full info and attach it to email instead of hardcoded info here;
+            html.AppendLine($"<div>Dear, {passenger.FirstName}</div>");
+            html.AppendLine($"<h1>This is information about your flight and ticket:</h1>");
+
+            html.AppendLine($"<div>Your travel number:{ ticket.PassengerId}</div>");
+            html.AppendLine($"<div>Your flight number :{ticket.FlightId}</div>");
+            html.AppendLine($"<div>Your luggage number :{ticket.LuggageId}</div>");
+            html.AppendLine($"<div>Your ticket type :{ticket.TicketType}</div>");
+            html.AppendLine($"<div>Your ticket class :{ticket.TicketRule}</div>");
+
+            html.AppendLine($"<div>If you have any questions you can send us back email.</div>");
+            html.AppendLine($"<div>Best regards and enjoy your journey!</div>");
+
+            await this.emailSender.SendEmailAsync("koceww@gmail.com", "AirportSystem", $"{passenger.Address}", "Ticket", html.ToString());
+
+            return this.Redirect("/Home/Index");
         }
     }
 }

@@ -51,8 +51,6 @@
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-           
-
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(this.configuration.GetConnectionString("DefaultConnection")));
 
@@ -80,9 +78,10 @@
             services.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
             services.AddScoped<IDbQueryRunner, DbQueryRunner>();
 
-            // Application services
+            // SendGrid
             services.AddTransient<IEmailSender>(x => new SendGridEmailSender(this.configuration["SendGrid:ApiKey"]));
 
+            // Application services
             services.AddTransient<ICountryService, CountryService>();
             services.AddTransient<ICityService, CityService>();
             services.AddTransient<ILuggageService, LuggageService>();
@@ -97,7 +96,6 @@
             services.AddTransient<ITravelLinesService, TravelLinesService>();
             services.AddTransient<ISeatsService, SeatsService>();
             services.AddTransient<IPaymentService, PaymentService>();
-
 
             // Stripe service
             services.Configure<StripeSettings>(this.configuration.GetSection("Stripe"));

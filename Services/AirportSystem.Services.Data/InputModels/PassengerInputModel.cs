@@ -39,6 +39,7 @@
         [Required]
         [MinLength(6)]
         [MaxLength(30)]
+        [Display(Name = "Email Address")]
         public string Address { get; set; }
 
         [Required]
